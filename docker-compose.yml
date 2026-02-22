@@ -1,0 +1,178 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database Service
+  postgres:
+    image: postgres:15-alpine
+    container_name: lottery-educator-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=en_US.UTF-8"
+    ports:
+      - "5432:5432"
+    volumes:
+      # Persist database data
+      - postgres_data:/var/lib/postgresql/data
+      # Initialize database with schema
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres - d lottery_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - lottery-network
+
+  # API Gateway Service
+  api-gateway:
+    build:
+      context: ./backend/api-gateway
+      dockerfile: Dockerfile
+    container_name: lottery-api-gateway
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      GAME_ENGINE_URL: http://game-engine:3001
+      STATISTICS_URL: http://statistics:3002
+      EMAIL_SERVICE_URL: http://email-service:3003
+      METRICS_SERVICE_URL: http://metrics-service:3004
+      LOG_LEVEL: debug
+    depends_on:
+      - postgres
+    volumes:
+      - ./backend/api-gateway/src:/app/src
+    command: npm run dev
+    networks:
+      - lottery-network
+
+  # Game Engine Service
+  game-engine:
+    build:
+      context: ./backend/game-engine
+      dockerfile: Dockerfile
+    container_name: lottery-game-engine
+    ports:
+      - "3001:3001"
+    environment:
+      NODE_ENV: development
+      PORT: 3001
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/lottery_dev
+      DATABASE_POOL_MIN: 2
+      DATABASE_POOL_MAX: 10
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/game-engine/src:/app/src
+    command: npm run dev
+    networks:
+      - lottery-network
+
+  # Statistics Service
+  statistics:
+    build:
+      context: ./backend/statistics
+      dockerfile: Dockerfile
+    container_name: lottery-statistics
+    ports:
+      - "3002:3002"
+    environment:
+      NODE_ENV: development
+      PORT: 3002
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/lottery_dev
+      DATABASE_POOL_MIN: 2
+      DATABASE_POOL_MAX: 10
+      CACHE_TTL: 3600
+      CACHE_ENABLED: "true"
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/statistics/src:/app/src
+    command: npm run dev
+    networks:
+      - lottery-network
+
+  # Email Service
+  email-service:
+    build:
+      context: ./backend/email-service
+      dockerfile: Dockerfile
+    container_name: lottery-email-service
+    ports:
+      - "3003:3003"
+    environment:
+      NODE_ENV: development
+      PORT: 3003
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/lottery_dev
+      DATABASE_POOL_MIN: 2
+      DATABASE_POOL_MAX: 10
+      RATE_LIMIT_WINDOW_MS: 3600000
+      RATE_LIMIT_MAX_REQUESTS: 5
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/email-service/src:/app/src
+    command: npm run dev
+    networks:
+      - lottery-network
+
+  # Metrics Service
+  metrics-service:
+    build:
+      context: ./backend/metrics-service
+      dockerfile: Dockerfile
+    container_name: lottery-metrics-service
+    ports:
+      - "3004:3004"
+    environment:
+      NODE_ENV: development
+      PORT: 3004
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/lottery_dev
+      DATABASE_POOL_MIN: 2
+      DATABASE_POOL_MAX: 10
+      AGGREGATION_CACHE_TTL: 1800
+      AGGREGATION_ENABLED: "true"
+      LOG_LEVEL: debug
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./backend/metrics-service/src:/app/src
+    command: npm run dev
+    networks:
+      - lottery-network
+
+  # Frontend (optional - Expo web)
+  # Uncomment if you want to run frontend in Docker
+  # frontend:
+  #   build:
+  #     context: ./frontend
+  #     dockerfile: Dockerfile
+  #   container_name: lottery-frontend
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     EXPO_PUBLIC_API_URL: http://localhost:3000/api
+  #   depends_on:
+  #     - api-gateway
+  #   volumes:
+  #     - ./frontend/src:/app/src
+  #   networks:
+  #     - lottery-network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  lottery-network:
+    driver: bridge
