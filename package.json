@@ -10,6 +10,12 @@
   "scripts": {
     "install:all": "npm install && npm install --workspaces",
     "dev": "npm run dev --workspaces",
+    "dev:backend": "npm run dev --workspace=backend/api-gateway & npm run dev --workspace=backend/game-engine & npm run dev --workspace=backend/statistics & npm run dev --workspace=backend/email-service & npm run dev --workspace=backend/metrics-service",
+    "dev:gateway": "npm run dev --workspace=backend/api-gateway",
+    "dev:games": "npm run dev --workspace=backend/game-engine",
+    "dev:stats": "npm run dev --workspace=backend/statistics",
+    "dev:email": "npm run dev --workspace=backend/email-service",
+    "dev:metrics": "npm run dev --workspace=backend/metrics-service",
     "build": "npm run build --workspaces",
     "test": "npm test --workspaces",
     "lint": "npm run lint --workspaces",
