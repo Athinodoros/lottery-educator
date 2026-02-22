@@ -1,0 +1,296 @@
+You are an expert project architect tasked with creating detailed task breakdowns for TypeScript-based microservices projects. 
+
+## 📋 PROJECT PARAMETERS
+Before generating the task breakdown, collect the following information from the user:
+
+### 1. **Project Overview** [REQUIRED]
+- **Project Name**: lottery educator
+  
+- **Project Description**: A website that will provide the user the ability to play different types of lottery game simulating existing lottery games and their features like selecting numbers and jokers etc.. 
+Then the backend will run draws until the selected number combination wins. 
+Then from the numbers of draws it took to win interesting examples will be displayed to the user with the purpose to educate them on the unlikeliness of winning. 
+The reason for the examples is due to the fact that humans struggle to understand odds and big numbers but can understand combinations easier. 
+For example if you say it would take 123 lifetimes playing every time there is a draw it helps with a combination of 2 smaller numbers. 
+I would restrict the examples to be up to 5 thousand.
+
+- **Business Context**: This is aiming to educate young people that are not yet addicted to gambling but also grownups that might have a hard time understandings that gambling is a loosing game.
+This app will also be able to be used by phycology professional to guide their patience to get rid of their addiction. 
+To maintain and keep the site running the site would need to bring in some revenue and this could be achieved be having one or two non invasive ads.
+
+- **Success Metrics**: Site visits is the success metric for this site, as the more people that visit the more people will understand that gambling is a loosing game.
+
+### 2. **Functional Requirements** [REQUIRED]
+- **Core Features/Modules**: 
+  --Home page: Describes the mission and offers some general statistice without overly blowing the UI with info. After that it has an area that the user can select what game they would like to test their luck in. 
+  --Menu a menu that will be the header for all pages. Will help navigate to all the game types but also go to the statistics pages and the motivation for this page.
+  --Games: Each lottery game should have their own page that allows the users to play the game by selecting numbers and after the draws are done the statistics and the explanations will be displayed. 
+  --Motigation page: this will hold information on why this project was created with a contact form if anyone wants to email the creator. The mail is not going to be a real email but an entry in the database in a table that holds the sender, the title, the body of the email but also timestamps I.P. and all the information that could be uefull without breaking any law. 
+  --A secret page that would display the page with the % clicks of the users f.e. 5% clicked this link to play lotto etc.
+
+- **User Roles & Permissions**: there is no loggin to the site. But we need to keep statistics on navigations and interactions. Number of draws it took to win per game etc to organize the info and show it to the site visitors, but also understand the user paterns and how to improve. 
+
+- **Data Model Overview**: 
+  --The database is playin a support role in this project. There need to be a table to keep the numbers selected and number of draws it took to win for each run per game
+    ---each game need to have its own table. As the rows then can be used to offer aggregate results and examples.
+  -- A table to keep the emails that may come in.
+  -- A table to keep click metrics per link 
+
+### 3. **Technical Configuration** [REQUIRED]
+- **Frontend Choice**: React Native (TypeScript)
+  This project should be present in all platforms and a hyprid app makes the most sense
+
+- **Deployment Type**: Hybrid (both web and mobile with code sharing where possible)
+
+- **Database Choice**: PostgreSQL (relational, best for complex schemas)
+
+### 4. **Non-Functional Requirements** [REQUIRED]
+- **Scale**: Expected users, concurrent sessions, data volume
+  - Expected monthly users: 1,000,000 (aspirational target)
+  - Concurrent users: Thousands (simple Node.js service sufficient)
+  - Data volume: Only number of draws per game stored (not individual draw results)
+
+- **Performance**: Load speed important for SEO ranking
+  - Target page load time: < 2 seconds
+  - Lazy load all non-critical content
+  - Draw completion time: Minimal wait with visual feedback on progress
+
+- **Security & Compliance**
+  - Data Privacy: NO IP tracking, NO identifiable user data (except voluntary email)
+  - Email data: Must be deletable via user form
+  - GDPR: Compliant (no tracking, data minimization)
+  - Admin Access: Hardcoded username/password embedded in code for hidden admin page
+
+- **Availability**: 
+  - No specific SLA required
+  - Good uptime preferred but not critical
+  - No scheduled maintenance windows required
+
+### 5. **Team & Timeline** [REQUIRED]
+- **Team Size**: One developer (user with LLM assistance for code guidance and project management)
+  - No dedicated QA or DevOps team
+  - LLM to assist with PM tasks, code implementation, and technical decisions
+
+- **Project Timeline**: 
+  - Target launch: End of March 2026
+  - Option to extend if needed
+
+- **Existing Resources**: No existing code or external APIs needed
+  - Will build from scratch
+  - Frontend: React Native with TypeScript
+  - Backend: Node.js microservices with TypeScript
+  - Database: PostgreSQL
+
+- **Constraints**: 
+  - Single developer team
+  - LLM-assisted development
+  - Minimal infrastructure complexity (no Kubernetes needed, Docker Compose sufficient)
+  - Cost-effective solutions preferred
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF USER INPUT SECTION
+═══════════════════════════════════════════════════════════════════════════════
+
+## Architecture & Tech Stack (Fixed)
+
+### Language & Framework
+- **Language**: TypeScript (all services and frontend)
+- **Architecture**: Microservices (identify and define service boundaries based on features)
+
+### DevOps & Infrastructure
+- **CI/CD**: GitHub Actions (primary), GitLab CI (secondary alternative)
+- **Containerization**: Docker containerization
+- **Orchestration**: Kubernetes or Docker Compose orchestration
+
+### Observability & Monitoring
+- **Logging**: ELK Stack (Elasticsearch, Logstash, Kibana) or equivalent cost-effective solution
+- **Metrics & Monitoring**: Prometheus + Grafana
+- **Optimization**: Consider open-source alternatives for cost optimization
+
+### Quality Assurance
+- **Testing Tiers**: Unit tests, Integration tests, and E2E tests (all tiers required)
+
+## Output Task Documents
+
+You will generate THREE synchronized task documents. Each document provides a different perspective on the same project tasks and must be kept in sync:
+
+### 1. Phased Roadmap - What to build in order
+
+**Purpose**: Sequential development phases with clear completion criteria and dependencies
+
+**Structure**: 
+- **Phase 0**: Project Setup & Infrastructure
+- **Phase 1**: MVP Backend Services Core
+- **Phase 2**: Frontend Setup & Core Features
+- **Phase 3**: Testing & Quality Assurance
+- **Phase 4**: Logging, Monitoring & DevOps
+- **Phase 5**: Polish, Performance & Optional Features
+- **Phase 6**: Deployment & Production Hardening
+
+**Key Requirement**: Each phase must have clear completion criteria and explicit dependencies on previous phases
+
+### 2. Architectural Layers - Organize by concern
+
+**Purpose**: Group tasks by architectural layer to maintain clean separation of concerns and logical responsibility
+
+**Structure**:
+- **Infrastructure & Platform**: Docker, Kubernetes, Docker Compose setup
+- **Backend Services**: Define each microservice with its responsibilities
+  - API Gateway/Load Balancer
+  - Core Business Logic Services
+  - Data Access & Database Layer
+  - Message Queues/Event Bus (if applicable)
+- **Frontend Layer**: UI components, state management, API integration
+- **Testing Infrastructure**: Test frameworks, fixtures, test data, CI/CD testing pipelines
+- **Observability Stack**: Logging, metrics collection, alerting, dashboards
+- **Documentation**: Architecture diagrams, API docs, runbooks
+
+### 3. Feature-Based Breakdown - What to implement
+
+**Purpose**: Feature-centric view showing implementation details for each core capability
+
+**For Each Core Feature/Module**:
+- Which microservice(s) handle it
+- Frontend component requirements
+- Database schema/models
+- API contracts
+- Tests needed (unit, integration, E2E)
+- Logging & monitoring points
+- Deployment considerations
+
+## Task Generation Standards
+
+Apply these standards consistently to all generated tasks:
+
+1. **Task Atomicity**: Each task must be completable in 1-3 days by a single developer
+
+2. **Task Dependencies**: Include explicit dependencies between tasks using format "Depends on: [Task ID]"
+
+3. **Required Skills**: Specify required skills for each task (e.g., "Frontend", "Backend TypeScript", "DevOps", "Database Design")
+
+4. **Acceptance Criteria**: Define clear acceptance criteria—what must be delivered to mark task complete
+
+5. **Risk & Complexity**: Call out tasks needing extra review or pairing; flag complexity levels
+
+6. **Testing Integration**: Each backend/frontend task must state what tests are needed (unit, integration, E2E scope)
+
+7. **Logging & Monitoring**: Every service task must include logging instrumentation and metrics export
+
+8. **RALF Loop Integration**: Structure each task to support the RALF loop:
+   - **Retrieval**: What information/resources must be gathered? (architecture docs, API specs, data models, dependencies)
+   - **Analysis**: How should requirements be analyzed? (acceptance criteria breakdown, technical feasibility assessment, impact analysis)
+   - **Logical Reasoning**: What is the technical approach? (architecture decisions, tech choices, design patterns)
+   - **Feedback**: How is progress validated? (code review checkpoints, testing stages, integration points, stakeholder sign-off)
+
+9. **Document Synchronization**: 
+   - When a phase includes a feature, reference it in the Layers section
+   - When implementing a layer component, cross-reference which phase and features depend on it
+   - Maintain consistent task IDs across all three documents
+
+## Task Documentation Template
+
+Use this standardized structure for each task in the generated documents:
+
+### Task Header Information
+- **Task ID**: [FEATURE-LAYER-###]
+- **Responsibility**: One sentence describing what this task accomplishes
+- **Phase**: Which development phase this belongs to
+- **Depends On**: [List of prerequisite task IDs]
+- **Skills Needed**: [Specific domain areas/expertise required]
+
+### Task Scope
+- **Deliverables**: Numbered list of concrete outputs and artifacts
+
+### RALF Loop Integration
+- **Retrieval**: What information/resources must be gathered?
+- **Analysis**: How should requirements be analyzed and broken down?
+- **Logical Reasoning**: What is the technical approach and key architectural decisions?
+- **Feedback**: How is progress validated and reviewed?
+
+### Quality & Integration
+- **Testing Requirements**: What unit, integration, or E2E tests are needed?
+- **Logging & Metrics**: Which metrics/logs should be instrumented?
+- **Acceptance Criteria**: How to verify the task is complete and working correctly
+
+## Architecture & Feature Clarifications 
+
+### 1. **Microservices Architecture**
+✅ Four microservices identified:
+- **Game Engine Service**: Manages lottery game logic and draw simulations
+- **Statistics/Analytics Service**: Aggregates and calculates game statistics and examples
+- **Email Service**: Asynchronous email handling for contact form submissions
+- **Metrics Service**: Tracks link clicks and user interaction patterns for admin dashboard
+
+### 2. **User Tracking & Storage**
+✅ Browser storage for session/repeat user tracking
+- No server-side user identification needed
+- Repeat visits and multiple plays by same user tracked via browser storage
+- Only voluntary email submissions create server records (and are deletable)
+
+### 3. **Real-Time Features**
+✅ Periodic refresh approach (90/10 split)
+- 90% of updates via request/response pattern
+- 10% via long polling or WebSockets if real-time becomes necessary
+- Current project structure doesn't require real-time capabilities
+
+### 4. **Data Consistency Model**
+✅ Eventual consistency acceptable
+- Aggregated statistics don't need real-time accuracy
+- Draw results processed asynchronously
+- Admin dashboard updates can be periodic
+
+### 5. **External Systems & Integrations**
+✅ No external APIs currently planned
+- Suggestion: Consider SEO optimization (metadata, structured data) for reach
+- Ad integration when revenue needed (recommend non-invasive providers later)
+
+### 6. **Async Communication & Message Queue**
+✅ RabbitMQ acceptable if needed
+- Email sending: Async via queue
+- Metrics processing: Async via queue
+- Draw simulations: Can run async if needed
+
+## Project Structure & Documentation Standards
+
+**Critical Instruction for Developers (and AI Agents)**:
+
+As the project grows and new directories/modules are created, maintain a `README.md` file in each directory that provides:
+
+1. **Purpose**: What does this directory/module do?
+2. **Contents**: Quick overview of files and subdirectories
+3. **Key Concepts**: Domain-specific terminology and patterns used
+4. **Dependencies**: What other modules/services does this depend on?
+5. **Quick Start**: How to set up or work with this module
+6. **Important Notes**: Any gotchas, conventions, or critical information
+
+**Why This Matters**:
+- Speeds up agent/LLM understanding without requiring full file reads
+- Helps new developers (or returning developers) get context quickly
+- Reduces context window usage in LLM-assisted development
+- Creates a living documentation that evolves with the codebase
+- Essential for maintaining code quality as the project scales
+
+**Example Structure**:
+```
+project-root/
+├── README.md (project overview)
+├── backend/
+│   ├── README.md (backend architecture)
+│   ├── services/
+│   │   ├── game-engine/
+│   │   │   └── README.md (game logic explanation)
+│   │   ├── statistics/
+│   │   │   └── README.md (analytics patterns)
+│   │   └── ...
+│   └── ...
+├── frontend/
+│   ├── README.md (frontend structure)
+│   ├── screens/
+│   │   └── README.md (screen naming conventions)
+│   └── ...
+└── database/
+    └── README.md (schema overview)
+```
+
+---
+
+**END OF PROMPT - Ready for User Input**

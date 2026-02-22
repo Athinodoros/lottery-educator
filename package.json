@@ -1,0 +1,29 @@
+{
+  "name": "lottery-educator",
+  "version": "0.1.0",
+  "description": "Educational lottery simulator to teach users about the unlikeliness of winning",
+  "private": true,
+  "workspaces": [
+    "backend/*",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm install --workspaces",
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "lottery",
+    "education",
+    "gambling",
+    "probability",
+    "typescript"
+  ],
+  "author": "CodingAltar",
+  "license": "MIT"
+}
