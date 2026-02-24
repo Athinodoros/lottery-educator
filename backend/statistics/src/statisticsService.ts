@@ -1,5 +1,6 @@
 import { queryOne, queryAll } from './database';
 import { GameStats, StatisticsExample } from './types';
+import logger from './logger';
 
 const CACHE: Map<string, { data: any; timestamp: number }> = new Map();
 const CACHE_TTL = parseInt(process.env.CACHE_TTL || '3600') * 1000; // Convert to ms
@@ -27,12 +28,12 @@ export async function getGameStats(gameId: string): Promise<GameStats | null> {
   // Check cache first
   const cached = getFromCache<GameStats>(cacheKey);
   if (cached) {
-    console.log(`Cache hit for ${cacheKey}`);
+    logger.debug(`Cache hit for ${cacheKey}`);
     return cached;
   }
 
   const stats = await queryOne(
-    `SELECT 
+    `SELECT
       gr.game_id,
       g.name,
       COUNT(*) as total_plays,
@@ -64,7 +65,7 @@ export async function getAllGameStats(): Promise<GameStats[]> {
   
   const cached = getFromCache<GameStats[]>(cacheKey);
   if (cached) {
-    console.log(`Cache hit for ${cacheKey}`);
+    logger.debug(`Cache hit for ${cacheKey}`);
     return cached;
   }
 
@@ -134,5 +135,5 @@ export async function generateExamples(gameId: string): Promise<StatisticsExampl
  */
 export function clearCache(): void {
   CACHE.clear();
-  console.log('Statistics cache cleared');
+  logger.info('Statistics cache cleared');
 }

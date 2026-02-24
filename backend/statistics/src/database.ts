@@ -1,5 +1,6 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import logger from './logger';
 
 dotenv.config();
 
@@ -12,7 +13,7 @@ const pool = new Pool({
 });
 
 pool.on('error', (err) => {
-  console.error('Unexpected error on idle client', err);
+  logger.error('Unexpected error on idle client', { error: err.message });
 });
 
 export async function query(text: string, params?: any[]): Promise<any> {
@@ -20,10 +21,10 @@ export async function query(text: string, params?: any[]): Promise<any> {
   try {
     const result = await pool.query(text, params);
     const duration = Date.now() - start;
-    console.log(`Query executed in ${duration}ms`);
+    logger.debug(`Query executed`, { duration: `${duration}ms` });
     return result;
-  } catch (error) {
-    console.error('Database query error:', error);
+  } catch (error: any) {
+    logger.error('Database query error', { error: error.message });
     throw error;
   }
 }
@@ -42,8 +43,8 @@ export async function healthCheck(): Promise<boolean> {
   try {
     await query('SELECT NOW()');
     return true;
-  } catch (error) {
-    console.error('Health check failed:', error);
+  } catch (error: any) {
+    logger.error('Health check failed', { error: error.message });
     return false;
   }
 }

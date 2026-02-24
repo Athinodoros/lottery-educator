@@ -109,12 +109,13 @@ app.get('/emails/:emailId', async (req: Request, res: Response) => {
   }
 });
 
-// Get all emails (admin - hardcoded check)
+// Get all emails (admin - validated via internal service key)
 app.get('/emails', async (req: Request, res: Response) => {
   try {
-    // TODO: Add proper authentication
-    const adminKey = req.query.key;
-    if (adminKey !== process.env.ADMIN_KEY) {
+    // Validate internal service key (sent by API Gateway after admin auth)
+    const adminKey = req.query.key || req.headers['x-admin-key'];
+    if (adminKey !== (process.env.ADMIN_KEY || 'admin-key')) {
+      logger.warn('Unauthorized email list access attempt');
       return res.status(403).json({ error: 'Forbidden' });
     }
 

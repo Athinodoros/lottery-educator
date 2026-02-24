@@ -30,9 +30,11 @@ describe('Navigation & Learn Page', () => {
     cy.url().should('eq', Cypress.config('baseUrl') + '/')
   })
 
-  it('redirects unknown routes to home', () => {
+  it('shows 404 page for unknown routes', () => {
     cy.visit('/this-route-does-not-exist')
-    cy.url().should('eq', Cypress.config('baseUrl') + '/')
+    cy.contains('404').should('be.visible')
+    cy.contains('Page Not Found').should('be.visible')
+    cy.contains('Back to Home').should('be.visible')
   })
 
   it('navigates to admin page', () => {
