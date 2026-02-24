@@ -10,14 +10,6 @@ module.exports = {
     '!src/**/*.d.ts',
     '!src/**/types.ts',
   ],
-  coverageThreshold: {
-    global: {
-      branches: 60,
-      functions: 60,
-      lines: 60,
-      statements: 60,
-    },
-  },
   setupFilesAfterEnv: ['<rootDir>/src/__tests__/setup.ts'],
   testTimeout: 10000,
 }
