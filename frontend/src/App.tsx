@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useEffect, lazy, Suspense } from 'react'
 import Layout from './layout/Layout'
 import ErrorBoundary from './components/ErrorBoundary'
@@ -13,6 +13,7 @@ const StatisticsDetailPage = lazy(() => import('./pages/StatisticsDetailPage'))
 const LearnPage = lazy(() => import('./pages/LearnPage'))
 const AdminPage = lazy(() => import('./pages/AdminPage'))
 const ContactPage = lazy(() => import('./pages/ContactPage'))
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 
 function App() {
   const initializeSession = useSessionStore((state) => state.initializeSession)
@@ -35,7 +36,7 @@ function App() {
               <Route path="/learn" element={<LearnPage />} />
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/admin" element={<AdminPage />} />
-              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
           </Routes>
         </Suspense>

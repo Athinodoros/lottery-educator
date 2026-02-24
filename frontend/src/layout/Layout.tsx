@@ -1,6 +1,7 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { Home, Gamepad2, BarChart3, Heart, Mail, Settings } from 'lucide-react'
 import PrivacyFooter from '../components/PrivacyFooter'
+import ConsentBanner from '../components/ConsentBanner'
 import './Layout.css'
 
 function Layout() {
@@ -25,6 +26,8 @@ function Layout() {
         <Outlet />
         <PrivacyFooter />
       </main>
+
+      <ConsentBanner />
 
       <nav className="nav-bar" aria-label="Main navigation">
         {navItems.map((item) => {
