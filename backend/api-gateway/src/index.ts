@@ -28,8 +28,8 @@ const EMAIL_SERVICE_URL = process.env.EMAIL_SERVICE_URL || 'http://localhost:300
 const METRICS_SERVICE_URL = process.env.METRICS_SERVICE_URL || 'http://localhost:3004';
 
 // Admin credentials
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'admin';
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'lottery-educator-2026';
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'nos';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'qweqweqwe';
 
 // Simple token store (in production, use JWT or sessions)
 const activeTokens = new Map<string, { username: string; createdAt: number }>();
@@ -101,7 +101,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
     res.setHeader('Access-Control-Allow-Origin', requestOrigin);
   }
 
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
 
@@ -328,11 +328,13 @@ app.post('/admin/logout', requireAdmin, (req: Request, res: Response) => {
 // Admin dashboard - aggregated data from all services
 app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) => {
   try {
-    const [gamesRes, allGamesRes, statsRes, metricsRes] = await Promise.allSettled([
+    const [gamesRes, allGamesRes, statsRes, metricsRes, sessionMetricsRes, playMetricsRes] = await Promise.allSettled([
       axios.get(`${GAME_ENGINE_URL}/games`),
       axios.get(`${GAME_ENGINE_URL}/games?include_pending=true`),
       axios.get(`${STATISTICS_URL}/stats`),
       axios.get(`${METRICS_SERVICE_URL}/metrics`),
+      axios.get(`${METRICS_SERVICE_URL}/metrics/sessions`),
+      axios.get(`${METRICS_SERVICE_URL}/metrics/plays`),
     ]);
 
     const games = gamesRes.status === 'fulfilled' ? gamesRes.value.data : [];
@@ -340,6 +342,8 @@ app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) =>
     const pendingGames = Array.isArray(allGames) ? allGames.filter((g: any) => !g.is_approved) : [];
     const stats = statsRes.status === 'fulfilled' ? statsRes.value.data : [];
     const metricsData = metricsRes.status === 'fulfilled' ? metricsRes.value.data : { metrics: [] };
+    const sessionMetrics = sessionMetricsRes.status === 'fulfilled' ? sessionMetricsRes.value.data : null;
+    const playMetrics = playMetricsRes.status === 'fulfilled' ? playMetricsRes.value.data : null;
 
     // Calculate totals from stats
     const statsArray = Array.isArray(stats) ? stats : [];
@@ -354,10 +358,10 @@ app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) =>
 
     // Calculate click metrics with percentages
     const metrics = metricsData.metrics || [];
-    const totalClicks = metrics.reduce((sum: number, m: any) => sum + (m.click_count || 0), 0);
+    const totalClicks = metrics.reduce((sum: number, m: any) => sum + (Number(m.total_clicks) || 0), 0);
     const metricsWithPercent = metrics.map((m: any) => ({
       ...m,
-      percentage: totalClicks > 0 ? ((m.click_count / totalClicks) * 100).toFixed(1) : '0.0',
+      percentage: totalClicks > 0 ? ((Number(m.total_clicks) / totalClicks) * 100).toFixed(1) : '0.0',
     }));
 
     res.json({
@@ -375,6 +379,8 @@ app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) =>
         total_clicks: totalClicks,
         by_link: metricsWithPercent,
       },
+      session_metrics: sessionMetrics || { totalSessions: 0, activeSessions: 0, avgSessionDuration: 0, bounceRate: 0 },
+      play_metrics: playMetrics || { totalPlays: 0, playConversionRate: 0, avgPlaysPerSession: 0, favoritGame: null },
       services: {
         game_engine: gamesRes.status === 'fulfilled' ? 'ok' : 'error',
         statistics: statsRes.status === 'fulfilled' ? 'ok' : 'error',
@@ -417,14 +423,14 @@ app.get('/admin/metrics', requireAdmin, async (req: Request, res: Response) => {
   try {
     const response = await axios.get(`${METRICS_SERVICE_URL}/metrics`);
     const metrics = response.data.metrics || [];
-    const totalClicks = metrics.reduce((sum: number, m: any) => sum + (m.click_count || 0), 0);
+    const totalClicks = metrics.reduce((sum: number, m: any) => sum + (Number(m.total_clicks) || 0), 0);
 
     res.json({
       total_clicks: totalClicks,
       total_links: metrics.length,
       metrics: metrics.map((m: any) => ({
         ...m,
-        percentage: totalClicks > 0 ? ((m.click_count / totalClicks) * 100).toFixed(1) : '0.0',
+        percentage: totalClicks > 0 ? ((Number(m.total_clicks) / totalClicks) * 100).toFixed(1) : '0.0',
       })),
     });
   } catch (error: any) {

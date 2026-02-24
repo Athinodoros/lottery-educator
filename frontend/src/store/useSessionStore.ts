@@ -48,8 +48,8 @@ export const useSessionStore = create<SessionStore>((set) => ({
       lastActivity: new Date().toISOString(),
     })
 
-    // Send session tracking data to backend if consent given
-    if (consentGiven && sessionId) {
+    // Always track anonymous session start (no PII)
+    if (sessionId) {
       recordSessionStart(sessionId)
     }
   },
@@ -59,8 +59,8 @@ export const useSessionStore = create<SessionStore>((set) => ({
       const newPlayCount = (state.playCount || 0) + 1
       localStorage.setItem(PLAY_COUNT_KEY, String(newPlayCount))
 
-      // Send metrics data to backend if consent given
-      if (state.hasGivenConsent && state.sessionId) {
+      // Always track anonymous play event (no PII)
+      if (state.sessionId) {
         recordPlayMetrics(state.sessionId, gameId, newPlayCount)
       }
 
@@ -73,8 +73,8 @@ export const useSessionStore = create<SessionStore>((set) => ({
 
   recordPageView: (page: string) => {
     set((state) => {
-      // Send page view tracking to backend if consent given
-      if (state.hasGivenConsent && state.sessionId) {
+      // Always track anonymous page view (no PII)
+      if (state.sessionId) {
         recordPageViewMetrics(state.sessionId, page)
       }
 

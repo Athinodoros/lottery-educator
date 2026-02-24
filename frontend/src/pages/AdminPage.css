@@ -829,6 +829,13 @@
   background: var(--color-error-bg);
 }
 
+.meta-bonus {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-accent);
+  margin-left: 4px;
+}
+
 /* ── Mobile Responsive ─────────────────────────── */
 @media (max-width: 768px) {
   .admin-page {

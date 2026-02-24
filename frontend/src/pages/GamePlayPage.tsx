@@ -285,6 +285,136 @@ function GamePlayPage() {
       ) : (
         <div className="results-container">
           <ResultsDisplay result={result} />
+
+          {game.probability_of_winning && (() => {
+            const expectedDraws = Math.round(1 / game.probability_of_winning)
+            return (
+              <section className="odds-perspective-section" aria-label="Odds in perspective">
+                <h2>Putting the Odds in Perspective</h2>
+
+                <div className="perspective-card">
+                  <h3>How Long Would It Take?</h3>
+                  <p>If you played {game.name} regularly, here's how long you'd expect to wait for a single win:</p>
+                  <div className="time-grid">
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 365).toLocaleString('de-DE')}</div>
+                      <div className="time-label">years playing daily</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 104).toLocaleString('de-DE')}</div>
+                      <div className="time-label">years playing twice a week</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 52).toLocaleString('de-DE')}</div>
+                      <div className="time-label">years playing once a week</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>How Much Would You Spend?</h3>
+                  <p>At $2 per ticket, here's what you'd expect to spend before winning once:</p>
+                  <div className="time-grid">
+                    <div className="time-item">
+                      <div className="time-value">${(expectedDraws * 2).toLocaleString('de-DE')}</div>
+                      <div className="time-label">total cost ({Math.round((expectedDraws * 2) / (Math.round(expectedDraws / 365))).toLocaleString('de-DE')}/yr playing daily)</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">${(104 * 2).toLocaleString('de-DE')}</div>
+                      <div className="time-label">per year playing twice a week</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">${(52 * 2).toLocaleString('de-DE')}</div>
+                      <div className="time-label">per year playing once a week</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>Lightning Strike Comparison</h3>
+                  <p>The odds of being struck by lightning in a given year are roughly 1 in 1,222,000.</p>
+                  <div className="time-grid single">
+                    <div className="time-item">
+                      <div className="time-value">{(expectedDraws / 1222000).toFixed(1)}x</div>
+                      <div className="time-label">more likely to be struck by lightning than to win {game.name}</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>Coin Flip Equivalent</h3>
+                  <p>Winning {game.name} is as likely as flipping a coin and getting heads every single time:</p>
+                  <div className="time-grid single">
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(Math.log2(expectedDraws))} times in a row</div>
+                      <div className="time-label">consecutive heads needed (each flip halves your chances)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>Ticket Stack</h3>
+                  <p>If each lottery ticket were 1mm thick and you stacked all the tickets needed to expect one win:</p>
+                  <div className="time-grid">
+                    <div className="time-item">
+                      <div className="time-value">{(expectedDraws / 1000).toLocaleString('de-DE')} m</div>
+                      <div className="time-label">stack height</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{(expectedDraws / 1000000).toFixed(1)} km</div>
+                      <div className="time-label">{expectedDraws >= 8848000 ? `${(expectedDraws / 8848000).toFixed(1)}x the height of Mt. Everest` : expectedDraws >= 324000 ? `${(expectedDraws / 324000).toFixed(1)}x the Eiffel Tower` : 'stacked up'}</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{expectedDraws >= 384400000000 ? `${(expectedDraws / 384400000000).toFixed(2)}x` : expectedDraws >= 1000000000 ? `${((expectedDraws / 384400000000) * 100).toFixed(2)}%` : `${((expectedDraws / 1000000) / 384400 * 100).toFixed(4)}%`}</div>
+                      <div className="time-label">of the distance to the Moon (384,400 km)</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>Pick a Card</h3>
+                  <p>A standard deck has 52 cards. Winning {game.name} is like picking one specific card from a huge pile:</p>
+                  <div className="time-grid single">
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 52).toLocaleString('de-DE')} decks</div>
+                      <div className="time-label">shuffle {Math.round(expectedDraws / 52).toLocaleString('de-DE')} decks together and draw the Ace of Spades on your first try</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>How Many Lifetimes?</h3>
+                  <p>Assuming an average human lifespan of 80 years, here's how many lifetimes you'd need:</p>
+                  <div className="time-grid">
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 365 / 80).toLocaleString('de-DE')}</div>
+                      <div className="time-label">lifetimes playing daily</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 104 / 80).toLocaleString('de-DE')}</div>
+                      <div className="time-label">lifetimes playing twice a week</div>
+                    </div>
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(expectedDraws / 52 / 80).toLocaleString('de-DE')}</div>
+                      <div className="time-label">lifetimes playing once a week</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="perspective-card">
+                  <h3>Birthday Match</h3>
+                  <p>The chance of a random stranger sharing your exact birthday is 1 in 365. Winning {game.name} is like:</p>
+                  <div className="time-grid single">
+                    <div className="time-item">
+                      <div className="time-value">{Math.round(Math.log(expectedDraws) / Math.log(365))} strangers in a row</div>
+                      <div className="time-label">meeting {Math.round(Math.log(expectedDraws) / Math.log(365))} random people and ALL of them sharing your exact birthday</div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )
+          })()}
+
           <div className="results-actions">
             <button className="play-again-button" onClick={handleRerun}>
               Rerun Same Numbers

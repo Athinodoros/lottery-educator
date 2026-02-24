@@ -1,7 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
-import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics, deleteSessionMetrics, getSessionMetrics, getPlayMetrics } from './metricsService';
+import { trackClick, trackSession, trackPlay, trackPageview, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics, deleteSessionMetrics, getSessionMetrics, getPlayMetrics } from './metricsService';
 import logger from './logger';
 
 dotenv.config();
@@ -68,6 +68,66 @@ app.post('/metrics/click', async (req: Request, res: Response) => {
   } catch (error: any) {
     logger.error('Error tracking click', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to track click', message: error.message });
+  }
+});
+
+// Track a session event
+app.post('/metrics/session', async (req: Request, res: Response) => {
+  try {
+    const { session_id, event_type, timestamp } = req.body;
+
+    if (!session_id || !event_type) {
+      return res.status(400).json({
+        error: 'Bad request',
+        message: 'session_id and event_type are required',
+      });
+    }
+
+    const event = await trackSession(session_id, event_type, timestamp || new Date().toISOString());
+    res.status(201).json(event);
+  } catch (error: any) {
+    logger.error('Error tracking session', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to track session', message: error.message });
+  }
+});
+
+// Track a play event
+app.post('/metrics/play', async (req: Request, res: Response) => {
+  try {
+    const { session_id, game_id, play_count, timestamp } = req.body;
+
+    if (!session_id || !game_id) {
+      return res.status(400).json({
+        error: 'Bad request',
+        message: 'session_id and game_id are required',
+      });
+    }
+
+    const event = await trackPlay(session_id, game_id, play_count || 1, timestamp || new Date().toISOString());
+    res.status(201).json(event);
+  } catch (error: any) {
+    logger.error('Error tracking play', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to track play', message: error.message });
+  }
+});
+
+// Track a page view
+app.post('/metrics/pageview', async (req: Request, res: Response) => {
+  try {
+    const { session_id, page, timestamp } = req.body;
+
+    if (!session_id || !page) {
+      return res.status(400).json({
+        error: 'Bad request',
+        message: 'session_id and page are required',
+      });
+    }
+
+    const event = await trackPageview(session_id, page, timestamp || new Date().toISOString());
+    res.status(201).json(event);
+  } catch (error: any) {
+    logger.error('Error tracking page view', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to track page view', message: error.message });
   }
 });
 

@@ -10,7 +10,7 @@
   gap: 8px;
   background: none;
   border: none;
-  color: #6366f1;
+  color: var(--color-primary);
   padding: 8px 0;
   margin-bottom: 32px;
   font-size: 15px;
@@ -20,7 +20,7 @@
 }
 
 .back-button:hover {
-  color: #4f46e5;
+  color: var(--color-primary-hover);
 }
 
 .detail-header {
@@ -32,12 +32,12 @@
   margin: 0 0 12px 0;
   font-size: 36px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .detail-header p {
   margin: 0;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 16px;
 }
 
@@ -46,10 +46,10 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 24px;
   margin-bottom: 48px;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%);
+  background: var(--gradient-primary-subtle);
   padding: 32px 24px;
   border-radius: 12px;
-  border: 1px solid rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--color-primary-bg);
 }
 
 .stat-item {
@@ -59,13 +59,13 @@
 .stat-value {
   font-size: 32px;
   font-weight: 700;
-  color: #6366f1;
+  color: var(--color-accent);
   margin-bottom: 8px;
 }
 
 .stat-label {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -78,14 +78,14 @@
   justify-content: center;
   gap: 16px;
   min-height: 400px;
-  color: #6b7280;
+  color: var(--color-text-muted);
 }
 
 .spinner {
   width: 50px;
   height: 50px;
-  border: 4px solid #e5e7eb;
-  border-top-color: #6366f1;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -99,11 +99,11 @@
 .error-banner {
   display: flex;
   gap: 12px;
-  background: #fef2f2;
-  border-left: 4px solid #ef4444;
+  background: var(--color-error-bg);
+  border-left: 4px solid var(--color-error);
   padding: 16px;
   border-radius: 6px;
-  color: #991b1b;
+  color: var(--color-error-text);
 }
 
 .error-banner span {
@@ -117,6 +117,45 @@
   line-height: 1.5;
 }
 
+.empty-state {
+  text-align: center;
+  padding: 60px 24px;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+.empty-state h2 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-heading);
+}
+
+.empty-state p {
+  margin: 0 0 24px 0;
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.play-link-btn {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: var(--color-bg-card);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.play-link-btn:hover {
+  background: var(--gradient-primary-hover);
+  transform: translateY(-2px);
+}
+
 .probability-section {
   margin-bottom: 48px;
 }
@@ -125,7 +164,7 @@
   margin: 0 0 24px 0;
   font-size: 24px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .probability-cards {
@@ -135,22 +174,22 @@
 }
 
 .prob-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
 }
 
 .prob-card:hover {
-  border-color: #6366f1;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary-sm);
   transform: translateY(-4px);
 }
 
 .prob-label {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -160,15 +199,105 @@
 .prob-value {
   font-size: 28px;
   font-weight: 700;
-  color: #6366f1;
+  color: var(--color-accent);
   margin-bottom: 12px;
 }
 
 .prob-desc {
   margin: 0;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 13px;
   line-height: 1.6;
+}
+
+/* ── Odds perspective section ────────────────────── */
+.odds-perspective-section {
+  margin-bottom: 48px;
+}
+
+.odds-perspective-section h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.perspective-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.perspective-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.perspective-card > p {
+  margin: 0 0 20px 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.time-item {
+  text-align: center;
+  padding: 16px 12px;
+  background: var(--gradient-primary-subtle);
+  border-radius: 10px;
+  border: 1px solid var(--color-primary-bg);
+}
+
+.time-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.time-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.time-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.time-item.highlight {
+  background: var(--color-error-bg);
+  border-color: var(--color-error);
+}
+
+.time-item.highlight .time-value {
+  color: var(--color-error);
+}
+
+@media (max-width: 768px) {
+  .time-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .time-value {
+    font-size: 22px;
+  }
+
+  .perspective-card {
+    padding: 20px;
+  }
 }
 
 .educational-section {
@@ -179,7 +308,7 @@
   margin: 0 0 24px 0;
   font-size: 24px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .education-cards {
@@ -189,35 +318,35 @@
 }
 
 .edu-card {
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 24px;
   transition: all 0.3s ease;
 }
 
 .edu-card:hover {
-  border-color: #6366f1;
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.1);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-primary-sm);
 }
 
 .edu-card h3 {
   margin: 0 0 12px 0;
   font-size: 16px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .edu-card p {
   margin: 0;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 14px;
   line-height: 1.6;
 }
 
 .disclaimer {
-  background: #fef3c7;
-  border: 1px solid #fcd34d;
+  background: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
   border-radius: 12px;
   padding: 20px;
   margin-top: 48px;
@@ -225,7 +354,7 @@
 
 .disclaimer p {
   margin: 0;
-  color: #92400e;
+  color: var(--color-warning-text);
   font-size: 14px;
   line-height: 1.6;
 }

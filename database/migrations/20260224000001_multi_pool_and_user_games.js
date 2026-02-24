@@ -32,7 +32,7 @@ exports.up = async function (knex) {
 
   for (const { name, range, count } of bonusMappings) {
     await knex.raw(
-      `UPDATE games SET bonus_number_range = ARRAY[?, ?], bonus_numbers_to_select = ? WHERE name = ?`,
+      `UPDATE games SET bonus_number_range = ARRAY[?::int, ?::int], bonus_numbers_to_select = ?::int WHERE name = ?`,
       [range[0], range[1], count, name]
     )
   }
@@ -55,6 +55,39 @@ exports.up = async function (knex) {
 
   // Drop old extra_number column
   await knex.raw(`ALTER TABLE game_results DROP COLUMN extra_number`)
+
+  // ── Compute probability_of_winning for all games ───────────────────
+  // C(n,k) = n! / (k! * (n-k)!)
+  await knex.raw(`
+    UPDATE games SET probability_of_winning = 1.0 / (
+      (
+        SELECT ROUND(EXP(SUM(LN(generate_series)))::numeric, 0)
+        FROM generate_series(
+          (number_range[2] - number_range[1] + 1) - numbers_to_select + 1,
+          number_range[2] - number_range[1] + 1
+        )
+      ) / (
+        SELECT ROUND(EXP(SUM(LN(generate_series)))::numeric, 0)
+        FROM generate_series(1, numbers_to_select)
+      )
+      * COALESCE(
+        CASE WHEN bonus_number_range IS NOT NULL AND bonus_numbers_to_select IS NOT NULL THEN
+          (
+            SELECT ROUND(EXP(SUM(LN(generate_series)))::numeric, 0)
+            FROM generate_series(
+              (bonus_number_range[2] - bonus_number_range[1] + 1) - bonus_numbers_to_select + 1,
+              bonus_number_range[2] - bonus_number_range[1] + 1
+            )
+          ) / (
+            SELECT ROUND(EXP(SUM(LN(generate_series)))::numeric, 0)
+            FROM generate_series(1, bonus_numbers_to_select)
+          )
+        END,
+        1
+      )
+    )
+    WHERE probability_of_winning IS NULL
+  `)
 
   // ── Recreate game_statistics view to only show approved games ─────
   await knex.raw(`DROP VIEW IF EXISTS game_statistics`)

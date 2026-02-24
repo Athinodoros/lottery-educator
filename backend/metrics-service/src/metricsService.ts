@@ -53,7 +53,7 @@ export async function getLinkMetrics(linkId: string): Promise<MetricsSummary | n
       link_id,
       COUNT(*) as total_clicks,
       COUNT(DISTINCT session_id) as unique_sessions,
-      ROUND(COUNT(*) / COUNT(DISTINCT session_id)::float, 2) as average_clicks_per_session,
+      ROUND(COUNT(*)::numeric / GREATEST(COUNT(DISTINCT session_id), 1), 2) as average_clicks_per_session,
       MIN(created_at) as first_click,
       MAX(created_at) as last_click
      FROM click_metrics
@@ -72,7 +72,7 @@ export async function getAllMetrics(): Promise<MetricsSummary[]> {
       link_id,
       COUNT(*) as total_clicks,
       COUNT(DISTINCT session_id) as unique_sessions,
-      ROUND(COUNT(*) / COUNT(DISTINCT session_id)::float, 2) as average_clicks_per_session,
+      ROUND(COUNT(*)::numeric / GREATEST(COUNT(DISTINCT session_id), 1), 2) as average_clicks_per_session,
       MIN(created_at) as first_click,
       MAX(created_at) as last_click
      FROM click_metrics
@@ -95,14 +95,75 @@ export async function getRecentClicks(linkId: string, limit: number = 100): Prom
 }
 
 /**
+ * Track a session event (session_start, etc.)
+ */
+export async function trackSession(
+  sessionId: string,
+  eventType: string,
+  timestamp: string
+): Promise<any> {
+  const id = uuidv4();
+  await query(
+    `INSERT INTO session_events (id, session_id, event_type, created_at)
+     VALUES ($1, $2, $3, $4)`,
+    [id, sessionId, eventType, timestamp]
+  );
+  return { id, session_id: sessionId, event_type: eventType, created_at: timestamp };
+}
+
+/**
+ * Track a play event
+ */
+export async function trackPlay(
+  sessionId: string,
+  gameId: string,
+  playCount: number,
+  timestamp: string
+): Promise<any> {
+  const id = uuidv4();
+  await query(
+    `INSERT INTO session_events (id, session_id, event_type, metadata, created_at)
+     VALUES ($1, $2, 'play', $3, $4)`,
+    [id, sessionId, JSON.stringify({ game_id: gameId, play_count: playCount }), timestamp]
+  );
+  return { id, session_id: sessionId, event_type: 'play', created_at: timestamp };
+}
+
+/**
+ * Track a page view event
+ */
+export async function trackPageview(
+  sessionId: string,
+  page: string,
+  timestamp: string
+): Promise<any> {
+  const id = uuidv4();
+  await query(
+    `INSERT INTO session_events (id, session_id, event_type, metadata, created_at)
+     VALUES ($1, $2, 'pageview', $3, $4)`,
+    [id, sessionId, JSON.stringify({ page }), timestamp]
+  );
+  return { id, session_id: sessionId, event_type: 'pageview', created_at: timestamp };
+}
+
+/**
  * Delete all metrics for a given session (GDPR "Forget Me")
  */
 export async function deleteSessionMetrics(sessionId: string): Promise<number> {
-  const result = await query(
-    `DELETE FROM click_metrics WHERE session_id = $1`,
+  let total = 0;
+  try {
+    const clickResult = await query(
+      `DELETE FROM click_metrics WHERE session_id = $1`,
+      [sessionId]
+    );
+    total += clickResult.rowCount || 0;
+  } catch (_) { /* session_id may not be a valid UUID for click_metrics */ }
+  const eventResult = await query(
+    `DELETE FROM session_events WHERE session_id = $1`,
     [sessionId]
   );
-  return result.rowCount || 0;
+  total += eventResult.rowCount || 0;
+  return total;
 }
 
 /**
@@ -111,8 +172,8 @@ export async function deleteSessionMetrics(sessionId: string): Promise<number> {
 export async function getSessionMetrics(): Promise<any> {
   const result = await queryOne(
     `SELECT
-      COUNT(DISTINCT user_session_id) AS "totalSessions",
-      COUNT(DISTINCT user_session_id) FILTER (
+      COUNT(DISTINCT session_id) AS "totalSessions",
+      COUNT(DISTINCT session_id) FILTER (
         WHERE session_end > NOW() - INTERVAL '30 minutes'
       ) AS "activeSessions",
       COALESCE(
@@ -121,20 +182,20 @@ export async function getSessionMetrics(): Promise<any> {
         ), 0
       ) AS "avgSessionDuration",
       CASE
-        WHEN COUNT(DISTINCT user_session_id) = 0 THEN 0
+        WHEN COUNT(DISTINCT session_id) = 0 THEN 0
         ELSE ROUND(
-          COUNT(DISTINCT user_session_id) FILTER (WHERE click_count = 1)::numeric
-          / COUNT(DISTINCT user_session_id) * 100, 1
+          COUNT(DISTINCT session_id) FILTER (WHERE event_count = 1)::numeric
+          / COUNT(DISTINCT session_id) * 100, 1
         )
       END AS "bounceRate"
      FROM (
        SELECT
-         user_session_id,
-         COUNT(*) AS click_count,
+         session_id,
+         COUNT(*) AS event_count,
          MIN(created_at) AS session_start,
          MAX(created_at) AS session_end
-       FROM click_metrics
-       GROUP BY user_session_id
+       FROM session_events
+       GROUP BY session_id
      ) sessions`
   );
   return result;
@@ -148,17 +209,17 @@ export async function getPlayMetrics(): Promise<any> {
     `SELECT
       COUNT(*) AS "totalPlays",
       CASE
-        WHEN (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) = 0 THEN 0
+        WHEN (SELECT COUNT(DISTINCT session_id) FROM click_metrics) = 0 THEN 0
         ELSE ROUND(
           COUNT(DISTINCT gr.id)::numeric
-          / (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) * 100, 1
+          / (SELECT COUNT(DISTINCT session_id) FROM click_metrics) * 100, 1
         )
       END AS "playConversionRate",
       CASE
-        WHEN (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) = 0 THEN 0
+        WHEN (SELECT COUNT(DISTINCT session_id) FROM click_metrics) = 0 THEN 0
         ELSE ROUND(
           COUNT(*)::numeric
-          / GREATEST((SELECT COUNT(DISTINCT user_session_id) FROM click_metrics), 1), 1
+          / GREATEST((SELECT COUNT(DISTINCT session_id) FROM click_metrics), 1), 1
         )
       END AS "avgPlaysPerSession",
       (
@@ -183,7 +244,7 @@ export async function getPageMetrics(pagePath: string): Promise<any> {
       COUNT(*) as total_clicks,
       COUNT(DISTINCT session_id) as unique_sessions,
       COUNT(DISTINCT link_id) as unique_links,
-      ROUND(COUNT(*) / COUNT(DISTINCT session_id)::float, 2) as average_clicks_per_session,
+      ROUND(COUNT(*)::numeric / GREATEST(COUNT(DISTINCT session_id), 1), 2) as average_clicks_per_session,
       MIN(created_at) as first_click,
       MAX(created_at) as last_click
      FROM click_metrics

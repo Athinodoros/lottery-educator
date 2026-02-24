@@ -6,9 +6,9 @@ export const metricsApi = {
   trackClick: async (linkId: string, sessionId: string, page?: string): Promise<void> => {
     try {
       await apiClient.post('/metrics/click', {
-        link_id: linkId,
-        user_session_id: sessionId,
-        page_path: page || '',
+        sessionId,
+        linkId,
+        onPage: page || '',
       });
     } catch (error) {
       // Silently fail - don't interrupt user experience

@@ -47,6 +47,20 @@ interface PendingGame {
   created_at: string
 }
 
+interface SessionMetrics {
+  totalSessions: number
+  activeSessions: number
+  avgSessionDuration: number
+  bounceRate: number
+}
+
+interface PlayMetrics {
+  totalPlays: number
+  playConversionRate: number
+  avgPlaysPerSession: number
+  favoritGame: string | null
+}
+
 interface ServiceStatus {
   game_engine: string
   statistics: string
@@ -58,6 +72,8 @@ interface DashboardData {
   games: any[]
   statistics: GameStat[]
   click_metrics: { total_clicks: number; by_link: ClickMetricItem[] }
+  session_metrics: SessionMetrics
+  play_metrics: PlayMetrics
   services: ServiceStatus
   timestamp: string
 }
@@ -450,7 +466,50 @@ function AdminPage() {
       {/* ── Metrics Tab ─────────────────────────────── */}
       {!loading && activeTab === 'metrics' && dashboard && (
         <div className="admin-section full-width">
-          <h2>Click Tracking Metrics</h2>
+          <h2>Session &amp; Engagement Metrics</h2>
+          <div className="metrics-summary">
+            <div className="stat-card">
+              <div className="stat-label">Total Sessions</div>
+              <div className="stat-value">{Number(dashboard.session_metrics.totalSessions).toLocaleString()}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Active Sessions</div>
+              <div className="stat-value">{Number(dashboard.session_metrics.activeSessions).toLocaleString()}</div>
+              <p className="stat-desc">Last 30 minutes</p>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Avg Session Duration</div>
+              <div className="stat-value">{Number(dashboard.session_metrics.avgSessionDuration).toFixed(1)} min</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Bounce Rate</div>
+              <div className="stat-value">{Number(dashboard.session_metrics.bounceRate).toFixed(1)}%</div>
+            </div>
+          </div>
+
+          <h2>Play Metrics</h2>
+          <div className="metrics-summary">
+            <div className="stat-card">
+              <div className="stat-label">Total Plays (tracked)</div>
+              <div className="stat-value">{Number(dashboard.play_metrics.totalPlays).toLocaleString()}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Avg Plays / Session</div>
+              <div className="stat-value">{Number(dashboard.play_metrics.avgPlaysPerSession).toFixed(1)}</div>
+            </div>
+            <div className="stat-card">
+              <div className="stat-label">Play Conversion Rate</div>
+              <div className="stat-value">{Number(dashboard.play_metrics.playConversionRate).toFixed(1)}%</div>
+            </div>
+            {dashboard.play_metrics.favoritGame && (
+              <div className="stat-card highlight">
+                <div className="stat-label">Most Played</div>
+                <div className="stat-value">{dashboard.play_metrics.favoritGame}</div>
+              </div>
+            )}
+          </div>
+
+          <h2>Click Tracking</h2>
           <div className="metrics-summary">
             <div className="stat-card">
               <div className="stat-label">Total Clicks</div>
@@ -474,7 +533,7 @@ function AdminPage() {
               {dashboard.click_metrics.by_link.map(m => (
                 <div key={m.link_id} className="metrics-table-row">
                   <span className="link-id">{m.link_id}</span>
-                  <span className="click-count">{m.click_count.toLocaleString()}</span>
+                  <span className="click-count">{Number(m.total_clicks || 0).toLocaleString()}</span>
                   <span className="click-pct">{m.percentage}%</span>
                   <div className="mini-bar-track">
                     <div
@@ -531,10 +590,10 @@ function AdminPage() {
             </div>
           )}
 
-          {/* Game Statistics */}
-          <h2 style={{ marginTop: '32px' }}>Game Statistics</h2>
-          {dashboard.statistics.length === 0 ? (
-            <p className="no-data">No game statistics available</p>
+          {/* All Games with Statistics */}
+          <h2 style={{ marginTop: '32px' }}>All Games</h2>
+          {dashboard.games.length === 0 ? (
+            <p className="no-data">No games available</p>
           ) : (
             <div className="games-stats-table">
               <div className="games-stats-header">
@@ -542,39 +601,25 @@ function AdminPage() {
                 <span>Plays</span>
                 <span>Wins</span>
                 <span>Win Rate</span>
-                <span>Avg Draws</span>
+                <span>Odds</span>
               </div>
-              {dashboard.statistics.map(stat => (
-                <div key={stat.game_id} className="games-stats-row">
-                  <span className="game-name">{stat.name || stat.game_id}</span>
-                  <span>{stat.total_plays.toLocaleString()}</span>
-                  <span>{stat.total_wins.toLocaleString()}</span>
-                  <span className="win-rate">{stat.win_rate_percent.toFixed(2)}%</span>
-                  <span>{stat.avg_draws_to_win.toLocaleString()}</span>
-                </div>
-              ))}
+              {dashboard.games.map((game: any) => {
+                const stat = dashboard.statistics.find((s: any) => s.game_id === game.id)
+                return (
+                  <div key={game.id} className="games-stats-row">
+                    <span className="game-name">
+                      {game.name}
+                      {game.bonus_number_range && <span className="meta-bonus"> +bonus</span>}
+                    </span>
+                    <span>{stat ? Number(stat.total_plays).toLocaleString() : '0'}</span>
+                    <span>{stat ? Number(stat.total_wins).toLocaleString() : '0'}</span>
+                    <span className="win-rate">{stat ? Number(stat.win_rate_percent).toFixed(2) + '%' : '-'}</span>
+                    <span>{game.probability_of_winning ? '1 in ' + Math.round(1 / Number(game.probability_of_winning)).toLocaleString() : '-'}</span>
+                  </div>
+                )
+              })}
             </div>
           )}
-
-          <h2 style={{ marginTop: '32px' }}>Available Games</h2>
-          <div className="games-list">
-            {dashboard.games.map((game: any) => (
-              <div key={game.id} className="game-item">
-                <div className="game-header">
-                  <span className="game-name">{game.name}</span>
-                  <span className="game-id">ID: {game.id?.substring(0, 8)}...</span>
-                </div>
-                {game.description && <p className="game-description">{game.description}</p>}
-                <div className="game-meta">
-                  <span className="meta-item">Numbers: {game.numbers_to_select}</span>
-                  <span className="meta-item">Range: {game.number_range?.[0]}-{game.number_range?.[1]}</span>
-                  {game.bonus_number_range && (
-                    <span className="meta-item">Bonus: +{game.bonus_numbers_to_select} ({game.bonus_number_range[0]}-{game.bonus_number_range[1]})</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       )}
     </div>
