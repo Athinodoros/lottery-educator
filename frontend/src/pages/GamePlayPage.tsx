@@ -113,6 +113,21 @@ function GamePlayPage() {
     setDrawProgress(0)
   }
 
+  const [rerunRequested, setRerunRequested] = useState(false)
+
+  const handleRerun = () => {
+    setResult(null)
+    setDrawProgress(0)
+    setRerunRequested(true)
+  }
+
+  useEffect(() => {
+    if (rerunRequested && !result && !isPlaying) {
+      setRerunRequested(false)
+      handlePlayGame()
+    }
+  }, [rerunRequested, result, isPlaying])
+
   const handleBackToGames = () => {
     navigate('/games')
   }
@@ -228,8 +243,11 @@ function GamePlayPage() {
         <div className="results-container">
           <ResultsDisplay result={result} />
           <div className="results-actions">
-            <button className="play-again-button" onClick={handlePlayAgain}>
-              Play Again
+            <button className="play-again-button" onClick={handleRerun}>
+              Rerun Same Numbers
+            </button>
+            <button className="play-again-button secondary" onClick={handlePlayAgain}>
+              Pick New Numbers
             </button>
             <button className="back-button secondary" onClick={handleBackToGames}>
               Back to Games

@@ -1,11 +1,13 @@
+import { useState } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import { Home, Gamepad2, BarChart3, Heart, Mail, Settings } from 'lucide-react'
+import { Home, Gamepad2, BarChart3, Heart, Mail, Settings, Menu, X } from 'lucide-react'
 import PrivacyFooter from '../components/PrivacyFooter'
 import ConsentBanner from '../components/ConsentBanner'
 import './Layout.css'
 
 function Layout() {
   const location = useLocation()
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   const navItems = [
     { path: '/', label: 'Home', icon: Home },
@@ -16,20 +18,20 @@ function Layout() {
     { path: '/admin', label: 'Admin', icon: Settings },
   ]
 
+  const handleNavClick = () => {
+    setDrawerOpen(false)
+  }
+
   return (
-    <div className="layout">
+    <div className={`layout ${drawerOpen ? 'drawer-open' : ''}`}>
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
 
-      <main id="main-content" className="content">
-        <Outlet />
-        <PrivacyFooter />
-      </main>
-
-      <ConsentBanner />
-
-      <nav className="nav-bar" aria-label="Main navigation">
+      <nav className="nav-drawer" aria-label="Main navigation">
+        <div className="nav-drawer-header">
+          <span className="nav-drawer-title">Lottery Educator</span>
+        </div>
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = location.pathname === item.path
@@ -40,13 +42,32 @@ function Layout() {
               className={`nav-item ${isActive ? 'active' : ''}`}
               aria-current={isActive ? 'page' : undefined}
               aria-label={item.label}
+              onClick={handleNavClick}
             >
-              <Icon size={24} aria-hidden="true" />
+              <Icon size={22} aria-hidden="true" />
               <span>{item.label}</span>
             </Link>
           )
         })}
       </nav>
+
+      <div className="main-wrapper">
+        <button
+          className="burger-button"
+          onClick={() => setDrawerOpen(!drawerOpen)}
+          aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={drawerOpen}
+        >
+          {drawerOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        <main id="main-content" className="content">
+          <Outlet />
+          <PrivacyFooter />
+        </main>
+      </div>
+
+      <ConsentBanner />
     </div>
   )
 }

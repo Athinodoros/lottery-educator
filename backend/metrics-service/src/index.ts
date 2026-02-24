@@ -1,7 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
-import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics, deleteSessionMetrics } from './metricsService';
+import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics, deleteSessionMetrics, getSessionMetrics, getPlayMetrics } from './metricsService';
 import logger from './logger';
 
 dotenv.config();
@@ -94,6 +94,28 @@ app.get('/metrics/link/:linkId/recent', async (req: Request, res: Response) => {
   } catch (error: any) {
     logger.error('Error fetching recent clicks', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch recent clicks', message: error.message });
+  }
+});
+
+// Get session-level aggregate metrics
+app.get('/metrics/sessions', async (req: Request, res: Response) => {
+  try {
+    const stats = await getSessionMetrics();
+    res.json(stats || { totalSessions: 0, activeSessions: 0, avgSessionDuration: 0, bounceRate: 0 });
+  } catch (error: any) {
+    logger.error('Error fetching session metrics', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to fetch session metrics', message: error.message });
+  }
+});
+
+// Get play-level aggregate metrics
+app.get('/metrics/plays', async (req: Request, res: Response) => {
+  try {
+    const stats = await getPlayMetrics();
+    res.json(stats || { totalPlays: 0, playConversionRate: 0, avgPlaysPerSession: 0, favoritGame: null });
+  } catch (error: any) {
+    logger.error('Error fetching play metrics', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to fetch play metrics', message: error.message });
   }
 });
 

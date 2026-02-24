@@ -5,6 +5,7 @@ import StatCard from '../components/StatCard'
 import { SkeletonCard } from '../components/Skeleton'
 import { metricsApi } from '../api/metrics'
 import { gameApi } from '../api/games'
+import apiClient from '../api/client'
 import './StatsPage.css'
 
 function StatsPage() {
@@ -13,6 +14,7 @@ function StatsPage() {
 
   const [sessionStats, setSessionStats] = useState<any>(null)
   const [playStats, setPlayStats] = useState<any>(null)
+  const [gameDrawStats, setGameDrawStats] = useState<any[]>([])
   const [games, setGames] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -29,10 +31,12 @@ function StatsPage() {
         const sessionData = await metricsApi.getSessionMetrics().catch(() => null)
         const playData = await metricsApi.getPlayMetrics().catch(() => null)
         const gamesData = await gameApi.getGames().catch(() => [])
+        const drawStatsData = await apiClient.get('/stats').then(r => r.data).catch(() => [])
 
         setSessionStats(sessionData)
         setPlayStats(playData)
         setGames(gamesData || [])
+        setGameDrawStats(drawStatsData || [])
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load statistics')
       } finally {
@@ -79,7 +83,7 @@ function StatsPage() {
         </div>
       )}
 
-      {!loading && !sessionStats && !playStats && !error && (
+      {!loading && !sessionStats && !playStats && gameDrawStats.length === 0 && !error && (
         <div className="empty-state">
           <h2>No Statistics Available</h2>
           <p>Play some games first to see statistics!</p>
@@ -89,7 +93,7 @@ function StatsPage() {
         </div>
       )}
 
-      {!loading && (sessionStats || playStats) && (
+      {!loading && (sessionStats || playStats || gameDrawStats.length > 0) && (
         <>
           <section className="stats-grid" aria-label="Session and play metrics">
             {sessionStats && (
@@ -104,11 +108,11 @@ function StatsPage() {
                 />
                 <StatCard
                   label="Avg Session Duration"
-                  value={`${(sessionStats.avgSessionDuration || 0).toFixed(1)}m`}
+                  value={`${Number(sessionStats.avgSessionDuration || 0).toFixed(1)}m`}
                 />
                 <StatCard
                   label="Bounce Rate"
-                  value={`${(sessionStats.bounceRate || 0).toFixed(1)}%`}
+                  value={`${Number(sessionStats.bounceRate || 0).toFixed(1)}%`}
                 />
               </>
             )}
@@ -121,11 +125,11 @@ function StatsPage() {
                 />
                 <StatCard
                   label="Play Conversion Rate"
-                  value={`${(playStats.playConversionRate || 0).toFixed(1)}%`}
+                  value={`${Number(playStats.playConversionRate || 0).toFixed(1)}%`}
                 />
                 <StatCard
                   label="Avg Plays Per Session"
-                  value={(playStats.avgPlaysPerSession || 0).toFixed(1)}
+                  value={Number(playStats.avgPlaysPerSession || 0).toFixed(1)}
                 />
                 <StatCard
                   label="Favorite Game"
@@ -134,6 +138,37 @@ function StatsPage() {
               </>
             )}
           </section>
+
+          {gameDrawStats.length > 0 && (
+            <section className="avg-draws-section" aria-label="Average draws per game">
+              <h2>Average Draws to Win</h2>
+              <p className="section-subtitle">
+                How many draws it takes on average to match your numbers for each game.
+              </p>
+              <div className="avg-draws-grid">
+                {gameDrawStats.map((stat: any) => (
+                  <div
+                    key={stat.game_id}
+                    className="avg-draws-card"
+                    onClick={() => handleGameClick(stat.game_id)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && handleGameClick(stat.game_id)}
+                    aria-label={`${stat.name}: ${Number(stat.avg_draws_to_win).toLocaleString('de-DE')} average draws. Click for details.`}
+                  >
+                    <span className="avg-draws-name">{stat.name}</span>
+                    <span className="avg-draws-value">
+                      {Number(stat.avg_draws_to_win).toLocaleString('de-DE')}
+                    </span>
+                    <span className="avg-draws-label">avg draws</span>
+                    <span className="avg-draws-plays">
+                      {Number(stat.total_plays).toLocaleString('de-DE')} plays
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {games.length > 0 && (
             <section className="games-stats-section" aria-label="Game-specific statistics">

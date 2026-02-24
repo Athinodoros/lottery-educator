@@ -3,7 +3,7 @@
   position: absolute;
   top: -100%;
   left: 16px;
-  z-index: 200;
+  z-index: 300;
   padding: 8px 16px;
   background: #6366f1;
   color: white;
@@ -18,99 +18,140 @@
   top: 0;
 }
 
+/* ── Layout ───────────────────────────────────────────── */
 .layout {
   display: flex;
-  flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.content {
-  flex: 1;
-  overflow-y: auto;
-  padding-bottom: 80px;
-}
-
-.nav-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* ── Drawer ───────────────────────────────────────────── */
+.nav-drawer {
+  flex-shrink: 0;
+  width: 260px;
+  min-height: 100vh;
+  margin-left: -260px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ffffff;
-  border-top: 1px solid #e5e7eb;
-  height: 80px;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
 }
 
+.drawer-open .nav-drawer {
+  margin-left: 0;
+}
+
+/* ── Drawer header ────────────────────────────────────── */
+.nav-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.nav-drawer-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+/* ── Nav items ────────────────────────────────────────── */
 .nav-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 4px;
-  padding: 8px 12px;
-  color: #9ca3af;
+  gap: 14px;
+  padding: 14px 20px;
+  color: #6b7280;
   text-decoration: none;
-  transition: color 0.2s;
-  font-size: 12px;
-  min-width: 70px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background-color 0.15s, color 0.15s;
 }
 
 .nav-item:hover {
+  background: #f5f3ff;
   color: #6366f1;
 }
 
 .nav-item.active {
   color: #6366f1;
+  background: #eef2ff;
+  border-right: 3px solid #6366f1;
 }
 
 .nav-item:focus-visible {
   outline: 2px solid #6366f1;
-  outline-offset: 2px;
+  outline-offset: -2px;
   border-radius: 4px;
 }
 
 .nav-item svg {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
 }
 
 .nav-item span {
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 15px;
 }
 
-@media (min-width: 768px) {
-  .nav-bar {
-    bottom: auto;
-    top: 0;
-    height: auto;
-    flex-direction: column;
-    width: 200px;
-    border-top: none;
-    border-right: 1px solid #e5e7eb;
-    padding: 20px 0;
-  }
+/* ── Main wrapper ─────────────────────────────────────── */
+.main-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  .content {
-    margin-left: 200px;
-    padding-bottom: 0;
-  }
+.content {
+  flex: 1;
+  overflow-y: auto;
+}
 
-  .nav-item {
-    width: 100%;
-    border-radius: 0;
-    padding: 12px 16px;
-    justify-content: flex-start;
-    gap: 12px;
-    flex-direction: row;
-    font-size: 14px;
-  }
+/* ── Burger button ────────────────────────────────────── */
+.burger-button {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  color: #374151;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  .nav-item span {
-    font-size: 14px;
+.drawer-open .burger-button {
+  transform: translateX(260px);
+}
+
+.burger-button:hover {
+  background: #f3f4f6;
+  color: #6366f1;
+}
+
+.burger-button:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* ── Reduced motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .nav-drawer,
+  .main-wrapper,
+  .burger-button {
+    transition: none;
   }
 }

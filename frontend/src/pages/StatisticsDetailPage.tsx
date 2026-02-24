@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { gameApi } from '../api/games'
-import { useAppStore } from '../store/useAppStore'
+import { useGamesStore } from '../store/gamesStore'
 import { useSessionStore } from '../store/useSessionStore'
 import { SkeletonCard, Skeleton } from '../components/Skeleton'
 import './StatisticsDetailPage.css'
@@ -20,12 +20,11 @@ export default function StatisticsDetailPage() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const [stats, setStats] = useState<GameStats | null>(null)
+  const [currentGame, setCurrentGame] = useState<any>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const games = useAppStore((state) => state.games)
+  const games = useGamesStore((state) => state.games)
   const recordPageView = useSessionStore((state) => state.recordPageView)
-
-  const currentGame = games.find((g) => g.id === id)
 
   useEffect(() => {
     if (id) {
@@ -34,11 +33,15 @@ export default function StatisticsDetailPage() {
   }, [id, recordPageView])
 
   useEffect(() => {
-    const loadStats = async () => {
+    const loadData = async () => {
       try {
         setLoading(true)
-        const data = await gameApi.getStatistics(id!)
-        setStats(data)
+        const [statsData, gameData] = await Promise.all([
+          gameApi.getStatistics(id!),
+          games.find((g) => g.id === id) || gameApi.getGame(id!),
+        ])
+        setStats(statsData)
+        setCurrentGame(gameData)
       } catch (err) {
         setError('Failed to load game statistics. Please try again.')
         console.error('Error loading statistics:', err)
@@ -48,9 +51,9 @@ export default function StatisticsDetailPage() {
     }
 
     if (id) {
-      loadStats()
+      loadData()
     }
-  }, [id])
+  }, [id, games])
 
   if (loading) {
     return (
@@ -96,17 +99,22 @@ export default function StatisticsDetailPage() {
     )
   }
 
-  const odds = currentGame?.number_range
-    ? `1 in ${Math.round((currentGame.number_range.length * currentGame.numbers_to_select) / 10)}`
-    : '1 in unknown'
+  // C(n, k) = n! / (k! * (n-k)!)
+  const combinations = (n: number, k: number): number => {
+    let result = 1
+    for (let i = 0; i < k; i++) {
+      result = (result * (n - i)) / (i + 1)
+    }
+    return Math.round(result)
+  }
 
-  const expectedDraws = currentGame?.number_range
-    ? Math.round(
-        (10 *
-          Math.pow(currentGame.number_range.length, currentGame.numbers_to_select)) /
-          (currentGame.numbers_to_select * (currentGame.number_range.length - currentGame.numbers_to_select + 1))
-      )
+  const totalNumbers = currentGame
+    ? currentGame.number_range[1] - currentGame.number_range[0] + 1
     : 0
+  const k = currentGame?.numbers_to_select || 0
+  const expectedDraws = totalNumbers && k ? combinations(totalNumbers, k) : 0
+
+  const odds = expectedDraws ? `1 in ${expectedDraws.toLocaleString('de-DE')}` : '1 in unknown'
 
   return (
     <div className="stats-detail-page">
@@ -130,11 +138,11 @@ export default function StatisticsDetailPage() {
           <div className="stat-label">Total Wins</div>
         </div>
         <div className="stat-item">
-          <div className="stat-value">{stats.win_rate_percent.toFixed(2)}%</div>
+          <div className="stat-value">{Number(stats.win_rate_percent).toFixed(2)}%</div>
           <div className="stat-label">Win Rate</div>
         </div>
         <div className="stat-item">
-          <div className="stat-value">{stats.avg_draws_to_win.toFixed(1)}</div>
+          <div className="stat-value">{Number(stats.avg_draws_to_win).toLocaleString('de-DE')}</div>
           <div className="stat-label">Avg Draws to Win</div>
         </div>
       </section>
@@ -157,7 +165,7 @@ export default function StatisticsDetailPage() {
 
           <div className="prob-card">
             <div className="prob-label">Observed vs Expected</div>
-            <div className="prob-value">{((stats.avg_draws_to_win / expectedDraws) * 100).toFixed(0)}%</div>
+            <div className="prob-value">{expectedDraws ? ((Number(stats.avg_draws_to_win) / expectedDraws) * 100).toFixed(0) : 'N/A'}%</div>
             <p className="prob-desc">How actual results compare to mathematical expectations</p>
           </div>
 
@@ -175,7 +183,7 @@ export default function StatisticsDetailPage() {
         <div className="education-cards">
           <div className="edu-card">
             <h3>What is Win Rate?</h3>
-            <p>The win rate shows what percentage of all plays resulted in a win. With {stats.total_plays} plays and {stats.total_wins} wins, the win rate is {stats.win_rate_percent.toFixed(2)}%.</p>
+            <p>The win rate shows what percentage of all plays resulted in a win. With {stats.total_plays} plays and {stats.total_wins} wins, the win rate is {Number(stats.win_rate_percent).toFixed(2)}%.</p>
           </div>
 
           <div className="edu-card">
@@ -188,7 +196,7 @@ export default function StatisticsDetailPage() {
           <div className="edu-card">
             <h3>Draws to Win</h3>
             <p>
-              This is the average number of times you need to play to win once. If the average is {stats.avg_draws_to_win.toFixed(1)}, it means on average, after that many attempts, you'd expect one win.
+              This is the average number of times you need to play to win once. If the average is {Number(stats.avg_draws_to_win).toLocaleString('de-DE')}, it means on average, after that many attempts, you'd expect one win.
             </p>
           </div>
 

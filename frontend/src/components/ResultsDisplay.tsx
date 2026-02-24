@@ -35,7 +35,7 @@ export function ResultsDisplay({ result }: ResultsDisplayProps) {
       <div className="results-body">
         <div className="results-stat">
           <span className="stat-label">Draws Required</span>
-          <span className="stat-value">{result.draws_to_win}</span>
+          <span className="stat-value">{result.draws_to_win.toLocaleString('de-DE')}</span>
         </div>
 
         <div className="results-boxes">
@@ -87,7 +87,7 @@ export function ResultsDisplay({ result }: ResultsDisplayProps) {
 
       <div className="results-footer">
         <p className="fact">
-          This is why lottery odds matter - on average, you need {result.draws_to_win}{' '}
+          This is why lottery odds matter - on average, you need {result.draws_to_win.toLocaleString('de-DE')}{' '}
           draws to match {matchCount} number{matchCount !== 1 ? 's' : ''}!
         </p>
       </div>

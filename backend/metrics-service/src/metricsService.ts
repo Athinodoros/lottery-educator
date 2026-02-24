@@ -106,6 +106,74 @@ export async function deleteSessionMetrics(sessionId: string): Promise<number> {
 }
 
 /**
+ * Get session-level aggregate metrics
+ */
+export async function getSessionMetrics(): Promise<any> {
+  const result = await queryOne(
+    `SELECT
+      COUNT(DISTINCT user_session_id) AS "totalSessions",
+      COUNT(DISTINCT user_session_id) FILTER (
+        WHERE session_end > NOW() - INTERVAL '30 minutes'
+      ) AS "activeSessions",
+      COALESCE(
+        ROUND(
+          AVG(EXTRACT(EPOCH FROM (session_end - session_start)) / 60)::numeric, 1
+        ), 0
+      ) AS "avgSessionDuration",
+      CASE
+        WHEN COUNT(DISTINCT user_session_id) = 0 THEN 0
+        ELSE ROUND(
+          COUNT(DISTINCT user_session_id) FILTER (WHERE click_count = 1)::numeric
+          / COUNT(DISTINCT user_session_id) * 100, 1
+        )
+      END AS "bounceRate"
+     FROM (
+       SELECT
+         user_session_id,
+         COUNT(*) AS click_count,
+         MIN(created_at) AS session_start,
+         MAX(created_at) AS session_end
+       FROM click_metrics
+       GROUP BY user_session_id
+     ) sessions`
+  );
+  return result;
+}
+
+/**
+ * Get play-level aggregate metrics (from game_results)
+ */
+export async function getPlayMetrics(): Promise<any> {
+  const result = await queryOne(
+    `SELECT
+      COUNT(*) AS "totalPlays",
+      CASE
+        WHEN (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) = 0 THEN 0
+        ELSE ROUND(
+          COUNT(DISTINCT gr.id)::numeric
+          / (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) * 100, 1
+        )
+      END AS "playConversionRate",
+      CASE
+        WHEN (SELECT COUNT(DISTINCT user_session_id) FROM click_metrics) = 0 THEN 0
+        ELSE ROUND(
+          COUNT(*)::numeric
+          / GREATEST((SELECT COUNT(DISTINCT user_session_id) FROM click_metrics), 1), 1
+        )
+      END AS "avgPlaysPerSession",
+      (
+        SELECT g.name FROM games g
+        JOIN game_results gr2 ON gr2.game_id = g.id
+        GROUP BY g.name
+        ORDER BY COUNT(*) DESC
+        LIMIT 1
+      ) AS "favoritGame"
+     FROM game_results gr`
+  );
+  return result;
+}
+
+/**
  * Get page-level metrics (all clicks on a page)
  */
 export async function getPageMetrics(pagePath: string): Promise<any> {
