@@ -1,7 +1,8 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
 import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics } from './metricsService';
+import logger from './logger';
 
 dotenv.config();
 
@@ -12,8 +13,21 @@ const port = process.env.PORT || 3004;
 app.use(express.json());
 
 // Request logging
-app.use((req: Request, res: Response, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const start = Date.now();
+  const originalSend = res.send;
+
+  res.send = function (data: any) {
+    const duration = Date.now() - start;
+    logger.info('Request completed', {
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration: `${duration}ms`,
+    });
+    return originalSend.call(this, data);
+  };
+
   next();
 });
 
@@ -52,7 +66,7 @@ app.post('/metrics/click', async (req: Request, res: Response) => {
     const metric = await trackClick(sessionId, linkId, onPage);
     res.status(201).json(metric);
   } catch (error: any) {
-    console.error('Error tracking click:', error);
+    logger.error('Error tracking click', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to track click', message: error.message });
   }
 });
@@ -66,7 +80,7 @@ app.get('/metrics/link/:linkId', async (req: Request, res: Response) => {
     }
     res.json(metrics);
   } catch (error: any) {
-    console.error('Error fetching link metrics:', error);
+    logger.error('Error fetching link metrics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch metrics', message: error.message });
   }
 });
@@ -78,7 +92,7 @@ app.get('/metrics/link/:linkId/recent', async (req: Request, res: Response) => {
     const clicks = await getRecentClicks(req.params.linkId, limit);
     res.json({ link_id: req.params.linkId, recent_clicks: clicks, count: clicks.length });
   } catch (error: any) {
-    console.error('Error fetching recent clicks:', error);
+    logger.error('Error fetching recent clicks', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch recent clicks', message: error.message });
   }
 });
@@ -89,7 +103,7 @@ app.get('/metrics', async (req: Request, res: Response) => {
     const metrics = await getAllMetrics();
     res.json({ metrics, total_links: metrics.length });
   } catch (error: any) {
-    console.error('Error fetching all metrics:', error);
+    logger.error('Error fetching all metrics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch metrics', message: error.message });
   }
 });
@@ -112,7 +126,7 @@ app.get('/metrics/page', async (req: Request, res: Response) => {
     }
     res.json(metrics);
   } catch (error: any) {
-    console.error('Error fetching page metrics:', error);
+    logger.error('Error fetching page metrics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch page metrics', message: error.message });
   }
 });
@@ -124,10 +138,10 @@ app.use((req: Request, res: Response) => {
 
 // Error handler
 app.use((err: any, req: Request, res: Response) => {
-  console.error('Error:', err);
+  logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`Metrics Service running on port ${port}`);
+  logger.info(`Metrics Service running on port ${port}`);
 });

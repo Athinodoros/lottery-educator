@@ -4,7 +4,44 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lottery Educator</title>
+    <meta name="description" content="Lottery Educator is an interactive educational simulator that teaches probability and statistics by showing why the lottery is so hard to win. Play simulated lottery games and explore real odds." />
+    <meta name="theme-color" content="#6366f1" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lottery Educator - Learn Why the Lottery is Hard to Win" />
+    <meta property="og:description" content="An interactive educational simulator that teaches probability and statistics through simulated lottery games." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lotteryeducator.com/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Lottery Educator - Learn Why the Lottery is Hard to Win" />
+    <meta name="twitter:description" content="An interactive educational simulator that teaches probability and statistics through simulated lottery games." />
+
+    <!-- Preconnect to API (dev) -->
+    <link rel="preconnect" href="http://localhost:3000" />
+
+    <title>Lottery Educator - Learn Why the Lottery is Hard to Win</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalApplication",
+        "name": "Lottery Educator",
+        "description": "An interactive educational simulator that teaches probability and statistics by showing why the lottery is so hard to win.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "educationalUse": "Interactive simulation",
+        "learningResourceType": "Simulation",
+        "teaches": "Probability and statistics through lottery simulations"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -1,7 +1,8 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
 import { getAllGames, getGameById, playGame, getGameResult } from './gameService';
+import logger from './logger';
 
 dotenv.config();
 
@@ -12,8 +13,21 @@ const port = process.env.PORT || 3001;
 app.use(express.json());
 
 // Request logging middleware
-app.use((req: Request, res: Response, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const start = Date.now();
+  const originalSend = res.send;
+
+  res.send = function (data: any) {
+    const duration = Date.now() - start;
+    logger.info('Request completed', {
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration: `${duration}ms`,
+    });
+    return originalSend.call(this, data);
+  };
+
   next();
 });
 
@@ -42,7 +56,7 @@ app.get('/games', async (req: Request, res: Response) => {
     const games = await getAllGames();
     res.json(games);
   } catch (error: any) {
-    console.error('Error fetching games:', error);
+    logger.error('Error fetching games', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch games', message: error.message });
   }
 });
@@ -56,7 +70,7 @@ app.get('/games/:gameId', async (req: Request, res: Response) => {
     }
     res.json(game);
   } catch (error: any) {
-    console.error('Error fetching game:', error);
+    logger.error('Error fetching game', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch game', message: error.message });
   }
 });
@@ -80,7 +94,7 @@ app.post('/games/:gameId/play', async (req: Request, res: Response) => {
 
     res.json(result);
   } catch (error: any) {
-    console.error('Error playing game:', error);
+    logger.error('Error playing game', { error: error.message, stack: error.stack });
     if (error.message.includes('not found') || error.message.includes('Invalid')) {
       return res.status(400).json({ error: 'Bad request', message: error.message });
     }
@@ -97,7 +111,7 @@ app.get('/games/:gameId/result/:resultId', async (req: Request, res: Response) =
     }
     res.json(result);
   } catch (error: any) {
-    console.error('Error fetching result:', error);
+    logger.error('Error fetching result', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch result', message: error.message });
   }
 });
@@ -109,10 +123,10 @@ app.use((req: Request, res: Response) => {
 
 // Error handler
 app.use((err: any, req: Request, res: Response) => {
-  console.error('Error:', err);
+  logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`Game Engine service running on port ${port}`);
+  logger.info(`Game Engine service running on port ${port}`);
 });

@@ -2,6 +2,17 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import logger from './logger';
+import {
+  register,
+  httpRequestDuration,
+  httpRequestTotal,
+  activeConnections,
+  gamePlayTotal,
+  adminLoginAttempts,
+  emailSubmissions,
+  serviceHealthStatus,
+} from './metrics';
 
 dotenv.config();
 
@@ -56,20 +67,53 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-// Request logging middleware
+// Request logging & metrics middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
+  // Skip metrics endpoint to avoid recursion
+  if (req.path === '/prometheus') return next();
+
+  activeConnections.inc();
+  const end = httpRequestDuration.startTimer();
   const start = Date.now();
   const originalSend = res.send;
 
   res.send = function (data: any) {
     const duration = Date.now() - start;
-    console.log(
-      `[${new Date().toISOString()}] ${req.method} ${req.path} - Status: ${res.statusCode} - ${duration}ms`
-    );
+    const route = req.route?.path || req.path;
+    const labels = { method: req.method, route, status_code: String(res.statusCode) };
+
+    end(labels);
+    httpRequestTotal.inc(labels);
+    activeConnections.dec();
+
+    // Track business metrics
+    if (req.method === 'POST' && req.path.includes('/play')) {
+      gamePlayTotal.inc({ game_route: req.path });
+    }
+    if (req.method === 'POST' && req.path === '/emails') {
+      emailSubmissions.inc();
+    }
+
+    logger.info('Request completed', {
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration: `${duration}ms`,
+    });
     return originalSend.call(this, data);
   };
 
   next();
+});
+
+// Prometheus scrape endpoint
+app.get('/prometheus', async (_req: Request, res: Response) => {
+  try {
+    res.set('Content-Type', register.contentType);
+    res.end(await register.metrics());
+  } catch (err: any) {
+    res.status(500).end(err.message);
+  }
 });
 
 // Health check aggregator
@@ -94,6 +138,12 @@ app.get('/health', async (req: Request, res: Response) => {
       s => s.status.status === 'fulfilled' && (s.status as any).value.data.status === 'ok'
     );
 
+    // Update Prometheus service health gauges
+    services.forEach(s => {
+      const isHealthy = s.status.status === 'fulfilled' && (s.status as any).value.data.status === 'ok';
+      serviceHealthStatus.set({ service: s.name }, isHealthy ? 1 : 0);
+    });
+
     res.json({
       status: allHealthy ? 'ok' : 'degraded',
       service: 'api-gateway',
@@ -104,7 +154,7 @@ app.get('/health', async (req: Request, res: Response) => {
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error('Health check error:', error.message);
+    logger.error('Health check error', { error: error.message });
     res.status(503).json({
       status: 'error',
       service: 'api-gateway',
@@ -202,10 +252,13 @@ app.post('/admin/login', (req: Request, res: Response) => {
       if (Date.now() - s.createdAt > TOKEN_TTL) activeTokens.delete(t);
     }
 
+    adminLoginAttempts.inc({ success: 'true' });
+    logger.info('Admin login successful', { username });
     return res.json({ token, expiresIn: TOKEN_TTL });
   }
 
-  console.log(`[ADMIN] Failed login attempt for user: ${username}`);
+  adminLoginAttempts.inc({ success: 'false' });
+  logger.warn('Failed admin login attempt', { username });
   res.status(401).json({ error: 'Invalid credentials' });
 });
 
@@ -270,7 +323,7 @@ app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) =>
       timestamp: new Date().toISOString(),
     });
   } catch (error: any) {
-    console.error('Admin dashboard error:', error.message);
+    logger.error('Admin dashboard error', { error: error.message });
     res.status(500).json({ error: 'Failed to load dashboard data' });
   }
 });
@@ -326,15 +379,16 @@ app.use((req: Request, res: Response) => {
 
 // Error handler
 app.use((err: any, req: Request, res: Response) => {
-  console.error('Error:', err);
+  logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`API Gateway running on port ${port}`);
-  console.log(`Routing to:`);
-  console.log(`  - Game Engine: ${GAME_ENGINE_URL}`);
-  console.log(`  - Statistics: ${STATISTICS_URL}`);
-  console.log(`  - Email Service: ${EMAIL_SERVICE_URL}`);
-  console.log(`  - Metrics Service: ${METRICS_SERVICE_URL}`);
+  logger.info(`API Gateway running on port ${port}`);
+  logger.info('Routing to upstream services', {
+    gameEngine: GAME_ENGINE_URL,
+    statistics: STATISTICS_URL,
+    emailService: EMAIL_SERVICE_URL,
+    metricsService: METRICS_SERVICE_URL,
+  });
 });

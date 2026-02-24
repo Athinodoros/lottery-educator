@@ -1,7 +1,8 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
 import { getGameStats, getAllGameStats, generateExamples } from './statisticsService';
+import logger from './logger';
 
 dotenv.config();
 
@@ -12,8 +13,21 @@ const port = process.env.PORT || 3002;
 app.use(express.json());
 
 // Request logging
-app.use((req: Request, res: Response, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const start = Date.now();
+  const originalSend = res.send;
+
+  res.send = function (data: any) {
+    const duration = Date.now() - start;
+    logger.info('Request completed', {
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration: `${duration}ms`,
+    });
+    return originalSend.call(this, data);
+  };
+
   next();
 });
 
@@ -42,7 +56,7 @@ app.get('/stats', async (req: Request, res: Response) => {
     const stats = await getAllGameStats();
     res.json(stats);
   } catch (error: any) {
-    console.error('Error fetching statistics:', error);
+    logger.error('Error fetching statistics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch statistics', message: error.message });
   }
 });
@@ -56,7 +70,7 @@ app.get('/stats/:gameId', async (req: Request, res: Response) => {
     }
     res.json(stats);
   } catch (error: any) {
-    console.error('Error fetching game statistics:', error);
+    logger.error('Error fetching game statistics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch statistics', message: error.message });
   }
 });
@@ -67,7 +81,7 @@ app.get('/stats/:gameId/examples', async (req: Request, res: Response) => {
     const examples = await generateExamples(req.params.gameId);
     res.json(examples);
   } catch (error: any) {
-    console.error('Error generating examples:', error);
+    logger.error('Error generating examples', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to generate examples', message: error.message });
   }
 });
@@ -79,10 +93,10 @@ app.use((req: Request, res: Response) => {
 
 // Error handler
 app.use((err: any, req: Request, res: Response) => {
-  console.error('Error:', err);
+  logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`Statistics service running on port ${port}`);
+  logger.info(`Statistics service running on port ${port}`);
 });

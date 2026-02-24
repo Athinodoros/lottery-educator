@@ -151,26 +151,42 @@ services:
     networks:
       - lottery-network
 
-  # Frontend (optional - Expo web)
-  # Uncomment if you want to run frontend in Docker
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   container_name: lottery-frontend
-  #   ports:
-  #     - "3000:3000"
-  #   environment:
-  #     EXPO_PUBLIC_API_URL: http://localhost:3000/api
-  #   depends_on:
-  #     - api-gateway
-  #   volumes:
-  #     - ./frontend/src:/app/src
-  #   networks:
-  #     - lottery-network
+  # Prometheus - Metrics collection
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    container_name: lottery-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    depends_on:
+      - api-gateway
+    networks:
+      - lottery-network
+
+  # Grafana - Metrics visualization
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: lottery-grafana
+    ports:
+      - "3100:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - prometheus
+    networks:
+      - lottery-network
 
 volumes:
   postgres_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
     driver: local
 
 networks:

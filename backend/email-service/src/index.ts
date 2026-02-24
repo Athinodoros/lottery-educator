@@ -1,8 +1,9 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
 import { submitEmail, getEmail, getAllEmails, deleteEmail, isValidEmail } from './emailService';
+import logger from './logger';
 
 dotenv.config();
 
@@ -22,8 +23,21 @@ const emailLimiter = rateLimit({
 });
 
 // Request logging
-app.use((req: Request, res: Response, next) => {
-  console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const start = Date.now();
+  const originalSend = res.send;
+
+  res.send = function (data: any) {
+    const duration = Date.now() - start;
+    logger.info('Request completed', {
+      method: req.method,
+      path: req.path,
+      status: res.statusCode,
+      duration: `${duration}ms`,
+    });
+    return originalSend.call(this, data);
+  };
+
   next();
 });
 
@@ -76,7 +90,7 @@ app.post('/emails', emailLimiter, async (req: Request, res: Response) => {
     const email = await submitEmail(senderEmail, subject, body);
     res.status(201).json(email);
   } catch (error: any) {
-    console.error('Error submitting email:', error);
+    logger.error('Error submitting email', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to submit email', message: error.message });
   }
 });
@@ -90,7 +104,7 @@ app.get('/emails/:emailId', async (req: Request, res: Response) => {
     }
     res.json(email);
   } catch (error: any) {
-    console.error('Error fetching email:', error);
+    logger.error('Error fetching email', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch email', message: error.message });
   }
 });
@@ -107,7 +121,7 @@ app.get('/emails', async (req: Request, res: Response) => {
     const emails = await getAllEmails();
     res.json(emails);
   } catch (error: any) {
-    console.error('Error fetching emails:', error);
+    logger.error('Error fetching emails', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch emails', message: error.message });
   }
 });
@@ -121,7 +135,7 @@ app.delete('/emails/:emailId', async (req: Request, res: Response) => {
     }
     res.json({ message: 'Email deleted successfully' });
   } catch (error: any) {
-    console.error('Error deleting email:', error);
+    logger.error('Error deleting email', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to delete email', message: error.message });
   }
 });
@@ -133,10 +147,10 @@ app.use((req: Request, res: Response) => {
 
 // Error handler
 app.use((err: any, req: Request, res: Response) => {
-  console.error('Error:', err);
+  logger.error('Unhandled error', { error: err.message, stack: err.stack });
   res.status(500).json({ error: 'Internal Server Error', message: err.message });
 });
 
 app.listen(port, () => {
-  console.log(`Email Service running on port ${port}`);
+  logger.info(`Email Service running on port ${port}`);
 });
