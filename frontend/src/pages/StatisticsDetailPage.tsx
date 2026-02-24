@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react'
 import { gameApi } from '../api/games'
 import { useAppStore } from '../store/useAppStore'
 import { useSessionStore } from '../store/useSessionStore'
+import { SkeletonCard, Skeleton } from '../components/Skeleton'
 import './StatisticsDetailPage.css'
 
 interface GameStats {
@@ -53,14 +54,28 @@ export default function StatisticsDetailPage() {
 
   if (loading) {
     return (
-      <div className="stats-detail-page">
+      <div className="stats-detail-page" role="status" aria-label="Loading statistics">
+        <span className="sr-only">Loading statistics...</span>
         <button className="back-button" onClick={() => navigate('/stats')}>
-          <ArrowLeft size={20} />
+          <ArrowLeft size={20} aria-hidden="true" />
           <span>Back to Statistics</span>
         </button>
-        <div className="loading-container">
-          <div className="spinner"></div>
-          <p>Loading statistics...</p>
+        <div style={{ marginTop: 24 }}>
+          <Skeleton width="300px" height="32px" />
+          <Skeleton width="200px" height="16px" />
+        </div>
+        <div className="stats-overview" style={{ marginTop: 24 }}>
+          {[1, 2, 3, 4].map((i) => (
+            <div className="stat-item" key={i}>
+              <Skeleton width="80px" height="32px" />
+              <Skeleton width="100px" height="14px" />
+            </div>
+          ))}
+        </div>
+        <div className="probability-cards" style={{ marginTop: 24 }}>
+          {[1, 2, 3, 4].map((i) => (
+            <SkeletonCard key={i} />
+          ))}
         </div>
       </div>
     )
@@ -70,11 +85,11 @@ export default function StatisticsDetailPage() {
     return (
       <div className="stats-detail-page">
         <button className="back-button" onClick={() => navigate('/stats')}>
-          <ArrowLeft size={20} />
+          <ArrowLeft size={20} aria-hidden="true" />
           <span>Back to Statistics</span>
         </button>
-        <div className="error-banner">
-          <span>⚠️</span>
+        <div className="error-banner" role="alert">
+          <span aria-hidden="true">&#9888;</span>
           <p>{error || 'No statistics available for this game.'}</p>
         </div>
       </div>
@@ -96,16 +111,16 @@ export default function StatisticsDetailPage() {
   return (
     <div className="stats-detail-page">
       <button className="back-button" onClick={() => navigate('/stats')}>
-        <ArrowLeft size={20} />
+        <ArrowLeft size={20} aria-hidden="true" />
         <span>Back to Statistics</span>
       </button>
 
-      <div className="detail-header">
+      <header className="detail-header">
         <h1>{stats.name} - Game Statistics</h1>
         <p>Detailed analysis and probability breakdown</p>
-      </div>
+      </header>
 
-      <div className="stats-overview">
+      <section className="stats-overview" aria-label="Key statistics">
         <div className="stat-item">
           <div className="stat-value">{stats.total_plays}</div>
           <div className="stat-label">Total Plays</div>
@@ -122,9 +137,9 @@ export default function StatisticsDetailPage() {
           <div className="stat-value">{stats.avg_draws_to_win.toFixed(1)}</div>
           <div className="stat-label">Avg Draws to Win</div>
         </div>
-      </div>
+      </section>
 
-      <div className="probability-section">
+      <section className="probability-section" aria-label="Probability analysis">
         <h2>Probability Analysis</h2>
 
         <div className="probability-cards">
@@ -152,53 +167,53 @@ export default function StatisticsDetailPage() {
             <p className="prob-desc">Total plays in this dataset (larger = more reliable)</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="educational-section">
+      <section className="educational-section" aria-label="Educational content">
         <h2>Understanding These Numbers</h2>
 
         <div className="education-cards">
           <div className="edu-card">
-            <h3>📊 What is Win Rate?</h3>
+            <h3>What is Win Rate?</h3>
             <p>The win rate shows what percentage of all plays resulted in a win. With {stats.total_plays} plays and {stats.total_wins} wins, the win rate is {stats.win_rate_percent.toFixed(2)}%.</p>
           </div>
 
           <div className="edu-card">
-            <h3>🎲 What are Odds?</h3>
+            <h3>What are Odds?</h3>
             <p>
               The odds represent how difficult it is to win. Lower odds (like 1 in 10) are easier to beat, while higher odds (like 1 in 1000) are much harder. These are mathematical probabilities calculated from the game rules.
             </p>
           </div>
 
           <div className="edu-card">
-            <h3>⏱️ Draws to Win</h3>
+            <h3>Draws to Win</h3>
             <p>
               This is the average number of times you need to play to win once. If the average is {stats.avg_draws_to_win.toFixed(1)}, it means on average, after that many attempts, you'd expect one win.
             </p>
           </div>
 
           <div className="edu-card">
-            <h3>💡 Sample Size Matters</h3>
+            <h3>Sample Size Matters</h3>
             <p>
               With {stats.total_plays} total plays, we have enough data to see real patterns. Larger sample sizes give us more confidence that these numbers represent the true probability.
             </p>
           </div>
 
           <div className="edu-card">
-            <h3>🧮 Comparing Theory to Reality</h3>
+            <h3>Comparing Theory to Reality</h3>
             <p>
               Lottery games are designed so that theoretically, players are expected to lose money over time. The observed win rate helps us understand if real game results match mathematical predictions.
             </p>
           </div>
 
           <div className="edu-card">
-            <h3>💰 Financial Literacy Tip</h3>
+            <h3>Financial Literacy Tip</h3>
             <p>
               Remember: lotteries are entertainment with a built-in expected loss. Never spend money on lottery games that you can't afford to lose. Always play responsibly!
             </p>
           </div>
         </div>
-      </div>
+      </section>
 
       <div className="disclaimer">
         <p>

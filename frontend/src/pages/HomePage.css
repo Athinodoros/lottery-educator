@@ -66,10 +66,11 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.feature-card h3 {
+.feature-card h2 {
   font-size: 20px;
   margin-bottom: 15px;
   color: #111827;
+  font-weight: 700;
 }
 
 .feature-card p {

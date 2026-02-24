@@ -180,7 +180,7 @@ function AdminPage() {
 
             <form onSubmit={handleLogin} className="login-form">
               {loginError && (
-                <div className="login-error">{loginError}</div>
+                <div className="login-error" role="alert">{loginError}</div>
               )}
               <div className="form-group">
                 <label htmlFor="username">Username</label>
@@ -234,12 +234,15 @@ function AdminPage() {
           </button>
         </div>
 
-        <div className="admin-tabs">
+        <div className="admin-tabs" role="tablist" aria-label="Dashboard sections">
           {(['overview', 'emails', 'metrics', 'games'] as Tab[]).map(tab => (
             <button
               key={tab}
+              role="tab"
               className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
               onClick={() => setActiveTab(tab)}
+              aria-selected={activeTab === tab}
+              aria-controls={`panel-${tab}`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
@@ -248,14 +251,14 @@ function AdminPage() {
       </div>
 
       {error && (
-        <div className="error-banner">
-          <span>!</span>
+        <div className="error-banner" role="alert">
+          <span aria-hidden="true">!</span>
           <p>{error}</p>
         </div>
       )}
 
       {loading && (
-        <div className="loading-container">
+        <div className="loading-container" role="status" aria-label="Loading dashboard data">
           <div className="spinner"></div>
           <p>Loading data...</p>
         </div>
@@ -303,9 +306,9 @@ function AdminPage() {
               <div className="services-grid">
                 {Object.entries(dashboard.services).map(([name, status]) => (
                   <div key={name} className={`service-item ${status}`}>
-                    <span className={`status-dot ${status}`}></span>
+                    <span className={`status-dot ${status}`} aria-hidden="true"></span>
                     <span className="service-name">{name.replace('_', ' ')}</span>
-                    <span className={`service-status ${status}`}>{status}</span>
+                    <span className={`service-status ${status}`} aria-label={`${name.replace('_', ' ')} status: ${status}`}>{status}</span>
                   </div>
                 ))}
               </div>
@@ -367,7 +370,7 @@ function AdminPage() {
                   <button
                     className="delete-btn"
                     onClick={() => deleteEmail(email.id)}
-                    title="Delete email"
+                    aria-label={`Delete email from ${email.sender_email}`}
                   >
                     Delete
                   </button>

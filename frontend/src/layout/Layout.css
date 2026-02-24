@@ -1,3 +1,23 @@
+/* Skip link — visible only on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 200;
+  padding: 8px 16px;
+  background: #6366f1;
+  color: white;
+  border-radius: 0 0 8px 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -45,6 +65,12 @@
 
 .nav-item.active {
   color: #6366f1;
+}
+
+.nav-item:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .nav-item svg {

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useGamesStore } from '../store/gamesStore'
 import { useSessionStore } from '../store/useSessionStore'
 import GameCard from '../components/GameCard'
+import { SkeletonCard } from '../components/Skeleton'
 import './GamesPage.css'
 
 function GamesPage() {
@@ -15,22 +16,24 @@ function GamesPage() {
 
   return (
     <div className="games-page">
-      <div className="games-header">
+      <header className="games-header">
         <h1>Games</h1>
         <p>Select a lottery game to play and learn the odds.</p>
-      </div>
+      </header>
 
       {error && (
-        <div className="error">
-          <h3>⚠️ Error Loading Games</h3>
+        <div className="error" role="alert">
+          <h3>Error Loading Games</h3>
           <p>{error}</p>
         </div>
       )}
 
       {isLoading && (
-        <div className="loading">
-          <div className="loading-spinner"></div>
-          <p>Loading games...</p>
+        <div className="games-grid" role="status" aria-label="Loading games">
+          <span className="sr-only">Loading games...</span>
+          {[1, 2, 3, 4].map((i) => (
+            <SkeletonCard key={i} />
+          ))}
         </div>
       )}
 

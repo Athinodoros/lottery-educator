@@ -5,6 +5,7 @@ import { useSessionStore } from '../store/useSessionStore'
 import NumberSelector from '../components/NumberSelector'
 import DrawAnimation from '../components/DrawAnimation'
 import ResultsDisplay from '../components/ResultsDisplay'
+import { Skeleton, SkeletonText } from '../components/Skeleton'
 import { Game, GameResult } from '../types'
 import { gameApi } from '../api/games'
 import './GamePlayPage.css'
@@ -90,10 +91,10 @@ function GamePlayPage() {
     try {
       const gameResult = await gameApi.playGame(id, selectedNumbers)
       setDrawProgress(100)
-      
+
       // Record play for tracking
       recordPlay(id)
-      
+
       // Show result after animation completes
       setTimeout(() => {
         setResult(gameResult)
@@ -118,9 +119,20 @@ function GamePlayPage() {
 
   if (loading) {
     return (
-      <div className="game-play-page loading">
-        <div className="spinner"></div>
-        <p>Loading game...</p>
+      <div className="game-play-page" role="status" aria-label="Loading game">
+        <span className="sr-only">Loading game...</span>
+        <div className="game-header">
+          <Skeleton width="80px" height="36px" borderRadius="8px" />
+          <div style={{ flex: 1 }}>
+            <Skeleton width="200px" height="28px" />
+            <Skeleton width="300px" height="16px" />
+          </div>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(48px, 1fr))', gap: '8px', padding: '24px' }}>
+          {Array.from({ length: 20 }).map((_, i) => (
+            <Skeleton key={i} width="48px" height="48px" borderRadius="8px" />
+          ))}
+        </div>
       </div>
     )
   }
@@ -128,11 +140,11 @@ function GamePlayPage() {
   if (!game) {
     return (
       <div className="game-play-page error-state">
-        <div className="error-box">
+        <div className="error-box" role="alert">
           <h2>Game Not Found</h2>
           <p>{error || 'Could not load this game'}</p>
           <button className="back-button" onClick={handleBackToGames}>
-            ← Back to Games
+            Back to Games
           </button>
         </div>
       </div>
@@ -142,8 +154,8 @@ function GamePlayPage() {
   return (
     <div className="game-play-page">
       <div className="game-header">
-        <button className="back-button" onClick={handleBackToGames}>
-          ← Back
+        <button className="back-button" onClick={handleBackToGames} aria-label="Back to games list">
+          &#8592; Back
         </button>
         <div>
           <h1>{game.name}</h1>
@@ -152,8 +164,8 @@ function GamePlayPage() {
       </div>
 
       {error && (
-        <div className="error-banner">
-          <span>⚠️</span>
+        <div className="error-banner" role="alert">
+          <span aria-hidden="true">&#9888;</span>
           <p>{error}</p>
         </div>
       )}
@@ -174,11 +186,12 @@ function GamePlayPage() {
               className="play-button"
               onClick={handlePlayGame}
               disabled={selectedNumbers.length !== game.numbers_to_select || isPlaying}
+              aria-label={isPlaying ? 'Drawing numbers in progress' : 'Play game'}
             >
-              {isPlaying ? 'Drawing...' : '🎲 Play Game'}
+              {isPlaying ? 'Drawing...' : 'Play Game'}
             </button>
             {selectedNumbers.length > 0 && selectedNumbers.length !== game.numbers_to_select && (
-              <p className="selection-hint">
+              <p className="selection-hint" aria-live="polite">
                 Select {game.numbers_to_select - selectedNumbers.length} more number
                 {game.numbers_to_select - selectedNumbers.length !== 1 ? 's' : ''}
               </p>
@@ -216,7 +229,7 @@ function GamePlayPage() {
           <ResultsDisplay result={result} />
           <div className="results-actions">
             <button className="play-again-button" onClick={handlePlayAgain}>
-              🎲 Play Again
+              Play Again
             </button>
             <button className="back-button secondary" onClick={handleBackToGames}>
               Back to Games

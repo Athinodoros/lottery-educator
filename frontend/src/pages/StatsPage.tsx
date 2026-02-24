@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSessionStore } from '../store/useSessionStore'
 import StatCard from '../components/StatCard'
+import { SkeletonCard } from '../components/Skeleton'
 import { metricsApi } from '../api/metrics'
 import { gameApi } from '../api/games'
 import './StatsPage.css'
@@ -9,7 +10,7 @@ import './StatsPage.css'
 function StatsPage() {
   const navigate = useNavigate()
   const recordPageView = useSessionStore((state) => state.recordPageView)
-  
+
   const [sessionStats, setSessionStats] = useState<any>(null)
   const [playStats, setPlayStats] = useState<any>(null)
   const [games, setGames] = useState<any[]>([])
@@ -52,25 +53,29 @@ function StatsPage() {
 
   return (
     <div className="stats-page">
-      <div className="stats-header">
+      <header className="stats-header">
         <h1>Lottery Statistics</h1>
         <p>
           Explore the odds and win rates across all lottery games. Understand why lottery
           tickets are statistically a losing proposition.
         </p>
-      </div>
+      </header>
 
       {error && (
-        <div className="error-banner">
-          <span>⚠️</span>
+        <div className="error-banner" role="alert">
+          <span aria-hidden="true">&#9888;</span>
           <p>{error}</p>
         </div>
       )}
 
       {loading && (
-        <div className="loading-container">
-          <div className="spinner"></div>
-          <p>Loading statistics...</p>
+        <div role="status" aria-label="Loading statistics">
+          <span className="sr-only">Loading statistics...</span>
+          <div className="stats-grid">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <SkeletonCard key={i} />
+            ))}
+          </div>
         </div>
       )}
 
@@ -79,14 +84,14 @@ function StatsPage() {
           <h2>No Statistics Available</h2>
           <p>Play some games first to see statistics!</p>
           <button className="play-button" onClick={() => navigate('/games')}>
-            Go to Games →
+            Go to Games
           </button>
         </div>
       )}
 
       {!loading && (sessionStats || playStats) && (
         <>
-          <div className="stats-grid">
+          <section className="stats-grid" aria-label="Session and play metrics">
             {sessionStats && (
               <>
                 <StatCard
@@ -128,10 +133,10 @@ function StatsPage() {
                 />
               </>
             )}
-          </div>
+          </section>
 
           {games.length > 0 && (
-            <div className="games-stats-section">
+            <section className="games-stats-section" aria-label="Game-specific statistics">
               <h2>Game-Specific Statistics</h2>
               <div className="games-list">
                 {games.map((game) => (
@@ -139,15 +144,16 @@ function StatsPage() {
                     key={game.id}
                     className="game-stat-link"
                     onClick={() => handleGameClick(game.id)}
+                    aria-label={`View statistics for ${game.name}`}
                   >
                     {game.name}
                   </button>
                 ))}
               </div>
-            </div>
+            </section>
           )}
 
-          <div className="stats-info">
+          <section className="stats-info" aria-label="Educational information">
             <div className="info-section">
               <h3>Understanding Lottery Odds</h3>
               <p>
@@ -178,7 +184,7 @@ function StatsPage() {
                 </li>
               </ul>
             </div>
-          </div>
+          </section>
         </>
       )}
     </div>

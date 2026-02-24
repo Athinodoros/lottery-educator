@@ -12,6 +12,7 @@ const StatsPage = lazy(() => import('./pages/StatsPage'))
 const StatisticsDetailPage = lazy(() => import('./pages/StatisticsDetailPage'))
 const LearnPage = lazy(() => import('./pages/LearnPage'))
 const AdminPage = lazy(() => import('./pages/AdminPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
 
 function App() {
   const initializeSession = useSessionStore((state) => state.initializeSession)
@@ -32,6 +33,7 @@ function App() {
               <Route path="/stats" element={<StatsPage />} />
               <Route path="/stats/:id" element={<StatisticsDetailPage />} />
               <Route path="/learn" element={<LearnPage />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="/admin" element={<AdminPage />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Route>
