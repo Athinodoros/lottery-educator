@@ -63,6 +63,15 @@ const emailLimiter = rateLimit({
   message: { error: 'Too many messages sent. Please try again later.' },
 });
 
+// Strict rate limit for game creation: 5 per hour per IP
+const gameCreateLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many games submitted. Please try again later.' },
+});
+
 // Strict rate limit for admin login: 10 attempts per 15 minutes per IP
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -220,6 +229,10 @@ async function proxyRequest(req: Request, res: Response, targetUrl: string) {
 }
 
 // Routes: Game Engine Service (port 3001)
+// Rate-limited game creation
+app.post('/games', gameCreateLimiter, (req: Request, res: Response) => {
+  proxyRequest(req, res, GAME_ENGINE_URL);
+});
 app.use('/games', (req: Request, res: Response) => {
   proxyRequest(req, res, GAME_ENGINE_URL);
 });
@@ -315,13 +328,16 @@ app.post('/admin/logout', requireAdmin, (req: Request, res: Response) => {
 // Admin dashboard - aggregated data from all services
 app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) => {
   try {
-    const [gamesRes, statsRes, metricsRes] = await Promise.allSettled([
+    const [gamesRes, allGamesRes, statsRes, metricsRes] = await Promise.allSettled([
       axios.get(`${GAME_ENGINE_URL}/games`),
+      axios.get(`${GAME_ENGINE_URL}/games?include_pending=true`),
       axios.get(`${STATISTICS_URL}/stats`),
       axios.get(`${METRICS_SERVICE_URL}/metrics`),
     ]);
 
     const games = gamesRes.status === 'fulfilled' ? gamesRes.value.data : [];
+    const allGames = allGamesRes.status === 'fulfilled' ? allGamesRes.value.data : [];
+    const pendingGames = Array.isArray(allGames) ? allGames.filter((g: any) => !g.is_approved) : [];
     const stats = statsRes.status === 'fulfilled' ? statsRes.value.data : [];
     const metricsData = metricsRes.status === 'fulfilled' ? metricsRes.value.data : { metrics: [] };
 
@@ -347,6 +363,7 @@ app.get('/admin/dashboard', requireAdmin, async (req: Request, res: Response) =>
     res.json({
       overview: {
         total_games: Array.isArray(games) ? games.length : 0,
+        pending_games: pendingGames.length,
         total_plays: totalPlays,
         total_wins: totalWins,
         global_win_rate: parseFloat(globalWinRate.toFixed(2)),
@@ -412,6 +429,38 @@ app.get('/admin/metrics', requireAdmin, async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     res.status(error.response?.status || 500).json(error.response?.data || { error: 'Failed to fetch metrics' });
+  }
+});
+
+// Admin games - list pending games
+app.get('/admin/games/pending', requireAdmin, async (req: Request, res: Response) => {
+  try {
+    const response = await axios.get(`${GAME_ENGINE_URL}/games?include_pending=true`);
+    const allGames = Array.isArray(response.data) ? response.data : [];
+    const pending = allGames.filter((g: any) => !g.is_approved);
+    res.json(pending);
+  } catch (error: any) {
+    res.status(error.response?.status || 500).json(error.response?.data || { error: 'Failed to fetch pending games' });
+  }
+});
+
+// Admin games - approve a game
+app.patch('/admin/games/:gameId/approve', requireAdmin, async (req: Request, res: Response) => {
+  try {
+    const response = await axios.patch(`${GAME_ENGINE_URL}/games/${req.params.gameId}/approve`);
+    res.json(response.data);
+  } catch (error: any) {
+    res.status(error.response?.status || 500).json(error.response?.data || { error: 'Failed to approve game' });
+  }
+});
+
+// Admin games - delete/reject a game
+app.delete('/admin/games/:gameId', requireAdmin, async (req: Request, res: Response) => {
+  try {
+    const response = await axios.delete(`${GAME_ENGINE_URL}/games/${req.params.gameId}`);
+    res.json(response.data);
+  } catch (error: any) {
+    res.status(error.response?.status || 500).json(error.response?.data || { error: 'Failed to delete game' });
   }
 });
 

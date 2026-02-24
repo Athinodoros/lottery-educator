@@ -20,11 +20,14 @@ function GamePlayPage() {
   // Local state
   const [game, setGame] = useState<Game | null>(null)
   const [selectedNumbers, setSelectedNumbers] = useState<number[]>([])
+  const [selectedExtra, setSelectedExtra] = useState<number[]>([])
   const [isPlaying, setIsPlaying] = useState(false)
   const [drawProgress, setDrawProgress] = useState(0)
   const [result, setResult] = useState<GameResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
+
+  const hasBonus = !!(game?.bonus_number_range && game?.bonus_numbers_to_select)
 
   // Load game details
   useEffect(() => {
@@ -68,8 +71,23 @@ function GamePlayPage() {
     })
   }
 
+  const handleExtraToggle = (number: number) => {
+    setSelectedExtra((prev) => {
+      if (prev.includes(number)) {
+        return prev.filter((n) => n !== number)
+      } else if (prev.length < (game?.bonus_numbers_to_select || 0)) {
+        return [...prev, number]
+      }
+      return prev
+    })
+  }
+
+  const mainComplete = selectedNumbers.length === (game?.numbers_to_select || 0)
+  const bonusComplete = !hasBonus || selectedExtra.length === (game?.bonus_numbers_to_select || 0)
+  const canPlay = mainComplete && bonusComplete
+
   const handlePlayGame = async () => {
-    if (!id || !game || selectedNumbers.length !== game.numbers_to_select) {
+    if (!id || !game || !canPlay) {
       return
     }
 
@@ -89,7 +107,11 @@ function GamePlayPage() {
     }, 200)
 
     try {
-      const gameResult = await gameApi.playGame(id, selectedNumbers)
+      const gameResult = await gameApi.playGame(
+        id,
+        selectedNumbers,
+        hasBonus ? selectedExtra : undefined
+      )
       setDrawProgress(100)
 
       // Record play for tracking
@@ -109,6 +131,7 @@ function GamePlayPage() {
 
   const handlePlayAgain = () => {
     setSelectedNumbers([])
+    setSelectedExtra([])
     setResult(null)
     setDrawProgress(0)
   }
@@ -166,6 +189,8 @@ function GamePlayPage() {
     )
   }
 
+  const bonusLabel = game.bonus_numbers_to_select === 1 ? 'bonus number' : 'bonus numbers'
+
   return (
     <div className="game-play-page">
       <div className="game-header">
@@ -196,19 +221,34 @@ function GamePlayPage() {
             disabled={isPlaying}
           />
 
+          {hasBonus && game.bonus_number_range && game.bonus_numbers_to_select && (
+            <NumberSelector
+              minNumber={game.bonus_number_range[0]}
+              maxNumber={game.bonus_number_range[1]}
+              numbersToSelect={game.bonus_numbers_to_select}
+              selectedNumbers={selectedExtra}
+              onNumberToggle={handleExtraToggle}
+              disabled={isPlaying}
+            />
+          )}
+
           <div className="play-button-container">
             <button
               className="play-button"
               onClick={handlePlayGame}
-              disabled={selectedNumbers.length !== game.numbers_to_select || isPlaying}
+              disabled={!canPlay || isPlaying}
               aria-label={isPlaying ? 'Drawing numbers in progress' : 'Play game'}
             >
               {isPlaying ? 'Drawing...' : 'Play Game'}
             </button>
-            {selectedNumbers.length > 0 && selectedNumbers.length !== game.numbers_to_select && (
+            {!canPlay && selectedNumbers.length > 0 && (
               <p className="selection-hint" aria-live="polite">
-                Select {game.numbers_to_select - selectedNumbers.length} more number
-                {game.numbers_to_select - selectedNumbers.length !== 1 ? 's' : ''}
+                {!mainComplete && (
+                  <>Select {game.numbers_to_select - selectedNumbers.length} more main number{game.numbers_to_select - selectedNumbers.length !== 1 ? 's' : ''}</>
+                )}
+                {mainComplete && !bonusComplete && hasBonus && (
+                  <>Select {(game.bonus_numbers_to_select || 0) - selectedExtra.length} more {bonusLabel}</>
+                )}
               </p>
             )}
           </div>
@@ -219,6 +259,9 @@ function GamePlayPage() {
               <ol>
                 <li>Select {game.numbers_to_select} numbers from {game.number_range[0]} to{' '}
                   {game.number_range[game.number_range.length - 1]}</li>
+                {hasBonus && game.bonus_number_range && (
+                  <li>Select {game.bonus_numbers_to_select} {bonusLabel} from {game.bonus_number_range[0]} to {game.bonus_number_range[1]}</li>
+                )}
                 <li>Click the Play button to start the draw</li>
                 <li>Watch as the lottery simulates drawings until your numbers match</li>
                 <li>See how many draws it takes!</li>

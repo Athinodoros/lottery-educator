@@ -15,21 +15,40 @@ export const gameApi = {
   },
 
   // Play a game
-  playGame: async (gameId: string, selectedNumbers: number[]): Promise<GameResult> => {
-    const response = await apiClient.post(`/games/${gameId}/play`, {
-      selectedNumbers,
-    });
+  playGame: async (gameId: string, selectedNumbers: number[], selectedExtra?: number[]): Promise<GameResult> => {
+    const body: any = { selectedNumbers };
+    if (selectedExtra && selectedExtra.length > 0) {
+      body.selectedExtra = selectedExtra;
+    }
+
+    const response = await apiClient.post(`/games/${gameId}/play`, body);
     const d = response.data;
     return {
       id: d.id,
       game_id: gameId,
       selected_numbers: selectedNumbers,
       winning_numbers: d.winningNumbers,
+      selected_extra: d.winningExtra ? selectedExtra : undefined,
+      winning_extra: d.winningExtra,
+      matched_bonus: d.results?.matchedBonus,
       draws_to_win: d.drawsToWin,
       is_winner: d.isWinner,
       played_at: new Date().toISOString(),
       created_at: new Date().toISOString(),
     };
+  },
+
+  // Create a new game (user-submitted)
+  createGame: async (data: {
+    name: string;
+    description?: string;
+    number_range: number[];
+    numbers_to_select: number;
+    bonus_number_range?: number[];
+    bonus_numbers_to_select?: number;
+  }): Promise<Game> => {
+    const response = await apiClient.post('/games', data);
+    return response.data;
   },
 
   // Get game statistics

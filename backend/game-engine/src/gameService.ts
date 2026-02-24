@@ -1,26 +1,22 @@
 import { v4 as uuidv4 } from 'uuid';
 import { query, queryOne, queryAll } from './database';
-import { Game, GamePlay, GamePlayRequest, GamePlayResponse } from './types';
+import { Game, GamePlay, GamePlayRequest, GamePlayResponse, CreateGameRequest } from './types';
 
 /**
  * Get all available games
  */
-export async function getAllGames(): Promise<Game[]> {
-  const games = await queryAll<Game>(
-    'SELECT * FROM games ORDER BY created_at DESC'
-  );
-  return games;
+export async function getAllGames(approvedOnly = true): Promise<Game[]> {
+  const sql = approvedOnly
+    ? 'SELECT * FROM games WHERE is_approved = true ORDER BY created_at DESC'
+    : 'SELECT * FROM games ORDER BY created_at DESC';
+  return queryAll<Game>(sql);
 }
 
 /**
  * Get a specific game by ID
  */
 export async function getGameById(gameId: string): Promise<Game | null> {
-  const game = await queryOne<Game>(
-    'SELECT * FROM games WHERE id = $1',
-    [gameId]
-  );
-  return game;
+  return queryOne<Game>('SELECT * FROM games WHERE id = $1', [gameId]);
 }
 
 /**
@@ -62,8 +58,16 @@ function binomialCoeff(n: number, k: number): number {
 function calcWinProbability(game: Game): number {
   const [min, max] = game.number_range;
   const range = max - min + 1;
-  const combos = binomialCoeff(range, game.numbers_to_select);
-  return 1 / (combos * (game.extra_numbers ?? 1));
+  const mainCombos = binomialCoeff(range, game.numbers_to_select);
+
+  let bonusCombos = 1;
+  if (game.bonus_number_range && game.bonus_numbers_to_select) {
+    const [bMin, bMax] = game.bonus_number_range;
+    const bonusRange = bMax - bMin + 1;
+    bonusCombos = binomialCoeff(bonusRange, game.bonus_numbers_to_select);
+  }
+
+  return 1 / (mainCombos * bonusCombos);
 }
 
 /**
@@ -77,38 +81,35 @@ function sampleDrawsToWin(probability: number): number {
 }
 
 /**
- * Play a single game draw
+ * Simulate a single draw for both main and bonus pools
  */
 function simulateDraw(
   selectedNumbers: number[],
   numberRange: number[],
   numbersToSelect: number,
-  selectedExtra?: number,
-  extraRange?: [number, number]
+  selectedExtra?: number[],
+  bonusRange?: number[] | null,
+  bonusCount?: number | null
 ): {
   winningNumbers: number[];
-  winningExtra?: number;
+  winningExtra?: number[];
   matches: number;
-  extraMatch: boolean;
+  bonusMatches: number;
 } {
   const [min, max] = numberRange;
   const winningNumbers = generateRandomNumbers(numbersToSelect, min, max);
   const matches = countMatches(selectedNumbers, winningNumbers);
-  
-  let winningExtra: number | undefined;
-  let extraMatch = false;
-  
-  if (selectedExtra !== undefined && extraRange) {
-    winningExtra = Math.floor(Math.random() * (extraRange[1] - extraRange[0] + 1)) + extraRange[0];
-    extraMatch = winningExtra === selectedExtra;
+
+  let winningExtra: number[] | undefined;
+  let bonusMatches = 0;
+
+  if (selectedExtra && bonusRange && bonusCount) {
+    const [bMin, bMax] = bonusRange;
+    winningExtra = generateRandomNumbers(bonusCount, bMin, bMax);
+    bonusMatches = countMatches(selectedExtra, winningExtra);
   }
 
-  return {
-    winningNumbers,
-    winningExtra,
-    matches,
-    extraMatch,
-  };
+  return { winningNumbers, winningExtra, matches, bonusMatches };
 }
 
 /**
@@ -118,33 +119,34 @@ export async function playGame(
   gameId: string,
   request: GamePlayRequest
 ): Promise<GamePlayResponse> {
-  // Get game details
   const game = await getGameById(gameId);
   if (!game) {
     throw new Error(`Game not found: ${gameId}`);
   }
 
-  const { number_range, numbers_to_select, extra_numbers } = game;
+  const { number_range, numbers_to_select, bonus_number_range, bonus_numbers_to_select } = game;
   const [min, max] = number_range;
-  
-  // Validate selected numbers
+
+  // Validate main numbers
   if (request.selectedNumbers.length !== numbers_to_select) {
     throw new Error(
       `Invalid number count. Expected ${numbers_to_select}, got ${request.selectedNumbers.length}`
     );
   }
-
   if (request.selectedNumbers.some((n) => n < min || n > max)) {
-    throw new Error(
-      `Numbers must be between ${min} and ${max}`
-    );
+    throw new Error(`Numbers must be between ${min} and ${max}`);
   }
 
-  if (request.selectedExtra !== undefined && extra_numbers !== null) {
-    if (request.selectedExtra < 1 || request.selectedExtra > extra_numbers) {
+  // Validate bonus numbers
+  if (bonus_number_range && bonus_numbers_to_select) {
+    const [bMin, bMax] = bonus_number_range;
+    if (!request.selectedExtra || request.selectedExtra.length !== bonus_numbers_to_select) {
       throw new Error(
-        `Extra number must be between 1 and ${extra_numbers}`
+        `Expected ${bonus_numbers_to_select} bonus number(s), got ${request.selectedExtra?.length ?? 0}`
       );
+    }
+    if (request.selectedExtra.some((n) => n < bMin || n > bMax)) {
+      throw new Error(`Bonus numbers must be between ${bMin} and ${bMax}`);
     }
   }
 
@@ -158,21 +160,23 @@ export async function playGame(
     number_range,
     numbers_to_select,
     request.selectedExtra,
-    extra_numbers ? [1, extra_numbers] : undefined
+    bonus_number_range,
+    bonus_numbers_to_select
   );
   const isWinner = drawCount === 1;
 
   // Save result to database
   const resultId = uuidv4();
   await query(
-    `INSERT INTO game_results 
-      (id, game_id, selected_numbers, winning_numbers, extra_number, draws_to_win)
-     VALUES ($1, $2, $3, $4, $5, $6)`,
+    `INSERT INTO game_results
+      (id, game_id, selected_numbers, winning_numbers, selected_extra, winning_extra, draws_to_win)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
     [
       resultId,
       gameId,
       request.selectedNumbers,
       lastDraw.winningNumbers,
+      request.selectedExtra || null,
       lastDraw.winningExtra || null,
       drawCount,
     ]
@@ -186,7 +190,7 @@ export async function playGame(
     isWinner,
     results: {
       matchedNumbers: lastDraw.matches,
-      matchedBonus: lastDraw.extraMatch,
+      matchedBonus: lastDraw.bonusMatches,
     },
   };
 }
@@ -195,9 +199,63 @@ export async function playGame(
  * Get a game result by ID
  */
 export async function getGameResult(resultId: string): Promise<GamePlay | null> {
-  const result = await queryOne<GamePlay>(
-    'SELECT * FROM game_results WHERE id = $1',
-    [resultId]
+  return queryOne<GamePlay>('SELECT * FROM game_results WHERE id = $1', [resultId]);
+}
+
+/**
+ * Create a new user-submitted game (pending approval)
+ */
+export async function createGame(data: CreateGameRequest): Promise<Game> {
+  const [min, max] = data.number_range;
+  const range = max - min + 1;
+  const mainCombos = binomialCoeff(range, data.numbers_to_select);
+
+  let bonusCombos = 1;
+  if (data.bonus_number_range && data.bonus_numbers_to_select) {
+    const [bMin, bMax] = data.bonus_number_range;
+    const bonusRange = bMax - bMin + 1;
+    bonusCombos = binomialCoeff(bonusRange, data.bonus_numbers_to_select);
+  }
+
+  const probability = 1 / (mainCombos * bonusCombos);
+  const id = uuidv4();
+
+  await query(
+    `INSERT INTO games (id, name, description, number_range, numbers_to_select, bonus_number_range, bonus_numbers_to_select, probability_of_winning, is_approved, created_by)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, false, 'user')`,
+    [
+      id,
+      data.name,
+      data.description || null,
+      data.number_range,
+      data.numbers_to_select,
+      data.bonus_number_range || null,
+      data.bonus_numbers_to_select || null,
+      probability,
+    ]
   );
-  return result;
+
+  const game = await getGameById(id);
+  return game!;
+}
+
+/**
+ * Approve a pending game
+ */
+export async function approveGame(gameId: string): Promise<Game | null> {
+  await query('UPDATE games SET is_approved = true WHERE id = $1', [gameId]);
+  return getGameById(gameId);
+}
+
+/**
+ * Delete an unapproved game (reject)
+ */
+export async function deleteGame(gameId: string): Promise<boolean> {
+  const game = await getGameById(gameId);
+  if (!game) return false;
+  if (game.is_approved && game.created_by === 'system') {
+    throw new Error('Cannot delete system-approved games');
+  }
+  const result = await query('DELETE FROM games WHERE id = $1', [gameId]);
+  return (result as any).rowCount > 0;
 }

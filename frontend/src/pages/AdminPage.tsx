@@ -4,6 +4,7 @@ import './AdminPage.css'
 
 interface AdminOverview {
   total_games: number
+  pending_games: number
   total_plays: number
   total_wins: number
   global_win_rate: number
@@ -34,6 +35,18 @@ interface GameStat {
   win_rate_percent: number
 }
 
+interface PendingGame {
+  id: string
+  name: string
+  description: string
+  number_range: number[]
+  numbers_to_select: number
+  bonus_number_range?: number[] | null
+  bonus_numbers_to_select?: number | null
+  created_by: string
+  created_at: string
+}
+
 interface ServiceStatus {
   game_engine: string
   statistics: string
@@ -62,6 +75,7 @@ function AdminPage() {
   const [activeTab, setActiveTab] = useState<Tab>('overview')
   const [dashboard, setDashboard] = useState<DashboardData | null>(null)
   const [emails, setEmails] = useState<EmailItem[]>([])
+  const [pendingGames, setPendingGames] = useState<PendingGame[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -105,6 +119,7 @@ function AdminPage() {
     setIsAuthenticated(false)
     setDashboard(null)
     setEmails([])
+    setPendingGames([])
     localStorage.removeItem('admin_token')
   }
 
@@ -149,6 +164,18 @@ function AdminPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
+  const loadPendingGames = useCallback(async () => {
+    if (!token) return
+    try {
+      const response = await apiClient.get('/admin/games/pending', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      setPendingGames(Array.isArray(response.data) ? response.data : [])
+    } catch {
+      setPendingGames([])
+    }
+  }, [token])
+
   const deleteEmail = async (emailId: string) => {
     if (!confirm('Are you sure you want to delete this email?')) return
     try {
@@ -161,6 +188,31 @@ function AdminPage() {
     }
   }
 
+  const approveGame = async (gameId: string) => {
+    try {
+      await apiClient.patch(`/admin/games/${gameId}/approve`, {}, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      setPendingGames(prev => prev.filter(g => g.id !== gameId))
+      // Refresh dashboard to update counts
+      loadDashboard()
+    } catch {
+      alert('Failed to approve game')
+    }
+  }
+
+  const rejectGame = async (gameId: string) => {
+    if (!confirm('Are you sure you want to reject and delete this game?')) return
+    try {
+      await apiClient.delete(`/admin/games/${gameId}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      setPendingGames(prev => prev.filter(g => g.id !== gameId))
+    } catch {
+      alert('Failed to reject game')
+    }
+  }
+
   // Load data when authenticated or tab changes
   useEffect(() => {
     if (!isAuthenticated) return
@@ -169,7 +221,10 @@ function AdminPage() {
     } else {
       loadDashboard()
     }
-  }, [isAuthenticated, activeTab, loadDashboard, loadEmails])
+    if (activeTab === 'games') {
+      loadPendingGames()
+    }
+  }, [isAuthenticated, activeTab, loadDashboard, loadEmails, loadPendingGames])
 
   // ── Login Screen ──────────────────────────────────────────────────
   if (!isAuthenticated) {
@@ -247,6 +302,9 @@ function AdminPage() {
               aria-controls={`panel-${tab}`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
+              {tab === 'games' && pendingGames.length > 0 && (
+                <span className="tab-badge">{pendingGames.length}</span>
+              )}
             </button>
           ))}
         </div>
@@ -291,6 +349,12 @@ function AdminPage() {
               <p className="stat-desc">Global winning percentage</p>
             </div>
           </div>
+
+          {dashboard.overview.pending_games > 0 && (
+            <div className="pending-notice" onClick={() => setActiveTab('games')} role="button" tabIndex={0}>
+              <strong>{dashboard.overview.pending_games}</strong> game{dashboard.overview.pending_games !== 1 ? 's' : ''} pending approval — click to review
+            </div>
+          )}
 
           <div className="admin-sections">
             {dashboard.overview.top_game && (
@@ -428,7 +492,47 @@ function AdminPage() {
       {/* ── Games Tab ───────────────────────────────── */}
       {!loading && activeTab === 'games' && dashboard && (
         <div className="admin-section full-width">
-          <h2>Game Statistics</h2>
+          {/* Pending Games Section */}
+          <h2>Pending Games ({pendingGames.length})</h2>
+          {pendingGames.length === 0 ? (
+            <p className="no-data">No games pending approval</p>
+          ) : (
+            <div className="pending-games-list">
+              {pendingGames.map(game => (
+                <div key={game.id} className="pending-game-card">
+                  <div className="pending-game-header">
+                    <h3>{game.name}</h3>
+                    <span className="pending-badge">Pending</span>
+                  </div>
+                  {game.description && <p className="pending-game-desc">{game.description}</p>}
+                  <div className="pending-game-params">
+                    <span>Main: Pick {game.numbers_to_select} from {game.number_range[0]}-{game.number_range[1]}</span>
+                    {game.bonus_number_range && game.bonus_numbers_to_select && (
+                      <span>Bonus: Pick {game.bonus_numbers_to_select} from {game.bonus_number_range[0]}-{game.bonus_number_range[1]}</span>
+                    )}
+                    <span>Submitted: {new Date(game.created_at).toLocaleDateString()}</span>
+                  </div>
+                  <div className="pending-game-actions">
+                    <button
+                      className="approve-btn"
+                      onClick={() => approveGame(game.id)}
+                    >
+                      Approve
+                    </button>
+                    <button
+                      className="reject-btn"
+                      onClick={() => rejectGame(game.id)}
+                    >
+                      Reject
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Game Statistics */}
+          <h2 style={{ marginTop: '32px' }}>Game Statistics</h2>
           {dashboard.statistics.length === 0 ? (
             <p className="no-data">No game statistics available</p>
           ) : (
@@ -463,7 +567,10 @@ function AdminPage() {
                 {game.description && <p className="game-description">{game.description}</p>}
                 <div className="game-meta">
                   <span className="meta-item">Numbers: {game.numbers_to_select}</span>
-                  <span className="meta-item">Range: 1-{game.number_range?.length || '?'}</span>
+                  <span className="meta-item">Range: {game.number_range?.[0]}-{game.number_range?.[1]}</span>
+                  {game.bonus_number_range && (
+                    <span className="meta-item">Bonus: +{game.bonus_numbers_to_select} ({game.bonus_number_range[0]}-{game.bonus_number_range[1]})</span>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,26 +1,26 @@
 .results-display {
-  background: white;
+  background: var(--color-bg-card);
   border-radius: 16px;
   overflow: hidden;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--color-border);
   transition: all 0.3s ease;
   animation: slideUp 0.5s ease;
 }
 
 .results-display.winner {
-  border-color: #10b981;
+  border-color: var(--color-success-vivid);
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(16, 185, 129, 0.02) 100%);
 }
 
 .results-display.loser {
-  border-color: #f59e0b;
+  border-color: var(--color-warning);
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(245, 158, 11, 0.02) 100%);
 }
 
 .results-header {
   padding: 40px 24px;
   text-align: center;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .results-icon {
@@ -33,21 +33,21 @@
   margin: 0 0 8px 0;
   font-size: 28px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .results-header.winner h2 {
-  color: #10b981;
+  color: var(--color-success-vivid);
 }
 
 .results-header.loser h2 {
-  color: #f59e0b;
+  color: var(--color-warning);
 }
 
 .results-subtitle {
   margin: 0;
   font-size: 16px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
 
@@ -60,14 +60,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  background: #f9fafb;
+  background: var(--color-bg);
   border-radius: 8px;
   margin-bottom: 24px;
 }
 
 .stat-label {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -76,7 +76,7 @@
 .stat-value {
   font-size: 24px;
   font-weight: 700;
-  color: #6366f1;
+  color: var(--color-accent);
 }
 
 .results-boxes {
@@ -87,17 +87,17 @@
 }
 
 .results-box {
-  background: #f9fafb;
+  background: var(--color-bg);
   border-radius: 8px;
   padding: 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
 }
 
 .results-box h4 {
   margin: 0 0 12px 0;
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -109,29 +109,49 @@
 }
 
 .number-badge {
-  background: white;
-  border: 2px solid #e5e7eb;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
   border-radius: 6px;
   padding: 6px 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-align: center;
   min-width: 35px;
 }
 
 .number-badge.match {
-  background: #10b981;
-  color: white;
-  border-color: #059669;
+  background: var(--color-success-vivid);
+  color: var(--color-bg-card);
+  border-color: var(--color-success-dark);
   font-weight: 700;
 }
 
 .number-badge.winning {
-  background: #6366f1;
-  color: white;
-  border-color: #4f46e5;
+  background: var(--color-primary);
+  color: var(--color-bg-card);
+  border-color: var(--color-primary-hover);
   font-weight: 700;
+}
+
+.number-badge.bonus {
+  border-color: var(--color-accent);
+}
+
+.number-badge.bonus.match {
+  background: var(--color-accent);
+  color: var(--color-bg-card);
+  border-color: var(--color-accent);
+}
+
+.number-badge.bonus.winning {
+  background: var(--color-accent);
+  color: var(--color-bg-card);
+  border-color: var(--color-accent);
+}
+
+.bonus-results {
+  margin-top: 0;
 }
 
 .results-stats {
@@ -140,7 +160,7 @@
   gap: 12px;
   margin-top: 24px;
   padding-top: 24px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-border);
 }
 
 .stat {
@@ -151,7 +171,7 @@
 .stat .label {
   display: block;
   font-size: 12px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -162,19 +182,19 @@
   display: block;
   font-size: 18px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .results-footer {
-  background: #f9fafb;
+  background: var(--color-bg);
   padding: 24px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-border);
 }
 
 .fact {
   margin: 0;
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   line-height: 1.6;
   font-style: italic;
 }

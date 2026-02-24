@@ -8,6 +8,7 @@ import { useSessionStore } from './store/useSessionStore'
 const HomePage = lazy(() => import('./pages/HomePage'))
 const GamesPage = lazy(() => import('./pages/GamesPage'))
 const GamePlayPage = lazy(() => import('./pages/GamePlayPage'))
+const CreateGamePage = lazy(() => import('./pages/CreateGamePage'))
 const StatsPage = lazy(() => import('./pages/StatsPage'))
 const StatisticsDetailPage = lazy(() => import('./pages/StatisticsDetailPage'))
 const LearnPage = lazy(() => import('./pages/LearnPage'))
@@ -30,6 +31,7 @@ function App() {
             <Route element={<Layout />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/games" element={<GamesPage />} />
+              <Route path="/games/create" element={<CreateGamePage />} />
               <Route path="/games/:id" element={<GamePlayPage />} />
               <Route path="/stats" element={<StatsPage />} />
               <Route path="/stats/:id" element={<StatisticsDetailPage />} />

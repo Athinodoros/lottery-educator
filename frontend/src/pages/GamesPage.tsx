@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useGamesStore } from '../store/gamesStore'
 import { useSessionStore } from '../store/useSessionStore'
 import GameCard from '../components/GameCard'
@@ -17,8 +18,15 @@ function GamesPage() {
   return (
     <div className="games-page">
       <header className="games-header">
-        <h1>Games</h1>
-        <p>Select a lottery game to play and learn the odds.</p>
+        <div className="games-header-top">
+          <div>
+            <h1>Games</h1>
+            <p>Select a lottery game to play and learn the odds.</p>
+          </div>
+          <Link to="/games/create" className="create-game-link">
+            + Create a Game
+          </Link>
+        </div>
       </header>
 
       {error && (

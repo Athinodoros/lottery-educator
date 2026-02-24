@@ -6,7 +6,10 @@ export interface Game {
   description: string;
   number_range: number[];
   numbers_to_select: number;
-  extra_numbers?: number;
+  bonus_number_range?: number[] | null;
+  bonus_numbers_to_select?: number | null;
+  is_approved?: boolean;
+  created_by?: string;
   probability_of_winning?: number;
   created_at: string;
   updated_at?: string;
@@ -17,6 +20,9 @@ export interface GameResult {
   game_id: string;
   selected_numbers: number[];
   winning_numbers: number[];
+  selected_extra?: number[];
+  winning_extra?: number[];
+  matched_bonus?: number;
   draws_to_win: number;
   is_winner: boolean;
   played_at: string;
