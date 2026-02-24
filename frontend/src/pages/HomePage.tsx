@@ -1,0 +1,45 @@
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { useSessionStore } from '../store/useSessionStore'
+import './HomePage.css'
+
+function HomePage() {
+  const recordPageView = useSessionStore((state) => state.recordPageView)
+
+  useEffect(() => {
+    recordPageView('home')
+  }, [recordPageView])
+
+  return (
+    <div className="home-page">
+      <div className="hero">
+        <h1>Lottery Educator</h1>
+        <p className="subtitle">Learn the true odds behind lottery games</p>
+        <p className="description">
+          Discover why lottery tickets are a statistical impossibility and understand
+          the mathematics behind game probability.
+        </p>
+        <Link to="/games" className="cta-button">
+          Play Games & Learn
+        </Link>
+      </div>
+
+      <div className="features">
+        <div className="feature-card">
+          <h3>🎰 Interactive Games</h3>
+          <p>Simulate thousands of lottery draws to understand how long it really takes to win.</p>
+        </div>
+        <div className="feature-card">
+          <h3>📊 Real Statistics</h3>
+          <p>See the true odds and probabilities behind popular lottery games worldwide.</p>
+        </div>
+        <div className="feature-card">
+          <h3>💡 Financial Education</h3>
+          <p>Learn why understanding probability is crucial for personal finance decisions.</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default HomePage

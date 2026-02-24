@@ -50,8 +50,7 @@ CREATE TABLE IF NOT EXISTS click_metrics (
   user_session_id UUID, -- Anonymous session ID (from browser storage)
   click_count INTEGER DEFAULT 1,
   created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE(link_id, user_session_id, DATE(created_at)) -- Prevent duplicate daily counts
+  updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Indexes for performance
@@ -78,7 +77,6 @@ SELECT
   MAX(gr.created_at) as last_play_at
 FROM game_results gr
 JOIN games g ON gr.game_id = g.id
-WHERE gr.is_deleted IS FALSE OR gr.is_deleted IS NULL
 GROUP BY gr.game_id, g.name;
 
 -- View for click metrics summary
@@ -90,7 +88,6 @@ SELECT
   ROUND(AVG(click_count), 2) as avg_clicks_per_session,
   MAX(updated_at) as last_click_at
 FROM click_metrics
-WHERE deleted_at IS NULL
 GROUP BY link_id;
 
 -- Update timestamps trigger

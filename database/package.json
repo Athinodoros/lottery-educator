@@ -1,0 +1,19 @@
+{
+  "name": "lottery-educator-db",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Knex migrations and seeds for the Lottery Educator database",
+  "scripts": {
+    "migrate": "knex migrate:latest",
+    "migrate:rollback": "knex migrate:rollback",
+    "migrate:status": "knex migrate:status",
+    "seed": "knex seed:run",
+    "setup": "npm run migrate && npm run seed",
+    "new-migration": "node scripts/new-migration.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "knex": "^3.1.0",
+    "pg": "^8.13.0"
+  }
+}

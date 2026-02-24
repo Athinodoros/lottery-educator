@@ -4,43 +4,61 @@ export interface Game {
   id: string;
   name: string;
   description: string;
-  numberRange: number[];
-  numbersToSelect: number;
-  extraNumbers?: number;
-  createdAt: string;
+  number_range: number[];
+  numbers_to_select: number;
+  extra_numbers?: number;
+  probability_of_winning?: number;
+  created_at: string;
+  updated_at?: string;
 }
 
 export interface GameResult {
   id: string;
-  gameId: string;
-  selectedNumbers: number[];
-  winningNumbers: number[];
-  drawsToWin: number;
-  playedAt: string;
+  game_id: string;
+  selected_numbers: number[];
+  winning_numbers: number[];
+  draws_to_win: number;
+  is_winner: boolean;
+  played_at: string;
+  created_at: string;
 }
 
 export interface Statistics {
-  gameId: string;
-  averageDraws: number;
-  totalPlays: number;
-  winRate: number;
-  oddsProbability: number;
+  game_id: string;
+  name: string;
+  total_plays: number;
+  total_wins: number;
+  avg_draws_to_win: number;
+  max_draws_to_win?: number;
+  min_draws_to_win?: number;
+  win_rate_percent: number;
+  last_play_at?: string;
+}
+
+export interface StatisticsExample {
+  game_id: string;
+  description: string;
+  example: string;
 }
 
 export interface Email {
   id: string;
-  senderEmail: string;
+  sender_email: string;
   subject: string;
   body: string;
-  createdAt: string;
-  isDeleted: boolean;
+  created_at: string;
+  is_deleted: boolean;
+  deleted_at?: string;
+  deleted_reason?: string;
 }
 
 export interface ClickMetric {
   id: string;
-  linkId: string;
-  userSessionId: string;
-  createdAt: string;
+  link_id: string;
+  user_session_id: string;
+  click_count: number;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface ApiResponse<T> {

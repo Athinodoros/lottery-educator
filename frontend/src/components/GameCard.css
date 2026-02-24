@@ -1,0 +1,132 @@
+.game-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.game-card:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.game-card-header {
+  margin-bottom: 12px;
+}
+
+.game-card-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.game-card-description {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.game-card-info {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.info-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.game-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.play-button,
+.stats-button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.play-button {
+  background: #6366f1;
+  color: white;
+}
+
+.play-button:hover {
+  background: #4f46e5;
+}
+
+.stats-button {
+  background: #f0f4f8;
+  color: #6366f1;
+  border: 1px solid #e0e7ff;
+}
+
+.stats-button:hover {
+  background: #e0e7ff;
+  border-color: #6366f1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .game-card {
+    padding: 16px;
+  }
+
+  .game-card-header h3 {
+    font-size: 18px;
+  }
+
+  .game-card-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-item {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-label {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 16px;
+  }
+}

@@ -54,13 +54,13 @@
 
 **Task Scope**:
 1. Create Dockerfile for backend services (Node.js)
-2. Create Dockerfile for frontend (React Native web & build)
+2. Create Dockerfile for frontend (React web build and serve)
 3. Create docker-compose.yml with all services
 4. Configure volumes for hot reload
 5. Create DevOps directory README.md
 
 **RALF Loop**:
-- **Retrieval**: Docker best practices, Node.js container patterns, React Native builds
+- **Retrieval**: Docker best practices, Node.js container patterns, React web builds
 - **Analysis**: Dev vs prod Dockerfile differences
 - **Logical Reasoning**: Single compose file, environment variables for service discovery
 - **Feedback**: `docker-compose up` starts entire stack
@@ -300,31 +300,31 @@
 - **Responsibility**: Build navigation and overall app structure
 - **Phase**: Phase 2
 - **Depends On**: P0-003, P1-002
-- **Skills Needed**: Frontend TypeScript, React Navigation
+- **Skills Needed**: Frontend TypeScript, React Router
 
 **Task Scope**:
-1. Create screen navigation hierarchy
-2. Implement bottom tab navigator (Home, Games, Motivation, Admin)
-3. Create reusable Header component
+1. Create page routing hierarchy with React Router
+2. Implement navigation bar (Home, Games, Statistics, Learn, Admin)
+3. Create reusable Header and Layout components
 4. Set up navigation state management
-5. Create screens/ directory README.md
+5. Create pages/ directory README.md
 
 **RALF Loop**:
-- **Retrieval**: React Navigation documentation, mobile patterns
-- **Analysis**: Screen hierarchy and transitions
-- **Logical Reasoning**: Tabbed navigation for main screens, nested stack for game types
-- **Feedback**: Navigate smoothly between screens, state persists
+- **Retrieval**: React Router documentation, SPA patterns
+- **Analysis**: Page hierarchy and route structure
+- **Logical Reasoning**: Client-side routing for smooth navigation, nested routes for game pages
+- **Feedback**: Navigate smoothly between pages, URL reflects current page
 
 **Testing**:
-- Navigation flow tests
-- Screen render tests
+- Routing flow tests
+- Page render tests
 - State management tests
 
 **Logging & Metrics**:
-- Screen transitions logged
-- Navigation timing
+- Page navigation logged via analytics
+- Route timing
 
-**Acceptance Criteria**: All screens accessible, smooth navigation, state managed
+**Acceptance Criteria**: All pages accessible, smooth navigation, URL updates correctly
 
 ---
 

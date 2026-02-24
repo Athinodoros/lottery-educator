@@ -19,7 +19,17 @@ export const gameApi = {
     const response = await apiClient.post(`/games/${gameId}/play`, {
       selectedNumbers,
     });
-    return response.data;
+    const d = response.data;
+    return {
+      id: d.id,
+      game_id: gameId,
+      selected_numbers: selectedNumbers,
+      winning_numbers: d.winningNumbers,
+      draws_to_win: d.drawsToWin,
+      is_winner: d.isWinner,
+      played_at: new Date().toISOString(),
+      created_at: new Date().toISOString(),
+    };
   },
 
   // Get game statistics

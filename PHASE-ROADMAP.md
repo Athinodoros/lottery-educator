@@ -2,7 +2,7 @@
 
 **Project Timeline**: Feb 22, 2026 - Mar 31, 2026 (5-6 weeks)
 **Team**: Solo developer + LLM guidance
-**Architecture**: React Native (TypeScript) + Node.js Microservices + PostgreSQL
+**Architecture**: React TypeScript (Web) + Node.js Microservices + PostgreSQL
 
 ---
 
@@ -62,27 +62,27 @@
 
 ---
 
-#### P0-003: Frontend (React Native) Scaffolding
-- **Responsibility**: Create React Native app with TypeScript
+#### P0-003: Frontend (React) Scaffolding
+- **Responsibility**: Create React web app with TypeScript
 - **Depends On**: P0-001
 - **Skills Needed**: Frontend TypeScript
 - **Scope**:
-  1. Initialize React Native project with Expo or bare workflow
+  1. Initialize React project with Vite or Create React App
   2. Set up TypeScript configuration
-  3. Create folder structure for screens, components, hooks, utils
-  4. Set up state management (Redux/Context choice)
-  5. Create frontend README.md with navigation structure
+  3. Create folder structure for pages, components, hooks, utils
+  4. Set up state management (Zustand/Context)
+  5. Create frontend README.md with routing structure
 
 **RALF Loop**:
-- **Retrieval**: React Native setup guides, state management patterns, navigation libraries
-- **Analysis**: Best approach for web + mobile code sharing with React Native
-- **Logical Reasoning**: Expo for rapid development, shared code between web and native
-- **Feedback**: Run app on web and mobile emulator, verify navigation works
+- **Retrieval**: React setup guides, state management patterns, routing libraries
+- **Analysis**: Best approach for modern React web development
+- **Logical Reasoning**: Vite for rapid development and optimized builds, TypeScript for type safety
+- **Feedback**: Run app in browser, verify routing and components work
 
 **Quality & Integration**:
 - **Testing**: Manual UI smoke test
 - **Logging & Metrics**: Console logging setup
-- **Acceptance Criteria**: App runs on web and mobile, basic navigation works
+- **Acceptance Criteria**: App runs in browser, basic navigation works, components render
 
 ---
 
@@ -122,7 +122,7 @@
   5. Create DevOps README.md with startup instructions
 
 **RALF Loop**:
-- **Retrieval**: Docker best practices, Node.js container patterns, React-Native containers
+- **Retrieval**: Docker best practices, Node.js container patterns, React web containers
 - **Analysis**: Determining dev vs prod Dockerfile configurations
 - **Logical Reasoning**: Single compose file for all services, environment variables for service config
 - **Feedback**: `docker-compose up` starts all services, services can communicate

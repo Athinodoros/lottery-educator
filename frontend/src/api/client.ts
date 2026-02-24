@@ -1,6 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 
-const API_URL = process.env.EXPO_PUBLIC_API_URL || 'http://localhost:3000/api';
+// Use Vite's import.meta.env for environment variables
+// API calls to /api are proxied to http://localhost:3000 by Vite
+// @ts-ignore - import.meta.env is available in Vite
+const API_URL = (import.meta.env.VITE_API_URL) || '/api';
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_URL,
