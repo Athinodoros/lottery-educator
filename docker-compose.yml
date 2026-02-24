@@ -151,6 +151,19 @@ services:
     networks:
       - lottery-network
 
+  # Frontend (React + Nginx)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lottery-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - api-gateway
+    networks:
+      - lottery-network
+
   # Prometheus - Metrics collection
   prometheus:
     image: prom/prometheus:v2.48.0

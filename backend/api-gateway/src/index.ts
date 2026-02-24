@@ -2,6 +2,8 @@ import express, { Express, Request, Response, NextFunction } from 'express';
 import crypto from 'crypto';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 import logger from './logger';
 import {
   register,
@@ -35,6 +37,40 @@ const TOKEN_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 // Middleware
 app.use(express.json());
+
+// Security headers
+app.use(helmet({
+  contentSecurityPolicy: false, // Handled by nginx in production
+  crossOriginEmbedderPolicy: false, // Allow cross-origin API calls
+}));
+
+// Global rate limit: 200 requests per minute per IP
+const globalLimiter = rateLimit({
+  windowMs: 60 * 1000,
+  max: 200,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later' },
+});
+app.use(globalLimiter);
+
+// Strict rate limit for email submissions: 5 per hour per IP
+const emailLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000,
+  max: 5,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many messages sent. Please try again later.' },
+});
+
+// Strict rate limit for admin login: 10 attempts per 15 minutes per IP
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many login attempts. Please try again later.' },
+});
 
 // CORS middleware
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -194,6 +230,9 @@ app.use('/stats', (req: Request, res: Response) => {
 });
 
 // Routes: Email Service (port 3003)
+app.post('/emails', emailLimiter, (req: Request, res: Response) => {
+  proxyRequest(req, res, EMAIL_SERVICE_URL);
+});
 app.use('/emails', (req: Request, res: Response) => {
   proxyRequest(req, res, EMAIL_SERVICE_URL);
 });
@@ -240,7 +279,7 @@ function requireAdmin(req: Request, res: Response, next: NextFunction) {
 }
 
 // Admin login
-app.post('/admin/login', (req: Request, res: Response) => {
+app.post('/admin/login', loginLimiter, (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {

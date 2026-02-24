@@ -1,0 +1,7 @@
+node_modules
+dist
+coverage
+cypress
+.env
+.env.local
+*.md
