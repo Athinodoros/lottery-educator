@@ -31,7 +31,7 @@ jobs:
             backend/metrics-service/package-lock.json
 
       - name: Install frontend dependencies
-        run: cd frontend && npm ci
+        run: cd frontend && npm install
 
       - name: Lint frontend
         run: cd frontend && npx eslint src/ --ext .ts,.tsx --max-warnings 0
@@ -40,7 +40,7 @@ jobs:
         run: |
           for service in api-gateway game-engine statistics email-service metrics-service; do
             echo "::group::Linting backend/$service"
-            cd backend/$service && npm ci && npx eslint src --ext .ts
+            cd backend/$service && npm install && npx eslint src --ext .ts
             cd ../..
             echo "::endgroup::"
           done
@@ -66,13 +66,13 @@ jobs:
             backend/metrics-service/package-lock.json
 
       - name: Type check frontend
-        run: cd frontend && npm ci && npx tsc --noEmit
+        run: cd frontend && npm install && npx tsc --noEmit
 
       - name: Type check backend services
         run: |
           for service in api-gateway game-engine statistics email-service metrics-service; do
             echo "::group::Type checking backend/$service"
-            cd backend/$service && npm ci && npx tsc --noEmit
+            cd backend/$service && npm install && npx tsc --noEmit
             cd ../..
             echo "::endgroup::"
           done
@@ -95,7 +95,7 @@ jobs:
           cache-dependency-path: backend/${{ matrix.service }}/package-lock.json
 
       - name: Install dependencies
-        run: cd backend/${{ matrix.service }} && npm ci
+        run: cd backend/${{ matrix.service }} && npm install
 
       - name: Run tests
         run: cd backend/${{ matrix.service }} && npx jest --forceExit --coverage --coverageReporters=text --coverageReporters=lcov
@@ -126,7 +126,7 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
-        run: cd frontend && npm ci
+        run: cd frontend && npm install
 
       - name: Run tests
         run: cd frontend && npx vitest --run --coverage
@@ -201,13 +201,13 @@ jobs:
         run: |
           for service in api-gateway game-engine statistics email-service metrics-service; do
             echo "::group::Building backend/$service"
-            cd backend/$service && npm ci && npx tsc
+            cd backend/$service && npm install && npx tsc
             cd ../..
             echo "::endgroup::"
           done
 
       - name: Build frontend
-        run: cd frontend && npm ci && npx vite build
+        run: cd frontend && npm install && npx vite build
 
       - name: Upload frontend build
         uses: actions/upload-artifact@v4
@@ -240,7 +240,7 @@ jobs:
             cypress-${{ runner.os }}-
 
       - name: Install dependencies
-        run: cd frontend && npm ci
+        run: cd frontend && npm install
 
       - name: Run Cypress E2E tests
         uses: cypress-io/github-action@v6
