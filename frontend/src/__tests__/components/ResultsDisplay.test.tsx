@@ -46,7 +46,7 @@ describe('ResultsDisplay Component', () => {
     it('should display draws to win', () => {
       render(<ResultsDisplay result={loserResult} />)
       // draws_to_win appears in stat-value span and in the footer text — use getAllByText
-      const matches = screen.getAllByText(/8500000/)
+      const matches = screen.getAllByText(/8\.500\.000|8,500,000|8500000/)
       expect(matches.length).toBeGreaterThan(0)
     })
 
