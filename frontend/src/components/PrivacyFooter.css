@@ -1,0 +1,85 @@
+.privacy-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.privacy-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.privacy-text {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.privacy-delete-btn {
+  font-size: 12px;
+  color: #6b7280;
+  background: none;
+  border: 1px solid #d1d5db;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.privacy-delete-btn:hover {
+  color: #dc2626;
+  border-color: #dc2626;
+}
+
+.privacy-confirm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.confirm-yes {
+  font-size: 12px;
+  color: white;
+  background: #dc2626;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-yes:hover {
+  background: #b91c1c;
+}
+
+.confirm-no {
+  font-size: 12px;
+  color: #6b7280;
+  background: none;
+  border: 1px solid #d1d5db;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirm-no:hover {
+  background: #f3f4f6;
+}
+
+.privacy-confirmed {
+  font-size: 12px;
+  color: #16a34a;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .privacy-footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,5 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
 import { Home, Gamepad2, BarChart3, Heart, Mail, Settings } from 'lucide-react'
+import PrivacyFooter from '../components/PrivacyFooter'
 import './Layout.css'
 
 function Layout() {
@@ -22,6 +23,7 @@ function Layout() {
 
       <main id="main-content" className="content">
         <Outlet />
+        <PrivacyFooter />
       </main>
 
       <nav className="nav-bar" aria-label="Main navigation">

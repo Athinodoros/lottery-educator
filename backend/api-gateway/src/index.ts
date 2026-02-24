@@ -238,6 +238,10 @@ app.use('/emails', (req: Request, res: Response) => {
 });
 
 // Routes: Metrics Service (port 3004)
+// Session deletion must be routed before the generic catch-all
+app.delete('/metrics/session/:sessionId', (req: Request, res: Response) => {
+  proxyRequest(req, res, METRICS_SERVICE_URL);
+});
 app.use('/metrics', (req: Request, res: Response) => {
   proxyRequest(req, res, METRICS_SERVICE_URL);
 });

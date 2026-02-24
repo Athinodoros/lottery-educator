@@ -1,7 +1,7 @@
 import express, { Express, Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { healthCheck } from './database';
-import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics } from './metricsService';
+import { trackClick, getLinkMetrics, getAllMetrics, getRecentClicks, getPageMetrics, deleteSessionMetrics } from './metricsService';
 import logger from './logger';
 
 dotenv.config();
@@ -128,6 +128,24 @@ app.get('/metrics/page', async (req: Request, res: Response) => {
   } catch (error: any) {
     logger.error('Error fetching page metrics', { error: error.message, stack: error.stack });
     res.status(500).json({ error: 'Failed to fetch page metrics', message: error.message });
+  }
+});
+
+// GDPR: Delete all metrics for a session ("Forget Me")
+app.delete('/metrics/session/:sessionId', async (req: Request, res: Response) => {
+  try {
+    const { sessionId } = req.params;
+
+    if (!sessionId) {
+      return res.status(400).json({ error: 'Session ID is required' });
+    }
+
+    const deletedCount = await deleteSessionMetrics(sessionId);
+    logger.info('Session data deleted (GDPR)', { sessionId, deletedCount });
+    res.json({ message: 'Session data deleted', deleted: deletedCount });
+  } catch (error: any) {
+    logger.error('Error deleting session data', { error: error.message, stack: error.stack });
+    res.status(500).json({ error: 'Failed to delete session data', message: error.message });
   }
 });
 

@@ -95,6 +95,17 @@ export async function getRecentClicks(linkId: string, limit: number = 100): Prom
 }
 
 /**
+ * Delete all metrics for a given session (GDPR "Forget Me")
+ */
+export async function deleteSessionMetrics(sessionId: string): Promise<number> {
+  const result = await query(
+    `DELETE FROM click_metrics WHERE session_id = $1`,
+    [sessionId]
+  );
+  return result.rowCount || 0;
+}
+
+/**
  * Get page-level metrics (all clicks on a page)
  */
 export async function getPageMetrics(pagePath: string): Promise<any> {
