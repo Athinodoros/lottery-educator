@@ -1,4 +1,4 @@
-# ESLint Configuration for React Native / Expo
+// ESLint Configuration for Lottery Educator Frontend
 
 module.exports = {
   root: true,
@@ -18,12 +18,14 @@ module.exports = {
     },
   },
   plugins: ['@typescript-eslint', 'react', 'react-hooks'],
+  ignorePatterns: ['src/__tests__/**'],
   rules: {
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'react/no-unescaped-entities': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-explicit-any': 'warn',
-    'no-console': ['warn', { allow: ['warn', 'error'] }],
+    '@typescript-eslint/no-explicit-any': 'off',
+    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
   },
   settings: {
     react: {

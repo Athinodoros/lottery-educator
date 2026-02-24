@@ -47,7 +47,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       const sessionId = initializeSession();
       const userSession = getSessionInfo();
       set({ sessionId, userSession, isInitialized: true });
-      console.log('Session initialized:', sessionId);
+      console.info('Session initialized:', sessionId);
     } catch (error) {
       console.error('Error initializing session:', error);
       set({ isInitialized: true });
@@ -69,7 +69,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
       
       // Send to backend if you want
       if (page) {
-        console.log(`Tracked action: ${linkId} on page: ${page}`);
+        console.info(`Tracked action: ${linkId} on page: ${page}`);
       }
     } catch (error) {
       console.error('Error tracking action:', error);
@@ -81,7 +81,7 @@ export const useAppStore = create<AppStore>((set, get) => ({
     try {
       forgetMe();
       set({ sessionId: null, userSession: null });
-      console.log('User data deletion initiated');
+      console.info('User data deletion initiated');
     } catch (error) {
       console.error('Error deleting user data:', error);
     }

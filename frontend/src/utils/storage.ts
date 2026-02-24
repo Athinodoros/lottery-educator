@@ -77,7 +77,7 @@ export const trackInteraction = (linkId: string): void => {
     const now = new Date().toISOString();
     localStorage.setItem(STORAGE_KEYS.LAST_PLAYED, now);
 
-    console.log(`Tracked interaction: ${linkId} (count: ${count + 1})`);
+    console.info(`Tracked interaction: ${linkId} (count: ${count + 1})`);
   } catch (error) {
     console.error('Error tracking interaction:', error);
   }
@@ -132,7 +132,7 @@ export const forgetMe = (): void => {
     localStorage.setItem(STORAGE_KEYS.DELETED_AT, now);
     localStorage.setItem(`@lottery_educator/deleted_at_${sessionId}`, now);
 
-    console.log('User data marked for deletion (GDPR Forget Me)');
+    console.info('User data marked for deletion (GDPR Forget Me)');
   } catch (error) {
     console.error('Error executing Forget Me:', error);
   }
@@ -202,7 +202,7 @@ export const clearAllUserData = (): void => {
       localStorage.removeItem(key);
     });
 
-    console.log('All user data cleared');
+    console.info('All user data cleared');
   } catch (error) {
     console.error('Error clearing user data:', error);
   }

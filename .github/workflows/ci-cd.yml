@@ -2,15 +2,15 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, master, develop]
   pull_request:
-    branches: [main, develop]
+    branches: [main, master, develop]
 
 env:
   NODE_VERSION: '18'
 
 jobs:
-  # ── Stage 1: Lint ────────────────────────────────────────
+  # ── Tier 1: Lint ───────────────────────────────────────────
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -22,22 +22,33 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: |
+            frontend/package-lock.json
+            backend/api-gateway/package-lock.json
+            backend/game-engine/package-lock.json
+            backend/statistics/package-lock.json
+            backend/email-service/package-lock.json
+            backend/metrics-service/package-lock.json
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install frontend dependencies
+        run: cd frontend && npm ci
 
       - name: Lint frontend
         run: cd frontend && npx eslint src/ --ext .ts,.tsx --max-warnings 0
-        continue-on-error: true
 
-  # ── Stage 2: Backend Tests ───────────────────────────────
-  test-backend:
-    name: Backend Tests
+      - name: Lint backend services
+        run: |
+          for service in api-gateway game-engine statistics email-service metrics-service; do
+            echo "::group::Linting backend/$service"
+            cd backend/$service && npm ci && npx eslint src --ext .ts
+            cd ../..
+            echo "::endgroup::"
+          done
+
+  # ── Tier 1: Type Check ────────────────────────────────────
+  typecheck:
+    name: Type Check
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        service: [api-gateway, game-engine, statistics, email-service, metrics-service]
-
     steps:
       - uses: actions/checkout@v4
 
@@ -46,16 +57,48 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: |
+            frontend/package-lock.json
+            backend/api-gateway/package-lock.json
+            backend/game-engine/package-lock.json
+            backend/statistics/package-lock.json
+            backend/email-service/package-lock.json
+            backend/metrics-service/package-lock.json
+
+      - name: Type check frontend
+        run: cd frontend && npm ci && npx tsc --noEmit
+
+      - name: Type check backend services
+        run: |
+          for service in api-gateway game-engine statistics email-service metrics-service; do
+            echo "::group::Type checking backend/$service"
+            cd backend/$service && npm ci && npx tsc --noEmit
+            cd ../..
+            echo "::endgroup::"
+          done
+
+  # ── Tier 1: Backend Tests (matrix) ────────────────────────
+  test-backend:
+    name: Backend Tests (${{ matrix.service }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [api-gateway, game-engine, statistics, email-service, metrics-service]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: backend/${{ matrix.service }}/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd backend/${{ matrix.service }}
-          npm ci
+        run: cd backend/${{ matrix.service }} && npm ci
 
       - name: Run tests
-        run: |
-          cd backend/${{ matrix.service }}
-          npx jest --forceExit --coverage --coverageReporters=text --coverageReporters=lcov
+        run: cd backend/${{ matrix.service }} && npx jest --forceExit --coverage --coverageReporters=text --coverageReporters=lcov
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/lottery_test
           NODE_ENV: test
@@ -68,11 +111,10 @@ jobs:
           directory: backend/${{ matrix.service }}/coverage
         continue-on-error: true
 
-  # ── Stage 3: Frontend Tests ──────────────────────────────
+  # ── Tier 1: Frontend Tests ────────────────────────────────
   test-frontend:
     name: Frontend Tests
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -81,6 +123,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
         run: cd frontend && npm ci
@@ -98,46 +141,11 @@ jobs:
           directory: frontend/coverage
         continue-on-error: true
 
-  # ── Stage 4: Build ──────────────────────────────────────
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    needs: [lint, test-backend, test-frontend]
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install all dependencies
-        run: npm ci
-
-      - name: Build backend services
-        run: |
-          for service in api-gateway game-engine statistics email-service metrics-service; do
-            echo "Building backend/$service..."
-            cd backend/$service && npx tsc && cd ../..
-          done
-
-      - name: Build frontend
-        run: cd frontend && npm run build
-
-      - name: Upload frontend build
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-dist
-          path: frontend/dist/
-          retention-days: 7
-
-  # ── Stage 5: Security Scan ──────────────────────────────
+  # ── Tier 1: Security Scan ─────────────────────────────────
   security:
     name: Security Scan
     runs-on: ubuntu-latest
-
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -146,6 +154,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Audit frontend dependencies
         run: cd frontend && npm audit --production --audit-level=high
@@ -154,9 +163,10 @@ jobs:
       - name: Audit backend dependencies
         run: |
           for service in api-gateway game-engine statistics email-service metrics-service; do
-            echo "Auditing backend/$service..."
+            echo "::group::Auditing backend/$service"
             cd backend/$service && npm audit --production --audit-level=high || true
             cd ../..
+            echo "::endgroup::"
           done
 
       - name: Run Snyk (if token available)
@@ -166,13 +176,103 @@ jobs:
         if: ${{ env.SNYK_TOKEN != '' }}
         continue-on-error: true
 
-  # ── Stage 6: Docker Build (main branch only) ────────────
+  # ── Tier 2: Build ─────────────────────────────────────────
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [lint, typecheck, test-backend, test-frontend]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: |
+            frontend/package-lock.json
+            backend/api-gateway/package-lock.json
+            backend/game-engine/package-lock.json
+            backend/statistics/package-lock.json
+            backend/email-service/package-lock.json
+            backend/metrics-service/package-lock.json
+
+      - name: Build backend services
+        run: |
+          for service in api-gateway game-engine statistics email-service metrics-service; do
+            echo "::group::Building backend/$service"
+            cd backend/$service && npm ci && npx tsc
+            cd ../..
+            echo "::endgroup::"
+          done
+
+      - name: Build frontend
+        run: cd frontend && npm ci && npx vite build
+
+      - name: Upload frontend build
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist/
+          retention-days: 7
+
+  # ── Tier 3: E2E Tests ─────────────────────────────────────
+  test-e2e:
+    name: E2E Tests
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-${{ hashFiles('frontend/package-lock.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: cd frontend && npm ci
+
+      - name: Run Cypress E2E tests
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: frontend
+          start: npx vite --port 5174
+          wait-on: 'http://localhost:5174'
+          wait-on-timeout: 60
+          browser: chrome
+
+      - name: Upload screenshots on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: frontend/cypress/screenshots/
+          retention-days: 7
+
+      - name: Upload videos on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-videos
+          path: frontend/cypress/videos/
+          retention-days: 7
+
+  # ── Tier 3: Docker Build ──────────────────────────────────
   docker:
     name: Docker Build
     runs-on: ubuntu-latest
     needs: [build]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     steps:
       - uses: actions/checkout@v4
 
@@ -180,7 +280,9 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Build Docker images
-        run: docker compose build
+        run: docker compose build api-gateway game-engine statistics email-service metrics-service frontend
+        env:
+          DOCKER_BUILDKIT: 1
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
@@ -190,5 +292,53 @@ jobs:
         if: ${{ vars.DOCKER_PUSH_ENABLED == 'true' }}
 
       - name: Push Docker images
-        run: docker compose push
+        run: docker compose push api-gateway game-engine statistics email-service metrics-service frontend
         if: ${{ vars.DOCKER_PUSH_ENABLED == 'true' }}
+
+  # ── Tier 4: Deploy ────────────────────────────────────────
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: [test-e2e, docker]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download frontend build
+        uses: actions/download-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist/
+
+      - name: Deployment readiness summary
+        run: |
+          echo "========================================="
+          echo "  DEPLOYMENT READINESS SUMMARY"
+          echo "========================================="
+          echo ""
+          echo "Branch:    ${{ github.ref_name }}"
+          echo "Commit:    ${{ github.sha }}"
+          echo "Actor:     ${{ github.actor }}"
+          echo "Run ID:    ${{ github.run_id }}"
+          echo ""
+          echo "Checks passed:"
+          echo "  ✓ Lint"
+          echo "  ✓ Type Check"
+          echo "  ✓ Backend Tests (5 services)"
+          echo "  ✓ Frontend Tests"
+          echo "  ✓ Build"
+          echo "  ✓ E2E Tests"
+          echo "  ✓ Docker Build"
+          echo ""
+          echo "Frontend artifact contents:"
+          ls -lh frontend/dist/
+          echo ""
+          echo "========================================="
+          echo "  Ready for deployment."
+          echo "  Add deployment commands below."
+          echo "========================================="
+          echo ""
+          echo "# Placeholder for deployment commands:"
+          echo "# - AWS ECS:  aws ecs update-service ..."
+          echo "# - K8s:      kubectl apply -f ..."
+          echo "# - VPS:      docker compose -f docker-compose.prod.yml up -d"

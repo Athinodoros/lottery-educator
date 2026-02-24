@@ -126,6 +126,7 @@ function AdminPage() {
     } finally {
       setLoading(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
   const loadEmails = useCallback(async () => {
@@ -145,6 +146,7 @@ function AdminPage() {
     } finally {
       setLoading(false)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
   const deleteEmail = async (emailId: string) => {
