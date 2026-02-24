@@ -7,7 +7,7 @@ on:
     branches: [main, master, develop]
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: '20'
 
 jobs:
   # ── Tier 1: Lint ───────────────────────────────────────────
