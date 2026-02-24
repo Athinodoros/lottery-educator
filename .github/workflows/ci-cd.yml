@@ -82,6 +82,7 @@ jobs:
     name: Backend Tests (${{ matrix.service }})
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         service: [api-gateway, game-engine, statistics, email-service, metrics-service]
     steps:
