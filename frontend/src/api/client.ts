@@ -13,10 +13,18 @@ const apiClient: AxiosInstance = axios.create({
   },
 });
 
-// Add response interceptor for error handling
+// Add response interceptor for user-friendly error handling
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (!error.response) {
+      // Network error or timeout
+      error.userMessage = 'Unable to connect to the server. Please check your internet connection and try again.';
+    } else if (error.response.status >= 500) {
+      error.userMessage = 'Something went wrong on our end. Please try again later.';
+    } else if (error.response.status === 429) {
+      error.userMessage = 'Too many requests. Please wait a moment and try again.';
+    }
     console.error('API Error:', error.response?.data || error.message);
     return Promise.reject(error);
   }

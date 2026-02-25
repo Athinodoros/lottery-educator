@@ -5,21 +5,21 @@
 
 describe('Error Scenarios', () => {
   it('shows error state when games API fails', () => {
-    cy.intercept('GET', '/games', { statusCode: 503, body: { error: 'Service unavailable' } }).as('getGamesFail')
+    cy.intercept('GET', '**/api/games', { statusCode: 503, body: { error: 'Service unavailable' } }).as('getGamesFail')
     cy.visit('/games')
     cy.wait('@getGamesFail')
     cy.contains('Error').should('be.visible')
   })
 
   it('shows game not found when game ID is invalid', () => {
-    cy.intercept('GET', '/games/invalid-id', { statusCode: 404, body: { error: 'Game not found' } }).as('getGameFail')
+    cy.intercept('GET', '**/api/games/invalid-id', { statusCode: 404, body: { error: 'Game not found' } }).as('getGameFail')
     cy.visit('/games/invalid-id')
     cy.wait('@getGameFail')
     cy.contains('Not Found').should('be.visible')
   })
 
   it('shows error banner when play fails', () => {
-    cy.intercept('GET', '/games/test-game-lotto', {
+    cy.intercept('GET', '**/api/games/test-game-lotto', {
       body: {
         id: 'test-game-lotto',
         name: 'Lotto',
@@ -30,7 +30,7 @@ describe('Error Scenarios', () => {
         created_at: '2026-01-01T00:00:00Z',
       },
     }).as('getGame')
-    cy.intercept('POST', '/games/test-game-lotto/play', {
+    cy.intercept('POST', '**/api/games/test-game-lotto/play', {
       statusCode: 500,
       body: { error: 'Failed to play game', message: 'Internal server error' },
     }).as('playFail')
@@ -46,7 +46,7 @@ describe('Error Scenarios', () => {
   })
 
   it('play button stays disabled with fewer numbers than required', () => {
-    cy.intercept('GET', '/games/test-game-lotto', {
+    cy.intercept('GET', '**/api/games/test-game-lotto', {
       body: {
         id: 'test-game-lotto',
         name: 'Lotto',

@@ -5,8 +5,8 @@
 
 describe('Game Play Flow', () => {
   beforeEach(() => {
-    cy.intercept('GET', '/games', { fixture: 'games.json' }).as('getGames')
-    cy.intercept('GET', '/games/test-game-lotto', {
+    cy.intercept('GET', '**/api/games', { fixture: 'games.json' }).as('getGames')
+    cy.intercept('GET', '**/api/games/test-game-lotto', {
       body: {
         id: 'test-game-lotto',
         name: 'Lotto',
@@ -18,7 +18,7 @@ describe('Game Play Flow', () => {
         created_at: '2026-01-01T00:00:00Z',
       },
     }).as('getGame')
-    cy.intercept('POST', '/games/test-game-lotto/play', {
+    cy.intercept('POST', '**/api/games/test-game-lotto/play', {
       body: {
         id: 'result-abc123',
         winningNumbers: [3, 12, 25, 31, 40, 47],
@@ -78,7 +78,7 @@ describe('Game Play Flow', () => {
     cy.wait('@playGame')
     cy.contains('Draws Required').should('be.visible')
     cy.contains('4').should('be.visible') // part of 4823192
-    cy.contains('Play Again').should('be.visible')
+    cy.contains('Pick New Numbers').should('be.visible')
   })
 
   it('resets state when play again is clicked', () => {
@@ -89,9 +89,9 @@ describe('Game Play Flow', () => {
     })
     cy.contains('Play Game').click()
     cy.wait('@playGame')
-    cy.contains('Play Again').click()
+    cy.contains('Pick New Numbers').click()
     cy.contains('Play Game').should('be.visible')
-    cy.contains('Play Again').should('not.exist')
+    cy.contains('Pick New Numbers').should('not.exist')
   })
 
   it('navigates back to games list', () => {

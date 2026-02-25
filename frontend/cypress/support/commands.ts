@@ -2,7 +2,7 @@
 
 // Wait for the games list to load from the API
 Cypress.Commands.add('waitForGames', () => {
-  cy.intercept('GET', '/games').as('getGames')
+  cy.intercept('GET', '**/api/games').as('getGames')
   cy.visit('/games')
   cy.wait('@getGames')
 })

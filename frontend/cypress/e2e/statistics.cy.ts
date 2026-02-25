@@ -17,8 +17,8 @@ describe('Statistics Flow', () => {
   }
 
   beforeEach(() => {
-    cy.intercept('GET', '/games', { fixture: 'games.json' }).as('getGames')
-    cy.intercept('GET', '/stats/test-game-lotto', { body: mockStats }).as('getStats')
+    cy.intercept('GET', '**/api/games', { fixture: 'games.json' }).as('getGames')
+    cy.intercept('GET', '**/api/stats/test-game-lotto', { body: mockStats }).as('getStats')
   })
 
   it('navigates to stats page from nav', () => {
