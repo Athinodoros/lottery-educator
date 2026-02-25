@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Pradžia",
+    "games": "Žaidimai",
+    "stats": "Statistika",
+    "learn": "Mokytis",
+    "contact": "Kontaktai",
+    "admin": "Administravimas"
+  },
+  "appTitle": "Loterijų švietimas",
+  "skipToContent": "Pereiti prie pagrindinio turinio",
+  "switchToDark": "Perjungti į tamsų režimą",
+  "switchToLight": "Perjungti į šviesų režimą",
+  "openMenu": "Atidaryti meniu",
+  "closeMenu": "Uždaryti meniu",
+  "footer": {
+    "privacyText": "Gerbiame jūsų privatumą. Jokie asmeniniai duomenys nėra renkami.",
+    "dataDeleted": "Jūsų duomenys buvo ištrinti.",
+    "deleteConfirm": "Ištrinti visus jūsų vietinius duomenis?",
+    "confirmYes": "Taip, ištrinti",
+    "confirmCancel": "Atšaukti",
+    "deleteButton": "Ištrinti mano duomenis",
+    "deleteAriaLabel": "Ištrinti mano duomenis"
+  },
+  "consent": {
+    "ariaLabel": "Slapukų sutikimas",
+    "text": "Naudojame anoniminę analitiką, kad pagerintume mokymosi patirtį. Jokie asmeniniai duomenys nėra renkami. Galite bet kada ištrinti savo duomenis.",
+    "accept": "Sutinku",
+    "decline": "Nesutinku"
+  }
+}

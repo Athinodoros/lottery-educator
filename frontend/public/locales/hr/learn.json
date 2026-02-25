@@ -1,0 +1,109 @@
+{
+  "title": "Saznajte o matematici lutrije",
+  "subtitle": "Razumijevanje stvarnih šansi iza lutrijskih igara",
+  "probability": {
+    "title": "Što je vjerojatnost?",
+    "text": "Vjerojatnost je matematička mogućnost da se neki događaj dogodi. Izražava se kao broj između 0 i 1, gdje 0 znači nemoguće, a 1 znači sigurno. Na primjer, vjerojatnost dobivanja glave pri bacanju poštenog novčića je 0,5 (ili 50%), jer postoje dva jednako moguća ishoda.",
+    "exampleTitle": "Primjer: Bacanje kocke",
+    "exampleText": "Kada bacite poštenu kocku sa šest strana:",
+    "exampleItem1": "Postoji 6 mogućih ishoda (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Vjerojatnost dobivanja 3 je 1/6 ≈ 16,67%",
+    "exampleItem3": "Vjerojatnost dobivanja bilo kojeg broja jednako je vjerojatna"
+  },
+  "combinations": {
+    "title": "Kombinacije i permutacije",
+    "text": "Kada izračunavamo lutrijske šanse, moramo razumjeti na koliko se različitih načina mogu odabrati i rasporediti elementi. U većini lutrija redoslijed brojeva nije bitan, pa koristimo <strong>kombinacije</strong>.",
+    "exampleTitle": "Primjer: Odabir 6 od 49",
+    "exampleText": "U tipičnoj lutriji gdje odabirete 6 brojeva od 49:",
+    "exampleItem1": "Broj mogućih kombinacija je otprilike 13,98 milijuna",
+    "exampleItem2": "Vaša šansa za dobitak s jednim listićem je 1 prema 13,98 milijuna",
+    "exampleItem3": "To je šansa za dobitak od 0,0000072%!"
+  },
+  "expectedValue": {
+    "title": "Očekivana vrijednost",
+    "text": "Očekivana vrijednost je prosječan iznos koji očekujete dobiti ili izgubiti po okladi na dugi rok. Za lutrije je očekivana vrijednost uvijek negativna, što znači da u prosjeku gubite novac.",
+    "exampleTitle": "Primjer: Jednostavna lutrija",
+    "exampleText": "Zamislite lutriju gdje:",
+    "exampleItem1": "Cijena listića: 1 $",
+    "exampleItem2": "Vjerojatnost dobitka od 10 $: 10%",
+    "exampleItem3": "Vjerojatnost da ne dobijete ništa: 90%",
+    "exampleItem4": "Očekivana vrijednost = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Dugoročno biste očekivali izaći na nulu, ali stvarne lutrije su još gore!"
+  },
+  "houseFavor": {
+    "title": "Zašto lutrije uvijek idu u korist organizatora",
+    "text": "Stvarne lutrije zadržavaju postotak od prodaje listića (obično 30-50%) prije isplate nagrada. To se naziva „prednost kuće." Evo što to znači:",
+    "exampleTitle": "Primjer: Stvarna lutrijska matematika",
+    "forEvery100": "Za svakih 100 $ od prodaje listića:",
+    "item1": "40-50 $ ide organizatoru lutrije (država, tvrtka itd.)",
+    "item2": "40-50 $ se raspodjeljuje dobitnicima",
+    "item3": "Preostala sredstva idu za potrebe (obrazovanje, infrastrukturu itd.)",
+    "item4": "Rezultat: Igrači dobivaju natrag samo 50-60 centi za svaki potrošeni dolar"
+  },
+  "comparison": {
+    "title": "Lutrija naspram ulaganja: Usporedba na 30 godina",
+    "text": "Što kad biste uložili novac koji biste potrošili na lutrijske listiće? Usporedimo trošenje 20 $ tjedno na lutrijske listiće s ulaganjem istog iznosa.",
+    "lotteryTitle": "Lutrijski listići",
+    "investTitle": "Ulaganje u indeksni fond",
+    "weeklySpend": "Tjedna potrošnja",
+    "weeklyInvest": "Tjedno ulaganje",
+    "totalSpent": "Ukupno potrošeno (30 god.)",
+    "totalInvested": "Ukupno uloženo (30 god.)",
+    "expectedReturn": "Očekivani prinos",
+    "portfolioValue": "Vrijednost portfelja",
+    "netResult": "Neto rezultat",
+    "netGain": "Neto dobitak",
+    "lotteryNote": "Temeljeno na prosječnom omjeru isplate od 50%",
+    "investNote": "Temeljeno na ~7% prosječnog godišnjeg prinosa (povijesni podaci S&P 500)",
+    "takeaway": "<strong>Razlika:</strong> Tijekom 30 godina lutrijski igrač gubi oko 15.600 $, dok ulagač zarađuje oko 70.800 $. To je razlika od 86.400 $ iz istih 20 $ tjedno."
+  },
+  "gamblersFallacy": {
+    "title": "„Kockareva zabluda"",
+    "text": "Mnogi ljudi vjeruju da prošli rezultati utječu na buduće ishode u nezavisnim događajima. To je pogrešno. Svako lutrijsko izvlačenje je nezavisno, a prethodni rezultati ne utječu na buduće.",
+    "exampleTitle": "Česte zablude",
+    "misconception1": "„7 je izvučen prošli tjedan, pa je manje vjerojatan ovaj tjedan"",
+    "reality1": "Svaki broj ima jednaku šansu pri svakom izvlačenju",
+    "misconception2": "„Zaslužujem dobitak nakon toliko gubitaka"",
+    "reality2": "Prošli gubici ne povećavaju vašu šansu za dobitak",
+    "misconception3": "„Ovi brojevi su 'vrući', pa su vjerojatniji"",
+    "reality3": "Često izvlačeni brojevi jednako su vjerojatni kao i rijetki",
+    "misconceptionLabel": "Zabluda:",
+    "realityLabel": "Stvarnost:"
+  },
+  "largeNumbers": {
+    "title": "Zakon velikih brojeva",
+    "text": "Što više igrate, vaši stvarni rezultati više konvergiraju prema teoretskoj vjerojatnosti. Međutim, to ne znači da ćete „na kraju dobiti" – to znači da ćete na kraju izgubiti još više novca!",
+    "exampleTitle": "Što brojevi pokazuju",
+    "item1": "Odigrajte 1 lutrijski listić: Možete dobiti jednom u životu",
+    "item2": "Odigrajte 100 listića: Vaše šanse se poboljšavaju, ali očekivani gubitak je i dalje cijela vaša investicija",
+    "item3": "Odigrajte 1.000 listića: Bliže ste statističkom prosjeku (gubitak ~50-60% potrošenog novca)",
+    "item4": "Što više igrate, vaši gubici se više približavaju matematičkom očekivanju"
+  },
+  "lessons": {
+    "title": "Pametne financijske pouke",
+    "text": "Razumijevanje lutrijske matematike uči nas vrijedne pouke o vjerojatnosti i ekonomskim odlukama:",
+    "riskReward": "Rizik naspram nagrade",
+    "riskRewardText": "Uvijek procjenjujte šanse u odnosu na potencijalnu nagradu. U lutrijama je omjer rizika i nagrade iznimno nepovoljan u usporedbi s drugim ulaganjima.",
+    "statThinking": "Statističko razmišljanje",
+    "statThinkingText": "Donosite odluke na temelju podataka i vjerojatnosti, a ne nade ili praznovjerja. To se odnosi na ulaganja, osiguranja i važne životne odluke.",
+    "longTermPlanning": "Dugoročno planiranje",
+    "longTermPlanningText": "Lutrijski dobici su nepouzdani. Stvaranje bogatstva redovnom štednjom i ulaganjem (čak i malih iznosa) mnogo je pouzdanije od nade u jackpot.",
+    "psychologyLoss": "Psihologija gubitka",
+    "psychologyLossText": "Razumijte kako nas naš mozak navodi na loše odluke. Precjenjujemo male vjerojatnosti i podcjenjujemo gubitke kad su raspoređeni kroz vrijeme."
+  },
+  "cta": {
+    "title": "Uvjerite se sami",
+    "text": "Najbolji način za razumijevanje lutrijskih šansi je osobno iskustvo. Isprobajte naš interaktivni lutrijski simulator i pogledajte koliko izvlačenja je potrebno za pogodak vaših brojeva.",
+    "trySimulator": "Isprobajte simulator",
+    "viewStatistics": "Pogledajte statistike"
+  },
+  "responsible": {
+    "title": "Odgovorno igranje",
+    "text": "Ako ikada osjetite da lutrijska igra postaje problem ili utječe na vaše financijsko zdravlje, molimo potražite pomoć:",
+    "helpline": "Nacionalna linija za pomoć pri problemima s kockanjem: 1-800-522-4700",
+    "ga": "Anonimni kockari:",
+    "ncpg": "NCPG (Vijeće za kompulzivno kockanje):",
+    "remember": "Lutrijski listići trebali bi se koristiti samo kao zabava s novcem koji si možete priuštiti izgubiti. Nikada se ne oslanjajte na njih za financijsko planiranje.",
+    "rememberLabel": "Zapamtite:"
+  }
+}

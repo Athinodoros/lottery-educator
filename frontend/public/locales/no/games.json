@@ -1,0 +1,19 @@
+{
+  "title": "Spill",
+  "subtitle": "Velg et lotterispill for å spille og lære om oddsen.",
+  "createGame": "+ Lag et spill",
+  "errorTitle": "Feil ved lasting av spill",
+  "loadingGames": "Laster spill",
+  "loadingText": "Laster spill...",
+  "noGamesTitle": "Ingen spill tilgjengelig",
+  "noGamesText": "Kom tilbake snart for lotterispill å spille.",
+  "card": {
+    "pick": "Velg",
+    "from": "Fra",
+    "bonus": "Bonus",
+    "odds": "Odds",
+    "oddsValue": "1 av {{value}}",
+    "playGame": "Spill →",
+    "viewStats": "Se statistikk"
+  }
+}

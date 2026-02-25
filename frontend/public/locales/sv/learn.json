@@ -1,0 +1,109 @@
+{
+  "title": "Lär dig om lotterimarematik",
+  "subtitle": "Förstå de verkliga oddsen bakom lotterispel",
+  "probability": {
+    "title": "Vad är sannolikhet?",
+    "text": "Sannolikhet är den matematiska chansen att en händelse inträffar. Den uttrycks som ett tal mellan 0 och 1, där 0 betyder omöjligt och 1 betyder säkert. Till exempel är sannolikheten att singla krona med ett rättvist mynt 0,5 (eller 50%), eftersom det finns två lika sannolika utfall.",
+    "exampleTitle": "Exempel: Kasta en tärning",
+    "exampleText": "När du kastar en rättvis sexsidig tärning:",
+    "exampleItem1": "Det finns 6 möjliga utfall (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Sannolikheten att slå en 3 är 1/6 ≈ 16,67%",
+    "exampleItem3": "Sannolikheten att slå vilket nummer som helst är lika stor"
+  },
+  "combinations": {
+    "title": "Kombinationer och permutationer",
+    "text": "Vid beräkning av lotteriodds behöver vi förstå hur många olika sätt objekt kan väljas och arrangeras. I de flesta lotterier spelar ordningen på numren ingen roll, så vi använder <strong>kombinationer</strong>.",
+    "exampleTitle": "Exempel: Välj 6 av 49",
+    "exampleText": "I ett typiskt lotteri där du väljer 6 nummer av 49:",
+    "exampleItem1": "Antalet möjliga kombinationer är ungefär 13,98 miljoner",
+    "exampleItem2": "Din chans att vinna med en lott är 1 på 13,98 miljoner",
+    "exampleItem3": "Det är 0,0000072% chans att vinna!"
+  },
+  "expectedValue": {
+    "title": "Förväntat värde",
+    "text": "Förväntat värde är det genomsnittliga beloppet du förväntar dig att vinna eller förlora per satsning på lång sikt. För lotterier är det förväntade värdet alltid negativt, vilket innebär att du förlorar pengar i genomsnitt.",
+    "exampleTitle": "Exempel: Ett enkelt lotteri",
+    "exampleText": "Tänk dig ett lotteri där:",
+    "exampleItem1": "Lottpris: $1",
+    "exampleItem2": "Sannolikhet att vinna $10: 10%",
+    "exampleItem3": "Sannolikhet att inte vinna något: 90%",
+    "exampleItem4": "Förväntat värde = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Över tid skulle du förvänta dig att gå jämnt ut, men verkliga lotterier är värre!"
+  },
+  "houseFavor": {
+    "title": "Varför lotterier alltid gynnar huset",
+    "text": "Verkliga lotterier behåller en procentandel av lottförsäljningen (vanligtvis 30-50%) innan vinster delas ut. Detta kallas \"husfördelen\". Här är vad det innebär:",
+    "exampleTitle": "Exempel: Verklig lotterimarematik",
+    "forEvery100": "För varje $100 i lottförsäljning:",
+    "item1": "$40-50 går till lotterioperatören (stat, företag osv.)",
+    "item2": "$40-50 fördelas till vinnare",
+    "item3": "Resterande medel går till ändamål (utbildning, infrastruktur osv.)",
+    "item4": "Resultat: Spelare får tillbaka bara 50-60 öre för varje krona de spenderar"
+  },
+  "comparison": {
+    "title": "Lotteri vs Investering: En 30-årsjämförelse",
+    "text": "Tänk om du investerade pengarna du skulle spendera på lotter istället? Låt oss jämföra att spendera $20 i veckan på lotter med att investera samma belopp.",
+    "lotteryTitle": "Lotter",
+    "investTitle": "Indexfondsinvestering",
+    "weeklySpend": "Veckovis utgift",
+    "weeklyInvest": "Veckovis investering",
+    "totalSpent": "Totalt spenderat (30 år)",
+    "totalInvested": "Totalt investerat (30 år)",
+    "expectedReturn": "Förväntad avkastning",
+    "portfolioValue": "Portföljvärde",
+    "netResult": "Nettoresultat",
+    "netGain": "Nettovinst",
+    "lotteryNote": "Baserat på genomsnittlig 50% utbetalningsgrad",
+    "investNote": "Baserat på ~7% genomsnittlig årlig avkastning (S&P 500 historiskt)",
+    "takeaway": "<strong>Skillnaden:</strong> Under 30 år förlorar lottospelaren ungefär $15 600 medan investeraren tjänar ungefär $70 800. Det är ett gap på $86 400 från samma $20 i veckan."
+  },
+  "gamblersFallacy": {
+    "title": "\"Spelarens felslut\"",
+    "text": "Många tror att tidigare resultat påverkar framtida utfall i oberoende händelser. Detta är felaktigt. Varje lottodragning är oberoende, och tidigare utfall påverkar inte framtida.",
+    "exampleTitle": "Vanliga missuppfattningar",
+    "misconception1": "\"7 drogs förra veckan, så det är mindre sannolikt denna vecka\"",
+    "reality1": "Varje nummer har exakt samma chans vid varje dragning",
+    "misconception2": "\"Jag har en vinst tillgodo efter många förluster\"",
+    "reality2": "Tidigare förluster ökar inte din chans att vinna",
+    "misconception3": "\"Dessa nummer är 'heta' så de är mer sannolika\"",
+    "reality3": "Ofta dragna nummer är lika sannolika som sällsynta",
+    "misconceptionLabel": "Missuppfattning:",
+    "realityLabel": "Verklighet:"
+  },
+  "largeNumbers": {
+    "title": "De stora talens lag",
+    "text": "Ju fler spel du spelar, desto mer närmar sig dina faktiska resultat den teoretiska sannolikheten. Men detta betyder inte att du \"till slut vinner\" - det betyder att du till slut förlorar ännu mer pengar!",
+    "exampleTitle": "Vad siffrorna visar",
+    "item1": "Spela 1 lott: Du kanske vinner en gång i livet",
+    "item2": "Spela 100 lotter: Dina odds förbättras, men den förväntade förlusten är fortfarande hela din investering",
+    "item3": "Spela 1 000 lotter: Du är närmare det statistiska genomsnittet (förlorar ~50-60% av pengarna)",
+    "item4": "Ju mer du spelar, desto mer närmar sig dina förluster den matematiska förväntan"
+  },
+  "lessons": {
+    "title": "Smarta ekonomiska lärdomar",
+    "text": "Att förstå lotterimarematik lär oss värdefulla lärdomar om sannolikhet och ekonomiska beslut:",
+    "riskReward": "Risk vs Belöning",
+    "riskRewardText": "Utvärdera alltid oddsen jämfört med den potentiella belöningen. I lotterier är risk-belöningsförhållandet extremt ogynnsamt jämfört med andra investeringar.",
+    "statThinking": "Statistiskt tänkande",
+    "statThinkingText": "Fatta beslut baserade på data och sannolikhet, inte hopp eller vidskepelse. Detta gäller för investeringar, försäkringar och stora livsbeslut.",
+    "longTermPlanning": "Långsiktig planering",
+    "longTermPlanningText": "Lottovinster är opålitliga. Att bygga förmögenhet genom regelbundet sparande och investering (även små belopp) är mycket mer tillförlitligt än att hoppas på en jackpot.",
+    "psychologyLoss": "Förlustpsykologi",
+    "psychologyLossText": "Förstå hur våra hjärnor lurar oss till dåliga beslut. Vi överskattar små sannolikheter och underskattar våra förluster när de sprids över tid."
+  },
+  "cta": {
+    "title": "Se själv",
+    "text": "Det bästa sättet att förstå lotteriodds är att uppleva dem själv. Prova vår interaktiva lotterisimulator och se hur många dragningar det tar att matcha dina nummer.",
+    "trySimulator": "Prova simulatorn",
+    "viewStatistics": "Visa statistik"
+  },
+  "responsible": {
+    "title": "Ansvarsfullt spelande",
+    "text": "Om du någonsin känner att lottospelande blir ett problem eller påverkar din ekonomiska hälsa, sök hjälp:",
+    "helpline": "Nationella stödlinjen för spelproblem: 1-800-522-4700",
+    "ga": "Anonyma spelare:",
+    "ncpg": "NCPG (Rådet för tvångsspelande):",
+    "remember": "Lotter bör bara användas som underhållning med pengar du har råd att förlora. Lita aldrig på dem för ekonomisk planering.",
+    "rememberLabel": "Kom ihåg:"
+  }
+}

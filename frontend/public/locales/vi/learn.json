@@ -1,0 +1,109 @@
+{
+  "title": "Tìm hiểu về toán học xổ số",
+  "subtitle": "Hiểu tỷ lệ thực sự đằng sau các trò chơi xổ số",
+  "probability": {
+    "title": "Xác suất là gì?",
+    "text": "Xác suất là khả năng toán học mà một sự kiện sẽ xảy ra. Nó được biểu thị bằng một số từ 0 đến 1, trong đó 0 nghĩa là không thể và 1 nghĩa là chắc chắn. Ví dụ, xác suất tung đồng xu ra mặt ngửa là 0,5 (hay 50%), vì có hai kết quả có khả năng xảy ra như nhau.",
+    "exampleTitle": "Ví dụ: Gieo xúc xắc",
+    "exampleText": "Khi bạn gieo một con xúc xắc sáu mặt cân đối:",
+    "exampleItem1": "Có 6 kết quả có thể (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Xác suất gieo được số 3 là 1/6 ≈ 16,67%",
+    "exampleItem3": "Xác suất gieo được bất kỳ số nào đều bằng nhau"
+  },
+  "combinations": {
+    "title": "Tổ hợp và Hoán vị",
+    "text": "Khi tính tỷ lệ xổ số, chúng ta cần hiểu có bao nhiêu cách khác nhau để chọn và sắp xếp các mục. Trong hầu hết xổ số, thứ tự các số không quan trọng, nên chúng ta dùng <strong>tổ hợp</strong>.",
+    "exampleTitle": "Ví dụ: Chọn 6 từ 49",
+    "exampleText": "Trong một xổ số điển hình mà bạn chọn 6 số từ 49:",
+    "exampleItem1": "Số tổ hợp có thể xảy ra là khoảng 13,98 triệu",
+    "exampleItem2": "Cơ hội trúng giải với một vé là 1 trên 13,98 triệu",
+    "exampleItem3": "Đó là 0,0000072% cơ hội trúng giải!"
+  },
+  "expectedValue": {
+    "title": "Giá trị kỳ vọng",
+    "text": "Giá trị kỳ vọng là số tiền trung bình bạn dự kiến thắng hoặc thua trên mỗi lần đặt cược trong dài hạn. Đối với xổ số, giá trị kỳ vọng luôn âm, nghĩa là trung bình bạn sẽ mất tiền.",
+    "exampleTitle": "Ví dụ: Một xổ số đơn giản",
+    "exampleText": "Tưởng tượng một xổ số trong đó:",
+    "exampleItem1": "Giá vé: $1",
+    "exampleItem2": "Xác suất thắng $10: 10%",
+    "exampleItem3": "Xác suất không thắng gì: 90%",
+    "exampleItem4": "Giá trị kỳ vọng = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Theo thời gian, bạn sẽ hòa vốn, nhưng xổ số thực tế còn tệ hơn!"
+  },
+  "houseFavor": {
+    "title": "Tại sao xổ số luôn có lợi cho nhà cái",
+    "text": "Xổ số thực tế giữ lại một phần trăm doanh thu bán vé (thường 30-50%) trước khi trả giải. Đây được gọi là \"lợi thế nhà cái\". Điều này có nghĩa là:",
+    "exampleTitle": "Ví dụ: Toán học xổ số thực tế",
+    "forEvery100": "Với mỗi $100 doanh thu bán vé:",
+    "item1": "$40-50 thuộc về nhà tổ chức xổ số (nhà nước, công ty, v.v.)",
+    "item2": "$40-50 được phân phối cho người thắng cuộc",
+    "item3": "Phần còn lại dành cho các mục đích (giáo dục, cơ sở hạ tầng, v.v.)",
+    "item4": "Kết quả: Người chơi chỉ nhận lại 50-60 xu cho mỗi đô la chi ra"
+  },
+  "comparison": {
+    "title": "Xổ số so với đầu tư: So sánh 30 năm",
+    "text": "Nếu bạn đầu tư số tiền mà bạn chi cho vé số thì sao? Hãy so sánh việc chi $20 mỗi tuần mua vé số với việc đầu tư cùng số tiền đó.",
+    "lotteryTitle": "Vé xổ số",
+    "investTitle": "Đầu tư quỹ chỉ số",
+    "weeklySpend": "Chi tiêu hàng tuần",
+    "weeklyInvest": "Đầu tư hàng tuần",
+    "totalSpent": "Tổng chi (30 năm)",
+    "totalInvested": "Tổng đầu tư (30 năm)",
+    "expectedReturn": "Lợi nhuận kỳ vọng",
+    "portfolioValue": "Giá trị danh mục",
+    "netResult": "Kết quả ròng",
+    "netGain": "Lợi nhuận ròng",
+    "lotteryNote": "Dựa trên tỷ lệ trả thưởng trung bình 50%",
+    "investNote": "Dựa trên lợi nhuận trung bình hàng năm ~7% (lịch sử S&P 500)",
+    "takeaway": "<strong>Sự khác biệt:</strong> Trong 30 năm, người chơi xổ số mất khoảng $15.600 trong khi nhà đầu tư lãi khoảng $70.800. Đó là khoảng cách $86.400 từ cùng $20 mỗi tuần."
+  },
+  "gamblersFallacy": {
+    "title": "\"Ngụy biện của người đánh bạc\"",
+    "text": "Nhiều người tin rằng kết quả trong quá khứ ảnh hưởng đến kết quả tương lai trong các sự kiện độc lập. Điều này sai. Mỗi lượt quay xổ số là độc lập, và kết quả trước đó không ảnh hưởng đến kết quả tương lai.",
+    "exampleTitle": "Những hiểu lầm phổ biến",
+    "misconception1": "\"Số 7 đã ra tuần trước, nên tuần này ít khả năng ra hơn\"",
+    "reality1": "Mỗi số có cùng xác suất ở mỗi lượt quay",
+    "misconception2": "\"Tôi đã thua nhiều lần rồi nên sắp đến lượt tôi thắng\"",
+    "reality2": "Những lần thua trước không tăng cơ hội thắng của bạn",
+    "misconception3": "\"Những số này đang 'nóng' nên chúng dễ ra hơn\"",
+    "reality3": "Các số xuất hiện thường xuyên cũng có xác suất bằng các số hiếm",
+    "misconceptionLabel": "Hiểu lầm:",
+    "realityLabel": "Thực tế:"
+  },
+  "largeNumbers": {
+    "title": "Luật số lớn",
+    "text": "Khi bạn chơi càng nhiều, kết quả thực tế sẽ tiến gần đến xác suất lý thuyết. Tuy nhiên, điều này không có nghĩa là bạn \"cuối cùng sẽ thắng\" - nó có nghĩa là bạn cuối cùng sẽ mất nhiều tiền hơn!",
+    "exampleTitle": "Các con số cho thấy gì",
+    "item1": "Chơi 1 vé: Bạn có thể trúng một lần trong đời",
+    "item2": "Chơi 100 vé: Cơ hội tăng lên, nhưng khoản thua kỳ vọng vẫn là toàn bộ khoản đầu tư",
+    "item3": "Chơi 1.000 vé: Bạn tiến gần hơn đến mức trung bình thống kê (mất ~50-60% số tiền chi ra)",
+    "item4": "Càng chơi nhiều, khoản thua của bạn càng tiến gần đến kỳ vọng toán học"
+  },
+  "lessons": {
+    "title": "Bài học tài chính thông minh",
+    "text": "Hiểu toán học xổ số dạy chúng ta những bài học giá trị về xác suất và các quyết định kinh tế:",
+    "riskReward": "Rủi ro và phần thưởng",
+    "riskRewardText": "Luôn đánh giá tỷ lệ so với phần thưởng tiềm năng. Trong xổ số, tỷ lệ rủi ro-phần thưởng cực kỳ bất lợi so với các khoản đầu tư khác.",
+    "statThinking": "Tư duy thống kê",
+    "statThinkingText": "Đưa ra quyết định dựa trên dữ liệu và xác suất, không phải hy vọng hay mê tín. Điều này áp dụng cho đầu tư, bảo hiểm và các quyết định quan trọng trong cuộc sống.",
+    "longTermPlanning": "Lập kế hoạch dài hạn",
+    "longTermPlanningText": "Trúng xổ số là không đáng tin cậy. Xây dựng tài sản thông qua tiết kiệm và đầu tư đều đặn (dù là số tiền nhỏ) đáng tin cậy hơn nhiều so với hy vọng trúng giải đặc biệt.",
+    "psychologyLoss": "Tâm lý thua lỗ",
+    "psychologyLossText": "Hiểu cách bộ não đánh lừa chúng ta vào những quyết định tồi. Chúng ta đánh giá quá cao xác suất nhỏ và đánh giá thấp khoản thua khi chúng trải đều theo thời gian."
+  },
+  "cta": {
+    "title": "Tự mình trải nghiệm",
+    "text": "Cách tốt nhất để hiểu tỷ lệ xổ số là trải nghiệm trực tiếp. Hãy thử trình mô phỏng xổ số tương tác của chúng tôi và xem cần bao nhiêu lượt quay để trùng số.",
+    "trySimulator": "Thử trình mô phỏng",
+    "viewStatistics": "Xem thống kê"
+  },
+  "responsible": {
+    "title": "Chơi có trách nhiệm",
+    "text": "Nếu bạn cảm thấy việc chơi xổ số đang trở thành vấn đề, hoặc nó ảnh hưởng đến sức khỏe tài chính của bạn, hãy tìm kiếm sự giúp đỡ:",
+    "helpline": "Đường dây nóng về vấn đề cờ bạc quốc gia: 1-800-522-4700",
+    "ga": "Gamblers Anonymous:",
+    "ncpg": "NCPG (Hội đồng về cờ bạc cưỡng chế):",
+    "remember": "Vé xổ số chỉ nên được sử dụng làm giải trí với số tiền bạn có thể chịu mất. Không bao giờ dựa vào chúng cho kế hoạch tài chính.",
+    "rememberLabel": "Hãy nhớ:"
+  }
+}

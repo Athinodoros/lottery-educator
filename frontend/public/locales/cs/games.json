@@ -1,0 +1,19 @@
+{
+  "title": "Hry",
+  "subtitle": "Vyberte loterijní hru, kterou chcete hrát, a poznejte šance.",
+  "createGame": "+ Vytvořit Hru",
+  "errorTitle": "Chyba při Načítání Her",
+  "loadingGames": "Načítání her",
+  "loadingText": "Načítání her...",
+  "noGamesTitle": "Žádné Dostupné Hry",
+  "noGamesText": "Zkuste to znovu brzy, nové loterijní hry budou k dispozici.",
+  "card": {
+    "pick": "Vybrat",
+    "from": "Z",
+    "bonus": "Bonus",
+    "odds": "Šance",
+    "oddsValue": "1 ku {{value}}",
+    "playGame": "Hrát →",
+    "viewStats": "Zobrazit Statistiky"
+  }
+}

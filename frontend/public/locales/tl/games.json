@@ -1,0 +1,19 @@
+{
+  "title": "Mga Laro",
+  "subtitle": "Pumili ng laro ng lotería upang laruin at alamin ang mga tsansa.",
+  "createGame": "+ Gumawa ng Laro",
+  "errorTitle": "Error sa Paglo-load ng mga Laro",
+  "loadingGames": "Naglo-load ng mga laro",
+  "loadingText": "Naglo-load ng mga laro...",
+  "noGamesTitle": "Walang Available na Laro",
+  "noGamesText": "Bumalik mamaya para sa mga laro ng lotería na malalaro.",
+  "card": {
+    "pick": "Pumili",
+    "from": "Mula sa",
+    "bonus": "Bonus",
+    "odds": "Tsansa",
+    "oddsValue": "1 sa {{value}}",
+    "playGame": "Laruin →",
+    "viewStats": "Tingnan ang Stats"
+  }
+}

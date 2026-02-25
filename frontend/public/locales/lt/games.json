@@ -1,0 +1,19 @@
+{
+  "title": "Žaidimai",
+  "subtitle": "Pasirinkite loterijos žaidimą ir sužinokite galimybes.",
+  "createGame": "+ Sukurti žaidimą",
+  "errorTitle": "Klaida įkeliant žaidimus",
+  "loadingGames": "Žaidimai kraunami",
+  "loadingText": "Žaidimai kraunami...",
+  "noGamesTitle": "Nėra prieinamų žaidimų",
+  "noGamesText": "Netrukus patikrinkite – bus loterijos žaidimų.",
+  "card": {
+    "pick": "Pasirinkti",
+    "from": "Iš",
+    "bonus": "Bonus",
+    "odds": "Galimybės",
+    "oddsValue": "1 iš {{value}}",
+    "playGame": "Žaisti →",
+    "viewStats": "Žiūrėti statistiką"
+  }
+}

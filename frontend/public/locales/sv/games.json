@@ -1,0 +1,19 @@
+{
+  "title": "Spel",
+  "subtitle": "Välj ett lotterispel att spela och lär dig om oddsen.",
+  "createGame": "+ Skapa ett spel",
+  "errorTitle": "Fel vid inläsning av spel",
+  "loadingGames": "Laddar spel",
+  "loadingText": "Laddar spel...",
+  "noGamesTitle": "Inga tillgängliga spel",
+  "noGamesText": "Kom tillbaka snart för lotterispel att spela.",
+  "card": {
+    "pick": "Välj",
+    "from": "Från",
+    "bonus": "Bonus",
+    "odds": "Odds",
+    "oddsValue": "1 på {{value}}",
+    "playGame": "Spela →",
+    "viewStats": "Visa statistik"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Tahanan",
+    "games": "Mga Laro",
+    "stats": "Estadistika",
+    "learn": "Matuto",
+    "contact": "Makipag-ugnayan",
+    "admin": "Admin"
+  },
+  "appTitle": "Edukasyon sa Lotería",
+  "skipToContent": "Lumaktaw sa pangunahing nilalaman",
+  "switchToDark": "Lumipat sa madilim na mode",
+  "switchToLight": "Lumipat sa maliwanag na mode",
+  "openMenu": "Buksan ang menu",
+  "closeMenu": "Isara ang menu",
+  "footer": {
+    "privacyText": "Iginagalang namin ang iyong privacy. Walang personal na datos ang kinokolekta.",
+    "dataDeleted": "Ang iyong datos ay naibura na.",
+    "deleteConfirm": "Burahin ang lahat ng iyong lokal na datos?",
+    "confirmYes": "Oo, burahin",
+    "confirmCancel": "Kanselahin",
+    "deleteButton": "Burahin ang Aking Datos",
+    "deleteAriaLabel": "Burahin ang aking datos"
+  },
+  "consent": {
+    "ariaLabel": "Pahintulot sa cookie",
+    "text": "Gumagamit kami ng anonymous na analytics upang mapabuti ang karanasan sa pag-aaral. Walang personal na datos ang kinokolekta. Maaari mong burahin ang iyong datos anumang oras.",
+    "accept": "Tanggapin",
+    "decline": "Tanggihan"
+  }
+}

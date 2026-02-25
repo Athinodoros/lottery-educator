@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import './NumberSelector.css'
 
 interface NumberSelectorProps {
@@ -17,6 +18,7 @@ export function NumberSelector({
   onNumberToggle,
   disabled = false,
 }: NumberSelectorProps) {
+  const { t } = useTranslation('gameplay')
   const numbers = Array.from(
     { length: maxNumber - minNumber + 1 },
     (_, i) => minNumber + i
@@ -28,7 +30,7 @@ export function NumberSelector({
   return (
     <div className="number-selector">
       <div className="selector-header">
-        <h3>Select {numbersToSelect} numbers from {minNumber}-{maxNumber}</h3>
+        <h3>{t('numberSelector.selectNumbers', { count: numbersToSelect, min: minNumber, max: maxNumber })}</h3>
         <div className={`progress-badge ${isComplete ? 'complete' : ''}`}>
           {selectedNumbers.length} / {numbersToSelect}
         </div>
@@ -53,7 +55,7 @@ export function NumberSelector({
 
       {isComplete && (
         <div className="selection-complete">
-          ✓ All {numbersToSelect} numbers selected!
+          ✓ {t('numberSelector.allSelected', { count: numbersToSelect })}
         </div>
       )}
     </div>

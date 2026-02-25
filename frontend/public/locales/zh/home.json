@@ -1,0 +1,14 @@
+{
+  "title": "彩票教育家",
+  "subtitle": "了解彩票游戏背后的真实概率",
+  "description": "探索为什么彩票在统计学上几乎不可能中奖，理解游戏概率背后的数学原理。",
+  "cta": "玩游戏并学习",
+  "features": {
+    "interactiveGames": "互动游戏",
+    "interactiveGamesDesc": "模拟数千次彩票开奖，了解真正中奖需要多长时间。",
+    "realStatistics": "真实统计",
+    "realStatisticsDesc": "查看全球热门彩票游戏背后的真实赔率和概率。",
+    "financialEducation": "金融教育",
+    "financialEducationDesc": "了解为什么理解概率对个人财务决策至关重要。"
+  }
+}

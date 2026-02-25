@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "games": "Spil",
+    "stats": "Statistik",
+    "learn": "Lær",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Lottery Educator",
+  "skipToContent": "Spring til hovedindhold",
+  "switchToDark": "Skift til mørk tilstand",
+  "switchToLight": "Skift til lys tilstand",
+  "openMenu": "Åbn menu",
+  "closeMenu": "Luk menu",
+  "footer": {
+    "privacyText": "Vi respekterer dit privatliv. Der indsamles ingen personlige data.",
+    "dataDeleted": "Dine data er blevet slettet.",
+    "deleteConfirm": "Slet alle dine lokale data?",
+    "confirmYes": "Ja, slet",
+    "confirmCancel": "Annuller",
+    "deleteButton": "Slet mine data",
+    "deleteAriaLabel": "Slet mine data"
+  },
+  "consent": {
+    "ariaLabel": "Cookie-samtykke",
+    "text": "Vi bruger anonym analyse til at forbedre læringsoplevelsen. Der indsamles ingen personlige data. Du kan slette dine data når som helst.",
+    "accept": "Accepter",
+    "decline": "Afvis"
+  }
+}

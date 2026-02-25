@@ -1,0 +1,35 @@
+.language-picker {
+  padding: 8px 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.language-select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.language-select option {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+.language-select:hover {
+  border-color: var(--color-primary);
+}
+
+.language-select:focus-visible {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+}
+
+[data-theme="dark"] .language-select {
+  color-scheme: dark;
+}

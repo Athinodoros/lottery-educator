@@ -30,46 +30,46 @@ describe('ContactPage', () => {
 
   it('renders the contact form', () => {
     renderContact()
-    expect(screen.getByText('Contact Us')).toBeTruthy()
-    expect(screen.getByLabelText('Email Address')).toBeTruthy()
-    expect(screen.getByLabelText('Subject')).toBeTruthy()
-    expect(screen.getByLabelText('Message')).toBeTruthy()
+    expect(screen.getByText('title')).toBeTruthy()
+    expect(screen.getByLabelText('emailLabel')).toBeTruthy()
+    expect(screen.getByLabelText('subjectLabel')).toBeTruthy()
+    expect(screen.getByLabelText('messageLabel')).toBeTruthy()
   })
 
   it('submit button is disabled when fields are empty', () => {
     renderContact()
-    const btn = screen.getByRole('button', { name: /send message/i })
+    const btn = screen.getByRole('button', { name: /sendMessage/ })
     expect(btn).toBeDisabled()
   })
 
   it('shows email validation error for invalid email', async () => {
     const user = userEvent.setup()
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'invalid')
-    expect(screen.getByText('Please enter a valid email address')).toBeTruthy()
+    await user.type(screen.getByLabelText('emailLabel'), 'invalid')
+    expect(screen.getByText('emailError')).toBeTruthy()
   })
 
   it('hides email validation error for valid email', async () => {
     const user = userEvent.setup()
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'test@example.com')
-    expect(screen.queryByText('Please enter a valid email address')).toBeNull()
+    await user.type(screen.getByLabelText('emailLabel'), 'test@example.com')
+    expect(screen.queryByText('emailError')).toBeNull()
   })
 
   it('shows character counts', async () => {
     const user = userEvent.setup()
     renderContact()
-    await user.type(screen.getByLabelText('Subject'), 'Hello')
+    await user.type(screen.getByLabelText('subjectLabel'), 'Hello')
     expect(screen.getByText('5/255')).toBeTruthy()
   })
 
   it('enables submit when all fields are valid', async () => {
     const user = userEvent.setup()
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'test@example.com')
-    await user.type(screen.getByLabelText('Subject'), 'Test')
-    await user.type(screen.getByLabelText('Message'), 'Hello world')
-    const btn = screen.getByRole('button', { name: /send message/i })
+    await user.type(screen.getByLabelText('emailLabel'), 'test@example.com')
+    await user.type(screen.getByLabelText('subjectLabel'), 'Test')
+    await user.type(screen.getByLabelText('messageLabel'), 'Hello world')
+    const btn = screen.getByRole('button', { name: /sendMessage/ })
     expect(btn).not.toBeDisabled()
   })
 
@@ -78,13 +78,13 @@ describe('ContactPage', () => {
     ;(apiClient.post as any).mockResolvedValueOnce({ data: { id: '1' } })
 
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'test@example.com')
-    await user.type(screen.getByLabelText('Subject'), 'Test Subject')
-    await user.type(screen.getByLabelText('Message'), 'Test body')
-    await user.click(screen.getByRole('button', { name: /send message/i }))
+    await user.type(screen.getByLabelText('emailLabel'), 'test@example.com')
+    await user.type(screen.getByLabelText('subjectLabel'), 'Test Subject')
+    await user.type(screen.getByLabelText('messageLabel'), 'Test body')
+    await user.click(screen.getByRole('button', { name: /sendMessage/ }))
 
     await waitFor(() => {
-      expect(screen.getByText('Message Sent!')).toBeTruthy()
+      expect(screen.getByText('successTitle')).toBeTruthy()
     })
     expect(apiClient.post).toHaveBeenCalledWith('/emails', {
       senderEmail: 'test@example.com',
@@ -100,10 +100,10 @@ describe('ContactPage', () => {
     })
 
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'test@example.com')
-    await user.type(screen.getByLabelText('Subject'), 'Test')
-    await user.type(screen.getByLabelText('Message'), 'Test body')
-    await user.click(screen.getByRole('button', { name: /send message/i }))
+    await user.type(screen.getByLabelText('emailLabel'), 'test@example.com')
+    await user.type(screen.getByLabelText('subjectLabel'), 'Test')
+    await user.type(screen.getByLabelText('messageLabel'), 'Test body')
+    await user.click(screen.getByRole('button', { name: /sendMessage/ }))
 
     await waitFor(() => {
       expect(screen.getByText('Rate limit exceeded')).toBeTruthy()
@@ -115,23 +115,23 @@ describe('ContactPage', () => {
     ;(apiClient.post as any).mockResolvedValueOnce({ data: { id: '1' } })
 
     renderContact()
-    await user.type(screen.getByLabelText('Email Address'), 'test@example.com')
-    await user.type(screen.getByLabelText('Subject'), 'Test')
-    await user.type(screen.getByLabelText('Message'), 'Body')
-    await user.click(screen.getByRole('button', { name: /send message/i }))
+    await user.type(screen.getByLabelText('emailLabel'), 'test@example.com')
+    await user.type(screen.getByLabelText('subjectLabel'), 'Test')
+    await user.type(screen.getByLabelText('messageLabel'), 'Body')
+    await user.click(screen.getByRole('button', { name: /sendMessage/ }))
 
     await waitFor(() => {
-      expect(screen.getByText('Message Sent!')).toBeTruthy()
+      expect(screen.getByText('successTitle')).toBeTruthy()
     })
 
-    await user.click(screen.getByText('Send Another Message'))
-    expect(screen.getByLabelText('Email Address')).toBeTruthy()
+    await user.click(screen.getByText('sendAnother'))
+    expect(screen.getByLabelText('emailLabel')).toBeTruthy()
   })
 
   it('renders sidebar info cards', () => {
     renderContact()
-    expect(screen.getByText('About This Project')).toBeTruthy()
-    expect(screen.getByText('Privacy')).toBeTruthy()
-    expect(screen.getByText('Open Source')).toBeTruthy()
+    expect(screen.getByText('aboutProject')).toBeTruthy()
+    expect(screen.getByText('privacy')).toBeTruthy()
+    expect(screen.getByText('openSource')).toBeTruthy()
   })
 })

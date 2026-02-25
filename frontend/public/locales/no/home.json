@@ -1,0 +1,14 @@
+{
+  "title": "Lotteriskolen",
+  "subtitle": "Lær de virkelige oddsen bak lotterispill",
+  "description": "Oppdag hvorfor lotterikuponger er en statistisk umulighet, og forstå matematikken bak spillsannsynlighet.",
+  "cta": "Spill og lær",
+  "features": {
+    "interactiveGames": "Interaktive spill",
+    "interactiveGamesDesc": "Simuler tusenvis av lotteritrekninger for å forstå hvor lang tid det virkelig tar å vinne.",
+    "realStatistics": "Ekte statistikk",
+    "realStatisticsDesc": "Se de virkelige oddsen og sannsynlighetene bak populære lotterispill verden over.",
+    "financialEducation": "Økonomisk opplæring",
+    "financialEducationDesc": "Lær hvorfor forståelse av sannsynlighet er avgjørende for personlige økonomiske beslutninger."
+  }
+}

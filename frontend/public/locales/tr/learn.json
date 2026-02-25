@@ -1,0 +1,109 @@
+{
+  "title": "Piyango Matematiğini Öğrenin",
+  "subtitle": "Piyango oyunlarının arkasındaki gerçek olasılıkları anlama",
+  "probability": {
+    "title": "Olasılık nedir?",
+    "text": "Olasılık, bir olayın gerçekleşme ihtimalinin matematiksel ifadesidir. 0 ile 1 arasında bir sayı olarak ifade edilir; 0 imkansız, 1 kesin anlamına gelir. Örneğin, adil bir madeni paranın yazı gelme olasılığı 0,5'tir (veya %50), çünkü eşit derecede olası iki sonuç vardır.",
+    "exampleTitle": "Örnek: Zar atma",
+    "exampleText": "Adil altı yüzlü bir zar attığınızda:",
+    "exampleItem1": "6 olası sonuç vardır (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "3 gelme olasılığı 1/6 ≈ %16,67'dir",
+    "exampleItem3": "Herhangi bir sayının gelme olasılığı eşittir"
+  },
+  "combinations": {
+    "title": "Kombinasyonlar ve permütasyonlar",
+    "text": "Piyango olasılıklarını hesaplarken, öğelerin kaç farklı şekilde seçilebileceğini ve düzenlenebileceğini anlamamız gerekir. Çoğu piyangoda sayıların sırası önemli değildir, bu nedenle <strong>kombinasyonlar</strong> kullanırız.",
+    "exampleTitle": "Örnek: 49'dan 6 seçme",
+    "exampleText": "49'dan 6 sayı seçtiğiniz tipik bir piyangoda:",
+    "exampleItem1": "Olası kombinasyon sayısı yaklaşık 13,98 milyondur",
+    "exampleItem2": "Bir biletle kazanma şansınız 13,98 milyonda 1'dir",
+    "exampleItem3": "Bu %0,0000072 kazanma şansı demektir!"
+  },
+  "expectedValue": {
+    "title": "Beklenen değer",
+    "text": "Beklenen değer, uzun vadede bahis başına kazanmayı veya kaybetmeyi beklediğiniz ortalama miktardır. Piyangolar için beklenen değer her zaman negatiftir, yani ortalama olarak para kaybedersiniz.",
+    "exampleTitle": "Örnek: Basit bir piyango",
+    "exampleText": "Şöyle bir piyango hayal edin:",
+    "exampleItem1": "Bilet fiyatı: $1",
+    "exampleItem2": "$10 kazanma olasılığı: %10",
+    "exampleItem3": "Hiçbir şey kazanmama olasılığı: %90",
+    "exampleItem4": "Beklenen değer = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Zamanla başabaş çıkmayı beklersiniz, ama gerçek piyangolar daha kötüdür!"
+  },
+  "houseFavor": {
+    "title": "Piyangolar neden her zaman evi kayırır",
+    "text": "Gerçek dünya piyangoları, ödülleri dağıtmadan önce bilet satışlarının bir yüzdesini (genellikle %30-50) tutar. Buna \"ev avantajı\" denir. İşte bunun anlamı:",
+    "exampleTitle": "Örnek: Gerçek piyango matematiği",
+    "forEvery100": "Her $100'lık bilet satışı için:",
+    "item1": "$40-50 piyango organizatörüne gider (devlet, şirket vb.)",
+    "item2": "$40-50 kazananlara dağıtılır",
+    "item3": "Kalan fonlar hayır işlerine gider (eğitim, altyapı vb.)",
+    "item4": "Sonuç: Oyuncular harcadıkları her dolar için yalnızca 50-60 sent geri alır"
+  },
+  "comparison": {
+    "title": "Piyango vs Yatırım: 30 yıllık karşılaştırma",
+    "text": "Piyango biletlerine harcayacağınız parayı yatırsaydınız ne olurdu? Haftada $20'yi piyango biletlerine harcamakla aynı miktarı yatırmayı karşılaştıralım.",
+    "lotteryTitle": "Piyango biletleri",
+    "investTitle": "Endeks fonu yatırımı",
+    "weeklySpend": "Haftalık harcama",
+    "weeklyInvest": "Haftalık yatırım",
+    "totalSpent": "Toplam harcama (30 yıl)",
+    "totalInvested": "Toplam yatırım (30 yıl)",
+    "expectedReturn": "Beklenen getiri",
+    "portfolioValue": "Portföy değeri",
+    "netResult": "Net sonuç",
+    "netGain": "Net kazanç",
+    "lotteryNote": "Ortalama %50 ödeme oranına göre",
+    "investNote": "~%7 ortalama yıllık getiriye göre (S&P 500 tarihsel)",
+    "takeaway": "<strong>Fark:</strong> 30 yılda piyango oyuncusu yaklaşık $15.600 kaybederken yatırımcı yaklaşık $70.800 kazanır. Aynı haftalık $20'dan $86.400'lük bir fark."
+  },
+  "gamblersFallacy": {
+    "title": "\"Kumarbazın yanılgısı\"",
+    "text": "Birçok insan geçmiş sonuçların bağımsız olaylarda gelecek sonuçları etkilediğine inanır. Bu yanlıştır. Her piyango çekilişi bağımsızdır ve önceki sonuçlar gelecektekileri etkilemez.",
+    "exampleTitle": "Yaygın yanılgılar",
+    "misconception1": "\"Geçen hafta 7 çekildi, bu hafta daha az olası\"",
+    "reality1": "Her sayının her çekilişte tam olarak aynı şansı vardır",
+    "misconception2": "\"Çok kaybettikten sonra kazanma sıram geldi\"",
+    "reality2": "Geçmiş kayıplar kazanma şansınızı artırmaz",
+    "misconception3": "\"Bu sayılar 'sıcak', bu yüzden daha olası\"",
+    "reality3": "Sık çekilen sayılar nadir olanlar kadar olasıdır",
+    "misconceptionLabel": "Yanılgı:",
+    "realityLabel": "Gerçek:"
+  },
+  "largeNumbers": {
+    "title": "Büyük sayılar yasası",
+    "text": "Daha fazla oyun oynadıkça gerçek sonuçlarınız teorik olasılığa yakınsar. Ancak bu \"sonunda kazanacağınız\" anlamına gelmez - daha da fazla para kaybedeceğiniz anlamına gelir!",
+    "exampleTitle": "Sayılar ne gösteriyor",
+    "item1": "1 piyango bileti oynayın: Ömrünüzde bir kez kazanabilirsiniz",
+    "item2": "100 bilet oynayın: Şansınız artar ama beklenen kayıp hala tam yatırımınızdır",
+    "item3": "1.000 bilet oynayın: İstatistiksel ortalamaya daha yakınsınız (harcanan paranın ~%50-60'ını kaybetmek)",
+    "item4": "Ne kadar çok oynarsanız, kayıplarınız matematiksel beklentiye o kadar yaklaşır"
+  },
+  "lessons": {
+    "title": "Akıllı finansal dersler",
+    "text": "Piyango matematiğini anlamak bize olasılık ve ekonomik kararlar hakkında değerli dersler öğretir:",
+    "riskReward": "Risk vs Ödül",
+    "riskRewardText": "Olasılıkları her zaman potansiyel ödüle göre değerlendirin. Piyangoarda risk-ödül oranı, diğer yatırımlara kıyasla son derece elverişsizdir.",
+    "statThinking": "İstatistiksel düşünce",
+    "statThinkingText": "Kararlarınızı umut veya batıl inanca değil, verilere ve olasılıklara dayandırın. Bu yatırım, sigorta ve önemli yaşam kararları için geçerlidir.",
+    "longTermPlanning": "Uzun vadeli planlama",
+    "longTermPlanningText": "Piyango kazançları güvenilir değildir. Düzenli tasarruf ve yatırım yoluyla (küçük miktarlar bile olsa) servet oluşturmak, bir büyük ikramiye umut etmekten çok daha güvenilirdir.",
+    "psychologyLoss": "Kayıp psikolojisi",
+    "psychologyLossText": "Beyinlerimizin bizi nasıl kötü kararlara yönlendirdiğini anlayın. Küçük olasılıkları abartırız ve zamana yayılan kayıplarımızı küçümseriz."
+  },
+  "cta": {
+    "title": "Kendiniz görün",
+    "text": "Piyango olasılıklarını anlamanın en iyi yolu bunları bizzat deneyimlemektir. Etkileşimli piyango simülatörümüzü deneyin ve numaralarınızın eşleşmesi için kaç çekiliş gerektiğini izleyin.",
+    "trySimulator": "Simülatörü deneyin",
+    "viewStatistics": "İstatistikleri görüntüleyin"
+  },
+  "responsible": {
+    "title": "Sorumlu oyun",
+    "text": "Piyango oynamanın bir sorun haline geldiğini veya mali sağlığınızı etkilediğini hissederseniz lütfen yardım isteyin:",
+    "helpline": "Ulusal Kumar Sorunu Yardım Hattı: 1-800-522-4700",
+    "ga": "Anonim Kumarbazlar:",
+    "ncpg": "NCPG (Kompulsif Kumar Konseyi):",
+    "remember": "Piyango biletleri yalnızca kaybetmeyi göze alabileceğiniz parayla eğlence olarak kullanılmalıdır. Asla finansal planlama için bunlara güvenmeyin.",
+    "rememberLabel": "Unutmayın:"
+  }
+}

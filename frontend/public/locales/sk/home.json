@@ -1,0 +1,14 @@
+{
+  "title": "Lotériový Vzdelávateľ",
+  "subtitle": "Spoznajte skutočné šance za lotériovými hrami",
+  "description": "Zistite, prečo sú lotériové žreby štatistickou nemožnosťou a pochopte matematiku za pravdepodobnosťou hier.",
+  "cta": "Hrajte a Učte Sa",
+  "features": {
+    "interactiveGames": "Interaktívne Hry",
+    "interactiveGamesDesc": "Simulujte tisíce žrebovaní lotérie, aby ste pochopili, ako dlho skutočne trvá vyhrať.",
+    "realStatistics": "Skutočné Štatistiky",
+    "realStatisticsDesc": "Pozrite sa na skutočné šance a pravdepodobnosti za populárnymi lotériovými hrami na celom svete.",
+    "financialEducation": "Finančné Vzdelávanie",
+    "financialEducationDesc": "Zistite, prečo je pochopenie pravdepodobnosti kľúčové pre osobné finančné rozhodovanie."
+  }
+}

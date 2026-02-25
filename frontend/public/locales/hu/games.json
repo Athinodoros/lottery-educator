@@ -1,0 +1,19 @@
+{
+  "title": "Játékok",
+  "subtitle": "Válassz egy lottójátékot, és ismerd meg az esélyeket.",
+  "createGame": "+ Játék létrehozása",
+  "errorTitle": "Hiba a játékok betöltésekor",
+  "loadingGames": "Játékok betöltése",
+  "loadingText": "Játékok betöltése...",
+  "noGamesTitle": "Nincsenek elérhető játékok",
+  "noGamesText": "Nézz vissza hamarosan a lottójátékokért.",
+  "card": {
+    "pick": "Válassz",
+    "from": "Tartomány",
+    "bonus": "Bónusz",
+    "odds": "Esélyek",
+    "oddsValue": "1 a {{value}}-hoz",
+    "playGame": "Játék indítása →",
+    "viewStats": "Statisztikák"
+  }
+}

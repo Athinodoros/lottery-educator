@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Domov",
+    "games": "Igre",
+    "stats": "Statistike",
+    "learn": "Učenje",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Loterijski izobraževalec",
+  "skipToContent": "Preskoči na glavno vsebino",
+  "switchToDark": "Preklopi na temni način",
+  "switchToLight": "Preklopi na svetli način",
+  "openMenu": "Odpri meni",
+  "closeMenu": "Zapri meni",
+  "footer": {
+    "privacyText": "Spoštujemo vašo zasebnost. Ne zbiramo osebnih podatkov.",
+    "dataDeleted": "Vaši podatki so bili izbrisani.",
+    "deleteConfirm": "Izbrisati vse vaše lokalne podatke?",
+    "confirmYes": "Da, izbriši",
+    "confirmCancel": "Prekliči",
+    "deleteButton": "Izbriši moje podatke",
+    "deleteAriaLabel": "Izbriši moje podatke"
+  },
+  "consent": {
+    "ariaLabel": "Soglasje za piškotke",
+    "text": "Uporabljamo anonimno analitiko za izboljšanje učne izkušnje. Ne zbiramo osebnih podatkov. Svoje podatke lahko kadar koli izbrišete.",
+    "accept": "Sprejmi",
+    "decline": "Zavrni"
+  }
+}

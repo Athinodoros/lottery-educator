@@ -1,0 +1,19 @@
+{
+  "title": "Trò chơi",
+  "subtitle": "Chọn một trò chơi xổ số để chơi và tìm hiểu tỷ lệ.",
+  "createGame": "+ Tạo trò chơi",
+  "errorTitle": "Lỗi khi tải trò chơi",
+  "loadingGames": "Đang tải trò chơi",
+  "loadingText": "Đang tải trò chơi...",
+  "noGamesTitle": "Không có trò chơi nào",
+  "noGamesText": "Hãy quay lại sau để chơi các trò chơi xổ số.",
+  "card": {
+    "pick": "Chọn",
+    "from": "Từ",
+    "bonus": "Số phụ",
+    "odds": "Tỷ lệ",
+    "oddsValue": "1 trên {{value}}",
+    "playGame": "Chơi ngay →",
+    "viewStats": "Xem thống kê"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "联系我们",
+  "subtitle": "有问题或反馈？我们很乐意听取您的意见。",
+  "successTitle": "消息已发送！",
+  "successText": "感谢您的留言。我们会尽快审阅您的消息。",
+  "sendAnother": "发送另一条消息",
+  "emailLabel": "电子邮箱",
+  "emailPlaceholder": "your@email.com",
+  "emailError": "请输入有效的电子邮箱地址",
+  "subjectLabel": "主题",
+  "subjectPlaceholder": "您想咨询什么？",
+  "messageLabel": "消息",
+  "messagePlaceholder": "告诉我们您的想法...",
+  "sending": "正在发送...",
+  "sendMessage": "发送消息",
+  "aboutProject": "关于本项目",
+  "aboutProjectText": "彩票教育家是一个免费的教育工具，通过互动模拟帮助人们了解中彩票的真实赔率。",
+  "privacy": "隐私",
+  "privacyText": "我们尊重您的隐私。您的电子邮箱仅用于回复您的消息。我们不存储IP地址或分享您的信息。您可以随时要求删除您的数据。",
+  "openSource": "开源",
+  "openSourceText": "本项目是开源的。如果您发现了错误或想要贡献代码，欢迎在GitHub上提交问题或拉取请求。"
+}

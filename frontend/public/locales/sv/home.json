@@ -1,0 +1,14 @@
+{
+  "title": "Lottery Educator",
+  "subtitle": "Lär dig de verkliga oddsen bakom lotterispel",
+  "description": "Upptäck varför lotter är en statistisk omöjlighet och förstå matematiken bakom sannolikhet i spel.",
+  "cta": "Spela och lär dig",
+  "features": {
+    "interactiveGames": "Interaktiva spel",
+    "interactiveGamesDesc": "Simulera tusentals lottodragningar för att förstå hur lång tid det verkligen tar att vinna.",
+    "realStatistics": "Riktig statistik",
+    "realStatisticsDesc": "Se de verkliga oddsen och sannolikheterna bakom populära lotterispel världen över.",
+    "financialEducation": "Finansiell utbildning",
+    "financialEducationDesc": "Lär dig varför förståelse av sannolikhet är avgörande för personliga ekonomiska beslut."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Lottery Educator",
+  "subtitle": "Piyango oyunlarının arkasındaki gerçek olasılıkları öğrenin",
+  "description": "Piyango biletlerinin neden istatistiksel olarak imkansız olduğunu keşfedin ve oyun olasılığının arkasındaki matematiği anlayın.",
+  "cta": "Oyna ve Öğren",
+  "features": {
+    "interactiveGames": "Etkileşimli Oyunlar",
+    "interactiveGamesDesc": "Kazanmanın gerçekte ne kadar sürdüğünü anlamak için binlerce piyango çekilişi simüle edin.",
+    "realStatistics": "Gerçek İstatistikler",
+    "realStatisticsDesc": "Dünya genelindeki popüler piyango oyunlarının arkasındaki gerçek olasılıkları görün.",
+    "financialEducation": "Finansal Eğitim",
+    "financialEducationDesc": "Olasılığı anlamanın kişisel finans kararları için neden çok önemli olduğunu öğrenin."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Sākums",
+    "games": "Spēles",
+    "stats": "Statistika",
+    "learn": "Mācīties",
+    "contact": "Kontakti",
+    "admin": "Administrēšana"
+  },
+  "appTitle": "Loteriju izglītība",
+  "skipToContent": "Pāriet uz galveno saturu",
+  "switchToDark": "Pārslēgt uz tumšo režīmu",
+  "switchToLight": "Pārslēgt uz gaišo režīmu",
+  "openMenu": "Atvērt izvēlni",
+  "closeMenu": "Aizvērt izvēlni",
+  "footer": {
+    "privacyText": "Mēs cienām jūsu privātumu. Personas dati netiek vākti.",
+    "dataDeleted": "Jūsu dati ir dzēsti.",
+    "deleteConfirm": "Dzēst visus jūsu vietējos datus?",
+    "confirmYes": "Jā, dzēst",
+    "confirmCancel": "Atcelt",
+    "deleteButton": "Dzēst manus datus",
+    "deleteAriaLabel": "Dzēst manus datus"
+  },
+  "consent": {
+    "ariaLabel": "Sīkdatņu piekrišana",
+    "text": "Mēs izmantojam anonīmu analītiku, lai uzlabotu mācību pieredzi. Personas dati netiek vākti. Jūs varat jebkurā laikā dzēst savus datus.",
+    "accept": "Pieņemt",
+    "decline": "Noraidīt"
+  }
+}

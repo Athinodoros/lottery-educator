@@ -1,0 +1,22 @@
+{
+  "title": "Kapcsolat",
+  "subtitle": "Kérdésed vagy visszajelzésed van? Szívesen hallanánk rólad.",
+  "successTitle": "Üzenet elküldve!",
+  "successText": "Köszönjük, hogy írtál. Hamarosan átnézzük az üzenetedet.",
+  "sendAnother": "Újabb üzenet küldése",
+  "emailLabel": "E-mail cím",
+  "emailPlaceholder": "te@email.com",
+  "emailError": "Kérjük, adj meg egy érvényes e-mail címet",
+  "subjectLabel": "Tárgy",
+  "subjectPlaceholder": "Miről van szó?",
+  "messageLabel": "Üzenet",
+  "messagePlaceholder": "Írd le, mi jár a fejedben...",
+  "sending": "Küldés...",
+  "sendMessage": "Üzenet küldése",
+  "aboutProject": "A projektről",
+  "aboutProjectText": "A Lottó Oktató egy ingyenes oktatási eszköz, amely interaktív szimulációkon keresztül segít megérteni a lottó nyerésének valódi esélyeit.",
+  "privacy": "Adatvédelem",
+  "privacyText": "Tiszteletben tartjuk az adatvédelmedet. Az e-mail címedet csak az üzenetedre való válaszadáshoz használjuk. Nem tároljuk az IP-címeket és nem osztjuk meg az adataidat. Bármikor kérheted az adataid törlését.",
+  "openSource": "Nyílt forráskód",
+  "openSourceText": "Ez a projekt nyílt forráskódú. Ha hibát találsz vagy szeretnél hozzájárulni, nyiss egy hibajegyet vagy pull requestet a GitHubon."
+}

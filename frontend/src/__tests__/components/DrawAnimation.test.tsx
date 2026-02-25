@@ -29,7 +29,7 @@ describe('DrawAnimation Component', () => {
 
     it('should display default message', () => {
       render(<DrawAnimation isDrawing={true} progress={30} />)
-      expect(screen.getByText('Drawing lottery...')).toBeTruthy()
+      expect(screen.getByText('drawingLottery')).toBeTruthy()
     })
 
     it('should display custom message', () => {

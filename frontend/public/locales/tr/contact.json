@@ -1,0 +1,22 @@
+{
+  "title": "İletişim",
+  "subtitle": "Sorularınız veya geri bildiriminiz mi var? Sizden haber almak isteriz.",
+  "successTitle": "Mesaj gönderildi!",
+  "successText": "Bize ulaştığınız için teşekkürler. Mesajınızı en kısa sürede inceleyeceğiz.",
+  "sendAnother": "Başka bir mesaj gönder",
+  "emailLabel": "E-posta adresi",
+  "emailPlaceholder": "ornek@email.com",
+  "emailError": "Lütfen geçerli bir e-posta adresi girin",
+  "subjectLabel": "Konu",
+  "subjectPlaceholder": "Bu ne hakkında?",
+  "messageLabel": "Mesaj",
+  "messagePlaceholder": "Aklınızdakileri bize anlatın...",
+  "sending": "Gönderiliyor...",
+  "sendMessage": "Mesaj gönder",
+  "aboutProject": "Bu proje hakkında",
+  "aboutProjectText": "Lottery Educator, insanların etkileşimli simülasyonlar aracılığıyla piyango kazanmanın gerçek olasılıklarını anlamalarına yardımcı olan ücretsiz bir eğitim aracıdır.",
+  "privacy": "Gizlilik",
+  "privacyText": "Gizliliğinize saygı duyuyoruz. E-postanız yalnızca mesajınıza yanıt vermek için kullanılır. IP adreslerini saklamıyoruz veya bilgilerinizi paylaşmıyoruz. Verilerinizin silinmesini istediğiniz zaman talep edebilirsiniz.",
+  "openSource": "Açık kaynak",
+  "openSourceText": "Bu proje açık kaynaklıdır. Bir hata bulursanız veya katkıda bulunmak isterseniz GitHub'da bir sorun bildirimi veya çekme isteği açmaktan çekinmeyin."
+}

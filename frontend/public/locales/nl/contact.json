@@ -1,0 +1,22 @@
+{
+  "title": "Neem Contact Op",
+  "subtitle": "Heeft u vragen of feedback? We horen graag van u.",
+  "successTitle": "Bericht Verzonden!",
+  "successText": "Bedankt voor uw bericht. We zullen het binnenkort bekijken.",
+  "sendAnother": "Nog een Bericht Sturen",
+  "emailLabel": "E-mailadres",
+  "emailPlaceholder": "uw@email.com",
+  "emailError": "Voer een geldig e-mailadres in",
+  "subjectLabel": "Onderwerp",
+  "subjectPlaceholder": "Waar gaat het over?",
+  "messageLabel": "Bericht",
+  "messagePlaceholder": "Vertel ons wat u bezighoudt...",
+  "sending": "Verzenden...",
+  "sendMessage": "Bericht Versturen",
+  "aboutProject": "Over Dit Project",
+  "aboutProjectText": "Loterij Educatie is een gratis educatief hulpmiddel dat mensen helpt de werkelijke kansen van het winnen van de loterij te begrijpen door middel van interactieve simulaties.",
+  "privacy": "Privacy",
+  "privacyText": "Wij respecteren uw privacy. Uw e-mail wordt alleen gebruikt om op uw bericht te reageren. Wij slaan geen IP-adressen op en delen uw informatie niet. U kunt op elk moment verwijdering van uw gegevens aanvragen.",
+  "openSource": "Open Source",
+  "openSourceText": "Dit project is open source. Als u een fout vindt of wilt bijdragen, open dan gerust een issue of pull request op GitHub."
+}

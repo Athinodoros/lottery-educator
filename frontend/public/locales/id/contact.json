@@ -1,0 +1,22 @@
+{
+  "title": "Hubungi Kami",
+  "subtitle": "Punya pertanyaan atau masukan? Kami senang mendengar dari Anda.",
+  "successTitle": "Pesan Terkirim!",
+  "successText": "Terima kasih telah menghubungi kami. Kami akan meninjau pesan Anda segera.",
+  "sendAnother": "Kirim Pesan Lain",
+  "emailLabel": "Alamat Email",
+  "emailPlaceholder": "email@anda.com",
+  "emailError": "Silakan masukkan alamat email yang valid",
+  "subjectLabel": "Subjek",
+  "subjectPlaceholder": "Tentang apa ini?",
+  "messageLabel": "Pesan",
+  "messagePlaceholder": "Ceritakan apa yang ada di pikiran Anda...",
+  "sending": "Mengirim...",
+  "sendMessage": "Kirim Pesan",
+  "aboutProject": "Tentang Proyek Ini",
+  "aboutProjectText": "Edukasi Lotere adalah alat edukasi gratis yang membantu orang memahami peluang nyata memenangkan lotere melalui simulasi interaktif.",
+  "privacy": "Privasi",
+  "privacyText": "Kami menghormati privasi Anda. Email Anda hanya digunakan untuk membalas pesan Anda. Kami tidak menyimpan alamat IP atau membagikan informasi Anda. Anda dapat meminta penghapusan data kapan saja.",
+  "openSource": "Sumber Terbuka",
+  "openSourceText": "Proyek ini bersifat sumber terbuka. Jika Anda menemukan bug atau ingin berkontribusi, silakan buka issue atau pull request di GitHub."
+}

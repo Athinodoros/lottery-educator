@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Početna",
+    "games": "Igre",
+    "stats": "Statistike",
+    "learn": "Učenje",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Lutrijski edukator",
+  "skipToContent": "Preskoči na glavni sadržaj",
+  "switchToDark": "Prebaci na tamni način",
+  "switchToLight": "Prebaci na svijetli način",
+  "openMenu": "Otvori izbornik",
+  "closeMenu": "Zatvori izbornik",
+  "footer": {
+    "privacyText": "Poštujemo vašu privatnost. Ne prikupljamo osobne podatke.",
+    "dataDeleted": "Vaši podaci su izbrisani.",
+    "deleteConfirm": "Obrisati sve vaše lokalne podatke?",
+    "confirmYes": "Da, obriši",
+    "confirmCancel": "Odustani",
+    "deleteButton": "Obriši moje podatke",
+    "deleteAriaLabel": "Obriši moje podatke"
+  },
+  "consent": {
+    "ariaLabel": "Pristanak na kolačiće",
+    "text": "Koristimo anonimnu analitiku za poboljšanje iskustva učenja. Ne prikupljamo osobne podatke. Možete obrisati svoje podatke u bilo kojem trenutku.",
+    "accept": "Prihvaćam",
+    "decline": "Odbijam"
+  }
+}

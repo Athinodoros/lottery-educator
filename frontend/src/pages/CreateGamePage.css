@@ -164,6 +164,7 @@
 
 .btn-primary:hover:not(:disabled) {
   background: var(--color-primary-hover);
+  color: #fff;
 }
 
 .btn-secondary {

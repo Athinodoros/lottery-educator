@@ -1,0 +1,14 @@
+{
+  "title": "복권 교육",
+  "subtitle": "복권 게임 뒤에 숨겨진 실제 확률을 배워보세요",
+  "description": "복권이 통계적으로 왜 거의 불가능한지 알아보고, 게임 확률 뒤에 숨겨진 수학을 이해해 보세요.",
+  "cta": "게임하면서 배우기",
+  "features": {
+    "interactiveGames": "인터랙티브 게임",
+    "interactiveGamesDesc": "수천 번의 복권 추첨을 시뮬레이션하여 당첨까지 실제로 얼마나 걸리는지 체험해 보세요.",
+    "realStatistics": "실제 통계",
+    "realStatisticsDesc": "전 세계 인기 복권 게임의 실제 확률과 승률을 확인해 보세요.",
+    "financialEducation": "금융 교육",
+    "financialEducationDesc": "확률을 이해하는 것이 개인 재무 결정에 왜 중요한지 배워보세요."
+  }
+}

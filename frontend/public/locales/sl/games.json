@@ -1,0 +1,19 @@
+{
+  "title": "Igre",
+  "subtitle": "Izberite loterijsko igro za igranje in spoznavanje možnosti.",
+  "createGame": "+ Ustvari igro",
+  "errorTitle": "Napaka pri nalaganju iger",
+  "loadingGames": "Nalaganje iger",
+  "loadingText": "Nalaganje iger...",
+  "noGamesTitle": "Ni razpoložljivih iger",
+  "noGamesText": "Preverite kmalu za loterijske igre.",
+  "card": {
+    "pick": "Izberi",
+    "from": "Iz",
+    "bonus": "Bonus",
+    "odds": "Možnosti",
+    "oddsValue": "1 proti {{value}}",
+    "playGame": "Igraj →",
+    "viewStats": "Statistike"
+  }
+}

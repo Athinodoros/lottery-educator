@@ -1,0 +1,109 @@
+{
+  "title": "Mācieties par loterijas matemātiku",
+  "subtitle": "Izprotiet patiesās iespējas loterijas spēlēs",
+  "probability": {
+    "title": "Kas ir varbūtība?",
+    "text": "Varbūtība ir matemātiskā iespēja, ka notikums notiks. To izsaka kā skaitli no 0 līdz 1, kur 0 nozīmē neiespējami un 1 nozīmē droši. Piemēram, varbūtība mest monētu un dabūt ģerboni ir 0,5 (jeb 50%), jo ir divi vienlīdz iespējami iznākumi.",
+    "exampleTitle": "Piemērs: kauliņa mešana",
+    "exampleText": "Kad jūs metat parastu sešu skaldņu kauliņu:",
+    "exampleItem1": "Ir 6 iespējami iznākumi (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Varbūtība izmest 3 ir 1/6 ≈ 16,67%",
+    "exampleItem3": "Katra skaitļa iespēja ir vienāda"
+  },
+  "combinations": {
+    "title": "Kombinācijas un permutācijas",
+    "text": "Aprēķinot loterijas iespējas, mums jāsaprot, cik dažādos veidos elementus var izvēlēties un sakārtot. Lielākajā daļā loteriju skaitļu secībai nav nozīmes, tāpēc mēs izmantojam <strong>kombinācijas</strong>.",
+    "exampleTitle": "Piemērs: 6 no 49 izvēle",
+    "exampleText": "Tipiskā loterijā, kur izvēlaties 6 skaitļus no 49:",
+    "exampleItem1": "Iespējamo kombināciju skaits ir aptuveni 13,98 miljoni",
+    "exampleItem2": "Jūsu iespēja uzvarēt ar vienu biļeti ir 1 no 13,98 miljoniem",
+    "exampleItem3": "Tā ir 0,0000072% iespēja uzvarēt!"
+  },
+  "expectedValue": {
+    "title": "Sagaidāmā vērtība",
+    "text": "Sagaidāmā vērtība ir vidējā summa, ko jūs sagaidāt laimēt vai zaudēt uz vienu likmi ilgtermiņā. Loterijām sagaidāmā vērtība vienmēr ir negatīva, kas nozīmē, ka vidēji jūs zaudējat naudu.",
+    "exampleTitle": "Piemērs: vienkārša loterija",
+    "exampleText": "Iedomājieties loteriju, kur:",
+    "exampleItem1": "Biļetes cena: 1 $",
+    "exampleItem2": "Varbūtība laimēt 10 $: 10%",
+    "exampleItem3": "Varbūtība nelaimēt neko: 90%",
+    "exampleItem4": "Sagaidāmā vērtība = (0,10 x 10 $) + (0,90 x 0 $) – 1 $ = 1 $ – 1 $ = 0 $",
+    "exampleItem5": "Ilgtermiņā jūs sagaidītu palikt pie nulles, bet reālas loterijas ir sliktākas!"
+  },
+  "houseFavor": {
+    "title": "Kāpēc loterijas vienmēr labvēlīgas organizatoram",
+    "text": "Reālas loterijas patur daļu no biļešu pārdošanas ieņēmumiem (parasti 30–50%), pirms izmaksā balvas. To sauc par „mājas priekšrocību". Lūk, ko tas nozīmē:",
+    "exampleTitle": "Piemērs: reāla loterijas matemātika",
+    "forEvery100": "No katriem 100 $ biļešu pārdošanas:",
+    "item1": "40–50 $ nonāk loterijas organizatoram (valstij, uzņēmumam utt.)",
+    "item2": "40–50 $ tiek sadalīti uzvarētājiem",
+    "item3": "Atlikušie līdzekļi tiek novirzīti mērķiem (izglītībai, infrastruktūrai utt.)",
+    "item4": "Rezultāts: spēlētāji atgūst tikai 50–60 centus par katru iztērēto dolāru"
+  },
+  "comparison": {
+    "title": "Loterija pret investēšanu: 30 gadu salīdzinājums",
+    "text": "Ko darītu, ja jūs investētu naudu, ko iztērētu loterijas biļetēm? Salīdzināsim 20 $ nedēļā loterijas biļetēm ar tādu pašu summu investējot.",
+    "lotteryTitle": "Loterijas biļetes",
+    "investTitle": "Indeksa fonda ieguldījums",
+    "weeklySpend": "Iknedēļas izdevumi",
+    "weeklyInvest": "Iknedēļas ieguldījums",
+    "totalSpent": "Kopā iztērēts (30 g.)",
+    "totalInvested": "Kopā ieguldīts (30 g.)",
+    "expectedReturn": "Sagaidāmā atdeve",
+    "portfolioValue": "Portfeļa vērtība",
+    "netResult": "Neto rezultāts",
+    "netGain": "Neto ieguvums",
+    "lotteryNote": "Balstoties uz vidējo 50% izmaksu attiecību",
+    "investNote": "Balstoties uz ~7% vidējo gada atdevi (S&P 500 vēsturiskie dati)",
+    "takeaway": "<strong>Atšķirība:</strong> 30 gadu laikā loterijas spēlētājs zaudē aptuveni 15 600 $, bet investors nopelna aptuveni 70 800 $. Tā ir 86 400 $ starpība no tiem pašiem 20 $ nedēļā."
+  },
+  "gamblersFallacy": {
+    "title": "„Azartspēlētāja maldīšanās"",
+    "text": "Daudzi cilvēki tic, ka iepriekšējie rezultāti ietekmē nākamos neatkarīgu notikumu iznākumus. Tas ir aplami. Katra loterijas izloze ir neatkarīga, un iepriekšējie rezultāti neietekmē nākamos.",
+    "exampleTitle": "Izplatīti maldīgi uzskati",
+    "misconception1": "„7 tika izlozēts pagājušajā nedēļā, tāpēc šonedēļ tas ir mazāk iespējams"",
+    "reality1": "Katram skaitlim ir tieši tāda pati iespēja katrā izlozē",
+    "misconception2": "„Man pienākas uzvara pēc daudziem zaudējumiem"",
+    "reality2": "Iepriekšējie zaudējumi nepalielina jūsu uzvaras iespēju",
+    "misconception3": "„Šie skaitļi ir „karstie", tāpēc ir lielāka iespēja"",
+    "reality3": "Bieži izlozēti skaitļi ir tikpat iespējami kā reti",
+    "misconceptionLabel": "Maldīgs uzskats:",
+    "realityLabel": "Realitāte:"
+  },
+  "largeNumbers": {
+    "title": "Lielo skaitļu likums",
+    "text": "Jo vairāk jūs spēlējat, jo vairāk jūsu faktiskie rezultāti tuvojas teorētiskajai varbūtībai. Tomēr tas nenozīmē, ka jūs „galu galā uzvarēsiet" – tas nozīmē, ka jūs galu galā zaudēsiet vēl vairāk naudas!",
+    "exampleTitle": "Ko rāda skaitļi",
+    "item1": "Spēlējiet 1 loterijas biļeti: jūs varētu uzvarēt vienu reizi mūžā",
+    "item2": "Spēlējiet 100 biļetes: jūsu iespējas uzlabojas, bet sagaidāmais zaudējums joprojām ir visa ieguldītā summa",
+    "item3": "Spēlējiet 1000 biļetes: jūs esat tuvāk statistiskajam vidējam (zaudējat ~50–60% iztērētās naudas)",
+    "item4": "Jo vairāk jūs spēlējat, jo tuvāk jūsu zaudējumi tuvojas matemātiskajai cerībai"
+  },
+  "lessons": {
+    "title": "Gudri finanšu padomi",
+    "text": "Loterijas matemātikas izpratne māca vērtīgas mācības par varbūtību un ekonomiskiem lēmumiem:",
+    "riskReward": "Risks pret atlīdzību",
+    "riskRewardText": "Vienmēr izvērtējiet iespējas salīdzinājumā ar iespējamo atlīdzību. Loterijās riska un atlīdzības attiecība ir ārkārtīgi nelabvēlīga salīdzinājumā ar citiem ieguldījumiem.",
+    "statThinking": "Statistiskā domāšana",
+    "statThinkingText": "Pieņemiet lēmumus, balstoties uz datiem un varbūtību, nevis cerību vai māņticību. Tas attiecas uz investēšanu, apdrošināšanu un svarīgiem dzīves lēmumiem.",
+    "longTermPlanning": "Ilgtermiņa plānošana",
+    "longTermPlanningText": "Loterijas laimesti ir neuzticami. Bagātības veidošana ar regulāru uzkrāšanu un investēšanu (pat nelielām summām) ir daudz uzticamāka nekā cerēt uz džekpotu.",
+    "psychologyLoss": "Zaudējuma psiholoģija",
+    "psychologyLossText": "Izprotiet, kā mūsu smadzenes mūs pieviļ, liekot pieņemt sliktus lēmumus. Mēs pārvērtējam mazas varbūtības un nenovērtējam savus zaudējumus, kad tie sadalās pa laiku."
+  },
+  "cta": {
+    "title": "Pārliecinieties paši",
+    "text": "Labākais veids, kā izprast loterijas iespējas, ir pieredzēt tās pašam. Izmēģiniet mūsu interaktīvo loterijas simulatoru un skatieties, cik izlozēšanu nepieciešams, lai jūsu skaitļi sakristu.",
+    "trySimulator": "Izmēģināt simulatoru",
+    "viewStatistics": "Skatīt statistiku"
+  },
+  "responsible": {
+    "title": "Atbildīga spēlēšana",
+    "text": "Ja jūtat, ka loterijas spēlēšana kļūst par problēmu vai ietekmē jūsu finanšu veselību, lūdzu, meklējiet palīdzību:",
+    "helpline": "Problemātiskas azartspēlēšanas palīdzības tālrunis: 1-800-522-4700",
+    "ga": "Anonīmie azartspēlētāji:",
+    "ncpg": "NCPG (Kompulsīvas azartspēlēšanas padome):",
+    "remember": "Loterijas biļetes drīkst izmantot tikai kā izklaidi ar naudu, ko varat atļauties zaudēt. Nekad nepaļaujieties uz tām finanšu plānošanā.",
+    "rememberLabel": "Atcerieties:"
+  }
+}

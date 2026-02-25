@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "games": "Permainan",
+    "stats": "Statistik",
+    "learn": "Pelajari",
+    "contact": "Kontak",
+    "admin": "Admin"
+  },
+  "appTitle": "Edukasi Lotere",
+  "skipToContent": "Langsung ke konten utama",
+  "switchToDark": "Beralih ke mode gelap",
+  "switchToLight": "Beralih ke mode terang",
+  "openMenu": "Buka menu",
+  "closeMenu": "Tutup menu",
+  "footer": {
+    "privacyText": "Kami menghormati privasi Anda. Tidak ada data pribadi yang dikumpulkan.",
+    "dataDeleted": "Data Anda telah dihapus.",
+    "deleteConfirm": "Hapus semua data lokal Anda?",
+    "confirmYes": "Ya, hapus",
+    "confirmCancel": "Batal",
+    "deleteButton": "Hapus Data Saya",
+    "deleteAriaLabel": "Hapus data saya"
+  },
+  "consent": {
+    "ariaLabel": "Persetujuan cookie",
+    "text": "Kami menggunakan analitik anonim untuk meningkatkan pengalaman belajar. Tidak ada data pribadi yang dikumpulkan. Anda dapat menghapus data Anda kapan saja.",
+    "accept": "Terima",
+    "decline": "Tolak"
+  }
+}

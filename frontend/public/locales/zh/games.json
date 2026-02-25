@@ -1,0 +1,19 @@
+{
+  "title": "游戏",
+  "subtitle": "选择一个彩票游戏来玩并了解赔率。",
+  "createGame": "+ 创建游戏",
+  "errorTitle": "加载游戏出错",
+  "loadingGames": "正在加载游戏",
+  "loadingText": "正在加载游戏...",
+  "noGamesTitle": "暂无可用游戏",
+  "noGamesText": "请稍后再来查看可玩的彩票游戏。",
+  "card": {
+    "pick": "选择",
+    "from": "范围",
+    "bonus": "奖金号",
+    "odds": "赔率",
+    "oddsValue": "{{value}} 分之一",
+    "playGame": "开始游戏 →",
+    "viewStats": "查看统计"
+  }
+}

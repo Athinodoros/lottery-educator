@@ -1,0 +1,109 @@
+{
+  "title": "Õppige loterii matemaatikat",
+  "subtitle": "Mõistke loteriimängude tegelikke võimalusi",
+  "probability": {
+    "title": "Mis on tõenäosus?",
+    "text": "Tõenäosus on matemaatiline võimalus, et sündmus toimub. Seda väljendatakse arvuna 0 ja 1 vahel, kus 0 tähendab võimatut ja 1 tähendab kindlat. Näiteks mündi viskamisel kulli saamise tõenäosus on 0,5 (ehk 50%), kuna on kaks võrdselt tõenäolist tulemust.",
+    "exampleTitle": "Näide: täringu viskamine",
+    "exampleText": "Kui viskate tavalist kuuetahulist täringut:",
+    "exampleItem1": "On 6 võimalikku tulemust (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Tõenäosus visata 3 on 1/6 ≈ 16,67%",
+    "exampleItem3": "Iga numbri tõenäosus on võrdne"
+  },
+  "combinations": {
+    "title": "Kombinatsioonid ja permutatsioonid",
+    "text": "Loterii võimaluste arvutamisel tuleb mõista, mitmel erineval viisil saab elemente valida ja paigutada. Enamiku loteriide puhul ei oma numbrite järjekord tähtsust, seega kasutame <strong>kombinatsioone</strong>.",
+    "exampleTitle": "Näide: 6 valimine 49-st",
+    "exampleText": "Tavalisel loteriil, kus valite 6 numbrit 49-st:",
+    "exampleItem1": "Võimalike kombinatsioonide arv on ligikaudu 13,98 miljonit",
+    "exampleItem2": "Teie võimalus ühe piletiga võita on 1 13,98 miljonist",
+    "exampleItem3": "See on 0,0000072% võimalus võita!"
+  },
+  "expectedValue": {
+    "title": "Oodatav väärtus",
+    "text": "Oodatav väärtus on keskmine summa, mida ootate pikas perspektiivis ühe panuse kohta võita või kaotada. Loteriide puhul on oodatav väärtus alati negatiivne, mis tähendab, et keskmiselt kaotate raha.",
+    "exampleTitle": "Näide: lihtne loterii",
+    "exampleText": "Kujutage ette loteriid, kus:",
+    "exampleItem1": "Pileti hind: 1 $",
+    "exampleItem2": "Tõenäosus võita 10 $: 10%",
+    "exampleItem3": "Tõenäosus mitte midagi võita: 90%",
+    "exampleItem4": "Oodatav väärtus = (0,10 x 10 $) + (0,90 x 0 $) – 1 $ = 1 $ – 1 $ = 0 $",
+    "exampleItem5": "Pikas perspektiivis ootaksite nullindat jäämist, aga tegelikud loteriid on halvemad!"
+  },
+  "houseFavor": {
+    "title": "Miks loteriid soosivad alati korraldajat",
+    "text": "Tegelikud loteriid hoiavad osa piletimüügist (tavaliselt 30–50%) enne auhindade väljamaksmist. Seda nimetatakse „maja eeliseks". Siin on, mida see tähendab:",
+    "exampleTitle": "Näide: tegelik loterii matemaatika",
+    "forEvery100": "Iga 100 $ piletimüügi kohta:",
+    "item1": "40–50 $ läheb loterii korraldajale (riigile, ettevõttele jne)",
+    "item2": "40–50 $ jagatakse võitjatele",
+    "item3": "Ülejäänud vahendid suunatakse eesmärkidele (haridus, taristu jne)",
+    "item4": "Tulemus: mängijad saavad tagasi vaid 50–60 senti iga kulutatud dollari kohta"
+  },
+  "comparison": {
+    "title": "Loterii vs. investeerimine: 30-aastane võrdlus",
+    "text": "Mis siis, kui investeeriksite raha, mille kulutaksite loteripiletitele? Võrdleme 20 $ nädalas loteripiletitele ja sama summa investeerimist.",
+    "lotteryTitle": "Loteripiletid",
+    "investTitle": "Indeksifondi investeering",
+    "weeklySpend": "Nädalane kulu",
+    "weeklyInvest": "Nädalane investeering",
+    "totalSpent": "Kokku kulutatud (30 a.)",
+    "totalInvested": "Kokku investeeritud (30 a.)",
+    "expectedReturn": "Oodatav tootlus",
+    "portfolioValue": "Portfelli väärtus",
+    "netResult": "Netotulem",
+    "netGain": "Netokasum",
+    "lotteryNote": "Põhineb keskmisel 50% väljamaksesuhtarvul",
+    "investNote": "Põhineb ~7% keskmisel aastastootlusel (S&P 500 ajaloolised andmed)",
+    "takeaway": "<strong>Vahe:</strong> 30 aasta jooksul kaotab loteriimängija umbes 15 600 $, samas kui investor teenib umbes 70 800 $. See on 86 400 $ vahe samast 20 $-st nädalas."
+  },
+  "gamblersFallacy": {
+    "title": "„Mänguri eksijäreldus"",
+    "text": "Paljud inimesed usuvad, et varasemad tulemused mõjutavad tulevasi tulemusi sõltumatute sündmuste puhul. See on vale. Iga loterii loosimine on sõltumatu ja varasemad tulemused ei mõjuta tulevasi.",
+    "exampleTitle": "Levinud väärarusaamad",
+    "misconception1": "„7 loositi eelmisel nädalal, seega on see sel nädalal vähem tõenäoline"",
+    "reality1": "Igal numbril on täpselt sama võimalus igal loosimisel",
+    "misconception2": "„Pärast paljusid kaotusi on mul võit ette nähtud"",
+    "reality2": "Varasemad kaotused ei suurenda teie võiduvõimalust",
+    "misconception3": "„Need numbrid on „kuumad", seega on tõenäolisemad"",
+    "reality3": "Sageli loositud numbrid on täpselt sama tõenäolised kui haruldased",
+    "misconceptionLabel": "Väärarusaam:",
+    "realityLabel": "Tegelikkus:"
+  },
+  "largeNumbers": {
+    "title": "Suurte arvude seadus",
+    "text": "Mida rohkem mängite, seda rohkem lähenevad teie tegelikud tulemused teoreetilisele tõenäosusele. Kuid see ei tähenda, et te „lõpuks võidate" – see tähendab, et te kaotate lõpuks veelgi rohkem raha!",
+    "exampleTitle": "Mida numbrid näitavad",
+    "item1": "Mängige 1 loteripilet: võite võita ühe korra elu jooksul",
+    "item2": "Mängige 100 piletit: teie võimalused paranevad, kuid oodatav kaotus on ikkagi kogu investeering",
+    "item3": "Mängige 1000 piletit: olete lähemal statistilisele keskmisele (kaotate ~50–60% kulutatud rahast)",
+    "item4": "Mida rohkem mängite, seda rohkem lähenevad teie kaotused matemaatilisele ootusele"
+  },
+  "lessons": {
+    "title": "Targad rahanduslikud õppetunnid",
+    "text": "Loterii matemaatika mõistmine õpetab väärtuslikke õppetunde tõenäosuse ja majanduslike otsuste kohta:",
+    "riskReward": "Risk vs. tasu",
+    "riskRewardText": "Hinnake alati võimalusi võrreldes võimaliku tasuga. Loteriides on riski ja tasu suhe äärmiselt ebasoodne võrreldes teiste investeeringutega.",
+    "statThinking": "Statistiline mõtlemine",
+    "statThinkingText": "Tehke otsuseid andmete ja tõenäosuse, mitte lootuse või ebausu põhjal. See kehtib investeerimise, kindlustuse ja oluliste eluliste otsuste kohta.",
+    "longTermPlanning": "Pikaajaline planeerimine",
+    "longTermPlanningText": "Loteriivõidud on ebakindlad. Varanduse kasvatamine regulaarse säästmise ja investeerimise kaudu (isegi väikeste summadega) on palju usaldusväärsem kui jackpoti ootamine.",
+    "psychologyLoss": "Kaotuse psühholoogia",
+    "psychologyLossText": "Mõistke, kuidas meie ajud petavad meid tegema halbu otsuseid. Me hindame üle väikseid tõenäosusi ja alahindame oma kaotusi, kui need jaotuvad aja peale."
+  },
+  "cta": {
+    "title": "Veenduge ise",
+    "text": "Parim viis loterii võimalusi mõista on neid ise kogeda. Proovige meie interaktiivset loterii simulaatorit ja vaadake, mitu loosimist kulub teie numbrite kattumiseks.",
+    "trySimulator": "Proovi simulaatorit",
+    "viewStatistics": "Vaata statistikat"
+  },
+  "responsible": {
+    "title": "Vastutustundlik mängimine",
+    "text": "Kui tunnete, et loteriimängimine muutub probleemiks või mõjutab teie rahalist tervist, palun pöörduge abi saamiseks:",
+    "helpline": "Probleemse hasartmängu abitelefon: 1-800-522-4700",
+    "ga": "Anonüümsed hasartmängijad:",
+    "ncpg": "NCPG (Kompulsiivse hasartmängu nõukogu):",
+    "remember": "Loteripileteid tuleks kasutada ainult meelelahutusena rahaga, mida saate endale lubada kaotada. Ärge kunagi lootke nende peale rahanduse planeerimisel.",
+    "rememberLabel": "Pidage meeles:"
+  }
+}

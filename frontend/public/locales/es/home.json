@@ -1,0 +1,14 @@
+{
+  "title": "Lotería Educativa",
+  "subtitle": "Descubra las verdaderas probabilidades de los juegos de lotería",
+  "description": "Descubra por qué los billetes de lotería son una imposibilidad estadística y comprenda las matemáticas detrás de la probabilidad de los juegos.",
+  "cta": "Jugar y aprender",
+  "features": {
+    "interactiveGames": "Juegos interactivos",
+    "interactiveGamesDesc": "Simule miles de sorteos de lotería para comprender cuánto tiempo realmente se tarda en ganar.",
+    "realStatistics": "Estadísticas reales",
+    "realStatisticsDesc": "Vea las verdaderas probabilidades y posibilidades de los juegos de lotería populares en todo el mundo.",
+    "financialEducation": "Educación financiera",
+    "financialEducationDesc": "Aprenda por qué entender la probabilidad es crucial para las decisiones financieras personales."
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Loterijų švietimas",
+  "subtitle": "Sužinokite tikrąsias loterijos žaidimų galimybes",
+  "description": "Sužinokite, kodėl loterijos bilietai yra statistiškai beveik neįmanomi, ir supraskite žaidimų tikimybių matematiką.",
+  "cta": "Žaiskite ir mokykitės",
+  "features": {
+    "interactiveGames": "Interaktyvūs žaidimai",
+    "interactiveGamesDesc": "Imituokite tūkstančius loterijos traukimų, kad suprastumėte, kiek iš tiesų reikia laukti laimėjimo.",
+    "realStatistics": "Tikra statistika",
+    "realStatisticsDesc": "Pamatykite tikrąsias galimybes ir tikimybes populiarių loterijos žaidimų visame pasaulyje.",
+    "financialEducation": "Finansinis švietimas",
+    "financialEducationDesc": "Sužinokite, kodėl tikimybių supratimas yra svarbus asmeninių finansų sprendimams."
+  }
+}

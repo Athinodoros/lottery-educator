@@ -1,0 +1,109 @@
+{
+  "title": "Poznaj Matematykę Loterii",
+  "subtitle": "Zrozum prawdziwe szanse stojące za grami loteryjnymi",
+  "probability": {
+    "title": "Czym jest Prawdopodobieństwo?",
+    "text": "Prawdopodobieństwo to matematyczna szansa, że dane zdarzenie nastąpi. Wyrażane jest jako liczba między 0 a 1, gdzie 0 oznacza niemożliwe, a 1 pewne. Na przykład prawdopodobieństwo uzyskania orła przy rzucie uczciwą monetą wynosi 0,5 (czyli 50%), ponieważ istnieją dwa jednakowo prawdopodobne wyniki.",
+    "exampleTitle": "Przykład: Rzut Kostką",
+    "exampleText": "Gdy rzucasz uczciwą sześciościenną kostką:",
+    "exampleItem1": "Istnieje 6 możliwych wyników (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Prawdopodobieństwo wyrzucenia 3 wynosi 1/6 ≈ 16,67%",
+    "exampleItem3": "Prawdopodobieństwo wyrzucenia dowolnej liczby jest jednakowe"
+  },
+  "combinations": {
+    "title": "Kombinacje i Permutacje",
+    "text": "Przy obliczaniu szans loteryjnych musimy zrozumieć, na ile różnych sposobów można wybrać i ułożyć elementy. W większości loterii kolejność numerów nie ma znaczenia, więc używamy <strong>kombinacji</strong>.",
+    "exampleTitle": "Przykład: Wybór 6 z 49",
+    "exampleText": "W typowej loterii, gdzie wybierasz 6 numerów z 49:",
+    "exampleItem1": "Liczba możliwych kombinacji wynosi w przybliżeniu 13,98 miliona",
+    "exampleItem2": "Twoja szansa na wygraną z jednym losem to 1 na 13,98 miliona",
+    "exampleItem3": "To 0,0000072% szans na wygraną!"
+  },
+  "expectedValue": {
+    "title": "Wartość Oczekiwana",
+    "text": "Wartość oczekiwana to średnia kwota, którą oczekujesz wygrać lub stracić na jednym zakładzie w dłuższym okresie. Dla loterii wartość oczekiwana jest zawsze ujemna, co oznacza, że średnio tracisz pieniądze.",
+    "exampleTitle": "Przykład: Prosta Loteria",
+    "exampleText": "Wyobraź sobie loterię, w której:",
+    "exampleItem1": "Koszt losu: $1",
+    "exampleItem2": "Prawdopodobieństwo wygrania $10: 10%",
+    "exampleItem3": "Prawdopodobieństwo wygrania niczego: 90%",
+    "exampleItem4": "Wartość oczekiwana = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Z czasem oczekiwałbyś wyjść na zero, ale prawdziwe loterie są gorsze!"
+  },
+  "houseFavor": {
+    "title": "Dlaczego Loterie Zawsze Faworyzują Dom",
+    "text": "Prawdziwe loterie zatrzymują procent ze sprzedaży losów (zwykle 30-50%) przed wypłatą nagród. To się nazywa \"przewaga domu\". Oto co to oznacza:",
+    "exampleTitle": "Przykład: Prawdziwa Matematyka Loterii",
+    "forEvery100": "Na każde $100 ze sprzedaży losów:",
+    "item1": "$40-50 trafia do organizatora loterii (państwo, firma itp.)",
+    "item2": "$40-50 jest rozdzielane między zwycięzców",
+    "item3": "Pozostałe środki trafiają na cele społeczne (edukacja, infrastruktura itp.)",
+    "item4": "Wynik: Gracze odzyskują tylko 50-60 centów za każdego wydanego dolara"
+  },
+  "comparison": {
+    "title": "Loteria vs Inwestowanie: Porównanie na 30 Lat",
+    "text": "Co by było, gdybyś zainwestował pieniądze, które wydałbyś na losy loteryjne? Porównajmy wydawanie $20 tygodniowo na losy z inwestowaniem tej samej kwoty.",
+    "lotteryTitle": "Losy Loteryjne",
+    "investTitle": "Inwestycja w Fundusz Indeksowy",
+    "weeklySpend": "Tygodniowy wydatek",
+    "weeklyInvest": "Tygodniowa inwestycja",
+    "totalSpent": "Łącznie wydane (30 lat)",
+    "totalInvested": "Łącznie zainwestowane (30 lat)",
+    "expectedReturn": "Oczekiwany zwrot",
+    "portfolioValue": "Wartość portfela",
+    "netResult": "Wynik netto",
+    "netGain": "Zysk netto",
+    "lotteryNote": "Na podstawie średniego wskaźnika wypłat 50%",
+    "investNote": "Na podstawie ~7% średniego rocznego zwrotu (historyczny S&P 500)",
+    "takeaway": "<strong>Różnica:</strong> Przez 30 lat gracz loteryjny traci około $15 600, podczas gdy inwestor zyskuje około $70 800. To różnica $86 400 z tych samych $20 tygodniowo."
+  },
+  "gamblersFallacy": {
+    "title": "\"Błąd Gracza\"",
+    "text": "Wiele osób wierzy, że wyniki z przeszłości wpływają na przyszłe wyniki w zdarzeniach niezależnych. To nieprawda. Każde losowanie loterii jest niezależne, a poprzednie wyniki nie wpływają na przyszłe.",
+    "exampleTitle": "Powszechne Błędne Przekonania",
+    "misconception1": "\"7 wypadło w zeszłym tygodniu, więc jest mniej prawdopodobne w tym tygodniu\"",
+    "reality1": "Każdy numer ma dokładnie taką samą szansę w każdym losowaniu",
+    "misconception2": "\"Po tylu przegranych powinienem wreszcie wygrać\"",
+    "reality2": "Wcześniejsze przegrane nie zwiększają szans na wygraną",
+    "misconception3": "\"Te numery są 'gorące', więc są bardziej prawdopodobne\"",
+    "reality3": "Często losowane numery są tak samo prawdopodobne jak rzadkie",
+    "misconceptionLabel": "Błędne przekonanie:",
+    "realityLabel": "Rzeczywistość:"
+  },
+  "largeNumbers": {
+    "title": "Prawo Wielkich Liczb",
+    "text": "Im więcej gier rozegrasz, tym bardziej Twoje rzeczywiste wyniki zbliżają się do teoretycznego prawdopodobieństwa. Jednak nie oznacza to, że \"w końcu wygrasz\" - oznacza to, że w końcu stracisz jeszcze więcej pieniędzy!",
+    "exampleTitle": "Co Pokazują Liczby",
+    "item1": "Zagraj 1 los loteryjny: Możesz wygrać raz w życiu",
+    "item2": "Zagraj 100 losów: Twoje szanse się poprawiają, ale oczekiwana strata to wciąż cała Twoja inwestycja",
+    "item3": "Zagraj 1000 losów: Jesteś bliżej średniej statystycznej (strata ~50-60% wydanych pieniędzy)",
+    "item4": "Im więcej grasz, tym bardziej Twoje straty zbliżają się do matematycznej oczekiwanej wartości"
+  },
+  "lessons": {
+    "title": "Mądre Lekcje Finansowe",
+    "text": "Zrozumienie matematyki loterii uczy nas cennych lekcji o prawdopodobieństwie i decyzjach ekonomicznych:",
+    "riskReward": "Ryzyko vs Nagroda",
+    "riskRewardText": "Zawsze oceniaj szanse w stosunku do potencjalnej nagrody. W loteriach stosunek ryzyka do nagrody jest niezwykle niekorzystny w porównaniu z innymi inwestycjami.",
+    "statThinking": "Myślenie Statystyczne",
+    "statThinkingText": "Podejmuj decyzje na podstawie danych i prawdopodobieństwa, a nie nadziei czy przesądów. Dotyczy to inwestowania, ubezpieczeń i ważnych decyzji życiowych.",
+    "longTermPlanning": "Planowanie Długoterminowe",
+    "longTermPlanningText": "Wygrane na loterii są niepewne. Budowanie bogactwa przez regularne oszczędzanie i inwestowanie (nawet małych kwot) jest znacznie bardziej niezawodne niż liczenie na główną wygraną.",
+    "psychologyLoss": "Psychologia Straty",
+    "psychologyLossText": "Zrozum, jak nasze mózgi oszukują nas, prowadząc do złych decyzji. Przeceniamy małe prawdopodobieństwa i nie doceniamy naszych strat, gdy są rozłożone w czasie."
+  },
+  "cta": {
+    "title": "Zobacz Sam",
+    "text": "Najlepszym sposobem na zrozumienie szans loteryjnych jest doświadczenie ich na własnej skórze. Wypróbuj nasz interaktywny symulator loterii i zobacz, ile losowań potrzeba, aby trafić Twoje numery.",
+    "trySimulator": "Wypróbuj Symulator",
+    "viewStatistics": "Zobacz Statystyki"
+  },
+  "responsible": {
+    "title": "Odpowiedzialna Gra",
+    "text": "Jeśli kiedykolwiek poczujesz, że gra na loterii staje się problemem lub wpływa na Twoje zdrowie finansowe, poproś o pomoc:",
+    "helpline": "Krajowa Linia Pomocy dla Problemów z Hazardem: 1-800-522-4700",
+    "ga": "Anonimowi Hazardziści:",
+    "ncpg": "NCPG (Rada ds. Hazardu Kompulsywnego):",
+    "remember": "Losy loteryjne powinny być traktowane wyłącznie jako rozrywka za pieniądze, które możesz stracić. Nigdy nie polegaj na nich w planowaniu finansowym.",
+    "rememberLabel": "Pamiętaj:"
+  }
+}

@@ -13,12 +13,12 @@
   margin: 0 0 16px 0;
   font-size: 36px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .learn-header p {
   margin: 0;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 16px;
 }
 
@@ -29,10 +29,10 @@
 }
 
 .learn-section {
-  background: white;
+  background: var(--color-bg-card);
   border-radius: 12px;
   padding: 32px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -40,12 +40,12 @@
   margin: 0 0 16px 0;
   font-size: 24px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .learn-section p {
   margin: 0 0 16px 0;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -55,8 +55,8 @@
 }
 
 .example-box {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(79, 70, 229, 0.05) 100%);
-  border-left: 4px solid #6366f1;
+  background: var(--gradient-primary-subtle);
+  border-left: 4px solid var(--color-primary);
   padding: 20px;
   border-radius: 8px;
   margin-top: 16px;
@@ -66,13 +66,13 @@
   margin: 0 0 12px 0;
   font-size: 16px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .example-box p {
   margin: 0 0 12px 0;
   font-size: 14px;
-  color: #6b7280;
+  color: var(--color-text-muted);
 }
 
 .example-box ul {
@@ -82,7 +82,7 @@
 
 .example-box li {
   margin-bottom: 8px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -92,7 +92,7 @@
 }
 
 .math-breakdown {
-  background: white;
+  background: var(--color-bg-card);
   padding: 16px;
   border-radius: 6px;
   margin-top: 12px;
@@ -102,7 +102,7 @@
   margin: 0 0 12px 0;
   font-size: 14px;
   font-weight: 600;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .math-breakdown ul {
@@ -112,7 +112,7 @@
 
 .math-breakdown li {
   margin-bottom: 8px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -129,29 +129,29 @@
 }
 
 .lesson-card {
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  background: var(--gradient-lesson);
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border-strong);
 }
 
 .lesson-card h3 {
   margin: 0 0 12px 0;
   font-size: 15px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .lesson-card p {
   margin: 0;
   font-size: 13px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   line-height: 1.5;
 }
 
 /* ── Lottery vs Investing Comparison ──────────── */
 .highlight-section {
-  border: 2px solid #6366f1;
+  border: 2px solid var(--color-primary);
 }
 
 .comparison-grid {
@@ -164,7 +164,7 @@
 .comparison-card {
   padding: 24px;
   border-radius: 10px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--color-border);
 }
 
 .comparison-card h3 {
@@ -179,7 +179,7 @@
 }
 
 .lottery-side h3 {
-  color: #991b1b;
+  color: var(--color-error-text);
 }
 
 .invest-side {
@@ -195,7 +195,7 @@
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .comparison-stat:last-of-type {
@@ -204,45 +204,45 @@
 
 .comparison-label {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--color-text-muted);
 }
 
 .comparison-value {
   font-size: 14px;
   font-weight: 700;
-  color: #1f2937;
+  color: var(--color-text-heading);
 }
 
 .comparison-value.negative {
-  color: #dc2626;
+  color: var(--color-error-dark);
 }
 
 .comparison-value.positive {
-  color: #16a34a;
+  color: var(--color-success-dark);
 }
 
 .comparison-note {
   margin: 12px 0 0 0;
   font-size: 11px;
-  color: #9ca3af;
+  color: var(--color-text-dim);
   font-style: italic;
 }
 
 .comparison-takeaway {
   margin-top: 20px;
   padding: 16px;
-  background: #f3f4f6;
+  background: var(--color-bg-subtle);
   border-radius: 8px;
   font-size: 15px;
-  color: #1f2937;
+  color: var(--color-text-heading);
   line-height: 1.6;
 }
 
 /* ── CTA Section ─────────────────────────────── */
 .cta-section {
   text-align: center;
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(79, 70, 229, 0.08) 100%);
-  border: 2px solid #c7d2fe;
+  background: var(--gradient-primary-subtle-strong);
+  border: 2px solid var(--color-primary-lighter);
 }
 
 .cta-buttons {
@@ -255,8 +255,8 @@
 .cta-primary {
   display: inline-block;
   padding: 12px 32px;
-  background: #6366f1;
-  color: white;
+  background: var(--color-primary);
+  color: #fff;
   border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
@@ -265,16 +265,16 @@
 }
 
 .cta-primary:hover {
-  background: #4f46e5;
-  color: white;
+  background: var(--color-primary-hover);
+  color: #fff;
 }
 
 .cta-secondary {
   display: inline-block;
   padding: 12px 32px;
-  background: white;
-  color: #6366f1;
-  border: 1px solid #c7d2fe;
+  background: var(--color-bg-card);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-lighter);
   border-radius: 8px;
   font-weight: 600;
   font-size: 15px;
@@ -283,25 +283,25 @@
 }
 
 .cta-secondary:hover {
-  background: #eef2ff;
-  border-color: #6366f1;
-  color: #4f46e5;
+  background: var(--color-primary-bg-subtle);
+  border-color: var(--color-primary);
+  color: var(--color-primary-hover);
 }
 
 .warning-section {
-  background: linear-gradient(135deg, rgba(248, 113, 113, 0.05) 0%, rgba(239, 68, 68, 0.05) 100%);
-  border-left-color: #ef4444;
+  background: var(--gradient-error-subtle);
+  border-left-color: var(--color-error);
 }
 
 .warning-section h2 {
-  color: #991b1b;
+  color: var(--color-error-text);
 }
 
 .warning-box {
-  background: white;
+  background: var(--color-bg-card);
   padding: 20px;
   border-radius: 8px;
-  border: 1px solid #fecaca;
+  border: 1px solid var(--color-error-border);
   margin-top: 16px;
 }
 
@@ -312,7 +312,7 @@
 
 .warning-box li {
   margin-bottom: 12px;
-  color: #7c2d12;
+  color: var(--color-warning-text-dark);
   font-size: 14px;
   line-height: 1.6;
 }
@@ -322,7 +322,7 @@
 }
 
 .warning-box a {
-  color: #6366f1;
+  color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;
 }
@@ -332,7 +332,7 @@
 }
 
 .warning-box p {
-  color: #7c2d12;
+  color: var(--color-warning-text-dark);
 }
 
 /* Mobile responsive */

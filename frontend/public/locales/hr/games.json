@@ -1,0 +1,19 @@
+{
+  "title": "Igre",
+  "subtitle": "Odaberite lutrijsku igru za igranje i upoznavanje šansi.",
+  "createGame": "+ Kreiraj igru",
+  "errorTitle": "Greška pri učitavanju igara",
+  "loadingGames": "Učitavanje igara",
+  "loadingText": "Učitavanje igara...",
+  "noGamesTitle": "Nema dostupnih igara",
+  "noGamesText": "Provjerite uskoro za lutrijske igre.",
+  "card": {
+    "pick": "Odaberi",
+    "from": "Od",
+    "bonus": "Bonus",
+    "odds": "Šanse",
+    "oddsValue": "1 prema {{value}}",
+    "playGame": "Igraj →",
+    "viewStats": "Statistike"
+  }
+}

@@ -82,7 +82,7 @@
 .login-btn {
   padding: 14px;
   background: var(--color-primary);
-  color: var(--color-bg-card);
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 15px;

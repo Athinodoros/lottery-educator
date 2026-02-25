@@ -1,0 +1,22 @@
+{
+  "title": "Kontakt oss",
+  "subtitle": "Har du spørsmål eller tilbakemeldinger? Vi vil gjerne høre fra deg.",
+  "successTitle": "Melding sendt!",
+  "successText": "Takk for at du tok kontakt. Vi vil gjennomgå meldingen din snart.",
+  "sendAnother": "Send en ny melding",
+  "emailLabel": "E-postadresse",
+  "emailPlaceholder": "din@epost.no",
+  "emailError": "Vennligst oppgi en gyldig e-postadresse",
+  "subjectLabel": "Emne",
+  "subjectPlaceholder": "Hva gjelder det?",
+  "messageLabel": "Melding",
+  "messagePlaceholder": "Fortell oss hva du tenker på...",
+  "sending": "Sender...",
+  "sendMessage": "Send melding",
+  "aboutProject": "Om dette prosjektet",
+  "aboutProjectText": "Lotteriskolen er et gratis pedagogisk verktøy som hjelper folk å forstå de virkelige oddsen for å vinne i lotteriet gjennom interaktive simuleringer.",
+  "privacy": "Personvern",
+  "privacyText": "Vi respekterer personvernet ditt. E-postadressen din brukes kun for å svare på meldingen din. Vi lagrer ikke IP-adresser eller deler informasjonen din. Du kan be om sletting av dataene dine når som helst.",
+  "openSource": "Åpen kildekode",
+  "openSourceText": "Dette prosjektet er åpen kildekode. Hvis du finner en feil eller ønsker å bidra, er du velkommen til å opprette en sak eller en pull request på GitHub."
+}

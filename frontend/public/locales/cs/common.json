@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Domů",
+    "games": "Hry",
+    "stats": "Statistiky",
+    "learn": "Vzdělávání",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Loterijní Vzdělavatel",
+  "skipToContent": "Přejít na hlavní obsah",
+  "switchToDark": "Přepnout na tmavý režim",
+  "switchToLight": "Přepnout na světlý režim",
+  "openMenu": "Otevřít menu",
+  "closeMenu": "Zavřít menu",
+  "footer": {
+    "privacyText": "Respektujeme vaše soukromí. Nejsou shromažďovány žádné osobní údaje.",
+    "dataDeleted": "Vaše data byla smazána.",
+    "deleteConfirm": "Smazat všechna vaše lokální data?",
+    "confirmYes": "Ano, smazat",
+    "confirmCancel": "Zrušit",
+    "deleteButton": "Smazat Moje Data",
+    "deleteAriaLabel": "Smazat moje data"
+  },
+  "consent": {
+    "ariaLabel": "Souhlas s cookies",
+    "text": "Používáme anonymní analýzy ke zlepšení vzdělávacího zážitku. Nejsou shromažďovány žádné osobní údaje. Svá data můžete kdykoli smazat.",
+    "accept": "Přijmout",
+    "decline": "Odmítnout"
+  }
+}

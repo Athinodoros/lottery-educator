@@ -225,9 +225,9 @@ export const setThemePreference = (theme: 'light' | 'dark'): void => {
 export const getThemePreference = (): 'light' | 'dark' => {
   try {
     const theme = localStorage.getItem(STORAGE_KEYS.THEME);
-    return (theme as 'light' | 'dark') || 'light';
+    return (theme as 'light' | 'dark') || 'dark';
   } catch (error) {
     console.error('Error getting theme:', error);
-    return 'light';
+    return 'dark';
   }
 };

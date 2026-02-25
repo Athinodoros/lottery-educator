@@ -1,0 +1,109 @@
+{
+  "title": "Lotteriemathematik verstehen",
+  "subtitle": "Die wahren Gewinnchancen bei Lotteriespielen verstehen",
+  "probability": {
+    "title": "Was ist Wahrscheinlichkeit?",
+    "text": "Wahrscheinlichkeit ist die mathematische Chance, dass ein Ereignis eintritt. Sie wird als Zahl zwischen 0 und 1 ausgedrückt, wobei 0 unmöglich und 1 sicher bedeutet. Zum Beispiel beträgt die Wahrscheinlichkeit, beim Münzwurf Kopf zu erhalten, 0,5 (oder 50 %), da es zwei gleich wahrscheinliche Ergebnisse gibt.",
+    "exampleTitle": "Beispiel: Würfeln",
+    "exampleText": "Wenn Sie einen fairen sechsseitigen Würfel werfen:",
+    "exampleItem1": "Es gibt 6 mögliche Ergebnisse (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Die Wahrscheinlichkeit, eine 3 zu würfeln, beträgt 1/6 ≈ 16,67 %",
+    "exampleItem3": "Die Wahrscheinlichkeit, eine beliebige Zahl zu würfeln, ist gleich groß"
+  },
+  "combinations": {
+    "title": "Kombinationen und Permutationen",
+    "text": "Bei der Berechnung von Lotteriegewinnchancen müssen wir verstehen, auf wie viele verschiedene Arten Elemente ausgewählt und angeordnet werden können. Bei den meisten Lotterien spielt die Reihenfolge der Zahlen keine Rolle, daher verwenden wir <strong>Kombinationen</strong>.",
+    "exampleTitle": "Beispiel: 6 aus 49 wählen",
+    "exampleText": "Bei einer typischen Lotterie, bei der Sie 6 Zahlen aus 49 wählen:",
+    "exampleItem1": "Die Anzahl der möglichen Kombinationen beträgt ungefähr 13,98 Millionen",
+    "exampleItem2": "Ihre Gewinnchance mit einem Los beträgt 1 zu 13,98 Millionen",
+    "exampleItem3": "Das ist eine Gewinnchance von 0,0000072 %!"
+  },
+  "expectedValue": {
+    "title": "Erwartungswert",
+    "text": "Der Erwartungswert ist der durchschnittliche Betrag, den Sie langfristig pro Wette gewinnen oder verlieren. Bei Lotterien ist der Erwartungswert immer negativ, was bedeutet, dass Sie im Durchschnitt Geld verlieren.",
+    "exampleTitle": "Beispiel: Eine einfache Lotterie",
+    "exampleText": "Stellen Sie sich eine Lotterie vor, bei der:",
+    "exampleItem1": "Loskosten: 1 $",
+    "exampleItem2": "Wahrscheinlichkeit, 10 $ zu gewinnen: 10 %",
+    "exampleItem3": "Wahrscheinlichkeit, nichts zu gewinnen: 90 %",
+    "exampleItem4": "Erwartungswert = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Über die Zeit würden Sie erwarten, kostendeckend zu spielen, aber echte Lotterien sind schlimmer!"
+  },
+  "houseFavor": {
+    "title": "Warum Lotterien immer das Haus begünstigen",
+    "text": "Echte Lotterien behalten einen Prozentsatz der Losverkäufe (typischerweise 30–50 %) ein, bevor Preise ausgezahlt werden. Das nennt man den „Hausvorteil". Das bedeutet:",
+    "exampleTitle": "Beispiel: Echte Lotteriemathematik",
+    "forEvery100": "Für jeden 100 $ Losumsatz:",
+    "item1": "40–50 $ gehen an den Lotterieveranstalter (Staat, Unternehmen usw.)",
+    "item2": "40–50 $ werden an die Gewinner ausgeschüttet",
+    "item3": "Die restlichen Mittel gehen an gemeinnützige Zwecke (Bildung, Infrastruktur usw.)",
+    "item4": "Ergebnis: Spieler erhalten nur 50–60 Cent für jeden ausgegebenen Dollar zurück"
+  },
+  "comparison": {
+    "title": "Lotterie vs. Investieren: Ein 30-Jahres-Vergleich",
+    "text": "Was wäre, wenn Sie das Geld, das Sie für Lotterielose ausgeben, stattdessen investieren würden? Vergleichen wir 20 $ pro Woche für Lotterielose mit der gleichen Investitionssumme.",
+    "lotteryTitle": "Lotterielose",
+    "investTitle": "Indexfonds-Investition",
+    "weeklySpend": "Wöchentliche Ausgabe",
+    "weeklyInvest": "Wöchentliche Investition",
+    "totalSpent": "Gesamtausgaben (30 J.)",
+    "totalInvested": "Gesamtinvestition (30 J.)",
+    "expectedReturn": "Erwartete Rendite",
+    "portfolioValue": "Portfoliowert",
+    "netResult": "Nettoergebnis",
+    "netGain": "Nettogewinn",
+    "lotteryNote": "Basierend auf einer durchschnittlichen Auszahlungsquote von 50 %",
+    "investNote": "Basierend auf einer durchschnittlichen jährlichen Rendite von ca. 7 % (historischer S&P 500)",
+    "takeaway": "<strong>Der Unterschied:</strong> Über 30 Jahre verliert der Lotteriespieler etwa 15.600 $, während der Investor etwa 70.800 $ gewinnt. Das ist eine Differenz von 86.400 $ bei denselben 20 $ pro Woche."
+  },
+  "gamblersFallacy": {
+    "title": "Der „Spielerfehlschluss"",
+    "text": "Viele Menschen glauben, dass vergangene Ergebnisse zukünftige Ergebnisse bei unabhängigen Ereignissen beeinflussen. Das ist falsch. Jede Lotterieziehung ist unabhängig, und vorherige Ergebnisse haben keinen Einfluss auf zukünftige.",
+    "exampleTitle": "Häufige Irrtümer",
+    "misconception1": "„Die 7 wurde letzte Woche gezogen, also ist sie diese Woche weniger wahrscheinlich"",
+    "reality1": "Jede Zahl hat bei jeder Ziehung genau die gleiche Chance",
+    "misconception2": "„Nach vielen Verlusten bin ich dran mit einem Gewinn"",
+    "reality2": "Vergangene Verluste erhöhen Ihre Gewinnchancen nicht",
+    "misconception3": "„Diese Zahlen sind ‚heiß', also sind sie wahrscheinlicher"",
+    "reality3": "Häufig gezogene Zahlen sind genauso wahrscheinlich wie seltene",
+    "misconceptionLabel": "Irrtum:",
+    "realityLabel": "Realität:"
+  },
+  "largeNumbers": {
+    "title": "Das Gesetz der großen Zahlen",
+    "text": "Je mehr Spiele Sie spielen, desto mehr nähern sich Ihre tatsächlichen Ergebnisse der theoretischen Wahrscheinlichkeit an. Das bedeutet jedoch nicht, dass Sie „irgendwann gewinnen" – es bedeutet, dass Sie letztendlich noch mehr Geld verlieren werden!",
+    "exampleTitle": "Was die Zahlen zeigen",
+    "item1": "1 Lotterielos spielen: Sie könnten einmal im Leben gewinnen",
+    "item2": "100 Lose spielen: Ihre Chancen verbessern sich, aber der erwartete Verlust ist immer noch Ihre gesamte Investition",
+    "item3": "1.000 Lose spielen: Sie nähern sich dem statistischen Durchschnitt (Verlust von ca. 50–60 % des ausgegebenen Geldes)",
+    "item4": "Je mehr Sie spielen, desto näher kommen Ihre Verluste der mathematischen Erwartung"
+  },
+  "lessons": {
+    "title": "Kluge Finanzlektionen",
+    "text": "Das Verständnis der Lotteriemathematik lehrt uns wertvolle Lektionen über Wahrscheinlichkeit und wirtschaftliche Entscheidungen:",
+    "riskReward": "Risiko vs. Ertrag",
+    "riskRewardText": "Bewerten Sie immer die Chancen im Verhältnis zum möglichen Gewinn. Bei Lotterien ist das Risiko-Ertrags-Verhältnis im Vergleich zu anderen Investitionen extrem ungünstig.",
+    "statThinking": "Statistisches Denken",
+    "statThinkingText": "Treffen Sie Entscheidungen auf Basis von Daten und Wahrscheinlichkeit, nicht auf Hoffnung oder Aberglauben. Dies gilt für Investitionen, Versicherungen und wichtige Lebensentscheidungen.",
+    "longTermPlanning": "Langfristige Planung",
+    "longTermPlanningText": "Lotteriegewinne sind unzuverlässig. Vermögensaufbau durch regelmäßiges Sparen und Investieren (auch kleiner Beträge) ist viel zuverlässiger als auf einen Jackpot zu hoffen.",
+    "psychologyLoss": "Psychologie des Verlusts",
+    "psychologyLossText": "Verstehen Sie, wie unser Gehirn uns zu schlechten Entscheidungen verleitet. Wir überschätzen kleine Wahrscheinlichkeiten und unterschätzen unsere Verluste, wenn sie über die Zeit verteilt sind."
+  },
+  "cta": {
+    "title": "Überzeugen Sie sich selbst",
+    "text": "Der beste Weg, Lotteriegewinnchancen zu verstehen, ist sie selbst zu erleben. Probieren Sie unseren interaktiven Lotteriesimulator aus und beobachten Sie, wie viele Ziehungen es braucht, um Ihre Zahlen zu treffen.",
+    "trySimulator": "Simulator ausprobieren",
+    "viewStatistics": "Statistiken ansehen"
+  },
+  "responsible": {
+    "title": "Verantwortungsvolles Spielen",
+    "text": "Wenn Sie das Gefühl haben, dass das Lotteriespielen zum Problem wird oder Ihre finanzielle Gesundheit beeinträchtigt, suchen Sie bitte Hilfe:",
+    "helpline": "Nationale Glücksspiel-Hilfshotline: 1-800-522-4700",
+    "ga": "Anonyme Spieler:",
+    "ncpg": "NCPG (Rat für zwanghaftes Glücksspiel):",
+    "remember": "Lotterielose sollten nur als Unterhaltung mit Geld verwendet werden, das Sie sich leisten können zu verlieren. Verlassen Sie sich niemals für Ihre Finanzplanung auf sie.",
+    "rememberLabel": "Denken Sie daran:"
+  }
+}

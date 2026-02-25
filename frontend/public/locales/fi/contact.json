@@ -1,0 +1,22 @@
+{
+  "title": "Ota yhteyttä",
+  "subtitle": "Onko sinulla kysyttävää tai palautetta? Kuulemme mielellämme sinusta.",
+  "successTitle": "Viesti lähetetty!",
+  "successText": "Kiitos yhteydenotostasi. Käsittelemme viestisi pian.",
+  "sendAnother": "Lähetä toinen viesti",
+  "emailLabel": "Sähköpostiosoite",
+  "emailPlaceholder": "sinun@sahkoposti.fi",
+  "emailError": "Anna kelvollinen sähköpostiosoite",
+  "subjectLabel": "Aihe",
+  "subjectPlaceholder": "Mistä on kyse?",
+  "messageLabel": "Viesti",
+  "messagePlaceholder": "Kerro meille, mitä mielessäsi on...",
+  "sending": "Lähetetään...",
+  "sendMessage": "Lähetä viesti",
+  "aboutProject": "Tietoa tästä projektista",
+  "aboutProjectText": "Lottery Educator on ilmainen opetustyökalu, joka auttaa ihmisiä ymmärtämään lottovoiton todellisia todennäköisyyksiä vuorovaikutteisten simulaatioiden avulla.",
+  "privacy": "Yksityisyys",
+  "privacyText": "Kunnioitamme yksityisyyttäsi. Sähköpostiasi käytetään vain vastaamaan viestiisi. Emme tallenna IP-osoitteita emmekä jaa tietojasi. Voit pyytää tietojesi poistamista milloin tahansa.",
+  "openSource": "Avoin lähdekoodi",
+  "openSourceText": "Tämä projekti on avointa lähdekoodia. Jos löydät virheen tai haluat osallistua, luo vapaasti ongelmaraportti tai vetopyyntö GitHubissa."
+}

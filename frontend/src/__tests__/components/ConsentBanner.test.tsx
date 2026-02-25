@@ -28,9 +28,9 @@ describe('ConsentBanner', () => {
     localStorageMock.getItem.mockReturnValue(null)
     render(<ConsentBanner />)
     expect(screen.getByRole('dialog')).toBeInTheDocument()
-    expect(screen.getByText(/anonymous analytics/i)).toBeInTheDocument()
-    expect(screen.getByText('Accept')).toBeInTheDocument()
-    expect(screen.getByText('Decline')).toBeInTheDocument()
+    expect(screen.getByText('consent.text')).toBeInTheDocument()
+    expect(screen.getByText('consent.accept')).toBeInTheDocument()
+    expect(screen.getByText('consent.decline')).toBeInTheDocument()
   })
 
   it('does not render when consent has been given', () => {
@@ -53,7 +53,7 @@ describe('ConsentBanner', () => {
     useSessionStore.setState({ hasGivenConsent: false, giveConsent })
 
     render(<ConsentBanner />)
-    await user.click(screen.getByText('Accept'))
+    await user.click(screen.getByText('consent.accept'))
     expect(giveConsent).toHaveBeenCalled()
   })
 
@@ -65,7 +65,7 @@ describe('ConsentBanner', () => {
     useSessionStore.setState({ hasGivenConsent: false, revokeConsent })
 
     render(<ConsentBanner />)
-    await user.click(screen.getByText('Decline'))
+    await user.click(screen.getByText('consent.decline'))
     expect(revokeConsent).toHaveBeenCalled()
   })
 
@@ -73,6 +73,6 @@ describe('ConsentBanner', () => {
     localStorageMock.getItem.mockReturnValue(null)
     render(<ConsentBanner />)
     const dialog = screen.getByRole('dialog')
-    expect(dialog).toHaveAttribute('aria-label', 'Cookie consent')
+    expect(dialog).toHaveAttribute('aria-label', 'consent.ariaLabel')
   })
 })

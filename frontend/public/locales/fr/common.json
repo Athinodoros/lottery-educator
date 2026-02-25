@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "games": "Jeux",
+    "stats": "Statistiques",
+    "learn": "Apprendre",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "appTitle": "Loterie Éducative",
+  "skipToContent": "Aller au contenu principal",
+  "switchToDark": "Passer au mode sombre",
+  "switchToLight": "Passer au mode clair",
+  "openMenu": "Ouvrir le menu",
+  "closeMenu": "Fermer le menu",
+  "footer": {
+    "privacyText": "Nous respectons votre vie privée. Aucune donnée personnelle n'est collectée.",
+    "dataDeleted": "Vos données ont été supprimées.",
+    "deleteConfirm": "Supprimer toutes vos données locales ?",
+    "confirmYes": "Oui, supprimer",
+    "confirmCancel": "Annuler",
+    "deleteButton": "Supprimer mes données",
+    "deleteAriaLabel": "Supprimer mes données"
+  },
+  "consent": {
+    "ariaLabel": "Consentement aux cookies",
+    "text": "Nous utilisons des analyses anonymes pour améliorer l'expérience d'apprentissage. Aucune donnée personnelle n'est collectée. Vous pouvez supprimer vos données à tout moment.",
+    "accept": "Accepter",
+    "decline": "Refuser"
+  }
+}

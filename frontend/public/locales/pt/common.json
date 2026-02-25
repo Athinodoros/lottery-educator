@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Início",
+    "games": "Jogos",
+    "stats": "Estatísticas",
+    "learn": "Aprender",
+    "contact": "Contacto",
+    "admin": "Admin"
+  },
+  "appTitle": "Educador de Lotaria",
+  "skipToContent": "Saltar para o conteúdo principal",
+  "switchToDark": "Mudar para modo escuro",
+  "switchToLight": "Mudar para modo claro",
+  "openMenu": "Abrir menu",
+  "closeMenu": "Fechar menu",
+  "footer": {
+    "privacyText": "Respeitamos a sua privacidade. Nenhum dado pessoal é recolhido.",
+    "dataDeleted": "Os seus dados foram eliminados.",
+    "deleteConfirm": "Eliminar todos os seus dados locais?",
+    "confirmYes": "Sim, eliminar",
+    "confirmCancel": "Cancelar",
+    "deleteButton": "Eliminar os Meus Dados",
+    "deleteAriaLabel": "Eliminar os meus dados"
+  },
+  "consent": {
+    "ariaLabel": "Consentimento de cookies",
+    "text": "Utilizamos análises anónimas para melhorar a experiência de aprendizagem. Nenhum dado pessoal é recolhido. Pode eliminar os seus dados a qualquer momento.",
+    "accept": "Aceitar",
+    "decline": "Recusar"
+  }
+}

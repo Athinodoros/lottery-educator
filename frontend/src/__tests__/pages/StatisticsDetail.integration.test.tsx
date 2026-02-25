@@ -79,7 +79,7 @@ describe('Statistics Detail Page - Integration Test', () => {
       renderStats()
       await waitFor(
         () => {
-          expect(screen.getByRole('heading', { name: /Powerball/i })).toBeTruthy()
+          expect(screen.getByRole('heading', { name: /detail\.gameStats/ })).toBeTruthy()
         },
         { timeout: 10000 }
       )
@@ -113,7 +113,7 @@ describe('Statistics Detail Page - Integration Test', () => {
       renderStats()
 
       await waitFor(() => {
-        expect(screen.getByText(/failed to load|error/i)).toBeTruthy()
+        expect(screen.getByText(/detail\.failedToLoad/)).toBeTruthy()
       })
     })
   })
@@ -123,7 +123,7 @@ describe('Statistics Detail Page - Integration Test', () => {
       renderStats()
       // Back button is rendered even during loading
       await waitFor(() => {
-        expect(screen.getByText(/back to statistics/i)).toBeTruthy()
+        expect(screen.getByText(/detail\.backToStats/)).toBeTruthy()
       })
     })
   })
@@ -133,7 +133,7 @@ describe('Statistics Detail Page - Integration Test', () => {
       renderStats()
       await waitFor(() => {
         // Check for the specific h2 heading — avoids ancestor container matches
-        expect(screen.getByRole('heading', { name: /Probability Analysis/i })).toBeTruthy()
+        expect(screen.getByRole('heading', { name: /detail\.probabilityAnalysis/ })).toBeTruthy()
       })
     })
   })

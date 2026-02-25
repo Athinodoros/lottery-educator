@@ -1,0 +1,14 @@
+{
+  "title": "Lottery Educator",
+  "subtitle": "Opi lottoarvontojen todelliset todennäköisyydet",
+  "description": "Selvitä, miksi lottoarvat ovat tilastollinen mahdottomuus, ja ymmärrä pelien todennäköisyyksien takana oleva matematiikka.",
+  "cta": "Pelaa ja opi",
+  "features": {
+    "interactiveGames": "Vuorovaikutteiset pelit",
+    "interactiveGamesDesc": "Simuloi tuhansia lottoarvontoja ymmärtääksesi, kuinka kauan voittaminen todella kestää.",
+    "realStatistics": "Oikeat tilastot",
+    "realStatisticsDesc": "Näe suosittujen lottoarvontojen todelliset todennäköisyydet ympäri maailmaa.",
+    "financialEducation": "Talousopetus",
+    "financialEducationDesc": "Opi, miksi todennäköisyyksien ymmärtäminen on ratkaisevan tärkeää henkilökohtaisille talouspäätöksille."
+  }
+}

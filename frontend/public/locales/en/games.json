@@ -1,0 +1,19 @@
+{
+  "title": "Games",
+  "subtitle": "Select a lottery game to play and learn the odds.",
+  "createGame": "+ Create a Game",
+  "errorTitle": "Error Loading Games",
+  "loadingGames": "Loading games",
+  "loadingText": "Loading games...",
+  "noGamesTitle": "No Games Available",
+  "noGamesText": "Check back soon for lottery games to play.",
+  "card": {
+    "pick": "Pick",
+    "from": "From",
+    "bonus": "Bonus",
+    "odds": "Odds",
+    "oddsValue": "1 in {{value}}",
+    "playGame": "Play Game →",
+    "viewStats": "View Stats"
+  }
+}

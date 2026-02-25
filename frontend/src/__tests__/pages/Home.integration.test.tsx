@@ -82,7 +82,7 @@ describe('Home Page - Integration Test', () => {
     )
 
     // Should have navigation buttons
-    const playButton = screen.getByRole('link', { name: /Play Games/i })
+    const playButton = screen.getByRole('link', { name: /cta/ })
 
     expect(playButton).toBeTruthy()
   })
@@ -94,7 +94,7 @@ describe('Home Page - Integration Test', () => {
       </BrowserRouter>
     )
 
-    const playButton = screen.getByRole('link', { name: /Play Games/i })
+    const playButton = screen.getByRole('link', { name: /cta/ })
     expect(playButton.getAttribute('href')).toBe('/games')
   })
 
@@ -105,7 +105,7 @@ describe('Home Page - Integration Test', () => {
       </BrowserRouter>
     )
 
-    const gameLink = screen.getByRole('link', { name: /Play Games/i })
+    const gameLink = screen.getByRole('link', { name: /cta/ })
     expect(gameLink.getAttribute('href')).toBe('/games')
   })
 
@@ -117,9 +117,9 @@ describe('Home Page - Integration Test', () => {
     )
 
     // Feature cards should be present
-    expect(screen.getByText(/Interactive Games/i)).toBeTruthy()
-    expect(screen.getByText(/Real Statistics/i)).toBeTruthy()
-    expect(screen.getByText(/Financial Education/i)).toBeTruthy()
+    expect(screen.getByText('features.interactiveGames')).toBeTruthy()
+    expect(screen.getByText('features.realStatistics')).toBeTruthy()
+    expect(screen.getByText('features.financialEducation')).toBeTruthy()
   })
 
   it('should have accessible links', () => {
@@ -142,7 +142,7 @@ describe('Home Page - Integration Test', () => {
     )
 
     // CTA button to play
-    const ctaButton = screen.getByRole('link', { name: /Play Games/i })
+    const ctaButton = screen.getByRole('link', { name: /cta/ })
     expect(ctaButton).toBeTruthy()
   })
 
@@ -154,7 +154,7 @@ describe('Home Page - Integration Test', () => {
     )
 
     // Stats mentioned in feature card
-    expect(screen.getByText(/Real Statistics/i)).toBeTruthy()
+    expect(screen.getByText('features.realStatistics')).toBeTruthy()
   })
 
   it('should have proper heading hierarchy', () => {
@@ -195,9 +195,9 @@ describe('Home Page - Feature Cards', () => {
     )
 
     // Should have feature cards explaining the platform
-    expect(screen.getAllByText(/Interactive Games/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/Real Statistics/i).length).toBeGreaterThan(0)
-    expect(screen.getAllByText(/Financial Education/i).length).toBeGreaterThan(0)
+    expect(screen.getAllByText('features.interactiveGames').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('features.realStatistics').length).toBeGreaterThan(0)
+    expect(screen.getAllByText('features.financialEducation').length).toBeGreaterThan(0)
   })
 
   it('should show mathematical education angle', () => {

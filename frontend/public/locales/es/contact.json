@@ -1,0 +1,22 @@
+{
+  "title": "Contáctenos",
+  "subtitle": "¿Tiene preguntas o comentarios? Nos encantaría saber de usted.",
+  "successTitle": "¡Mensaje enviado!",
+  "successText": "Gracias por contactarnos. Revisaremos su mensaje en breve.",
+  "sendAnother": "Enviar otro mensaje",
+  "emailLabel": "Dirección de correo electrónico",
+  "emailPlaceholder": "su@email.com",
+  "emailError": "Por favor, introduzca una dirección de correo electrónico válida",
+  "subjectLabel": "Asunto",
+  "subjectPlaceholder": "¿De qué se trata?",
+  "messageLabel": "Mensaje",
+  "messagePlaceholder": "Cuéntenos lo que piensa...",
+  "sending": "Enviando...",
+  "sendMessage": "Enviar mensaje",
+  "aboutProject": "Sobre este proyecto",
+  "aboutProjectText": "Lotería Educativa es una herramienta educativa gratuita que ayuda a las personas a comprender las verdaderas probabilidades de ganar la lotería a través de simulaciones interactivas.",
+  "privacy": "Privacidad",
+  "privacyText": "Respetamos su privacidad. Su correo electrónico solo se usa para responder a su mensaje. No almacenamos direcciones IP ni compartimos su información. Puede solicitar la eliminación de sus datos en cualquier momento.",
+  "openSource": "Código abierto",
+  "openSourceText": "Este proyecto es de código abierto. Si encuentra un error o desea contribuir, no dude en abrir un issue o un pull request en GitHub."
+}

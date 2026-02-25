@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "홈",
+    "games": "게임",
+    "stats": "통계",
+    "learn": "학습",
+    "contact": "문의",
+    "admin": "관리"
+  },
+  "appTitle": "복권 교육",
+  "skipToContent": "본문으로 건너뛰기",
+  "switchToDark": "다크 모드로 전환",
+  "switchToLight": "라이트 모드로 전환",
+  "openMenu": "메뉴 열기",
+  "closeMenu": "메뉴 닫기",
+  "footer": {
+    "privacyText": "귀하의 개인정보를 존중합니다. 개인 데이터는 수집하지 않습니다.",
+    "dataDeleted": "귀하의 데이터가 삭제되었습니다.",
+    "deleteConfirm": "모든 로컬 데이터를 삭제하시겠습니까?",
+    "confirmYes": "네, 삭제합니다",
+    "confirmCancel": "취소",
+    "deleteButton": "내 데이터 삭제",
+    "deleteAriaLabel": "내 데이터 삭제"
+  },
+  "consent": {
+    "ariaLabel": "쿠키 동의",
+    "text": "학습 경험을 개선하기 위해 익명 분석을 사용합니다. 개인 데이터는 수집하지 않습니다. 언제든지 데이터를 삭제할 수 있습니다.",
+    "accept": "동의",
+    "decline": "거부"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Kontakta oss",
+  "subtitle": "Har du frågor eller feedback? Vi vill gärna höra från dig.",
+  "successTitle": "Meddelande skickat!",
+  "successText": "Tack för att du kontaktade oss. Vi kommer att granska ditt meddelande inom kort.",
+  "sendAnother": "Skicka ett till meddelande",
+  "emailLabel": "E-postadress",
+  "emailPlaceholder": "din@email.se",
+  "emailError": "Ange en giltig e-postadress",
+  "subjectLabel": "Ämne",
+  "subjectPlaceholder": "Vad handlar det om?",
+  "messageLabel": "Meddelande",
+  "messagePlaceholder": "Berätta vad du tänker på...",
+  "sending": "Skickar...",
+  "sendMessage": "Skicka meddelande",
+  "aboutProject": "Om detta projekt",
+  "aboutProjectText": "Lottery Educator är ett gratis utbildningsverktyg som hjälper människor förstå de verkliga oddsen att vinna på lotteri genom interaktiva simuleringar.",
+  "privacy": "Integritet",
+  "privacyText": "Vi respekterar din integritet. Din e-post används bara för att svara på ditt meddelande. Vi lagrar inte IP-adresser eller delar din information. Du kan begära radering av dina data när som helst.",
+  "openSource": "Öppen källkod",
+  "openSourceText": "Detta projekt är öppen källkod. Om du hittar ett fel eller vill bidra, skapa gärna ett ärende eller en pull request på GitHub."
+}

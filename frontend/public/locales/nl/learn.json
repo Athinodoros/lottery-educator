@@ -1,0 +1,109 @@
+{
+  "title": "Leer Over Loterijwiskunde",
+  "subtitle": "De werkelijke kansen achter loterijspellen begrijpen",
+  "probability": {
+    "title": "Wat is Kansberekening?",
+    "text": "Kansberekening is de wiskundige waarschijnlijkheid dat een gebeurtenis zal plaatsvinden. Het wordt uitgedrukt als een getal tussen 0 en 1, waarbij 0 onmogelijk betekent en 1 zeker. De kans op kop bij het opgooien van een eerlijke munt is bijvoorbeeld 0,5 (of 50%), aangezien er twee even waarschijnlijke uitkomsten zijn.",
+    "exampleTitle": "Voorbeeld: Een Dobbelsteen Gooien",
+    "exampleText": "Wanneer u een eerlijke zeszijdige dobbelsteen gooit:",
+    "exampleItem1": "Er zijn 6 mogelijke uitkomsten (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "De kans op het gooien van een 3 is 1/6 ≈ 16,67%",
+    "exampleItem3": "De kans op het gooien van elk nummer is even groot"
+  },
+  "combinations": {
+    "title": "Combinaties en Permutaties",
+    "text": "Bij het berekenen van loterijkansen moeten we begrijpen op hoeveel verschillende manieren items kunnen worden geselecteerd en gerangschikt. Bij de meeste loterijen maakt de volgorde van nummers niet uit, dus gebruiken we <strong>combinaties</strong>.",
+    "exampleTitle": "Voorbeeld: 6 Kiezen uit 49",
+    "exampleText": "In een typische loterij waarbij u 6 nummers uit 49 kiest:",
+    "exampleItem1": "Het aantal mogelijke combinaties is ongeveer 13,98 miljoen",
+    "exampleItem2": "Uw kans om te winnen met één lot is 1 op 13,98 miljoen",
+    "exampleItem3": "Dat is een kans van 0,0000072% om te winnen!"
+  },
+  "expectedValue": {
+    "title": "Verwachte Waarde",
+    "text": "Verwachte waarde is het gemiddelde bedrag dat u op de lange termijn verwacht te winnen of verliezen per inzet. Voor loterijen is de verwachte waarde altijd negatief, wat betekent dat u gemiddeld geld verliest.",
+    "exampleTitle": "Voorbeeld: Een Eenvoudige Loterij",
+    "exampleText": "Stel u een loterij voor waarbij:",
+    "exampleItem1": "Lotprijs: $1",
+    "exampleItem2": "Kans op het winnen van $10: 10%",
+    "exampleItem3": "Kans op niets winnen: 90%",
+    "exampleItem4": "Verwachte waarde = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Op termijn zou u quitte spelen, maar echte loterijen zijn slechter!"
+  },
+  "houseFavor": {
+    "title": "Waarom Loterijen Altijd het Huis Bevoordelen",
+    "text": "Echte loterijen houden een percentage van de lotverkoop in (doorgaans 30-50%) voordat ze prijzen uitkeren. Dit wordt het \"huisvoordeel\" genoemd. Dit is wat het betekent:",
+    "exampleTitle": "Voorbeeld: Echte Loterijwiskunde",
+    "forEvery100": "Voor elke $100 aan lotverkoop:",
+    "item1": "$40-50 gaat naar de loterijorganisator (staat, bedrijf, enz.)",
+    "item2": "$40-50 wordt verdeeld onder winnaars",
+    "item3": "De overige fondsen gaan naar goede doelen (onderwijs, infrastructuur, enz.)",
+    "item4": "Resultaat: Spelers krijgen slechts 50-60 cent terug voor elke uitgegeven dollar"
+  },
+  "comparison": {
+    "title": "Loterij vs Beleggen: Een Vergelijking over 30 Jaar",
+    "text": "Wat als u het geld dat u aan loterijloten zou uitgeven in plaats daarvan zou beleggen? Laten we $20 per week aan loterijloten uitgeven vergelijken met hetzelfde bedrag beleggen.",
+    "lotteryTitle": "Loterijloten",
+    "investTitle": "Indexfonds Belegging",
+    "weeklySpend": "Wekelijkse uitgave",
+    "weeklyInvest": "Wekelijkse belegging",
+    "totalSpent": "Totaal uitgegeven (30 jr)",
+    "totalInvested": "Totaal belegd (30 jr)",
+    "expectedReturn": "Verwacht rendement",
+    "portfolioValue": "Portefeuillewaarde",
+    "netResult": "Nettoresultaat",
+    "netGain": "Nettowinst",
+    "lotteryNote": "Gebaseerd op gemiddelde uitbetalingsratio van 50%",
+    "investNote": "Gebaseerd op ~7% gemiddeld jaarlijks rendement (S&P 500 historisch)",
+    "takeaway": "<strong>Het verschil:</strong> Over 30 jaar verliest de loterijspeler ongeveer $15.600 terwijl de belegger ongeveer $70.800 wint. Dat is een verschil van $86.400 met dezelfde $20 per week."
+  },
+  "gamblersFallacy": {
+    "title": "De \"Gokkersdrogleer\"",
+    "text": "Veel mensen geloven dat eerdere resultaten toekomstige uitkomsten beïnvloeden bij onafhankelijke gebeurtenissen. Dit is onjuist. Elke loterijstrekking is onafhankelijk en eerdere uitkomsten beïnvloeden toekomstige niet.",
+    "exampleTitle": "Veelvoorkomende Misvattingen",
+    "misconception1": "\"7 werd vorige week getrokken, dus het is minder waarschijnlijk deze week\"",
+    "reality1": "Elk nummer heeft bij elke trekking exact dezelfde kans",
+    "misconception2": "\"Ik verdien het om te winnen na zo vaak te hebben verloren\"",
+    "reality2": "Eerdere verliezen verhogen uw winstkans niet",
+    "misconception3": "\"Deze nummers zijn 'hot' dus ze zijn waarschijnlijker\"",
+    "reality3": "Vaak getrokken nummers zijn net zo waarschijnlijk als zeldzame",
+    "misconceptionLabel": "Misvatting:",
+    "realityLabel": "Werkelijkheid:"
+  },
+  "largeNumbers": {
+    "title": "De Wet van de Grote Getallen",
+    "text": "Naarmate u meer spellen speelt, convergeren uw werkelijke resultaten naar de theoretische kans. Dit betekent echter niet dat u \"uiteindelijk zult winnen\" - het betekent dat u uiteindelijk nog meer geld zult verliezen!",
+    "exampleTitle": "Wat de Cijfers Laten Zien",
+    "item1": "Speel 1 loterijlot: U wint misschien één keer in uw leven",
+    "item2": "Speel 100 loten: Uw kansen verbeteren, maar het verwachte verlies is nog steeds uw volledige investering",
+    "item3": "Speel 1.000 loten: U bent dichter bij het statistische gemiddelde (verlies van ~50-60% van uitgegeven geld)",
+    "item4": "Hoe meer u speelt, hoe dichter uw verliezen de wiskundige verwachting benaderen"
+  },
+  "lessons": {
+    "title": "Slimme Financiële Lessen",
+    "text": "Het begrijpen van loterijwiskunde leert ons waardevolle lessen over kansberekening en economische beslissingen:",
+    "riskReward": "Risico vs Beloning",
+    "riskRewardText": "Evalueer altijd de kansen versus de potentiële beloning. Bij loterijen is de risico-beloningsverhouding extreem ongunstig vergeleken met andere beleggingen.",
+    "statThinking": "Statistisch Denken",
+    "statThinkingText": "Neem beslissingen op basis van gegevens en kansberekening, niet op basis van hoop of bijgeloof. Dit geldt voor beleggen, verzekeringen en belangrijke levensbeslissingen.",
+    "longTermPlanning": "Langetermijnplanning",
+    "longTermPlanningText": "Loterijwinsten zijn onbetrouwbaar. Vermogen opbouwen door regelmatig te sparen en te beleggen (zelfs kleine bedragen) is veel betrouwbaarder dan hopen op een jackpot.",
+    "psychologyLoss": "Psychologie van Verlies",
+    "psychologyLossText": "Begrijp hoe onze hersenen ons misleiden tot slechte beslissingen. We overschatten kleine kansen en onderschatten onze verliezen wanneer ze over de tijd verspreid zijn."
+  },
+  "cta": {
+    "title": "Zie Het Zelf",
+    "text": "De beste manier om loterijkansen te begrijpen is ze uit eerste hand te ervaren. Probeer onze interactieve loterijsimulator en zie hoeveel trekkingen nodig zijn om uw nummers te matchen.",
+    "trySimulator": "Probeer de Simulator",
+    "viewStatistics": "Bekijk Statistieken"
+  },
+  "responsible": {
+    "title": "Verantwoord Spelen",
+    "text": "Als u ooit het gevoel heeft dat loterijspelen een probleem wordt, of als het uw financiële gezondheid beïnvloedt, zoek dan hulp:",
+    "helpline": "Nationale Hulplijn voor Gokproblemen: 1-800-522-4700",
+    "ga": "Anonieme Gokkers:",
+    "ncpg": "NCPG (Raad inzake Dwangmatig Gokken):",
+    "remember": "Loterijloten mogen alleen worden gebruikt als entertainment met geld dat u kunt missen. Vertrouw er nooit op voor financiële planning.",
+    "rememberLabel": "Onthoud:"
+  }
+}

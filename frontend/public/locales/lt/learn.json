@@ -1,0 +1,109 @@
+{
+  "title": "Mokykitės apie loterijos matematiką",
+  "subtitle": "Supraskite tikrąsias loterijos žaidimų galimybes",
+  "probability": {
+    "title": "Kas yra tikimybė?",
+    "text": "Tikimybė yra matematinis įvykio pasireiškimo šansas. Ji išreiškiama skaičiumi nuo 0 iki 1, kur 0 reiškia neįmanoma ir 1 reiškia tikra. Pavyzdžiui, tikimybė mesti monetą ir gauti herbą yra 0,5 (arba 50%), nes yra du vienodai tikėtini rezultatai.",
+    "exampleTitle": "Pavyzdys: kauliuko metimas",
+    "exampleText": "Kai metate šešiasienį kauliuką:",
+    "exampleItem1": "Yra 6 galimi rezultatai (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Tikimybė išmesti 3 yra 1/6 ≈ 16,67%",
+    "exampleItem3": "Kiekvieno skaičiaus tikimybė yra vienoda"
+  },
+  "combinations": {
+    "title": "Kombinacijos ir permutacijos",
+    "text": "Skaičiuojant loterijos galimybes, reikia suprasti, kiek skirtingų būdų galima pasirinkti ir išdėstyti elementus. Daugumoje loterijų skaičių eilės tvarka nesvarbi, todėl naudojame <strong>kombinacijas</strong>.",
+    "exampleTitle": "Pavyzdys: 6 iš 49 pasirinkimas",
+    "exampleText": "Tipinėje loterijoje, kur renkate 6 skaičius iš 49:",
+    "exampleItem1": "Galimų kombinacijų skaičius yra apie 13,98 milijono",
+    "exampleItem2": "Jūsų tikimybė laimėti su vienu bilietu yra 1 iš 13,98 milijono",
+    "exampleItem3": "Tai 0,0000072% tikimybė laimėti!"
+  },
+  "expectedValue": {
+    "title": "Tikėtina vertė",
+    "text": "Tikėtina vertė yra vidutinė suma, kurią tikitės laimėti ar prarasti už vieną statymą ilguoju laikotarpiu. Loterijoms tikėtina vertė visada yra neigiama, o tai reiškia, kad vidutiniškai prarandate pinigus.",
+    "exampleTitle": "Pavyzdys: paprasta loterija",
+    "exampleText": "Įsivaizduokite loteriją, kur:",
+    "exampleItem1": "Bilieto kaina: 1 $",
+    "exampleItem2": "Tikimybė laimėti 10 $: 10%",
+    "exampleItem3": "Tikimybė nieko nelaimėti: 90%",
+    "exampleItem4": "Tikėtina vertė = (0,10 x 10 $) + (0,90 x 0 $) – 1 $ = 1 $ – 1 $ = 0 $",
+    "exampleItem5": "Ilgainiui tikėtumėtės likti ties nuliu, bet tikros loterijos yra blogesnės!"
+  },
+  "houseFavor": {
+    "title": "Kodėl loterijos visada naudingos organizatoriui",
+    "text": "Tikros loterijos pasilieka dalį bilietų pardavimų (paprastai 30–50%) prieš mokėdamos prizus. Tai vadinama „namų pranašumu". Štai ką tai reiškia:",
+    "exampleTitle": "Pavyzdys: tikra loterijos matematika",
+    "forEvery100": "Iš kiekvienų 100 $ bilietų pardavimų:",
+    "item1": "40–50 $ atitenka loterijos organizatoriui (valstybei, įmonei ir t. t.)",
+    "item2": "40–50 $ paskirstoma laimėtojams",
+    "item3": "Likę lėšos skiriamos tikslams (švietimui, infrastruktūrai ir t. t.)",
+    "item4": "Rezultatas: žaidėjai atgauna tik 50–60 centų už kiekvieną išleistą dolerį"
+  },
+  "comparison": {
+    "title": "Loterija prieš investavimą: 30 metų palyginimas",
+    "text": "O jei investuotumėte pinigus, kuriuos išleistumėte loterijos bilietams? Palyginkime 20 $ per savaitę loterijos bilietams ir tą pačią sumą investuojant.",
+    "lotteryTitle": "Loterijos bilietai",
+    "investTitle": "Investicija į indekso fondą",
+    "weeklySpend": "Savaitinės išlaidos",
+    "weeklyInvest": "Savaitinė investicija",
+    "totalSpent": "Iš viso išleista (30 m.)",
+    "totalInvested": "Iš viso investuota (30 m.)",
+    "expectedReturn": "Tikėtina grąža",
+    "portfolioValue": "Portfelio vertė",
+    "netResult": "Grynasis rezultatas",
+    "netGain": "Grynasis pelnas",
+    "lotteryNote": "Pagal vidutinį 50% išmokų santykį",
+    "investNote": "Pagal ~7% vidutinę metinę grąžą (S&P 500 istoriniai duomenys)",
+    "takeaway": "<strong>Skirtumas:</strong> Per 30 metų loterijos žaidėjas praranda apie 15 600 $, o investuotojas uždirba apie 70 800 $. Tai 86 400 $ skirtumas nuo tų pačių 20 $ per savaitę."
+  },
+  "gamblersFallacy": {
+    "title": "„Lošėjo klaida"",
+    "text": "Daugelis žmonių mano, kad ankstesni rezultatai turi įtakos būsimiems nepriklausomų įvykių rezultatams. Tai klaidinga. Kiekvienas loterijos traukimas yra nepriklausomas, ir ankstesni rezultatai neturi įtakos būsimiems.",
+    "exampleTitle": "Dažni klaidingi įsitikinimai",
+    "misconception1": "„7 buvo ištrauktas praeitą savaitę, todėl šią savaitę mažiau tikėtinas"",
+    "reality1": "Kiekvienas skaičius turi lygiai tokią pačią tikimybę kiekviename traukime",
+    "misconception2": "„Man priklauso laimėjimas po daugelio pralaimėjimų"",
+    "reality2": "Ankstesni pralaimėjimai nedidina jūsų laimėjimo tikimybės",
+    "misconception3": "„Šie skaičiai yra „karšti", todėl labiau tikėtini"",
+    "reality3": "Dažnai traukiami skaičiai yra lygiai taip pat tikėtini kaip ir reti",
+    "misconceptionLabel": "Klaidingas įsitikinimas:",
+    "realityLabel": "Tikrovė:"
+  },
+  "largeNumbers": {
+    "title": "Didelių skaičių dėsnis",
+    "text": "Kuo daugiau žaidžiate, tuo labiau jūsų faktiniai rezultatai artėja prie teorinės tikimybės. Tačiau tai nereiškia, kad „galiausiai laimėsite" – tai reiškia, kad galiausiai prarasite dar daugiau pinigų!",
+    "exampleTitle": "Ką rodo skaičiai",
+    "item1": "Žaiskite 1 loterijos bilietą: galite laimėti vieną kartą per gyvenimą",
+    "item2": "Žaiskite 100 bilietų: jūsų galimybės gerėja, bet tikėtinas nuostolis vis tiek yra visa investicija",
+    "item3": "Žaiskite 1000 bilietų: esate arčiau statistinio vidurkio (prarandate ~50–60% išleistų pinigų)",
+    "item4": "Kuo daugiau žaidžiate, tuo labiau jūsų nuostoliai artėja prie matematinio lūkesčio"
+  },
+  "lessons": {
+    "title": "Protingi finansiniai patarimai",
+    "text": "Loterijos matematikos supratimas moko vertingų pamokų apie tikimybę ir ekonominius sprendimus:",
+    "riskReward": "Rizika ir atlygis",
+    "riskRewardText": "Visada vertinkite galimybes palyginti su galimu atlygiu. Loterijose rizikos ir atlygio santykis yra labai nepalankus, palyginti su kitomis investicijomis.",
+    "statThinking": "Statistinis mąstymas",
+    "statThinkingText": "Priimkite sprendimus remdamiesi duomenimis ir tikimybe, o ne viltimi ar prietarais. Tai taikoma investavimui, draudimui ir svarbiems gyvenimo sprendimams.",
+    "longTermPlanning": "Ilgalaikis planavimas",
+    "longTermPlanningText": "Loterijos laimėjimai yra nepatikimi. Turto kaupimas reguliariai taupant ir investuojant (net nedideles sumas) yra daug patikimesnis nei laukimas laimėjimo.",
+    "psychologyLoss": "Nuostolio psichologija",
+    "psychologyLossText": "Supraskite, kaip mūsų smegenys mus apgaudinėja priimant blogus sprendimus. Mes pervertiname mažas tikimybes ir nuvertiname savo nuostolius, kai jie pasiskirsto per laiką."
+  },
+  "cta": {
+    "title": "Pamatykite patys",
+    "text": "Geriausias būdas suprasti loterijos galimybes – patirti jas iš pirmų rankų. Išbandykite mūsų interaktyvų loterijos simuliatorių ir pažiūrėkite, kiek traukimų reikia, kad sutaptų jūsų skaičiai.",
+    "trySimulator": "Išbandyti simuliatorių",
+    "viewStatistics": "Peržiūrėti statistiką"
+  },
+  "responsible": {
+    "title": "Atsakingas lošimas",
+    "text": "Jei jaučiate, kad loterijos žaidimas tampa problema arba jis daro įtaką jūsų finansinei sveikatai, kreipkitės pagalbos:",
+    "helpline": "Probleminio lošimo pagalbos linija: 1-800-522-4700",
+    "ga": "Anoniminiai lošėjai:",
+    "ncpg": "NCPG (Kompulsyvaus lošimo taryba):",
+    "remember": "Loterijos bilietai turėtų būti naudojami tik kaip pramoga su pinigais, kuriuos galite sau leisti prarasti. Niekada nepasikliaukite jais planuodami finansus.",
+    "rememberLabel": "Atminkite:"
+  }
+}

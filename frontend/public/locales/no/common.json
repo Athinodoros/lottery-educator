@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Hjem",
+    "games": "Spill",
+    "stats": "Statistikk",
+    "learn": "Lær",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Lotteriskolen",
+  "skipToContent": "Hopp til hovedinnhold",
+  "switchToDark": "Bytt til mørk modus",
+  "switchToLight": "Bytt til lys modus",
+  "openMenu": "Åpne meny",
+  "closeMenu": "Lukk meny",
+  "footer": {
+    "privacyText": "Vi respekterer personvernet ditt. Ingen personopplysninger samles inn.",
+    "dataDeleted": "Dataene dine er slettet.",
+    "deleteConfirm": "Slette alle dine lokale data?",
+    "confirmYes": "Ja, slett",
+    "confirmCancel": "Avbryt",
+    "deleteButton": "Slett mine data",
+    "deleteAriaLabel": "Slett mine data"
+  },
+  "consent": {
+    "ariaLabel": "Samtykke til informasjonskapsler",
+    "text": "Vi bruker anonym analyse for å forbedre læringsopplevelsen. Ingen personopplysninger samles inn. Du kan slette dataene dine når som helst.",
+    "accept": "Godta",
+    "decline": "Avslå"
+  }
+}

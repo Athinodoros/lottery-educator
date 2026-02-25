@@ -1,0 +1,109 @@
+{
+  "title": "Spoznajte matematiko loterije",
+  "subtitle": "Razumevanje resničnih možnosti za loterijskimi igrami",
+  "probability": {
+    "title": "Kaj je verjetnost?",
+    "text": "Verjetnost je matematična možnost, da se nek dogodek zgodi. Izraža se kot število med 0 in 1, kjer 0 pomeni nemogoče, 1 pa gotovo. Na primer, verjetnost, da pri metu poštenega kovanca dobite glavo, je 0,5 (ali 50 %), ker sta dva enako verjetna izida.",
+    "exampleTitle": "Primer: Met kocke",
+    "exampleText": "Ko vržete pošteno šeststransko kocko:",
+    "exampleItem1": "Obstaja 6 možnih izidov (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Verjetnost, da dobite 3, je 1/6 ≈ 16,67 %",
+    "exampleItem3": "Verjetnost, da dobite katero koli število, je enako verjetna"
+  },
+  "combinations": {
+    "title": "Kombinacije in permutacije",
+    "text": "Ko izračunavamo loterijske možnosti, moramo razumeti, na koliko različnih načinov je mogoče izbrati in razporediti elemente. V večini loterij vrstni red števil ni pomemben, zato uporabljamo <strong>kombinacije</strong>.",
+    "exampleTitle": "Primer: Izbira 6 od 49",
+    "exampleText": "V tipični loteriji, kjer izberete 6 števil od 49:",
+    "exampleItem1": "Število možnih kombinacij je približno 13,98 milijona",
+    "exampleItem2": "Vaša možnost za zmago z eno srečko je 1 proti 13,98 milijona",
+    "exampleItem3": "To je 0,0000072-odstotna možnost za zmago!"
+  },
+  "expectedValue": {
+    "title": "Pričakovana vrednost",
+    "text": "Pričakovana vrednost je povprečen znesek, ki ga pričakujete, da boste dobili ali izgubili na stavo dolgoročno. Za loterije je pričakovana vrednost vedno negativna, kar pomeni, da v povprečju izgubljate denar.",
+    "exampleTitle": "Primer: Preprosta loterija",
+    "exampleText": "Predstavljajte si loterijo, kjer:",
+    "exampleItem1": "Cena srečke: 1 $",
+    "exampleItem2": "Verjetnost dobitka 10 $: 10 %",
+    "exampleItem3": "Verjetnost, da ne dobite ničesar: 90 %",
+    "exampleItem4": "Pričakovana vrednost = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Dolgoročno bi pričakovali, da boste na ničli, toda resnične loterije so še slabše!"
+  },
+  "houseFavor": {
+    "title": "Zakaj loterije vedno koristijo organizatorju",
+    "text": "Resnične loterije obdržijo odstotek od prodaje srečk (običajno 30–50 %) pred izplačilom nagrad. To se imenuje „prednost hiše." Tukaj je, kaj to pomeni:",
+    "exampleTitle": "Primer: Resnična loterijska matematika",
+    "forEvery100": "Za vsakih 100 $ od prodaje srečk:",
+    "item1": "40–50 $ gre organizatorju loterije (država, podjetje itd.)",
+    "item2": "40–50 $ se razdeli dobitnikem",
+    "item3": "Preostala sredstva gredo za namene (izobraževanje, infrastrukturo itd.)",
+    "item4": "Rezultat: Igralci dobijo nazaj le 50–60 centov za vsak porabljeni dolar"
+  },
+  "comparison": {
+    "title": "Loterija proti naložbam: 30-letna primerjava",
+    "text": "Kaj če bi denar, ki bi ga porabili za loterijske srečke, raje naložili? Primerjajmo porabo 20 $ na teden za loterijske srečke z naložbo enakega zneska.",
+    "lotteryTitle": "Loterijske srečke",
+    "investTitle": "Naložba v indeksni sklad",
+    "weeklySpend": "Tedenski strošek",
+    "weeklyInvest": "Tedenska naložba",
+    "totalSpent": "Skupaj porabljeno (30 let)",
+    "totalInvested": "Skupaj naloženo (30 let)",
+    "expectedReturn": "Pričakovani donos",
+    "portfolioValue": "Vrednost portfelja",
+    "netResult": "Neto rezultat",
+    "netGain": "Neto dobitek",
+    "lotteryNote": "Na podlagi povprečnega razmerja izplačil 50 %",
+    "investNote": "Na podlagi ~7 % povprečnega letnega donosa (zgodovinski podatki S&P 500)",
+    "takeaway": "<strong>Razlika:</strong> V 30 letih loterijski igralec izgubi približno 15.600 $, medtem ko vlagatelj pridobi približno 70.800 $. To je 86.400 $ razlike iz istih 20 $ na teden."
+  },
+  "gamblersFallacy": {
+    "title": "„Igralčeva zmota"",
+    "text": "Mnogi ljudje verjamejo, da pretekli rezultati vplivajo na prihodnje izide pri neodvisnih dogodkih. To je napačno. Vsako loterijsko žrebanje je neodvisno in prejšnji rezultati ne vplivajo na prihodnje.",
+    "exampleTitle": "Pogoste zmote",
+    "misconception1": "„7 je bila izžrebana prejšnji teden, zato je ta teden manj verjetna"",
+    "reality1": "Vsako število ima natanko enako možnost pri vsakem žrebanju",
+    "misconception2": "„Po toliko izgubah sem na vrsti za dobitek"",
+    "reality2": "Pretekle izgube ne povečajo vaše možnosti za zmago",
+    "misconception3": "„Ta števila so 'vroča', zato so bolj verjetna"",
+    "reality3": "Pogosto izžrebana števila so ravno tako verjetna kot redka",
+    "misconceptionLabel": "Zmota:",
+    "realityLabel": "Resničnost:"
+  },
+  "largeNumbers": {
+    "title": "Zakon velikih števil",
+    "text": "Več ko igrate, bolj vaši dejanski rezultati konvergirajo k teoretični verjetnosti. Toda to ne pomeni, da boste „sčasoma zmagali" – pomeni, da boste sčasoma izgubili še več denarja!",
+    "exampleTitle": "Kaj kažejo števila",
+    "item1": "Odigrajte 1 loterijsko srečko: Morda zmagate enkrat v življenju",
+    "item2": "Odigrajte 100 srečk: Vaše možnosti se izboljšajo, toda pričakovana izguba je še vedno celotna naložba",
+    "item3": "Odigrajte 1.000 srečk: Bližje ste statističnemu povprečju (izguba ~50–60 % porabljenega denarja)",
+    "item4": "Več ko igrate, bolj se vaše izgube približujejo matematičnemu pričakovanju"
+  },
+  "lessons": {
+    "title": "Pametne finančne lekcije",
+    "text": "Razumevanje loterijske matematike nas uči dragocenih lekcij o verjetnosti in ekonomskih odločitvah:",
+    "riskReward": "Tveganje proti nagradi",
+    "riskRewardText": "Vedno ocenite možnosti glede na potencialno nagrado. Pri loterijah je razmerje med tveganjem in nagrado izjemno neugodno v primerjavi z drugimi naložbami.",
+    "statThinking": "Statistično razmišljanje",
+    "statThinkingText": "Sprejemajte odločitve na podlagi podatkov in verjetnosti, ne upanja ali praznoverja. To velja za naložbe, zavarovanja in pomembne življenjske odločitve.",
+    "longTermPlanning": "Dolgoročno načrtovanje",
+    "longTermPlanningText": "Loterijski dobitki so nezanesljivi. Gradnja premoženja z rednim varčevanjem in nalaganjem (tudi majhnih zneskov) je veliko bolj zanesljiva kot upanje na jackpot.",
+    "psychologyLoss": "Psihologija izgube",
+    "psychologyLossText": "Razumite, kako nas naši možgani zapeljejo v slabe odločitve. Precenjujemo majhne verjetnosti in podcenjujemo svoje izgube, ko so razporejene skozi čas."
+  },
+  "cta": {
+    "title": "Prepričajte se sami",
+    "text": "Najboljši način za razumevanje loterijskih možnosti je, da jih izkusite iz prve roke. Preizkusite naš interaktivni loterijski simulator in opazujte, koliko žrebanj je potrebnih za zadetek vaših števil.",
+    "trySimulator": "Preizkusite simulator",
+    "viewStatistics": "Oglejte si statistike"
+  },
+  "responsible": {
+    "title": "Odgovorno igranje",
+    "text": "Če kadar koli občutite, da loterijska igra postaja problem ali vpliva na vaše finančno zdravje, prosimo poiščite pomoč:",
+    "helpline": "Nacionalna linija za pomoč pri težavah z igrami na srečo: 1-800-522-4700",
+    "ga": "Anonimni igralci:",
+    "ncpg": "NCPG (Svet za kompulzivno igranje):",
+    "remember": "Loterijske srečke bi smeli uporabljati samo za zabavo z denarjem, ki si ga lahko privoščite izgubiti. Nikoli se ne zanašajte nanje za finančno načrtovanje.",
+    "rememberLabel": "Zapomnite si:"
+  }
+}

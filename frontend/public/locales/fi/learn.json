@@ -1,0 +1,109 @@
+{
+  "title": "Opi lottomatematiikasta",
+  "subtitle": "Ymmärrä lottoarvontojen todelliset todennäköisyydet",
+  "probability": {
+    "title": "Mikä on todennäköisyys?",
+    "text": "Todennäköisyys on matemaattinen mahdollisuus, että tapahtuma toteutuu. Se ilmaistaan lukuna 0:n ja 1:n välillä, jossa 0 tarkoittaa mahdotonta ja 1 tarkoittaa varmaa. Esimerkiksi todennäköisyys saada kruuna reilulla kolikonheitolla on 0,5 (tai 50 %), koska on kaksi yhtä todennäköistä lopputulosta.",
+    "exampleTitle": "Esimerkki: Nopanheitto",
+    "exampleText": "Kun heität reilua kuusisivuista noppaa:",
+    "exampleItem1": "On 6 mahdollista lopputulosta (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Todennäköisyys heittää 3 on 1/6 ≈ 16,67 %",
+    "exampleItem3": "Todennäköisyys heittää mikä tahansa numero on yhtä suuri"
+  },
+  "combinations": {
+    "title": "Kombinaatiot ja permutaatiot",
+    "text": "Lottotodennäköisyyksiä laskettaessa meidän on ymmärrettävä, kuinka monella eri tavalla kohteita voidaan valita ja järjestää. Useimmissa lottoarvonnoissa numeroiden järjestyksellä ei ole merkitystä, joten käytämme <strong>kombinaatioita</strong>.",
+    "exampleTitle": "Esimerkki: 6 valinta 49:stä",
+    "exampleText": "Tyypillisessä lotossa, jossa valitset 6 numeroa 49:stä:",
+    "exampleItem1": "Mahdollisten kombinaatioiden määrä on noin 13,98 miljoonaa",
+    "exampleItem2": "Mahdollisuutesi voittaa yhdellä kupongilla on 1 / 13,98 miljoonasta",
+    "exampleItem3": "Se on 0,0000072 % mahdollisuus voittaa!"
+  },
+  "expectedValue": {
+    "title": "Odotusarvo",
+    "text": "Odotusarvo on keskimääräinen summa, jonka odotat voittavasi tai häviäväsi vetoa kohden pitkällä aikavälillä. Lottoarvonnoissa odotusarvo on aina negatiivinen, mikä tarkoittaa, että häviät rahaa keskimäärin.",
+    "exampleTitle": "Esimerkki: Yksinkertainen lotto",
+    "exampleText": "Kuvittele lotto, jossa:",
+    "exampleItem1": "Kupongin hinta: 1 $",
+    "exampleItem2": "Todennäköisyys voittaa 10 $: 10 %",
+    "exampleItem3": "Todennäköisyys voittaa ei mitään: 90 %",
+    "exampleItem4": "Odotusarvo = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Ajan myötä pääsisit nollatulokseen, mutta todelliset lottopeli ovat huonompia!"
+  },
+  "houseFavor": {
+    "title": "Miksi lotto suosii aina taloa",
+    "text": "Todelliset lottopelit pitävät osan kuponkimyynnistä (tyypillisesti 30-50 %) ennen palkintojen jakamista. Tätä kutsutaan \"talon eduksi\". Tämä tarkoittaa seuraavaa:",
+    "exampleTitle": "Esimerkki: Todellinen lottomatematiikka",
+    "forEvery100": "Jokaisesta 100 dollarista kuponkimyynnissä:",
+    "item1": "40-50 $ menee lottoyhtiölle (valtio, yritys jne.)",
+    "item2": "40-50 $ jaetaan voittajille",
+    "item3": "Loput varat menevät tarkoituksiin (koulutus, infrastruktuuri jne.)",
+    "item4": "Tulos: Pelaajat saavat takaisin vain 50-60 senttiä jokaisesta käytetystä dollarista"
+  },
+  "comparison": {
+    "title": "Lotto vs Sijoittaminen: 30 vuoden vertailu",
+    "text": "Entä jos sijoittaisit lottoarpoihin käyttämäsi rahat sen sijaan? Vertaillaan 20 dollarin viikkokulutusta lottoarpoihin saman summan sijoittamiseen.",
+    "lotteryTitle": "Lottoarvat",
+    "investTitle": "Indeksirahastosijoitus",
+    "weeklySpend": "Viikoittainen kulutus",
+    "weeklyInvest": "Viikoittainen sijoitus",
+    "totalSpent": "Yhteensä käytetty (30 v.)",
+    "totalInvested": "Yhteensä sijoitettu (30 v.)",
+    "expectedReturn": "Odotettu tuotto",
+    "portfolioValue": "Salkun arvo",
+    "netResult": "Nettotulos",
+    "netGain": "Nettovoitto",
+    "lotteryNote": "Perustuu keskimääräiseen 50 % maksuprosenttiin",
+    "investNote": "Perustuu ~7 % keskimääräiseen vuosituottoon (S&P 500 historiallinen)",
+    "takeaway": "<strong>Ero:</strong> 30 vuodessa lottopelaaja häviää noin 15 600 $, kun taas sijoittaja tienaa noin 70 800 $. Se on 86 400 dollarin ero samasta 20 dollarista viikossa."
+  },
+  "gamblersFallacy": {
+    "title": "\"Pelaajan harha\"",
+    "text": "Monet uskovat, että aiemmat tulokset vaikuttavat tuleviin lopputuloksiin riippumattomissa tapahtumissa. Tämä on väärin. Jokainen lottoarvonta on riippumaton, eivätkä aiemmat tulokset vaikuta tuleviin.",
+    "exampleTitle": "Yleisiä väärinkäsityksiä",
+    "misconception1": "\"Numero 7 arvottiin viime viikolla, joten se on epätodennäköisempi tällä viikolla\"",
+    "reality1": "Jokaisella numerolla on täsmälleen sama mahdollisuus jokaisessa arvonnassa",
+    "misconception2": "\"Minulle kuuluu voitto monen häviön jälkeen\"",
+    "reality2": "Aiemmat häviöt eivät lisää voittomahdollisuuttasi",
+    "misconception3": "\"Nämä numerot ovat 'kuumia', joten ne ovat todennäköisempiä\"",
+    "reality3": "Usein arvotut numerot ovat yhtä todennäköisiä kuin harvinaiset",
+    "misconceptionLabel": "Väärinkäsitys:",
+    "realityLabel": "Todellisuus:"
+  },
+  "largeNumbers": {
+    "title": "Suurten lukujen laki",
+    "text": "Mitä enemmän pelaat, sitä lähemmäksi todelliset tuloksesi lähestyvät teoreettista todennäköisyyttä. Tämä ei kuitenkaan tarkoita, että \"voitat lopulta\" – se tarkoittaa, että lopulta häviät vielä enemmän rahaa!",
+    "exampleTitle": "Mitä numerot kertovat",
+    "item1": "Pelaa 1 lottoarpa: Saatat voittaa kerran elämässäsi",
+    "item2": "Pelaa 100 arpaa: Mahdollisuutesi paranevat, mutta odotettu tappio on silti koko sijoituksesi",
+    "item3": "Pelaa 1 000 arpaa: Olet lähempänä tilastollista keskiarvoa (häviät ~50-60 % rahoista)",
+    "item4": "Mitä enemmän pelaat, sitä lähemmäksi tappiosi lähestyvät matemaattista odotusarvoa"
+  },
+  "lessons": {
+    "title": "Viisaita talousoppeja",
+    "text": "Lottomatematiikan ymmärtäminen opettaa meille arvokkaita oppeja todennäköisyyksistä ja talouspäätöksistä:",
+    "riskReward": "Riski vs Palkkio",
+    "riskRewardText": "Arvioi aina todennäköisyydet suhteessa mahdolliseen palkkioon. Lottopeleissä riski-palkkiosuhde on erittäin epäedullinen verrattuna muihin sijoituksiin.",
+    "statThinking": "Tilastollinen ajattelu",
+    "statThinkingText": "Tee päätöksiä datan ja todennäköisyyksien perusteella, älä toivon tai taikauskon. Tämä pätee sijoittamiseen, vakuutuksiin ja suuriin elämänpäätöksiin.",
+    "longTermPlanning": "Pitkän aikavälin suunnittelu",
+    "longTermPlanningText": "Lottovoitot ovat epäluotettavia. Varallisuuden rakentaminen säännöllisellä säästämisellä ja sijoittamisella (pieniäkin summia) on paljon luotettavampaa kuin jättipotin toivominen.",
+    "psychologyLoss": "Tappion psykologia",
+    "psychologyLossText": "Ymmärrä, miten aivomme huijaavat meitä tekemään huonoja päätöksiä. Yliarvioimme pienet todennäköisyydet ja aliarvioimme tappiomme, kun ne jakautuvat ajan myötä."
+  },
+  "cta": {
+    "title": "Näe itse",
+    "text": "Paras tapa ymmärtää lottotodennäköisyyksiä on kokea ne omakohtaisesti. Kokeile vuorovaikutteista lottosimulaattoriamme ja katso, kuinka monta arvontaa tarvitaan numeroidesi osumiseen.",
+    "trySimulator": "Kokeile simulaattoria",
+    "viewStatistics": "Näytä tilastot"
+  },
+  "responsible": {
+    "title": "Vastuullinen pelaaminen",
+    "text": "Jos tunnet, että lottopelaaminen on muodostumassa ongelmaksi tai se vaikuttaa taloudelliseen terveyteesi, hae apua:",
+    "helpline": "Peluuri-auttava puhelin: 0800 100 101",
+    "ga": "Nimettömät pelurit:",
+    "ncpg": "NCPG (Pakkopelaamisen neuvosto):",
+    "remember": "Lottoarpoja tulisi käyttää vain viihteenä rahalla, jolla sinulla on varaa hävitä. Älä koskaan luota niihin taloussuunnittelussa.",
+    "rememberLabel": "Muista:"
+  }
+}

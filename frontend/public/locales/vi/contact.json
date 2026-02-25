@@ -1,0 +1,22 @@
+{
+  "title": "Liên hệ",
+  "subtitle": "Có câu hỏi hoặc phản hồi? Chúng tôi rất muốn nghe từ bạn.",
+  "successTitle": "Đã gửi tin nhắn!",
+  "successText": "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ xem xét tin nhắn của bạn sớm.",
+  "sendAnother": "Gửi tin nhắn khác",
+  "emailLabel": "Địa chỉ email",
+  "emailPlaceholder": "email@cuaban.com",
+  "emailError": "Vui lòng nhập địa chỉ email hợp lệ",
+  "subjectLabel": "Chủ đề",
+  "subjectPlaceholder": "Bạn muốn nói về điều gì?",
+  "messageLabel": "Tin nhắn",
+  "messagePlaceholder": "Hãy cho chúng tôi biết bạn đang nghĩ gì...",
+  "sending": "Đang gửi...",
+  "sendMessage": "Gửi tin nhắn",
+  "aboutProject": "Về dự án này",
+  "aboutProjectText": "Giáo dục Xổ số là công cụ giáo dục miễn phí giúp mọi người hiểu tỷ lệ thực sự của việc trúng xổ số thông qua các mô phỏng tương tác.",
+  "privacy": "Quyền riêng tư",
+  "privacyText": "Chúng tôi tôn trọng quyền riêng tư của bạn. Email của bạn chỉ được sử dụng để phản hồi tin nhắn của bạn. Chúng tôi không lưu trữ địa chỉ IP hoặc chia sẻ thông tin của bạn. Bạn có thể yêu cầu xóa dữ liệu bất cứ lúc nào.",
+  "openSource": "Mã nguồn mở",
+  "openSourceText": "Dự án này là mã nguồn mở. Nếu bạn tìm thấy lỗi hoặc muốn đóng góp, hãy mở một issue hoặc pull request trên GitHub."
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Juegos",
+  "subtitle": "Seleccione un juego de lotería para jugar y conocer las probabilidades.",
+  "createGame": "+ Crear un juego",
+  "errorTitle": "Error al cargar los juegos",
+  "loadingGames": "Cargando juegos",
+  "loadingText": "Cargando juegos...",
+  "noGamesTitle": "No hay juegos disponibles",
+  "noGamesText": "Vuelva pronto para encontrar juegos de lotería.",
+  "card": {
+    "pick": "Elegir",
+    "from": "De",
+    "bonus": "Bonus",
+    "odds": "Probabilidades",
+    "oddsValue": "1 en {{value}}",
+    "playGame": "Jugar →",
+    "viewStats": "Ver estadísticas"
+  }
+}

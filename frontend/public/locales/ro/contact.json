@@ -1,0 +1,22 @@
+{
+  "title": "Contactează-ne",
+  "subtitle": "Ai întrebări sau feedback? Ne-ar plăcea să auzim de la tine.",
+  "successTitle": "Mesaj trimis!",
+  "successText": "Mulțumim că ne-ai contactat. Vom examina mesajul tău în curând.",
+  "sendAnother": "Trimite un alt mesaj",
+  "emailLabel": "Adresa de e-mail",
+  "emailPlaceholder": "email@exemplu.com",
+  "emailError": "Te rugăm să introduci o adresă de e-mail validă",
+  "subjectLabel": "Subiect",
+  "subjectPlaceholder": "Despre ce este vorba?",
+  "messageLabel": "Mesaj",
+  "messagePlaceholder": "Spune-ne ce ai pe suflet...",
+  "sending": "Se trimite...",
+  "sendMessage": "Trimite mesajul",
+  "aboutProject": "Despre acest proiect",
+  "aboutProjectText": "Educatorul Loteriei este un instrument educativ gratuit care ajută oamenii să înțeleagă adevăratele șanse de a câștiga la loterie prin simulări interactive.",
+  "privacy": "Confidențialitate",
+  "privacyText": "Respectăm confidențialitatea ta. E-mailul tău este folosit doar pentru a răspunde la mesajul tău. Nu stocăm adrese IP și nu partajăm informațiile tale. Poți solicita ștergerea datelor tale oricând.",
+  "openSource": "Cod deschis",
+  "openSourceText": "Acest proiect este cu cod deschis. Dacă găsești un bug sau vrei să contribui, nu ezita să deschizi un tichet sau un pull request pe GitHub."
+}

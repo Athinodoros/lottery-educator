@@ -1,0 +1,109 @@
+{
+  "title": "Învață despre matematica loteriei",
+  "subtitle": "Înțelegerea adevăratelor șanse din spatele jocurilor de loterie",
+  "probability": {
+    "title": "Ce este probabilitatea?",
+    "text": "Probabilitatea este posibilitatea matematică ca un eveniment să se producă. Se exprimă ca un număr între 0 și 1, unde 0 înseamnă imposibil și 1 înseamnă cert. De exemplu, probabilitatea de a obține cap la aruncarea unei monede corecte este 0,5 (sau 50%), deoarece există două rezultate la fel de probabile.",
+    "exampleTitle": "Exemplu: Aruncarea unui zar",
+    "exampleText": "Când arunci un zar corect cu șase fețe:",
+    "exampleItem1": "Există 6 rezultate posibile (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Probabilitatea de a obține un 3 este 1/6 ≈ 16,67%",
+    "exampleItem3": "Probabilitatea de a obține orice număr este la fel de mare"
+  },
+  "combinations": {
+    "title": "Combinații și permutări",
+    "text": "Când calculăm șansele la loterie, trebuie să înțelegem în câte moduri diferite pot fi selectate și aranjate elementele. În majoritatea loteriilor, ordinea numerelor nu contează, așa că folosim <strong>combinații</strong>.",
+    "exampleTitle": "Exemplu: Alegerea a 6 din 49",
+    "exampleText": "Într-o loterie tipică în care alegi 6 numere din 49:",
+    "exampleItem1": "Numărul de combinații posibile este aproximativ 13,98 milioane",
+    "exampleItem2": "Șansa ta de câștig cu un bilet este de 1 la 13,98 milioane",
+    "exampleItem3": "Asta înseamnă o șansă de 0,0000072% de a câștiga!"
+  },
+  "expectedValue": {
+    "title": "Valoarea așteptată",
+    "text": "Valoarea așteptată este suma medie pe care te aștepți să o câștigi sau pierzi per pariu pe termen lung. Pentru loterii, valoarea așteptată este întotdeauna negativă, ceea ce înseamnă că pierzi bani în medie.",
+    "exampleTitle": "Exemplu: O loterie simplă",
+    "exampleText": "Imaginează-ți o loterie în care:",
+    "exampleItem1": "Costul biletului: 1 $",
+    "exampleItem2": "Probabilitatea de a câștiga 10 $: 10%",
+    "exampleItem3": "Probabilitatea de a nu câștiga nimic: 90%",
+    "exampleItem4": "Valoarea așteptată = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Pe termen lung, te-ai aștepta să ieși pe zero, dar loteriile reale sunt și mai rele!"
+  },
+  "houseFavor": {
+    "title": "De ce loteriile favorizează întotdeauna casa",
+    "text": "Loteriile reale rețin un procent din vânzările de bilete (de obicei 30-50%) înainte de a plăti premiile. Acesta se numește „avantajul casei." Iată ce înseamnă asta:",
+    "exampleTitle": "Exemplu: Matematica loteriei reale",
+    "forEvery100": "Pentru fiecare 100 $ din vânzări de bilete:",
+    "item1": "40-50 $ merg la organizatorul loteriei (stat, companie etc.)",
+    "item2": "40-50 $ sunt distribuiți câștigătorilor",
+    "item3": "Fondurile rămase merg către cauze (educație, infrastructură etc.)",
+    "item4": "Rezultat: Jucătorii primesc înapoi doar 50-60 de cenți pentru fiecare dolar cheltuit"
+  },
+  "comparison": {
+    "title": "Loterie vs. investiții: O comparație pe 30 de ani",
+    "text": "Ce-ar fi dacă ai investi banii pe care i-ai cheltui pe bilete de loterie? Să comparăm cheltuirea a 20 $ pe săptămână pe bilete de loterie cu investirea aceleiași sume.",
+    "lotteryTitle": "Bilete de loterie",
+    "investTitle": "Investiție în fond de index",
+    "weeklySpend": "Cheltuieli săptămânale",
+    "weeklyInvest": "Investiție săptămânală",
+    "totalSpent": "Total cheltuit (30 ani)",
+    "totalInvested": "Total investit (30 ani)",
+    "expectedReturn": "Randament așteptat",
+    "portfolioValue": "Valoarea portofoliului",
+    "netResult": "Rezultat net",
+    "netGain": "Câștig net",
+    "lotteryNote": "Bazat pe rata medie de plată de 50%",
+    "investNote": "Bazat pe ~7% randament anual mediu (date istorice S&P 500)",
+    "takeaway": "<strong>Diferența:</strong> Pe parcursul a 30 de ani, jucătorul de loterie pierde aproximativ 15.600 $, în timp ce investitorul câștigă aproximativ 70.800 $. Aceasta este o diferență de 86.400 $ din aceiași 20 $ pe săptămână."
+  },
+  "gamblersFallacy": {
+    "title": "„Eroarea jucătorului"",
+    "text": "Mulți oameni cred că rezultatele trecute afectează rezultatele viitoare la evenimente independente. Acest lucru este fals. Fiecare extragere de loterie este independentă, iar rezultatele anterioare nu influențează cele viitoare.",
+    "exampleTitle": "Concepții greșite frecvente",
+    "misconception1": "„7 a fost extras săptămâna trecută, deci este mai puțin probabil săptămâna aceasta"",
+    "reality1": "Fiecare număr are exact aceeași șansă la fiecare extragere",
+    "misconception2": "„Mi se cuvine un câștig după ce am pierdut de multe ori"",
+    "reality2": "Pierderile anterioare nu îți cresc șansa de a câștiga",
+    "misconception3": "„Aceste numere sunt 'fierbinți', deci sunt mai probabile"",
+    "reality3": "Numerele extrase frecvent sunt la fel de probabile ca cele rare",
+    "misconceptionLabel": "Concepție greșită:",
+    "realityLabel": "Realitate:"
+  },
+  "largeNumbers": {
+    "title": "Legea numerelor mari",
+    "text": "Cu cât joci mai mult, cu atât rezultatele tale reale converg spre probabilitatea teoretică. Totuși, aceasta nu înseamnă că „vei câștiga în cele din urmă" – înseamnă că vei pierde și mai mulți bani!",
+    "exampleTitle": "Ce arată numerele",
+    "item1": "Joacă 1 bilet de loterie: Ai putea câștiga o dată într-o viață",
+    "item2": "Joacă 100 de bilete: Șansele tale se îmbunătățesc, dar pierderea așteptată este tot investiția completă",
+    "item3": "Joacă 1.000 de bilete: Ești mai aproape de media statistică (pierderea a ~50-60% din banii cheltuiți)",
+    "item4": "Cu cât joci mai mult, cu atât pierderile tale se apropie de așteptarea matematică"
+  },
+  "lessons": {
+    "title": "Lecții financiare inteligente",
+    "text": "Înțelegerea matematicii loteriei ne învață lecții valoroase despre probabilitate și decizii economice:",
+    "riskReward": "Risc vs. recompensă",
+    "riskRewardText": "Evaluează întotdeauna șansele în raport cu recompensa potențială. La loterii, raportul risc-recompensă este extrem de nefavorabil comparativ cu alte investiții.",
+    "statThinking": "Gândire statistică",
+    "statThinkingText": "Ia decizii bazate pe date și probabilitate, nu pe speranță sau superstiție. Aceasta se aplică investițiilor, asigurărilor și deciziilor importante din viață.",
+    "longTermPlanning": "Planificare pe termen lung",
+    "longTermPlanningText": "Câștigurile la loterie sunt nesigure. Construirea averii prin economisire și investire regulată (chiar și sume mici) este mult mai fiabilă decât speranța într-un jackpot.",
+    "psychologyLoss": "Psihologia pierderii",
+    "psychologyLossText": "Înțelege cum ne păcălește creierul să luăm decizii proaste. Supraestimăm probabilitățile mici și subestimăm pierderile când sunt distribuite în timp."
+  },
+  "cta": {
+    "title": "Convinge-te singur",
+    "text": "Cel mai bun mod de a înțelege șansele la loterie este să le experimentezi direct. Încearcă simulatorul nostru interactiv de loterie și urmărește câte extrageri sunt necesare pentru a potrivi numerele tale.",
+    "trySimulator": "Încearcă simulatorul",
+    "viewStatistics": "Vezi statisticile"
+  },
+  "responsible": {
+    "title": "Joc responsabil",
+    "text": "Dacă simți vreodată că jocul de loterie devine o problemă sau dacă îți afectează sănătatea financiară, te rugăm să ceri ajutor:",
+    "helpline": "Linia de asistență pentru probleme de jocuri de noroc: 1-800-522-4700",
+    "ga": "Jucătorii Anonimi:",
+    "ncpg": "NCPG (Consiliul pentru Jocuri de Noroc Compulsive):",
+    "remember": "Biletele de loterie ar trebui folosite doar ca divertisment cu bani pe care ți-i permiți să-i pierzi. Nu te baza niciodată pe ele pentru planificare financiară.",
+    "rememberLabel": "Reține:"
+  }
+}

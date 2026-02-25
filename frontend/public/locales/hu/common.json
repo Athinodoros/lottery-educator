@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Kezdőlap",
+    "games": "Játékok",
+    "stats": "Statisztikák",
+    "learn": "Tanulás",
+    "contact": "Kapcsolat",
+    "admin": "Admin"
+  },
+  "appTitle": "Lottó Oktató",
+  "skipToContent": "Ugrás a fő tartalomhoz",
+  "switchToDark": "Váltás sötét módra",
+  "switchToLight": "Váltás világos módra",
+  "openMenu": "Menü megnyitása",
+  "closeMenu": "Menü bezárása",
+  "footer": {
+    "privacyText": "Tiszteletben tartjuk az adatvédelmedet. Semmilyen személyes adatot nem gyűjtünk.",
+    "dataDeleted": "Az adataid törölve lettek.",
+    "deleteConfirm": "Törli az összes helyi adatát?",
+    "confirmYes": "Igen, törlés",
+    "confirmCancel": "Mégse",
+    "deleteButton": "Adataim törlése",
+    "deleteAriaLabel": "Adataim törlése"
+  },
+  "consent": {
+    "ariaLabel": "Süti hozzájárulás",
+    "text": "Névtelen elemzéseket használunk a tanulási élmény javítása érdekében. Semmilyen személyes adatot nem gyűjtünk. Bármikor törölheted az adataidat.",
+    "accept": "Elfogadás",
+    "decline": "Elutasítás"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "title": "Pelajari Matematika Lotere",
+  "subtitle": "Memahami peluang sesungguhnya di balik permainan lotere",
+  "probability": {
+    "title": "Apa itu Probabilitas?",
+    "text": "Probabilitas adalah kemungkinan matematis bahwa suatu peristiwa akan terjadi. Dinyatakan sebagai angka antara 0 dan 1, di mana 0 berarti mustahil dan 1 berarti pasti. Misalnya, probabilitas melempar koin dan mendapat kepala adalah 0,5 (atau 50%), karena ada dua hasil yang sama kemungkinannya.",
+    "exampleTitle": "Contoh: Melempar Dadu",
+    "exampleText": "Ketika Anda melempar dadu enam sisi yang adil:",
+    "exampleItem1": "Ada 6 kemungkinan hasil (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Probabilitas mendapat angka 3 adalah 1/6 ≈ 16,67%",
+    "exampleItem3": "Probabilitas mendapat angka berapa pun sama besarnya"
+  },
+  "combinations": {
+    "title": "Kombinasi dan Permutasi",
+    "text": "Saat menghitung peluang lotere, kita perlu memahami berapa banyak cara berbeda item dapat dipilih dan disusun. Dalam kebanyakan lotere, urutan nomor tidak penting, jadi kita menggunakan <strong>kombinasi</strong>.",
+    "exampleTitle": "Contoh: Memilih 6 dari 49",
+    "exampleText": "Dalam lotere tipikal di mana Anda memilih 6 nomor dari 49:",
+    "exampleItem1": "Jumlah kombinasi yang mungkin adalah sekitar 13,98 juta",
+    "exampleItem2": "Peluang Anda menang dengan satu tiket adalah 1 dari 13,98 juta",
+    "exampleItem3": "Itu adalah peluang menang 0,0000072%!"
+  },
+  "expectedValue": {
+    "title": "Nilai yang Diharapkan",
+    "text": "Nilai yang diharapkan adalah jumlah rata-rata yang Anda harapkan untuk menang atau kalah per taruhan dalam jangka panjang. Untuk lotere, nilai yang diharapkan selalu negatif, artinya rata-rata Anda kehilangan uang.",
+    "exampleTitle": "Contoh: Lotere Sederhana",
+    "exampleText": "Bayangkan sebuah lotere di mana:",
+    "exampleItem1": "Harga tiket: $1",
+    "exampleItem2": "Probabilitas menang $10: 10%",
+    "exampleItem3": "Probabilitas tidak menang apa-apa: 90%",
+    "exampleItem4": "Nilai yang diharapkan = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Seiring waktu, Anda akan impas, tetapi lotere nyata lebih buruk!"
+  },
+  "houseFavor": {
+    "title": "Mengapa Lotere Selalu Menguntungkan Bandar",
+    "text": "Lotere dunia nyata menyimpan persentase dari penjualan tiket (biasanya 30-50%) sebelum membayarkan hadiah. Ini disebut \"keuntungan bandar.\" Inilah artinya:",
+    "exampleTitle": "Contoh: Matematika Lotere Nyata",
+    "forEvery100": "Untuk setiap $100 penjualan tiket:",
+    "item1": "$40-50 masuk ke penyelenggara lotere (negara, perusahaan, dll.)",
+    "item2": "$40-50 dibagikan kepada pemenang",
+    "item3": "Dana sisanya untuk kepentingan umum (pendidikan, infrastruktur, dll.)",
+    "item4": "Hasilnya: Pemain hanya mendapat kembali 50-60 sen untuk setiap dolar yang dibelanjakan"
+  },
+  "comparison": {
+    "title": "Lotere vs Investasi: Perbandingan 30 Tahun",
+    "text": "Bagaimana jika Anda menginvestasikan uang yang Anda habiskan untuk tiket lotere? Mari bandingkan menghabiskan $20 per minggu untuk tiket lotere versus menginvestasikan jumlah yang sama.",
+    "lotteryTitle": "Tiket Lotere",
+    "investTitle": "Investasi Dana Indeks",
+    "weeklySpend": "Pengeluaran mingguan",
+    "weeklyInvest": "Investasi mingguan",
+    "totalSpent": "Total dibelanjakan (30 thn)",
+    "totalInvested": "Total diinvestasikan (30 thn)",
+    "expectedReturn": "Pengembalian yang diharapkan",
+    "portfolioValue": "Nilai portofolio",
+    "netResult": "Hasil bersih",
+    "netGain": "Keuntungan bersih",
+    "lotteryNote": "Berdasarkan rasio pembayaran rata-rata 50%",
+    "investNote": "Berdasarkan pengembalian tahunan rata-rata ~7% (historis S&P 500)",
+    "takeaway": "<strong>Perbedaannya:</strong> Selama 30 tahun, pemain lotere kehilangan sekitar $15.600 sementara investor mendapat sekitar $70.800. Itu selisih $86.400 dari $20 per minggu yang sama."
+  },
+  "gamblersFallacy": {
+    "title": "\"Kekeliruan Penjudi\"",
+    "text": "Banyak orang percaya bahwa hasil masa lalu memengaruhi hasil masa depan dalam peristiwa independen. Ini salah. Setiap undian lotere bersifat independen, dan hasil sebelumnya tidak memengaruhi hasil berikutnya.",
+    "exampleTitle": "Kesalahpahaman Umum",
+    "misconception1": "\"Angka 7 keluar minggu lalu, jadi minggu ini kemungkinannya lebih kecil\"",
+    "reality1": "Setiap angka memiliki peluang yang sama persis di setiap undian",
+    "misconception2": "\"Saya sudah sering kalah, jadi saatnya saya menang\"",
+    "reality2": "Kekalahan masa lalu tidak meningkatkan peluang menang Anda",
+    "misconception3": "\"Nomor-nomor ini sedang 'panas' jadi kemungkinannya lebih besar\"",
+    "reality3": "Nomor yang sering muncul sama mungkinnya dengan nomor yang jarang",
+    "misconceptionLabel": "Kesalahpahaman:",
+    "realityLabel": "Kenyataan:"
+  },
+  "largeNumbers": {
+    "title": "Hukum Bilangan Besar",
+    "text": "Semakin banyak Anda bermain, hasil aktual Anda akan mendekati probabilitas teoretis. Namun, ini tidak berarti Anda \"akhirnya akan menang\" - ini berarti Anda akhirnya akan kehilangan lebih banyak uang!",
+    "exampleTitle": "Apa yang Ditunjukkan Angka-Angka",
+    "item1": "Beli 1 tiket lotere: Anda mungkin menang sekali seumur hidup",
+    "item2": "Beli 100 tiket: Peluang meningkat, tapi kerugian yang diharapkan tetap seluruh investasi Anda",
+    "item3": "Beli 1.000 tiket: Anda lebih mendekati rata-rata statistik (kehilangan ~50-60% uang yang dibelanjakan)",
+    "item4": "Semakin banyak Anda bermain, semakin kerugian Anda mendekati ekspektasi matematis"
+  },
+  "lessons": {
+    "title": "Pelajaran Keuangan Cerdas",
+    "text": "Memahami matematika lotere mengajarkan kita pelajaran berharga tentang probabilitas dan keputusan ekonomi:",
+    "riskReward": "Risiko vs Imbalan",
+    "riskRewardText": "Selalu evaluasi peluang versus potensi imbalan. Dalam lotere, rasio risiko-imbalan sangat tidak menguntungkan dibandingkan investasi lain.",
+    "statThinking": "Berpikir Statistik",
+    "statThinkingText": "Buat keputusan berdasarkan data dan probabilitas, bukan harapan atau takhayul. Ini berlaku untuk investasi, asuransi, dan keputusan hidup penting.",
+    "longTermPlanning": "Perencanaan Jangka Panjang",
+    "longTermPlanningText": "Kemenangan lotere tidak bisa diandalkan. Membangun kekayaan melalui tabungan dan investasi rutin (bahkan jumlah kecil) jauh lebih andal daripada berharap menang jackpot.",
+    "psychologyLoss": "Psikologi Kerugian",
+    "psychologyLossText": "Pahami bagaimana otak kita menipu kita ke dalam keputusan yang buruk. Kita melebih-lebihkan probabilitas kecil dan meremehkan kerugian kita ketika tersebar seiring waktu."
+  },
+  "cta": {
+    "title": "Buktikan Sendiri",
+    "text": "Cara terbaik untuk memahami peluang lotere adalah mengalaminya langsung. Coba simulator lotere interaktif kami dan lihat berapa banyak undian yang dibutuhkan untuk mencocokkan nomor Anda.",
+    "trySimulator": "Coba Simulator",
+    "viewStatistics": "Lihat Statistik"
+  },
+  "responsible": {
+    "title": "Bermain Bertanggung Jawab",
+    "text": "Jika Anda merasa bahwa bermain lotere menjadi masalah, atau memengaruhi kesehatan keuangan Anda, silakan cari bantuan:",
+    "helpline": "Hotline Masalah Perjudian Nasional: 1-800-522-4700",
+    "ga": "Gamblers Anonymous:",
+    "ncpg": "NCPG (Dewan Perjudian Kompulsif):",
+    "remember": "Tiket lotere hanya boleh digunakan sebagai hiburan dengan uang yang bisa Anda relakan. Jangan pernah mengandalkannya untuk perencanaan keuangan.",
+    "rememberLabel": "Ingat:"
+  }
+}

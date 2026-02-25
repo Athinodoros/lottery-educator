@@ -1,0 +1,14 @@
+{
+  "title": "Lottery Educator",
+  "subtitle": "Lær de sande odds bag lotterispil",
+  "description": "Opdag hvorfor lottokuponer er en statistisk umulighed, og forstå matematikken bag sandsynlighed i spil.",
+  "cta": "Spil og lær",
+  "features": {
+    "interactiveGames": "Interaktive spil",
+    "interactiveGamesDesc": "Simuler tusindvis af lottotrækninger for at forstå, hvor lang tid det virkelig tager at vinde.",
+    "realStatistics": "Rigtig statistik",
+    "realStatisticsDesc": "Se de sande odds og sandsynligheder bag populære lotterispil verden over.",
+    "financialEducation": "Finansiel uddannelse",
+    "financialEducationDesc": "Lær hvorfor forståelse af sandsynlighed er afgørende for personlige økonomiske beslutninger."
+  }
+}

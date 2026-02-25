@@ -1,0 +1,19 @@
+{
+  "title": "Gry",
+  "subtitle": "Wybierz grę loteryjną, aby zagrać i poznać szanse.",
+  "createGame": "+ Utwórz Grę",
+  "errorTitle": "Błąd Ładowania Gier",
+  "loadingGames": "Ładowanie gier",
+  "loadingText": "Ładowanie gier...",
+  "noGamesTitle": "Brak Dostępnych Gier",
+  "noGamesText": "Sprawdź ponownie wkrótce, aby zagrać w gry loteryjne.",
+  "card": {
+    "pick": "Wybierz",
+    "from": "Z",
+    "bonus": "Bonus",
+    "odds": "Szanse",
+    "oddsValue": "1 na {{value}}",
+    "playGame": "Zagraj →",
+    "viewStats": "Zobacz Statystyki"
+  }
+}

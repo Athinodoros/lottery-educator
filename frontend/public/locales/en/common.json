@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "stats": "Stats",
+    "learn": "Learn",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "appTitle": "Lottery Educator",
+  "skipToContent": "Skip to main content",
+  "switchToDark": "Switch to dark mode",
+  "switchToLight": "Switch to light mode",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "footer": {
+    "privacyText": "We respect your privacy. No personal data is collected.",
+    "dataDeleted": "Your data has been deleted.",
+    "deleteConfirm": "Delete all your local data?",
+    "confirmYes": "Yes, delete",
+    "confirmCancel": "Cancel",
+    "deleteButton": "Delete My Data",
+    "deleteAriaLabel": "Delete my data"
+  },
+  "consent": {
+    "ariaLabel": "Cookie consent",
+    "text": "We use anonymous analytics to improve the learning experience. No personal data is collected. You can delete your data anytime.",
+    "accept": "Accept",
+    "decline": "Decline"
+  }
+}

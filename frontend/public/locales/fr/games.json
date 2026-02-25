@@ -1,0 +1,19 @@
+{
+  "title": "Jeux",
+  "subtitle": "Sélectionnez un jeu de loterie pour jouer et découvrir les chances de gain.",
+  "createGame": "+ Créer un jeu",
+  "errorTitle": "Erreur lors du chargement des jeux",
+  "loadingGames": "Chargement des jeux",
+  "loadingText": "Chargement des jeux...",
+  "noGamesTitle": "Aucun jeu disponible",
+  "noGamesText": "Revenez bientôt pour des jeux de loterie.",
+  "card": {
+    "pick": "Choisir",
+    "from": "Parmi",
+    "bonus": "Bonus",
+    "odds": "Chances",
+    "oddsValue": "1 sur {{value}}",
+    "playGame": "Jouer →",
+    "viewStats": "Voir les stats"
+  }
+}

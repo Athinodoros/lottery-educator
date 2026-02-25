@@ -1,0 +1,14 @@
+{
+  "title": "Lotteria Educativa",
+  "subtitle": "Scopri le vere probabilità dei giochi della lotteria",
+  "description": "Scopri perché i biglietti della lotteria sono un'impossibilità statistica e comprendi la matematica dietro le probabilità di vincita.",
+  "cta": "Gioca e impara",
+  "features": {
+    "interactiveGames": "Giochi interattivi",
+    "interactiveGamesDesc": "Simula migliaia di estrazioni della lotteria per capire quanto tempo ci vuole davvero per vincere.",
+    "realStatistics": "Statistiche reali",
+    "realStatisticsDesc": "Scopri le vere probabilità e possibilità di vincita dei giochi della lotteria più popolari al mondo.",
+    "financialEducation": "Educazione finanziaria",
+    "financialEducationDesc": "Scopri perché comprendere la probabilità è fondamentale per le decisioni finanziarie personali."
+  }
+}

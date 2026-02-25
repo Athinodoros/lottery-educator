@@ -14,18 +14,18 @@ function renderWithRouter() {
 describe('NotFoundPage', () => {
   it('renders 404 heading', () => {
     renderWithRouter()
-    expect(screen.getByText('404')).toBeInTheDocument()
+    expect(screen.getByText('code')).toBeInTheDocument()
   })
 
   it('renders page not found message', () => {
     renderWithRouter()
-    expect(screen.getByText('Page Not Found')).toBeInTheDocument()
-    expect(screen.getByText(/doesn't exist or has been moved/)).toBeInTheDocument()
+    expect(screen.getByText('title')).toBeInTheDocument()
+    expect(screen.getByText('message')).toBeInTheDocument()
   })
 
   it('has a link back to home', () => {
     renderWithRouter()
-    const link = screen.getByText('Back to Home').closest('a')
+    const link = screen.getByText('backHome').closest('a')
     expect(link).toHaveAttribute('href', '/')
   })
 })

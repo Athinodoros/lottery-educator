@@ -1,0 +1,109 @@
+{
+  "title": "Belajar Tentang Matematik Loteri",
+  "subtitle": "Memahami peluang sebenar di sebalik permainan loteri",
+  "probability": {
+    "title": "Apakah Kebarangkalian?",
+    "text": "Kebarangkalian adalah kemungkinan matematik bahawa sesuatu peristiwa akan berlaku. Ia dinyatakan sebagai nombor antara 0 dan 1, di mana 0 bermaksud mustahil dan 1 bermaksud pasti. Contohnya, kebarangkalian mendapat kepala apabila melambung syiling ialah 0.5 (atau 50%), kerana terdapat dua hasil yang sama kemungkinannya.",
+    "exampleTitle": "Contoh: Membaling Dadu",
+    "exampleText": "Apabila anda membaling dadu enam sisi yang adil:",
+    "exampleItem1": "Terdapat 6 kemungkinan hasil (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Kebarangkalian mendapat nombor 3 ialah 1/6 ≈ 16.67%",
+    "exampleItem3": "Kebarangkalian mendapat mana-mana nombor adalah sama"
+  },
+  "combinations": {
+    "title": "Kombinasi dan Pilih Atur",
+    "text": "Apabila mengira peluang loteri, kita perlu memahami berapa banyak cara berbeza item boleh dipilih dan disusun. Dalam kebanyakan loteri, susunan nombor tidak penting, jadi kita menggunakan <strong>kombinasi</strong>.",
+    "exampleTitle": "Contoh: Memilih 6 daripada 49",
+    "exampleText": "Dalam loteri biasa di mana anda memilih 6 nombor daripada 49:",
+    "exampleItem1": "Bilangan kombinasi yang mungkin adalah kira-kira 13.98 juta",
+    "exampleItem2": "Peluang anda menang dengan satu tiket ialah 1 dalam 13.98 juta",
+    "exampleItem3": "Itu adalah peluang menang 0.0000072%!"
+  },
+  "expectedValue": {
+    "title": "Nilai Jangkaan",
+    "text": "Nilai jangkaan adalah jumlah purata yang anda jangka menang atau kalah bagi setiap pertaruhan dalam jangka panjang. Untuk loteri, nilai jangkaan sentiasa negatif, bermakna secara purata anda kehilangan wang.",
+    "exampleTitle": "Contoh: Loteri Mudah",
+    "exampleText": "Bayangkan sebuah loteri di mana:",
+    "exampleItem1": "Harga tiket: $1",
+    "exampleItem2": "Kebarangkalian menang $10: 10%",
+    "exampleItem3": "Kebarangkalian tidak menang apa-apa: 90%",
+    "exampleItem4": "Nilai jangkaan = (0.10 x $10) + (0.90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Dari semasa ke semasa, anda akan pulang modal, tetapi loteri sebenar lebih teruk!"
+  },
+  "houseFavor": {
+    "title": "Mengapa Loteri Sentiasa Memihak kepada Penganjur",
+    "text": "Loteri dunia sebenar menyimpan peratusan jualan tiket (biasanya 30-50%) sebelum membayar hadiah. Ini dipanggil \"kelebihan penganjur.\" Inilah maksudnya:",
+    "exampleTitle": "Contoh: Matematik Loteri Sebenar",
+    "forEvery100": "Bagi setiap $100 jualan tiket:",
+    "item1": "$40-50 pergi kepada penganjur loteri (kerajaan, syarikat, dll.)",
+    "item2": "$40-50 diagihkan kepada pemenang",
+    "item3": "Baki dana pergi kepada tujuan (pendidikan, infrastruktur, dll.)",
+    "item4": "Keputusan: Pemain hanya mendapat kembali 50-60 sen bagi setiap dolar yang dibelanjakan"
+  },
+  "comparison": {
+    "title": "Loteri vs Pelaburan: Perbandingan 30 Tahun",
+    "text": "Bagaimana jika anda melaburkan wang yang anda belanjakan untuk tiket loteri? Mari bandingkan membelanjakan $20 seminggu untuk tiket loteri berbanding melaburkan jumlah yang sama.",
+    "lotteryTitle": "Tiket Loteri",
+    "investTitle": "Pelaburan Dana Indeks",
+    "weeklySpend": "Perbelanjaan mingguan",
+    "weeklyInvest": "Pelaburan mingguan",
+    "totalSpent": "Jumlah dibelanjakan (30 thn)",
+    "totalInvested": "Jumlah dilaburkan (30 thn)",
+    "expectedReturn": "Pulangan jangkaan",
+    "portfolioValue": "Nilai portfolio",
+    "netResult": "Keputusan bersih",
+    "netGain": "Keuntungan bersih",
+    "lotteryNote": "Berdasarkan nisbah pembayaran purata 50%",
+    "investNote": "Berdasarkan pulangan tahunan purata ~7% (sejarah S&P 500)",
+    "takeaway": "<strong>Perbezaannya:</strong> Selama 30 tahun, pemain loteri kehilangan kira-kira $15,600 manakala pelabur mendapat kira-kira $70,800. Itu jurang $86,400 daripada $20 seminggu yang sama."
+  },
+  "gamblersFallacy": {
+    "title": "\"Kesilapan Penjudi\"",
+    "text": "Ramai orang percaya bahawa keputusan lepas mempengaruhi keputusan masa depan dalam peristiwa bebas. Ini salah. Setiap cabutan loteri adalah bebas, dan keputusan sebelumnya tidak mempengaruhi yang seterusnya.",
+    "exampleTitle": "Salah Tanggapan Biasa",
+    "misconception1": "\"Nombor 7 keluar minggu lepas, jadi ia kurang mungkin minggu ini\"",
+    "reality1": "Setiap nombor mempunyai peluang yang sama persis setiap cabutan",
+    "misconception2": "\"Saya sudah lama kalah, jadi giliran saya untuk menang\"",
+    "reality2": "Kekalahan lepas tidak meningkatkan peluang anda untuk menang",
+    "misconception3": "\"Nombor-nombor ini sedang 'panas' jadi lebih mungkin keluar\"",
+    "reality3": "Nombor yang kerap keluar sama kemungkinannya dengan yang jarang",
+    "misconceptionLabel": "Salah tanggapan:",
+    "realityLabel": "Realiti:"
+  },
+  "largeNumbers": {
+    "title": "Hukum Nombor Besar",
+    "text": "Semakin banyak anda bermain, keputusan sebenar anda akan menumpu kepada kebarangkalian teori. Walau bagaimanapun, ini tidak bermakna anda \"akhirnya akan menang\" - ia bermakna anda akhirnya akan kehilangan lebih banyak wang!",
+    "exampleTitle": "Apa yang Ditunjukkan Nombor-Nombor",
+    "item1": "Beli 1 tiket loteri: Anda mungkin menang sekali seumur hidup",
+    "item2": "Beli 100 tiket: Peluang meningkat, tetapi kerugian jangkaan masih seluruh pelaburan anda",
+    "item3": "Beli 1,000 tiket: Anda lebih hampir kepada purata statistik (kehilangan ~50-60% wang yang dibelanjakan)",
+    "item4": "Semakin banyak anda bermain, semakin kerugian anda menghampiri jangkaan matematik"
+  },
+  "lessons": {
+    "title": "Pengajaran Kewangan Bijak",
+    "text": "Memahami matematik loteri mengajar kita pengajaran berharga tentang kebarangkalian dan keputusan ekonomi:",
+    "riskReward": "Risiko vs Ganjaran",
+    "riskRewardText": "Sentiasa nilai peluang berbanding ganjaran berpotensi. Dalam loteri, nisbah risiko-ganjaran amat tidak menguntungkan berbanding pelaburan lain.",
+    "statThinking": "Pemikiran Statistik",
+    "statThinkingText": "Buat keputusan berdasarkan data dan kebarangkalian, bukan harapan atau tahyul. Ini terpakai untuk pelaburan, insurans dan keputusan hidup utama.",
+    "longTermPlanning": "Perancangan Jangka Panjang",
+    "longTermPlanningText": "Kemenangan loteri tidak boleh diharap. Membina kekayaan melalui simpanan dan pelaburan tetap (walaupun jumlah kecil) jauh lebih dipercayai daripada mengharapkan hadiah utama.",
+    "psychologyLoss": "Psikologi Kerugian",
+    "psychologyLossText": "Fahami bagaimana otak kita menipu kita ke dalam keputusan yang buruk. Kita melebihkan kebarangkalian kecil dan memandang rendah kerugian kita apabila ia tersebar dari semasa ke semasa."
+  },
+  "cta": {
+    "title": "Lihat Sendiri",
+    "text": "Cara terbaik untuk memahami peluang loteri adalah mengalaminya sendiri. Cuba simulator loteri interaktif kami dan lihat berapa banyak cabutan yang diperlukan untuk memadankan nombor anda.",
+    "trySimulator": "Cuba Simulator",
+    "viewStatistics": "Lihat Statistik"
+  },
+  "responsible": {
+    "title": "Permainan Bertanggungjawab",
+    "text": "Jika anda merasakan bermain loteri menjadi masalah, atau ia menjejaskan kesihatan kewangan anda, sila dapatkan bantuan:",
+    "helpline": "Talian Bantuan Masalah Perjudian Kebangsaan: 1-800-522-4700",
+    "ga": "Gamblers Anonymous:",
+    "ncpg": "NCPG (Majlis Perjudian Kompulsif):",
+    "remember": "Tiket loteri hanya patut digunakan sebagai hiburan dengan wang yang anda mampu kehilangan. Jangan sekali-kali bergantung kepadanya untuk perancangan kewangan.",
+    "rememberLabel": "Ingat:"
+  }
+}

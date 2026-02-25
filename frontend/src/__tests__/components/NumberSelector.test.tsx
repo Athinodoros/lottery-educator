@@ -25,8 +25,8 @@ describe('NumberSelector Component', () => {
 
     it('should show selection progress text', () => {
       render(<NumberSelector {...baseProps} />)
-      // Shows "Select X numbers" or similar
-      expect(screen.getByText(/select/i)).toBeTruthy()
+      // Shows translation key "numberSelector.selectNumbers"
+      expect(screen.getByText(/numberSelector\.selectNumbers/)).toBeTruthy()
     })
 
     it('should show progress badge', () => {
@@ -36,7 +36,7 @@ describe('NumberSelector Component', () => {
 
     it('should show completion message when all numbers selected', () => {
       render(<NumberSelector {...baseProps} selectedNumbers={[1, 2, 3]} />)
-      expect(screen.getByText(/selected/i)).toBeTruthy()
+      expect(screen.getByText(/numberSelector\.allSelected/)).toBeTruthy()
     })
   })
 

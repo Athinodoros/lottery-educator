@@ -1,0 +1,109 @@
+{
+  "title": "Ismerd meg a lottó matematikáját",
+  "subtitle": "A lottójátékok mögötti valós esélyek megértése",
+  "probability": {
+    "title": "Mi a valószínűség?",
+    "text": "A valószínűség annak matematikai mértéke, hogy egy esemény bekövetkezik. Egy 0 és 1 közötti számmal fejezzük ki, ahol a 0 a lehetetlent, az 1 pedig a biztosat jelenti. Például egy szabályos érme feldobásakor a fej valószínűsége 0,5 (vagyis 50%), mivel két egyformán valószínű kimenetel van.",
+    "exampleTitle": "Példa: Kockadobás",
+    "exampleText": "Amikor egy szabályos hatoldalú kockával dobsz:",
+    "exampleItem1": "6 lehetséges kimenetel van (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "A 3-as dobásának valószínűsége 1/6 ≈ 16,67%",
+    "exampleItem3": "Bármelyik szám dobásának valószínűsége egyforma"
+  },
+  "combinations": {
+    "title": "Kombinációk és permutációk",
+    "text": "A lottó esélyeinek kiszámításakor meg kell értenünk, hányféleképpen lehet elemeket kiválasztani és elrendezni. A legtöbb lottóban a számok sorrendje nem számít, ezért <strong>kombinációkat</strong> használunk.",
+    "exampleTitle": "Példa: 6 szám választása 49-ből",
+    "exampleText": "Egy tipikus lottóban, ahol 6 számot választasz 49-ből:",
+    "exampleItem1": "A lehetséges kombinációk száma körülbelül 13,98 millió",
+    "exampleItem2": "Egy szelvénnyel a nyerési esélyed 1 a 13,98 millióhoz",
+    "exampleItem3": "Ez 0,0000072%-os nyerési esély!"
+  },
+  "expectedValue": {
+    "title": "Várható érték",
+    "text": "A várható érték az az átlagos összeg, amelyet hosszú távon nyerhetsz vagy veszíthetsz fogadásonként. A lottók esetében a várható érték mindig negatív, ami azt jelenti, hogy átlagosan pénzt veszítesz.",
+    "exampleTitle": "Példa: Egy egyszerű lottó",
+    "exampleText": "Képzelj el egy lottót, ahol:",
+    "exampleItem1": "A szelvény ára: 1 $",
+    "exampleItem2": "10 $ nyerésének valószínűsége: 10%",
+    "exampleItem3": "A semmit nem nyerés valószínűsége: 90%",
+    "exampleItem4": "Várható érték = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Hosszú távon nullszaldóra jutnál, de a valódi lottók ennél rosszabbak!"
+  },
+  "houseFavor": {
+    "title": "Miért kedvez a lottó mindig a szervezőnek",
+    "text": "A valódi lottók a szelvénybevétel egy részét (jellemzően 30-50%) megtartják a nyeremények kifizetése előtt. Ezt nevezzük a „szervező előnyének." Íme, mit jelent ez:",
+    "exampleTitle": "Példa: Valódi lottómatematika",
+    "forEvery100": "Minden 100 $ szelvénybevételből:",
+    "item1": "40-50 $ a lottó szervezőjéhez kerül (állam, vállalat stb.)",
+    "item2": "40-50 $ kerül szétosztásra a nyertesek között",
+    "item3": "A fennmaradó összeg jótékony célokra megy (oktatás, infrastruktúra stb.)",
+    "item4": "Eredmény: A játékosok minden elköltött dollárból csak 50-60 centet kapnak vissza"
+  },
+  "comparison": {
+    "title": "Lottó vs. befektetés: 30 éves összehasonlítás",
+    "text": "Mi lenne, ha a lottószelvényekre költött pénzt inkább befektetnéd? Hasonlítsuk össze a heti 20 $ lottóra költését és ugyanennek az összegnek a befektetését.",
+    "lotteryTitle": "Lottószelvények",
+    "investTitle": "Indexalap befektetés",
+    "weeklySpend": "Heti költés",
+    "weeklyInvest": "Heti befektetés",
+    "totalSpent": "Összes költés (30 év)",
+    "totalInvested": "Összes befektetés (30 év)",
+    "expectedReturn": "Várható hozam",
+    "portfolioValue": "Portfólió értéke",
+    "netResult": "Nettó eredmény",
+    "netGain": "Nettó nyereség",
+    "lotteryNote": "Átlagosan 50%-os kifizetési arány alapján",
+    "investNote": "~7%-os átlagos éves hozam alapján (S&P 500 történelmi adatok)",
+    "takeaway": "<strong>A különbség:</strong> 30 év alatt a lottójátékos körülbelül 15 600 $-t veszít, míg a befektető mintegy 70 800 $-t nyer. Ez 86 400 $ különbség ugyanabból a heti 20 $-ból."
+  },
+  "gamblersFallacy": {
+    "title": "A „játékos tévedése"",
+    "text": "Sokan hiszik, hogy a korábbi eredmények befolyásolják a jövőbeli kimeneteleket független eseményeknél. Ez hamis. Minden lottóhúzás független, és a korábbi eredmények nem befolyásolják a jövőbelieket.",
+    "exampleTitle": "Gyakori tévhitek",
+    "misconception1": "„A 7-est múlt héten húzták, tehát ezen a héten kevésbé valószínű"",
+    "reality1": "Minden számnak pontosan ugyanannyi esélye van minden húzásnál",
+    "misconception2": "„Sok vesztes után most rajtam a sor a nyerésre"",
+    "reality2": "A korábbi veszteségek nem növelik a nyerés esélyét",
+    "misconception3": "„Ezek a számok 'forróak', tehát valószínűbbek"",
+    "reality3": "A gyakran húzott számok pont olyan valószínűek, mint a ritkák",
+    "misconceptionLabel": "Tévhit:",
+    "realityLabel": "Valóság:"
+  },
+  "largeNumbers": {
+    "title": "A nagy számok törvénye",
+    "text": "Minél többet játszol, annál jobban közelítenek a tényleges eredményeid az elméleti valószínűséghez. Ez azonban nem jelenti azt, hogy „végül nyerni fogsz" – hanem azt, hogy végül még több pénzt veszítesz!",
+    "exampleTitle": "Amit a számok mutatnak",
+    "item1": "1 lottószelvény játéka: Egyszer nyerhetsz egy életben",
+    "item2": "100 szelvény játéka: Az esélyeid javulnak, de a várható veszteség még mindig a teljes befektetésed",
+    "item3": "1000 szelvény játéka: Közelebb kerülsz a statisztikai átlaghoz (a költött pénz ~50-60%-ának elvesztése)",
+    "item4": "Minél többet játszol, annál jobban közelítenek a veszteségeid a matematikai elváráshoz"
+  },
+  "lessons": {
+    "title": "Okos pénzügyi tanulságok",
+    "text": "A lottómatematika megértése értékes tanulságokat tanít a valószínűségről és a gazdasági döntésekről:",
+    "riskReward": "Kockázat vs. jutalom",
+    "riskRewardText": "Mindig értékeld az esélyeket a lehetséges nyereménnyel szemben. A lottóknál a kockázat-jutalom arány rendkívül kedvezőtlen más befektetésekhez képest.",
+    "statThinking": "Statisztikai gondolkodás",
+    "statThinkingText": "Hozz döntéseket adatok és valószínűségek, ne remény vagy babona alapján. Ez vonatkozik a befektetésekre, biztosításokra és a nagy életdöntésekre is.",
+    "longTermPlanning": "Hosszú távú tervezés",
+    "longTermPlanningText": "A lottónyeremények megbízhatatlanok. A rendszeres megtakarítással és befektetéssel (akár kis összegekkel is) történő vagyonépítés sokkal megbízhatóbb, mint a jackpotra várni.",
+    "psychologyLoss": "A veszteség pszichológiája",
+    "psychologyLossText": "Értsd meg, hogyan csapja be az agyunk rossz döntésekbe. Túlbecsüljük a kis valószínűségeket és alábecsüljük a veszteségeinket, ha azok időben eloszlanak."
+  },
+  "cta": {
+    "title": "Győződj meg róla magad",
+    "text": "A lottó esélyek megértésének legjobb módja a személyes tapasztalat. Próbáld ki az interaktív lottószimulátort, és nézd meg, hány húzás szükséges a számaid eltalálásához.",
+    "trySimulator": "Próbáld ki a szimulátort",
+    "viewStatistics": "Statisztikák megtekintése"
+  },
+  "responsible": {
+    "title": "Felelős játék",
+    "text": "Ha úgy érzed, hogy a lottójáték problémává válik, vagy hatással van a pénzügyi helyzeted, kérjük, kérj segítséget:",
+    "helpline": "Nemzeti Szerencsejáték-problémák Segélyvonala: 1-800-522-4700",
+    "ga": "Névtelen Játékosok:",
+    "ncpg": "NCPG (Kényszeres Szerencsejáték Tanács):",
+    "remember": "A lottószelvényeket csak szórakozásként szabad használni, olyan pénzből, amit megengedhetsz magadnak elveszíteni. Soha ne építs rájuk pénzügyi terveket.",
+    "rememberLabel": "Ne feledd:"
+  }
+}

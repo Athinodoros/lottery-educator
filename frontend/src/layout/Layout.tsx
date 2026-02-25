@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Outlet, Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Home, Gamepad2, BarChart3, Heart, Mail, Settings, Menu, X, Sun, Moon } from 'lucide-react'
 import { getThemePreference, setThemePreference } from '../utils/storage'
 import { useSessionStore } from '../store/useSessionStore'
 import { metricsApi } from '../api/metrics'
+import { RTL_LANGUAGES } from '../i18n'
 import PrivacyFooter from '../components/PrivacyFooter'
 import ConsentBanner from '../components/ConsentBanner'
+import LanguagePicker from '../components/LanguagePicker'
 import './Layout.css'
 
 function getInitialTheme(): 'light' | 'dark' {
@@ -17,6 +20,7 @@ function getInitialTheme(): 'light' | 'dark' {
 
 function Layout() {
   const location = useLocation()
+  const { t, i18n } = useTranslation()
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>(getInitialTheme)
 
@@ -25,41 +29,47 @@ function Layout() {
     setThemePreference(theme)
   }, [theme])
 
+  useEffect(() => {
+    const dir = RTL_LANGUAGES.includes(i18n.language) ? 'rtl' : 'ltr'
+    document.documentElement.dir = dir
+    document.documentElement.lang = i18n.language
+  }, [i18n.language])
+
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light')
   }
 
   const navItems = [
-    { path: '/', label: 'Home', icon: Home },
-    { path: '/games', label: 'Games', icon: Gamepad2 },
-    { path: '/stats', label: 'Stats', icon: BarChart3 },
-    { path: '/learn', label: 'Learn', icon: Heart },
-    { path: '/contact', label: 'Contact', icon: Mail },
-    { path: '/admin', label: 'Admin', icon: Settings },
+    { path: '/', labelKey: 'nav.home', icon: Home },
+    { path: '/games', labelKey: 'nav.games', icon: Gamepad2 },
+    { path: '/stats', labelKey: 'nav.stats', icon: BarChart3 },
+    { path: '/learn', labelKey: 'nav.learn', icon: Heart },
+    { path: '/contact', labelKey: 'nav.contact', icon: Mail },
+    { path: '/admin', labelKey: 'nav.admin', icon: Settings },
   ]
 
   const sessionId = useSessionStore((state) => state.sessionId)
 
-  const handleNavClick = (label: string) => {
+  const handleNavClick = (labelKey: string) => {
     setDrawerOpen(false)
     if (sessionId) {
-      metricsApi.trackClick(`nav-${label.toLowerCase()}`, sessionId, location.pathname)
+      metricsApi.trackClick(`nav-${labelKey.split('.')[1]}`, sessionId, location.pathname)
     }
   }
 
   return (
     <div className={`layout ${drawerOpen ? 'drawer-open' : ''}`}>
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t('skipToContent')}
       </a>
 
       <nav className="nav-drawer" aria-label="Main navigation">
         <div className="nav-drawer-header">
-          <span className="nav-drawer-title">Lottery Educator</span>
+          <span className="nav-drawer-title">{t('appTitle')}</span>
           <button
             className="theme-toggle"
             onClick={toggleTheme}
-            aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+            aria-label={theme === 'light' ? t('switchToDark') : t('switchToLight')}
           >
             {theme === 'light' ? <Moon size={18} aria-hidden="true" /> : <Sun size={18} aria-hidden="true" />}
           </button>
@@ -67,27 +77,29 @@ function Layout() {
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = location.pathname === item.path
+          const label = t(item.labelKey)
           return (
             <Link
               key={item.path}
               to={item.path}
               className={`nav-item ${isActive ? 'active' : ''}`}
               aria-current={isActive ? 'page' : undefined}
-              aria-label={item.label}
-              onClick={() => handleNavClick(item.label)}
+              aria-label={label}
+              onClick={() => handleNavClick(item.labelKey)}
             >
               <Icon size={22} aria-hidden="true" />
-              <span>{item.label}</span>
+              <span>{label}</span>
             </Link>
           )
         })}
+        <LanguagePicker />
       </nav>
 
       <div className="main-wrapper">
         <button
           className="burger-button"
           onClick={() => setDrawerOpen(!drawerOpen)}
-          aria-label={drawerOpen ? 'Close menu' : 'Open menu'}
+          aria-label={drawerOpen ? t('closeMenu') : t('openMenu')}
           aria-expanded={drawerOpen}
         >
           {drawerOpen ? <X size={24} /> : <Menu size={24} />}

@@ -1,0 +1,109 @@
+{
+  "title": "Learn About Lottery Mathematics",
+  "subtitle": "Understanding the true odds behind lottery games",
+  "probability": {
+    "title": "What is Probability?",
+    "text": "Probability is the mathematical likelihood that an event will occur. It's expressed as a number between 0 and 1, where 0 means impossible and 1 means certain. For example, the probability of flipping heads on a fair coin is 0.5 (or 50%), since there are two equally likely outcomes.",
+    "exampleTitle": "Example: Rolling a Die",
+    "exampleText": "When you roll a fair six-sided die:",
+    "exampleItem1": "There are 6 possible outcomes (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "The probability of rolling a 3 is 1/6 ≈ 16.67%",
+    "exampleItem3": "The probability of rolling any number is equally likely"
+  },
+  "combinations": {
+    "title": "Combinations and Permutations",
+    "text": "When calculating lottery odds, we need to understand how many different ways items can be selected and arranged. In most lotteries, the order of numbers doesn't matter, so we use <strong>combinations</strong>.",
+    "exampleTitle": "Example: Picking 6 from 49",
+    "exampleText": "In a typical lottery where you pick 6 numbers from 49:",
+    "exampleItem1": "The number of possible combinations is approximately 13.98 million",
+    "exampleItem2": "Your chance of winning with one ticket is 1 in 13.98 million",
+    "exampleItem3": "That's a 0.0000072% chance of winning!"
+  },
+  "expectedValue": {
+    "title": "Expected Value",
+    "text": "Expected value is the average amount you expect to win or lose per bet in the long run. For lotteries, the expected value is always negative, meaning you lose money on average.",
+    "exampleTitle": "Example: A Simple Lottery",
+    "exampleText": "Imagine a lottery where:",
+    "exampleItem1": "Ticket costs: $1",
+    "exampleItem2": "Probability of winning $10: 10%",
+    "exampleItem3": "Probability of winning nothing: 90%",
+    "exampleItem4": "Expected value = (0.10 x $10) + (0.90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Over time, you'd expect to break even, but real lotteries are worse!"
+  },
+  "houseFavor": {
+    "title": "Why Lotteries Always Favor the House",
+    "text": "Real-world lotteries keep a percentage of ticket sales (typically 30-50%) before paying out prizes. This is called the \"house advantage.\" Here's what this means:",
+    "exampleTitle": "Example: Real Lottery Math",
+    "forEvery100": "For every $100 in ticket sales:",
+    "item1": "$40-50 goes to the lottery organizer (state, company, etc.)",
+    "item2": "$40-50 is distributed to winners",
+    "item3": "The remaining funds go to causes (education, infrastructure, etc.)",
+    "item4": "Result: Players get back only 50-60 cents for every dollar spent"
+  },
+  "comparison": {
+    "title": "Lottery vs Investing: A 30-Year Comparison",
+    "text": "What if you invested the money you'd spend on lottery tickets instead? Let's compare spending $20 per week on lottery tickets versus investing that same amount.",
+    "lotteryTitle": "Lottery Tickets",
+    "investTitle": "Index Fund Investment",
+    "weeklySpend": "Weekly spend",
+    "weeklyInvest": "Weekly invest",
+    "totalSpent": "Total spent (30 yrs)",
+    "totalInvested": "Total invested (30 yrs)",
+    "expectedReturn": "Expected return",
+    "portfolioValue": "Portfolio value",
+    "netResult": "Net result",
+    "netGain": "Net gain",
+    "lotteryNote": "Based on average 50% payout ratio",
+    "investNote": "Based on ~7% average annual return (S&P 500 historical)",
+    "takeaway": "<strong>The difference:</strong> Over 30 years, the lottery player loses about $15,600 while the investor gains about $70,800. That's an $86,400 gap from the same $20 per week."
+  },
+  "gamblersFallacy": {
+    "title": "The \"Gambler's Fallacy\"",
+    "text": "Many people believe that past results affect future outcomes in independent events. This is false. Each lottery draw is independent, and previous outcomes don't influence future ones.",
+    "exampleTitle": "Common Misconceptions",
+    "misconception1": "\"7 was drawn last week, so it's less likely this week\"",
+    "reality1": "Each number has exactly the same chance every draw",
+    "misconception2": "\"I'm due for a win after losing many times\"",
+    "reality2": "Past losses don't increase your chance of winning",
+    "misconception3": "\"These numbers are 'hot' so they're more likely\"",
+    "reality3": "Frequently drawn numbers are just as likely as rare ones",
+    "misconceptionLabel": "Misconception:",
+    "realityLabel": "Reality:"
+  },
+  "largeNumbers": {
+    "title": "The Law of Large Numbers",
+    "text": "As you play more games, your actual results converge toward the theoretical probability. However, this doesn't mean you'll \"eventually win\" - it means you'll eventually lose even more money!",
+    "exampleTitle": "What the Numbers Show",
+    "item1": "Play 1 lottery ticket: You might win once in a lifetime",
+    "item2": "Play 100 tickets: Your odds improve, but expected loss is still your full investment",
+    "item3": "Play 1,000 tickets: You're closer to the statistical average (losing ~50-60% of money spent)",
+    "item4": "The more you play, the closer your losses approach the mathematical expectation"
+  },
+  "lessons": {
+    "title": "Smart Financial Lessons",
+    "text": "Understanding lottery mathematics teaches us valuable lessons about probability and economic decisions:",
+    "riskReward": "Risk vs Reward",
+    "riskRewardText": "Always evaluate the odds versus the potential reward. In lotteries, the risk-to-reward ratio is extremely unfavorable compared to other investments.",
+    "statThinking": "Statistical Thinking",
+    "statThinkingText": "Make decisions based on data and probability, not hope or superstition. This applies to investing, insurance, and major life decisions.",
+    "longTermPlanning": "Long-Term Planning",
+    "longTermPlanningText": "Lottery winnings are unreliable. Building wealth through regular saving and investing (even small amounts) is much more reliable than hoping for a jackpot.",
+    "psychologyLoss": "Psychology of Loss",
+    "psychologyLossText": "Understand how our brains trick us into poor decisions. We overestimate small probabilities and underestimate our losses when they're spread over time."
+  },
+  "cta": {
+    "title": "See It for Yourself",
+    "text": "The best way to understand lottery odds is to experience them firsthand. Try our interactive lottery simulator and watch how many draws it takes to match your numbers.",
+    "trySimulator": "Try the Simulator",
+    "viewStatistics": "View Statistics"
+  },
+  "responsible": {
+    "title": "Responsible Gaming",
+    "text": "If you ever feel that lottery play is becoming a problem, or if it's affecting your financial health, please reach out for help:",
+    "helpline": "National Problem Gambling Helpline: 1-800-522-4700",
+    "ga": "Gamblers Anonymous:",
+    "ncpg": "NCPG (Council on Compulsive Gambling):",
+    "remember": "Lottery tickets should only be used as entertainment with money you can afford to lose. Never rely on them for financial planning.",
+    "rememberLabel": "Remember:"
+  }
+}

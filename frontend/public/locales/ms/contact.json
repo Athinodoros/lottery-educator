@@ -1,0 +1,22 @@
+{
+  "title": "Hubungi Kami",
+  "subtitle": "Ada soalan atau maklum balas? Kami ingin mendengar daripada anda.",
+  "successTitle": "Mesej Dihantar!",
+  "successText": "Terima kasih kerana menghubungi kami. Kami akan menyemak mesej anda dengan segera.",
+  "sendAnother": "Hantar Mesej Lain",
+  "emailLabel": "Alamat E-mel",
+  "emailPlaceholder": "emel@anda.com",
+  "emailError": "Sila masukkan alamat e-mel yang sah",
+  "subjectLabel": "Subjek",
+  "subjectPlaceholder": "Ini tentang apa?",
+  "messageLabel": "Mesej",
+  "messagePlaceholder": "Beritahu kami apa yang anda fikirkan...",
+  "sending": "Menghantar...",
+  "sendMessage": "Hantar Mesej",
+  "aboutProject": "Tentang Projek Ini",
+  "aboutProjectText": "Pendidikan Loteri adalah alat pendidikan percuma yang membantu orang memahami peluang sebenar memenangi loteri melalui simulasi interaktif.",
+  "privacy": "Privasi",
+  "privacyText": "Kami menghormati privasi anda. E-mel anda hanya digunakan untuk membalas mesej anda. Kami tidak menyimpan alamat IP atau berkongsi maklumat anda. Anda boleh meminta pemadaman data pada bila-bila masa.",
+  "openSource": "Sumber Terbuka",
+  "openSourceText": "Projek ini adalah sumber terbuka. Jika anda menemui pepijat atau ingin menyumbang, sila buka isu atau permintaan tarik di GitHub."
+}

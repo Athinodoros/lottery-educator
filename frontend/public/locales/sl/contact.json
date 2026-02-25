@@ -1,0 +1,22 @@
+{
+  "title": "Kontaktirajte nas",
+  "subtitle": "Imate vprašanja ali povratne informacije? Z veseljem bi slišali od vas.",
+  "successTitle": "Sporočilo poslano!",
+  "successText": "Hvala, da ste se obrnili na nas. Vaše sporočilo bomo kmalu pregledali.",
+  "sendAnother": "Pošljite drugo sporočilo",
+  "emailLabel": "E-poštni naslov",
+  "emailPlaceholder": "vaš@email.com",
+  "emailError": "Prosimo, vnesite veljaven e-poštni naslov",
+  "subjectLabel": "Zadeva",
+  "subjectPlaceholder": "Za kaj gre?",
+  "messageLabel": "Sporočilo",
+  "messagePlaceholder": "Povejte nam, kaj vam je na misli...",
+  "sending": "Pošiljanje...",
+  "sendMessage": "Pošlji sporočilo",
+  "aboutProject": "O projektu",
+  "aboutProjectText": "Loterijski izobraževalec je brezplačno izobraževalno orodje, ki ljudem pomaga razumeti resnične možnosti za zmago na loteriji skozi interaktivne simulacije.",
+  "privacy": "Zasebnost",
+  "privacyText": "Spoštujemo vašo zasebnost. Vaš e-poštni naslov se uporablja samo za odgovor na vaše sporočilo. Ne shranjujemo IP naslovov in ne delimo vaših podatkov. Kadar koli lahko zahtevate izbris svojih podatkov.",
+  "openSource": "Odprta koda",
+  "openSourceText": "Ta projekt je odprtokoden. Če najdete napako ali želite prispevati, lahko odprete prijavo težave ali zahtevek za spremembe na GitHubu."
+}

@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import { useSessionStore } from '../store/useSessionStore'
 import './ConsentBanner.css'
 
 function ConsentBanner() {
+  const { t } = useTranslation()
   const hasGivenConsent = useSessionStore((state) => state.hasGivenConsent)
   const giveConsent = useSessionStore((state) => state.giveConsent)
   const revokeConsent = useSessionStore((state) => state.revokeConsent)
@@ -12,18 +14,17 @@ function ConsentBanner() {
   if (hasDecided || hasGivenConsent) return null
 
   return (
-    <div className="consent-banner" role="dialog" aria-label="Cookie consent">
+    <div className="consent-banner" role="dialog" aria-label={t('consent.ariaLabel')}>
       <div className="consent-inner">
         <p className="consent-text">
-          We use anonymous analytics to improve the learning experience.
-          No personal data is collected. You can delete your data anytime.
+          {t('consent.text')}
         </p>
         <div className="consent-actions">
           <button className="consent-accept" onClick={giveConsent}>
-            Accept
+            {t('consent.accept')}
           </button>
           <button className="consent-decline" onClick={revokeConsent}>
-            Decline
+            {t('consent.decline')}
           </button>
         </div>
       </div>

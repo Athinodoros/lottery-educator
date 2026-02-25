@@ -1,0 +1,109 @@
+{
+  "title": "Matuto Tungkol sa Matematika ng Lotería",
+  "subtitle": "Pag-unawa sa tunay na tsansa sa likod ng mga laro ng lotería",
+  "probability": {
+    "title": "Ano ang Probabilidad?",
+    "text": "Ang probabilidad ay ang matematikal na posibilidad na magaganap ang isang pangyayari. Ito ay ipinapahayag bilang isang numero sa pagitan ng 0 at 1, kung saan ang 0 ay nangangahulugang imposible at ang 1 ay nangangahulugang tiyak. Halimbawa, ang probabilidad ng pagkakuha ng ulo sa isang patas na barya ay 0.5 (o 50%), dahil may dalawang magkaparehong posibleng resulta.",
+    "exampleTitle": "Halimbawa: Paghagis ng Dais",
+    "exampleText": "Kapag naghagis ka ng isang patas na anim-na-panig na dais:",
+    "exampleItem1": "May 6 na posibleng resulta (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Ang probabilidad ng pagkakuha ng 3 ay 1/6 ≈ 16.67%",
+    "exampleItem3": "Ang probabilidad ng pagkakuha ng anumang numero ay pantay-pantay"
+  },
+  "combinations": {
+    "title": "Mga Kumbinasyon at Permutasyon",
+    "text": "Sa pagkalkula ng tsansa ng lotería, kailangan nating maunawaan kung ilang magkakaibang paraan ang mga bagay na mapipili at maayos. Sa karamihan ng lotería, hindi mahalaga ang pagkakasunod-sunod ng mga numero, kaya gumagamit tayo ng <strong>mga kumbinasyon</strong>.",
+    "exampleTitle": "Halimbawa: Pagpili ng 6 mula sa 49",
+    "exampleText": "Sa isang karaniwang lotería kung saan pumipili ka ng 6 na numero mula sa 49:",
+    "exampleItem1": "Ang bilang ng posibleng kumbinasyon ay humigit-kumulang 13.98 milyon",
+    "exampleItem2": "Ang tsansa mong manalo sa isang tiket ay 1 sa 13.98 milyon",
+    "exampleItem3": "Iyon ay 0.0000072% na tsansa ng pagpanalo!"
+  },
+  "expectedValue": {
+    "title": "Inaasahang Halaga",
+    "text": "Ang inaasahang halaga ay ang average na halaga na inaasahan mong manalo o matalo sa bawat taya sa mahabang panahon. Para sa lotería, ang inaasahang halaga ay palaging negatibo, ibig sabihin nawawalan ka ng pera sa karaniwan.",
+    "exampleTitle": "Halimbawa: Isang Simpleng Lotería",
+    "exampleText": "Isipin ang isang lotería kung saan:",
+    "exampleItem1": "Halaga ng tiket: $1",
+    "exampleItem2": "Probabilidad ng pagpanalo ng $10: 10%",
+    "exampleItem3": "Probabilidad ng walang panalo: 90%",
+    "exampleItem4": "Inaasahang halaga = (0.10 x $10) + (0.90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Sa paglipas ng panahon, inaasahang mababawi mo ang puhunan, pero ang tunay na lotería ay mas masama!"
+  },
+  "houseFavor": {
+    "title": "Bakit Palaging Pabor sa Bahay ang Lotería",
+    "text": "Ang tunay na lotería ay naglalaan ng porsyento ng benta ng tiket (karaniwang 30-50%) bago magbayad ng premyo. Ito ay tinatawag na \"kalamangan ng bahay.\" Ito ang ibig sabihin nito:",
+    "exampleTitle": "Halimbawa: Tunay na Matematika ng Lotería",
+    "forEvery100": "Sa bawat $100 na benta ng tiket:",
+    "item1": "$40-50 ang napupunta sa organiser ng lotería (estado, kumpanya, atbp.)",
+    "item2": "$40-50 ang ibinabahagi sa mga nanalo",
+    "item3": "Ang natitirang pondo ay napupunta sa mga layunin (edukasyon, imprastruktura, atbp.)",
+    "item4": "Resulta: Ang mga manlalaro ay nakakakuha lang ng 50-60 sentimo para sa bawat dolyar na ginastos"
+  },
+  "comparison": {
+    "title": "Lotería vs Pamumuhunan: 30-Taong Paghahambing",
+    "text": "Paano kung inilagak mo sa puhunan ang perang ginagastos mo sa mga tiket ng lotería? Ihambing natin ang paggastos ng $20 bawat linggo sa mga tiket ng lotería laban sa pamumuhunan ng parehong halaga.",
+    "lotteryTitle": "Mga Tiket ng Lotería",
+    "investTitle": "Pamumuhunan sa Index Fund",
+    "weeklySpend": "Lingguhang gastos",
+    "weeklyInvest": "Lingguhang puhunan",
+    "totalSpent": "Kabuuang ginastos (30 taon)",
+    "totalInvested": "Kabuuang inilagak (30 taon)",
+    "expectedReturn": "Inaasahang kita",
+    "portfolioValue": "Halaga ng portfolio",
+    "netResult": "Netong resulta",
+    "netGain": "Netong kita",
+    "lotteryNote": "Batay sa average na 50% na ratio ng bayad",
+    "investNote": "Batay sa ~7% average na taunang kita (makasaysayang S&P 500)",
+    "takeaway": "<strong>Ang pagkakaiba:</strong> Sa loob ng 30 taon, ang manlalaro ng lotería ay nawalan ng humigit-kumulang $15,600 habang ang namumuhunan ay kumita ng humigit-kumulang $70,800. Iyon ay $86,400 na agwat mula sa parehong $20 bawat linggo."
+  },
+  "gamblersFallacy": {
+    "title": "Ang \"Kamalian ng Manlalaro\"",
+    "text": "Maraming tao ang naniniwala na ang mga nakaraang resulta ay nakakaapekto sa mga resulta sa hinaharap sa mga independiyenteng pangyayari. Ito ay mali. Ang bawat bunutan ng lotería ay independiyente, at ang mga nakaraang resulta ay hindi nakakaapekto sa mga susunod.",
+    "exampleTitle": "Mga Karaniwang Maling Akala",
+    "misconception1": "\"Ang 7 ay nabunot noong nakaraang linggo, kaya mas maliit ang tsansa nito ngayong linggo\"",
+    "reality1": "Bawat numero ay may eksaktong parehong tsansa sa bawat bunutan",
+    "misconception2": "\"Matagal na akong natatalo, kaya dapat na akong manalo\"",
+    "reality2": "Ang mga nakaraang pagkatalo ay hindi nagpapataas ng iyong tsansa ng pagpanalo",
+    "misconception3": "\"Ang mga numerong ito ay 'mainit' kaya mas malamang lumabas\"",
+    "reality3": "Ang mga madalas na numero ay may parehong tsansa gaya ng mga bihirang numero",
+    "misconceptionLabel": "Maling akala:",
+    "realityLabel": "Realidad:"
+  },
+  "largeNumbers": {
+    "title": "Ang Batas ng Malalaking Numero",
+    "text": "Habang mas marami kang nilalaro, ang iyong aktwal na resulta ay papalapit sa teoritikal na probabilidad. Gayunpaman, hindi ito nangangahulugan na \"sa kalaunan ay mananalo ka\" - ibig sabihin nito ay sa kalaunan ay mas marami kang mawawalang pera!",
+    "exampleTitle": "Ano ang Ipinakikita ng mga Numero",
+    "item1": "Maglaro ng 1 tiket: Maaari kang manalo nang isang beses sa buong buhay mo",
+    "item2": "Maglaro ng 100 tiket: Tumataas ang tsansa, pero ang inaasahang pagkatalo ay ang buong puhunan mo pa rin",
+    "item3": "Maglaro ng 1,000 tiket: Mas malapit ka na sa estadistikal na average (nawawala ~50-60% ng perang ginastos)",
+    "item4": "Habang mas marami kang nilalaro, mas lumalapit ang iyong pagkatalo sa matematikal na inaasahan"
+  },
+  "lessons": {
+    "title": "Matalinong Aral sa Pananalapi",
+    "text": "Ang pag-unawa sa matematika ng lotería ay nagtuturo sa atin ng mahahalagang aral tungkol sa probabilidad at desisyon sa ekonomiya:",
+    "riskReward": "Panganib vs Gantimpala",
+    "riskRewardText": "Palaging suriin ang tsansa laban sa potensyal na gantimpala. Sa lotería, ang ratio ng panganib-sa-gantimpala ay lubhang hindi paborable kumpara sa ibang puhunan.",
+    "statThinking": "Pag-iisip na Estadistikal",
+    "statThinkingText": "Gumawa ng mga desisyon batay sa datos at probabilidad, hindi pag-asa o pamahiin. Naaangkop ito sa pamumuhunan, seguro, at mahahalagang desisyon sa buhay.",
+    "longTermPlanning": "Pangmatagalang Pagpaplano",
+    "longTermPlanningText": "Ang pagpanalo sa lotería ay hindi maaasahan. Ang pagtatayo ng kayamanan sa pamamagitan ng regular na pag-iipon at pamumuhunan (kahit maliit na halaga) ay mas maaasahan kaysa umasa sa jackpot.",
+    "psychologyLoss": "Sikolohiya ng Pagkatalo",
+    "psychologyLossText": "Unawain kung paano tayo nililinlang ng ating utak sa mga masamang desisyon. Labis nating tinataya ang maliliit na probabilidad at minamaliit ang ating mga pagkatalo kapag nahahati sa paglipas ng panahon."
+  },
+  "cta": {
+    "title": "Makita Mo Mismo",
+    "text": "Ang pinakamahusay na paraan upang maunawaan ang tsansa ng lotería ay ang personal na maranasan ito. Subukan ang aming interaktibong simulator ng lotería at panoorin kung ilang bunutan ang kailangan upang tumugma ang iyong mga numero.",
+    "trySimulator": "Subukan ang Simulator",
+    "viewStatistics": "Tingnan ang Estadistika"
+  },
+  "responsible": {
+    "title": "Responsableng Paglalaro",
+    "text": "Kung nararamdaman mo na ang paglalaro ng lotería ay nagiging problema, o nakakaapekto sa iyong kalusugang pinansyal, mangyaring humingi ng tulong:",
+    "helpline": "National Problem Gambling Helpline: 1-800-522-4700",
+    "ga": "Gamblers Anonymous:",
+    "ncpg": "NCPG (Council on Compulsive Gambling):",
+    "remember": "Ang mga tiket ng lotería ay dapat gamitin lamang bilang libangan gamit ang perang kaya mong mawala. Huwag kailanman umasa sa mga ito para sa pagpaplano sa pananalapi.",
+    "rememberLabel": "Tandaan:"
+  }
+}

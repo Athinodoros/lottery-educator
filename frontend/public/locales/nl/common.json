@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Start",
+    "games": "Spellen",
+    "stats": "Statistieken",
+    "learn": "Leren",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "appTitle": "Loterij Educatie",
+  "skipToContent": "Ga naar hoofdinhoud",
+  "switchToDark": "Schakel naar donkere modus",
+  "switchToLight": "Schakel naar lichte modus",
+  "openMenu": "Menu openen",
+  "closeMenu": "Menu sluiten",
+  "footer": {
+    "privacyText": "Wij respecteren uw privacy. Er worden geen persoonlijke gegevens verzameld.",
+    "dataDeleted": "Uw gegevens zijn verwijderd.",
+    "deleteConfirm": "Al uw lokale gegevens verwijderen?",
+    "confirmYes": "Ja, verwijderen",
+    "confirmCancel": "Annuleren",
+    "deleteButton": "Mijn Gegevens Verwijderen",
+    "deleteAriaLabel": "Mijn gegevens verwijderen"
+  },
+  "consent": {
+    "ariaLabel": "Cookie-toestemming",
+    "text": "Wij gebruiken anonieme analyses om de leerervaring te verbeteren. Er worden geen persoonlijke gegevens verzameld. U kunt uw gegevens op elk moment verwijderen.",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
+  }
+}

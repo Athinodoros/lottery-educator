@@ -1,3 +1,159 @@
+/* ── Theme Variables ──────────────────────────────────── */
+:root {
+  /* Primary (violet) */
+  --color-primary: #8b5cf6;
+  --color-primary-hover: #7c3aed;
+  --color-primary-dark: #6d28d9;
+  --color-primary-light: #c4b5fd;
+  --color-primary-lighter: #ddd6fe;
+  --color-primary-bg: #ede9fe;
+  --color-primary-bg-subtle: #f5f3ff;
+  --color-primary-bg-hover: #f5f3ff;
+
+  /* Accent (gold/amber) — data highlights, stat numbers */
+  --color-accent: #f59e0b;
+  --color-accent-hover: #d97706;
+
+  /* Backgrounds */
+  --color-bg: #f8f9fc;
+  --color-bg-card: #ffffff;
+  --color-bg-subtle: #f1f3f9;
+  --color-bg-hover: #eef0f8;
+
+  /* Text */
+  --color-text: #111827;
+  --color-text-heading: #1f2937;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+  --color-text-dim: #9ca3af;
+
+  /* Borders */
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-overlay: 0 20px 60px rgba(0, 0, 0, 0.3);
+  --shadow-primary-sm: 0 4px 12px rgba(139, 92, 246, 0.2);
+  --shadow-primary-md: 0 8px 24px rgba(139, 92, 246, 0.18);
+
+  /* Success */
+  --color-success: #22c55e;
+  --color-success-vivid: #10b981;
+  --color-success-dark: #16a34a;
+  --color-success-text: #065f46;
+  --color-success-bg: #ecfdf5;
+  --color-success-bg-subtle: #d1fae5;
+  --color-success-border: #6ee7b7;
+  --color-success-border-light: #bbf7d0;
+
+  /* Error */
+  --color-error: #ef4444;
+  --color-error-dark: #dc2626;
+  --color-error-text: #991b1b;
+  --color-error-text-alt: #b91c1c;
+  --color-error-bg: #fef2f2;
+  --color-error-bg-dark: #fee2e2;
+  --color-error-border: #fecaca;
+  --color-error-border-dark: #fca5a5;
+
+  /* Warning */
+  --color-warning: #f59e0b;
+  --color-warning-text: #92400e;
+  --color-warning-text-dark: #7c2d12;
+  --color-warning-bg: #fef3c7;
+  --color-warning-border: #fcd34d;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  --gradient-primary-subtle: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(99, 102, 241, 0.05) 100%);
+  --gradient-primary-subtle-strong: linear-gradient(135deg, rgba(139, 92, 246, 0.06) 0%, rgba(99, 102, 241, 0.08) 100%);
+  --gradient-error-subtle: linear-gradient(135deg, rgba(248, 113, 113, 0.05) 0%, rgba(239, 68, 68, 0.05) 100%);
+  --gradient-lesson: linear-gradient(135deg, #f1f3f9 0%, #e5e7eb 100%);
+
+  /* Misc */
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+  --focus-ring: 0 0 0 3px rgba(139, 92, 246, 0.15);
+  --color-link-negative: #dc2626;
+  --color-link-positive: #16a34a;
+}
+
+/* ── Dark Theme ──────────────────────────────────────── */
+[data-theme="dark"] {
+  --color-primary: #a78bfa;
+  --color-primary-hover: #8b5cf6;
+  --color-primary-dark: #7c3aed;
+  --color-primary-light: #8b5cf6;
+  --color-primary-lighter: #6d28d9;
+  --color-primary-bg: rgba(139, 92, 246, 0.15);
+  --color-primary-bg-subtle: rgba(139, 92, 246, 0.08);
+  --color-primary-bg-hover: rgba(139, 92, 246, 0.12);
+
+  --color-accent: #fbbf24;
+  --color-accent-hover: #f59e0b;
+
+  --color-bg: #0b1121;
+  --color-bg-card: #151c2e;
+  --color-bg-subtle: #1b2340;
+  --color-bg-hover: #242e4a;
+
+  --color-text: #f1f5f9;
+  --color-text-heading: #e2e8f0;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-dim: #64748b;
+
+  --color-border: #1e2844;
+  --color-border-strong: #2a3655;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --shadow-overlay: 0 20px 60px rgba(0, 0, 0, 0.7);
+  --shadow-primary-sm: 0 4px 12px rgba(167, 139, 250, 0.25);
+  --shadow-primary-md: 0 8px 24px rgba(167, 139, 250, 0.2);
+
+  --color-success: #4ade80;
+  --color-success-vivid: #34d399;
+  --color-success-dark: #22c55e;
+  --color-success-text: #86efac;
+  --color-success-bg: rgba(34, 197, 94, 0.1);
+  --color-success-bg-subtle: rgba(34, 197, 94, 0.15);
+  --color-success-border: rgba(34, 197, 94, 0.3);
+  --color-success-border-light: rgba(34, 197, 94, 0.2);
+
+  --color-error: #f87171;
+  --color-error-dark: #ef4444;
+  --color-error-text: #fca5a5;
+  --color-error-text-alt: #f87171;
+  --color-error-bg: rgba(239, 68, 68, 0.1);
+  --color-error-bg-dark: rgba(239, 68, 68, 0.15);
+  --color-error-border: rgba(239, 68, 68, 0.3);
+  --color-error-border-dark: rgba(239, 68, 68, 0.4);
+
+  --color-warning: #fbbf24;
+  --color-warning-text: #fcd34d;
+  --color-warning-text-dark: #fbbf24;
+  --color-warning-bg: rgba(245, 158, 11, 0.1);
+  --color-warning-border: rgba(245, 158, 11, 0.3);
+
+  --gradient-primary: linear-gradient(135deg, #a78bfa 0%, #818cf8 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  --gradient-primary-subtle: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
+  --gradient-primary-subtle-strong: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(99, 102, 241, 0.15) 100%);
+  --gradient-error-subtle: linear-gradient(135deg, rgba(248, 113, 113, 0.08) 0%, rgba(239, 68, 68, 0.08) 100%);
+  --gradient-lesson: linear-gradient(135deg, #1b2340 0%, #242e4a 100%);
+
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --focus-ring: 0 0 0 3px rgba(167, 139, 250, 0.2);
+  --color-link-negative: #f87171;
+  --color-link-positive: #4ade80;
+}
+
+/* ── Reset ───────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +166,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f9fafb;
-  color: #111827;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #root {
@@ -21,12 +178,12 @@ body {
 }
 
 a {
-  color: #6366f1;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 a:hover {
-  color: #4f46e5;
+  color: var(--color-primary-hover);
 }
 
 button {
@@ -61,7 +218,7 @@ a:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 

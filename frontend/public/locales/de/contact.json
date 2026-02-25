@@ -1,0 +1,22 @@
+{
+  "title": "Kontakt",
+  "subtitle": "Haben Sie Fragen oder Feedback? Wir freuen uns, von Ihnen zu hören.",
+  "successTitle": "Nachricht gesendet!",
+  "successText": "Vielen Dank für Ihre Nachricht. Wir werden sie in Kürze bearbeiten.",
+  "sendAnother": "Weitere Nachricht senden",
+  "emailLabel": "E-Mail-Adresse",
+  "emailPlaceholder": "ihre@email.com",
+  "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+  "subjectLabel": "Betreff",
+  "subjectPlaceholder": "Worum geht es?",
+  "messageLabel": "Nachricht",
+  "messagePlaceholder": "Teilen Sie uns mit, was Sie beschäftigt...",
+  "sending": "Wird gesendet...",
+  "sendMessage": "Nachricht senden",
+  "aboutProject": "Über dieses Projekt",
+  "aboutProjectText": "Lotterie-Lernplattform ist ein kostenloses Bildungstool, das Menschen hilft, die wahren Gewinnchancen der Lotterie durch interaktive Simulationen zu verstehen.",
+  "privacy": "Datenschutz",
+  "privacyText": "Wir respektieren Ihre Privatsphäre. Ihre E-Mail wird nur verwendet, um auf Ihre Nachricht zu antworten. Wir speichern keine IP-Adressen und geben Ihre Informationen nicht weiter. Sie können jederzeit die Löschung Ihrer Daten beantragen.",
+  "openSource": "Open Source",
+  "openSourceText": "Dieses Projekt ist Open Source. Wenn Sie einen Fehler finden oder beitragen möchten, können Sie gerne ein Issue oder einen Pull Request auf GitHub eröffnen."
+}

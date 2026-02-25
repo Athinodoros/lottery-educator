@@ -1,0 +1,22 @@
+{
+  "title": "Kontakt",
+  "subtitle": "Masz pytania lub uwagi? Chętnie Cię wysłuchamy.",
+  "successTitle": "Wiadomość Wysłana!",
+  "successText": "Dziękujemy za kontakt. Wkrótce przejrzymy Twoją wiadomość.",
+  "sendAnother": "Wyślij Kolejną Wiadomość",
+  "emailLabel": "Adres E-mail",
+  "emailPlaceholder": "twoj@email.com",
+  "emailError": "Wprowadź prawidłowy adres e-mail",
+  "subjectLabel": "Temat",
+  "subjectPlaceholder": "O czym chcesz napisać?",
+  "messageLabel": "Wiadomość",
+  "messagePlaceholder": "Powiedz nam, co masz na myśli...",
+  "sending": "Wysyłanie...",
+  "sendMessage": "Wyślij Wiadomość",
+  "aboutProject": "O Tym Projekcie",
+  "aboutProjectText": "Edukator Loteryjny to bezpłatne narzędzie edukacyjne, które pomaga ludziom zrozumieć prawdziwe szanse na wygraną w loterii za pomocą interaktywnych symulacji.",
+  "privacy": "Prywatność",
+  "privacyText": "Szanujemy Twoją prywatność. Twój e-mail jest używany wyłącznie do odpowiedzi na Twoją wiadomość. Nie przechowujemy adresów IP ani nie udostępniamy Twoich informacji. Możesz poprosić o usunięcie swoich danych w dowolnym momencie.",
+  "openSource": "Otwarte Źródło",
+  "openSourceText": "Ten projekt jest open source. Jeśli znajdziesz błąd lub chcesz się przyczynić, możesz otworzyć issue lub pull request na GitHubie."
+}

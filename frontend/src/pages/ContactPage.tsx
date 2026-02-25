@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import apiClient from '../api/client'
 import './ContactPage.css'
 
 function ContactPage() {
+  const { t } = useTranslation('contact')
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [body, setBody] = useState('')
@@ -36,8 +38,8 @@ function ContactPage() {
   return (
     <div className="contact-page">
       <div className="contact-header">
-        <h1>Contact Us</h1>
-        <p>Have questions or feedback? We'd love to hear from you.</p>
+        <h1>{t('title')}</h1>
+        <p>{t('subtitle')}</p>
       </div>
 
       <div className="contact-layout">
@@ -45,13 +47,13 @@ function ContactPage() {
           {status === 'success' ? (
             <div className="success-message" role="alert">
               <div className="success-icon">&#10003;</div>
-              <h2>Message Sent!</h2>
-              <p>Thank you for reaching out. We'll review your message shortly.</p>
+              <h2>{t('successTitle')}</h2>
+              <p>{t('successText')}</p>
               <button
                 className="send-another-btn"
                 onClick={() => setStatus('idle')}
               >
-                Send Another Message
+                {t('sendAnother')}
               </button>
             </div>
           ) : (
@@ -63,31 +65,31 @@ function ContactPage() {
               )}
 
               <div className="form-group">
-                <label htmlFor="contact-email">Email Address</label>
+                <label htmlFor="contact-email">{t('emailLabel')}</label>
                 <input
                   id="contact-email"
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
+                  placeholder={t('emailPlaceholder')}
                   required
                   aria-required="true"
                   aria-invalid={email.length > 0 && !isValidEmail(email)}
                   autoComplete="email"
                 />
                 {email.length > 0 && !isValidEmail(email) && (
-                  <span className="field-error" role="alert" aria-live="polite">Please enter a valid email address</span>
+                  <span className="field-error" role="alert" aria-live="polite">{t('emailError')}</span>
                 )}
               </div>
 
               <div className="form-group">
-                <label htmlFor="contact-subject">Subject</label>
+                <label htmlFor="contact-subject">{t('subjectLabel')}</label>
                 <input
                   id="contact-subject"
                   type="text"
                   value={subject}
                   onChange={(e) => setSubject(e.target.value)}
-                  placeholder="What is this about?"
+                  placeholder={t('subjectPlaceholder')}
                   required
                   aria-required="true"
                   maxLength={255}
@@ -96,12 +98,12 @@ function ContactPage() {
               </div>
 
               <div className="form-group">
-                <label htmlFor="contact-body">Message</label>
+                <label htmlFor="contact-body">{t('messageLabel')}</label>
                 <textarea
                   id="contact-body"
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  placeholder="Tell us what's on your mind..."
+                  placeholder={t('messagePlaceholder')}
                   required
                   aria-required="true"
                   rows={6}
@@ -115,7 +117,7 @@ function ContactPage() {
                 className="submit-btn"
                 disabled={status === 'sending' || !email || !subject || !body || !isValidEmail(email)}
               >
-                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                {status === 'sending' ? t('sending') : t('sendMessage')}
               </button>
             </form>
           )}
@@ -123,29 +125,18 @@ function ContactPage() {
 
         <aside className="contact-info">
           <div className="info-card">
-            <h3>About This Project</h3>
-            <p>
-              Lottery Educator is a free educational tool that helps people
-              understand the real odds of winning the lottery through
-              interactive simulations.
-            </p>
+            <h3>{t('aboutProject')}</h3>
+            <p>{t('aboutProjectText')}</p>
           </div>
 
           <div className="info-card">
-            <h3>Privacy</h3>
-            <p>
-              We respect your privacy. Your email is only used to respond to your
-              message. We don't store IP addresses or share your information.
-              You can request deletion of your data at any time.
-            </p>
+            <h3>{t('privacy')}</h3>
+            <p>{t('privacyText')}</p>
           </div>
 
           <div className="info-card">
-            <h3>Open Source</h3>
-            <p>
-              This project is open source. If you find a bug or want to
-              contribute, feel free to open an issue or pull request on GitHub.
-            </p>
+            <h3>{t('openSource')}</h3>
+            <p>{t('openSourceText')}</p>
           </div>
         </aside>
       </div>

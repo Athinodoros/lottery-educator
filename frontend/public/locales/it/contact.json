@@ -1,0 +1,22 @@
+{
+  "title": "Contattaci",
+  "subtitle": "Hai domande o feedback? Ci piacerebbe sentirti.",
+  "successTitle": "Messaggio inviato!",
+  "successText": "Grazie per averci contattato. Esamineremo il tuo messaggio a breve.",
+  "sendAnother": "Invia un altro messaggio",
+  "emailLabel": "Indirizzo e-mail",
+  "emailPlaceholder": "tua@email.com",
+  "emailError": "Inserisci un indirizzo e-mail valido",
+  "subjectLabel": "Oggetto",
+  "subjectPlaceholder": "Di cosa si tratta?",
+  "messageLabel": "Messaggio",
+  "messagePlaceholder": "Dicci cosa hai in mente...",
+  "sending": "Invio in corso...",
+  "sendMessage": "Invia messaggio",
+  "aboutProject": "Informazioni sul progetto",
+  "aboutProjectText": "Lotteria Educativa è uno strumento educativo gratuito che aiuta le persone a comprendere le vere probabilità di vincere alla lotteria attraverso simulazioni interattive.",
+  "privacy": "Privacy",
+  "privacyText": "Rispettiamo la tua privacy. La tua e-mail viene utilizzata solo per rispondere al tuo messaggio. Non memorizziamo indirizzi IP né condividiamo le tue informazioni. Puoi richiedere la cancellazione dei tuoi dati in qualsiasi momento.",
+  "openSource": "Open Source",
+  "openSourceText": "Questo progetto è open source. Se trovi un bug o vuoi contribuire, sentiti libero di aprire un issue o una pull request su GitHub."
+}

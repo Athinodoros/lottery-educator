@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Avaleht",
+    "games": "Mängud",
+    "stats": "Statistika",
+    "learn": "Õpi",
+    "contact": "Kontakt",
+    "admin": "Haldus"
+  },
+  "appTitle": "Loterii haridus",
+  "skipToContent": "Liigu põhisisu juurde",
+  "switchToDark": "Lülitu tumedale režiimile",
+  "switchToLight": "Lülitu heledal režiimile",
+  "openMenu": "Ava menüü",
+  "closeMenu": "Sulge menüü",
+  "footer": {
+    "privacyText": "Austame teie privaatsust. Isikuandmeid ei koguta.",
+    "dataDeleted": "Teie andmed on kustutatud.",
+    "deleteConfirm": "Kustutada kõik teie kohalikud andmed?",
+    "confirmYes": "Jah, kustuta",
+    "confirmCancel": "Tühista",
+    "deleteButton": "Kustuta minu andmed",
+    "deleteAriaLabel": "Kustuta minu andmed"
+  },
+  "consent": {
+    "ariaLabel": "Küpsiste nõusolek",
+    "text": "Kasutame anonüümset analüütikat õppimiskogemuse parandamiseks. Isikuandmeid ei koguta. Saate oma andmed igal ajal kustutada.",
+    "accept": "Nõustu",
+    "decline": "Keeldu"
+  }
+}

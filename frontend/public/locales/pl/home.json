@@ -1,0 +1,14 @@
+{
+  "title": "Edukator Loteryjny",
+  "subtitle": "Poznaj prawdziwe szanse w grach loteryjnych",
+  "description": "Odkryj, dlaczego losy na loterię to statystyczna niemożliwość i zrozum matematykę stojącą za prawdopodobieństwem gier.",
+  "cta": "Graj i Ucz Się",
+  "features": {
+    "interactiveGames": "Interaktywne Gry",
+    "interactiveGamesDesc": "Symuluj tysiące losowań loterii, aby zrozumieć, ile naprawdę czasu potrzeba, aby wygrać.",
+    "realStatistics": "Prawdziwe Statystyki",
+    "realStatisticsDesc": "Zobacz prawdziwe szanse i prawdopodobieństwa stojące za popularnymi grami loteryjnymi na świecie.",
+    "financialEducation": "Edukacja Finansowa",
+    "financialEducationDesc": "Dowiedz się, dlaczego rozumienie prawdopodobieństwa jest kluczowe dla osobistych decyzji finansowych."
+  }
+}

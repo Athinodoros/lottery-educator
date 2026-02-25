@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Trang chủ",
+    "games": "Trò chơi",
+    "stats": "Thống kê",
+    "learn": "Tìm hiểu",
+    "contact": "Liên hệ",
+    "admin": "Quản trị"
+  },
+  "appTitle": "Giáo dục Xổ số",
+  "skipToContent": "Chuyển đến nội dung chính",
+  "switchToDark": "Chuyển sang chế độ tối",
+  "switchToLight": "Chuyển sang chế độ sáng",
+  "openMenu": "Mở menu",
+  "closeMenu": "Đóng menu",
+  "footer": {
+    "privacyText": "Chúng tôi tôn trọng quyền riêng tư của bạn. Không có dữ liệu cá nhân nào được thu thập.",
+    "dataDeleted": "Dữ liệu của bạn đã được xóa.",
+    "deleteConfirm": "Xóa tất cả dữ liệu cục bộ của bạn?",
+    "confirmYes": "Có, xóa đi",
+    "confirmCancel": "Hủy",
+    "deleteButton": "Xóa dữ liệu của tôi",
+    "deleteAriaLabel": "Xóa dữ liệu của tôi"
+  },
+  "consent": {
+    "ariaLabel": "Đồng ý cookie",
+    "text": "Chúng tôi sử dụng phân tích ẩn danh để cải thiện trải nghiệm học tập. Không có dữ liệu cá nhân nào được thu thập. Bạn có thể xóa dữ liệu bất cứ lúc nào.",
+    "accept": "Chấp nhận",
+    "decline": "Từ chối"
+  }
+}

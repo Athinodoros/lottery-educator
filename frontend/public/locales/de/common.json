@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "games": "Spiele",
+    "stats": "Statistiken",
+    "learn": "Lernen",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Lotterie-Lernplattform",
+  "skipToContent": "Zum Hauptinhalt springen",
+  "switchToDark": "Zum Dunkelmodus wechseln",
+  "switchToLight": "Zum Hellmodus wechseln",
+  "openMenu": "Menü öffnen",
+  "closeMenu": "Menü schließen",
+  "footer": {
+    "privacyText": "Wir respektieren Ihre Privatsphäre. Es werden keine personenbezogenen Daten erhoben.",
+    "dataDeleted": "Ihre Daten wurden gelöscht.",
+    "deleteConfirm": "Alle Ihre lokalen Daten löschen?",
+    "confirmYes": "Ja, löschen",
+    "confirmCancel": "Abbrechen",
+    "deleteButton": "Meine Daten löschen",
+    "deleteAriaLabel": "Meine Daten löschen"
+  },
+  "consent": {
+    "ariaLabel": "Cookie-Zustimmung",
+    "text": "Wir verwenden anonyme Analysen, um das Lernerlebnis zu verbessern. Es werden keine personenbezogenen Daten erhoben. Sie können Ihre Daten jederzeit löschen.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen"
+  }
+}

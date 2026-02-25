@@ -1,0 +1,19 @@
+{
+  "title": "Oyunlar",
+  "subtitle": "Oynamak ve olasılıkları öğrenmek için bir piyango oyunu seçin.",
+  "createGame": "+ Oyun Oluştur",
+  "errorTitle": "Oyunlar yüklenirken hata",
+  "loadingGames": "Oyunlar yükleniyor",
+  "loadingText": "Oyunlar yükleniyor...",
+  "noGamesTitle": "Mevcut oyun yok",
+  "noGamesText": "Piyango oyunları için yakında tekrar kontrol edin.",
+  "card": {
+    "pick": "Seç",
+    "from": "Arası",
+    "bonus": "Bonus",
+    "odds": "Olasılık",
+    "oddsValue": "{{value}} içinde 1",
+    "playGame": "Oyna →",
+    "viewStats": "İstatistikler"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Makipag-ugnayan",
+  "subtitle": "May mga tanong o puna? Gusto naming marinig mula sa iyo.",
+  "successTitle": "Naipadala na ang Mensahe!",
+  "successText": "Salamat sa pakikipag-ugnayan. Susuriin namin ang iyong mensahe sa lalong madaling panahon.",
+  "sendAnother": "Magpadala ng Isa Pang Mensahe",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "iyong@email.com",
+  "emailError": "Mangyaring maglagay ng wastong email address",
+  "subjectLabel": "Paksa",
+  "subjectPlaceholder": "Tungkol saan ito?",
+  "messageLabel": "Mensahe",
+  "messagePlaceholder": "Sabihin sa amin ang nasa isip mo...",
+  "sending": "Ipinapadala...",
+  "sendMessage": "Ipadala ang Mensahe",
+  "aboutProject": "Tungkol sa Proyektong Ito",
+  "aboutProjectText": "Ang Edukasyon sa Lotería ay isang libreng pang-edukasyong kasangkapan na tumutulong sa mga tao na maunawaan ang tunay na tsansa ng pagpanalo sa lotería sa pamamagitan ng mga interaktibong simulasyon.",
+  "privacy": "Privacy",
+  "privacyText": "Iginagalang namin ang iyong privacy. Ang iyong email ay ginagamit lamang upang tumugon sa iyong mensahe. Hindi kami nag-iimbak ng mga IP address o nagbabahagi ng iyong impormasyon. Maaari kang humiling ng pagbura ng iyong datos anumang oras.",
+  "openSource": "Open Source",
+  "openSourceText": "Ang proyektong ito ay open source. Kung nakakita ka ng bug o gustong mag-ambag, huwag mag-atubiling mag-bukas ng issue o pull request sa GitHub."
+}

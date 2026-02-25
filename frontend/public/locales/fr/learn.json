@@ -1,0 +1,109 @@
+{
+  "title": "Comprendre les mathématiques de la loterie",
+  "subtitle": "Comprendre les vraies probabilités des jeux de loterie",
+  "probability": {
+    "title": "Qu'est-ce que la probabilité ?",
+    "text": "La probabilité est la vraisemblance mathématique qu'un événement se produise. Elle s'exprime par un nombre entre 0 et 1, où 0 signifie impossible et 1 signifie certain. Par exemple, la probabilité d'obtenir face en lançant une pièce équitable est de 0,5 (ou 50 %), car il y a deux résultats également probables.",
+    "exampleTitle": "Exemple : Lancer un dé",
+    "exampleText": "Quand vous lancez un dé équitable à six faces :",
+    "exampleItem1": "Il y a 6 résultats possibles (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "La probabilité d'obtenir un 3 est de 1/6 ≈ 16,67 %",
+    "exampleItem3": "La probabilité d'obtenir n'importe quel nombre est également probable"
+  },
+  "combinations": {
+    "title": "Combinaisons et permutations",
+    "text": "Pour calculer les probabilités de la loterie, nous devons comprendre de combien de façons différentes des éléments peuvent être sélectionnés et arrangés. Dans la plupart des loteries, l'ordre des numéros n'a pas d'importance, donc nous utilisons les <strong>combinaisons</strong>.",
+    "exampleTitle": "Exemple : Choisir 6 parmi 49",
+    "exampleText": "Dans une loterie typique où vous choisissez 6 numéros parmi 49 :",
+    "exampleItem1": "Le nombre de combinaisons possibles est d'environ 13,98 millions",
+    "exampleItem2": "Votre chance de gagner avec un billet est de 1 sur 13,98 millions",
+    "exampleItem3": "C'est une chance de gagner de 0,0000072 % !"
+  },
+  "expectedValue": {
+    "title": "Valeur attendue",
+    "text": "La valeur attendue est le montant moyen que vous espérez gagner ou perdre par pari à long terme. Pour les loteries, la valeur attendue est toujours négative, ce qui signifie que vous perdez de l'argent en moyenne.",
+    "exampleTitle": "Exemple : Une loterie simple",
+    "exampleText": "Imaginez une loterie où :",
+    "exampleItem1": "Prix du billet : 1 $",
+    "exampleItem2": "Probabilité de gagner 10 $ : 10 %",
+    "exampleItem3": "Probabilité de ne rien gagner : 90 %",
+    "exampleItem4": "Valeur attendue = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Au fil du temps, vous pourriez espérer atteindre le seuil de rentabilité, mais les vraies loteries sont pires !"
+  },
+  "houseFavor": {
+    "title": "Pourquoi les loteries favorisent toujours la maison",
+    "text": "Les loteries réelles conservent un pourcentage des ventes de billets (généralement 30 à 50 %) avant de distribuer les prix. C'est ce qu'on appelle l'« avantage de la maison ». Voici ce que cela signifie :",
+    "exampleTitle": "Exemple : Mathématiques réelles de la loterie",
+    "forEvery100": "Pour chaque 100 $ de ventes de billets :",
+    "item1": "40 à 50 $ vont à l'organisateur de la loterie (État, entreprise, etc.)",
+    "item2": "40 à 50 $ sont distribués aux gagnants",
+    "item3": "Le reste va à des causes (éducation, infrastructure, etc.)",
+    "item4": "Résultat : Les joueurs ne récupèrent que 50 à 60 centimes pour chaque dollar dépensé"
+  },
+  "comparison": {
+    "title": "Loterie vs Investissement : Comparaison sur 30 ans",
+    "text": "Et si vous investissiez l'argent que vous dépensez en billets de loterie ? Comparons 20 $ par semaine en billets de loterie versus le même montant investi.",
+    "lotteryTitle": "Billets de loterie",
+    "investTitle": "Investissement en fonds indiciels",
+    "weeklySpend": "Dépense hebdomadaire",
+    "weeklyInvest": "Investissement hebdomadaire",
+    "totalSpent": "Total dépensé (30 ans)",
+    "totalInvested": "Total investi (30 ans)",
+    "expectedReturn": "Rendement attendu",
+    "portfolioValue": "Valeur du portefeuille",
+    "netResult": "Résultat net",
+    "netGain": "Gain net",
+    "lotteryNote": "Basé sur un taux de redistribution moyen de 50 %",
+    "investNote": "Basé sur un rendement annuel moyen d'environ 7 % (historique du S&P 500)",
+    "takeaway": "<strong>La différence :</strong> Sur 30 ans, le joueur de loterie perd environ 15 600 $ tandis que l'investisseur gagne environ 70 800 $. C'est un écart de 86 400 $ pour les mêmes 20 $ par semaine."
+  },
+  "gamblersFallacy": {
+    "title": "Le « sophisme du joueur »",
+    "text": "Beaucoup de gens croient que les résultats passés affectent les résultats futurs dans les événements indépendants. C'est faux. Chaque tirage de loterie est indépendant, et les résultats précédents n'influencent pas les futurs.",
+    "exampleTitle": "Idées reçues courantes",
+    "misconception1": "« Le 7 a été tiré la semaine dernière, donc il est moins probable cette semaine »",
+    "reality1": "Chaque numéro a exactement la même chance à chaque tirage",
+    "misconception2": "« Après avoir perdu plusieurs fois, c'est mon tour de gagner »",
+    "reality2": "Les pertes passées n'augmentent pas vos chances de gagner",
+    "misconception3": "« Ces numéros sont "chauds" donc ils sont plus probables »",
+    "reality3": "Les numéros fréquemment tirés sont tout aussi probables que les rares",
+    "misconceptionLabel": "Idée reçue :",
+    "realityLabel": "Réalité :"
+  },
+  "largeNumbers": {
+    "title": "La loi des grands nombres",
+    "text": "Plus vous jouez, plus vos résultats réels convergent vers la probabilité théorique. Cependant, cela ne signifie pas que vous « finirez par gagner » – cela signifie que vous finirez par perdre encore plus d'argent !",
+    "exampleTitle": "Ce que montrent les chiffres",
+    "item1": "Jouer 1 billet de loterie : Vous pourriez gagner une fois dans votre vie",
+    "item2": "Jouer 100 billets : Vos chances s'améliorent, mais la perte attendue reste votre investissement total",
+    "item3": "Jouer 1 000 billets : Vous vous rapprochez de la moyenne statistique (perte de 50 à 60 % de l'argent dépensé)",
+    "item4": "Plus vous jouez, plus vos pertes se rapprochent de l'espérance mathématique"
+  },
+  "lessons": {
+    "title": "Leçons financières intelligentes",
+    "text": "Comprendre les mathématiques de la loterie nous enseigne des leçons précieuses sur la probabilité et les décisions économiques :",
+    "riskReward": "Risque vs Récompense",
+    "riskRewardText": "Évaluez toujours les chances par rapport à la récompense potentielle. Dans les loteries, le rapport risque/récompense est extrêmement défavorable par rapport aux autres investissements.",
+    "statThinking": "Pensée statistique",
+    "statThinkingText": "Prenez des décisions basées sur les données et la probabilité, pas sur l'espoir ou la superstition. Cela s'applique aux investissements, aux assurances et aux grandes décisions de vie.",
+    "longTermPlanning": "Planification à long terme",
+    "longTermPlanningText": "Les gains de loterie sont peu fiables. Construire un patrimoine par l'épargne et l'investissement réguliers (même de petits montants) est bien plus fiable que d'espérer un jackpot.",
+    "psychologyLoss": "Psychologie de la perte",
+    "psychologyLossText": "Comprenez comment notre cerveau nous pousse à prendre de mauvaises décisions. Nous surestimons les petites probabilités et sous-estimons nos pertes lorsqu'elles sont réparties dans le temps."
+  },
+  "cta": {
+    "title": "Constatez par vous-même",
+    "text": "La meilleure façon de comprendre les probabilités de la loterie est de les vivre. Essayez notre simulateur de loterie interactif et observez combien de tirages sont nécessaires pour trouver vos numéros.",
+    "trySimulator": "Essayer le simulateur",
+    "viewStatistics": "Voir les statistiques"
+  },
+  "responsible": {
+    "title": "Jeu responsable",
+    "text": "Si vous sentez que le jeu de loterie devient un problème ou qu'il affecte votre santé financière, veuillez demander de l'aide :",
+    "helpline": "Ligne d'aide nationale pour le jeu problématique : 1-800-522-4700",
+    "ga": "Joueurs Anonymes :",
+    "ncpg": "NCPG (Conseil sur le jeu compulsif) :",
+    "remember": "Les billets de loterie ne devraient être utilisés que comme divertissement avec de l'argent que vous pouvez vous permettre de perdre. Ne comptez jamais sur eux pour votre planification financière.",
+    "rememberLabel": "Rappel :"
+  }
+}

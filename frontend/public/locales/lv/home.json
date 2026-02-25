@@ -1,0 +1,14 @@
+{
+  "title": "Loteriju izglītība",
+  "subtitle": "Uzziniet patiesās iespējas loterijas spēlēs",
+  "description": "Uzziniet, kāpēc loterijas biļetes ir statistiski gandrīz neiespējamas, un izprotiet spēļu varbūtību matemātiku.",
+  "cta": "Spēlējiet un mācieties",
+  "features": {
+    "interactiveGames": "Interaktīvas spēles",
+    "interactiveGamesDesc": "Simulējiet tūkstošiem loterijas izlozēšanu, lai saprastu, cik ilgi patiešām jāgaida uz uzvaru.",
+    "realStatistics": "Reāla statistika",
+    "realStatisticsDesc": "Skatiet patiesās iespējas un varbūtības populārām loterijas spēlēm visā pasaulē.",
+    "financialEducation": "Finanšu izglītība",
+    "financialEducationDesc": "Uzziniet, kāpēc varbūtību izpratne ir būtiska personīgo finanšu lēmumiem."
+  }
+}

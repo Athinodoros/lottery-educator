@@ -1,0 +1,14 @@
+{
+  "title": "Educador de Lotaria",
+  "subtitle": "Aprenda as verdadeiras probabilidades dos jogos de lotaria",
+  "description": "Descubra por que os bilhetes de lotaria são uma impossibilidade estatística e compreenda a matemática por detrás da probabilidade dos jogos.",
+  "cta": "Jogar e Aprender",
+  "features": {
+    "interactiveGames": "Jogos Interativos",
+    "interactiveGamesDesc": "Simule milhares de sorteios de lotaria para compreender quanto tempo realmente demora a ganhar.",
+    "realStatistics": "Estatísticas Reais",
+    "realStatisticsDesc": "Veja as verdadeiras probabilidades por detrás dos jogos de lotaria populares em todo o mundo.",
+    "financialEducation": "Educação Financeira",
+    "financialEducationDesc": "Aprenda por que compreender a probabilidade é crucial para as decisões financeiras pessoais."
+  }
+}

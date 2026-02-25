@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "games": "Oyunlar",
+    "stats": "İstatistikler",
+    "learn": "Öğren",
+    "contact": "İletişim",
+    "admin": "Yönetim"
+  },
+  "appTitle": "Lottery Educator",
+  "skipToContent": "Ana içeriğe geç",
+  "switchToDark": "Karanlık moda geç",
+  "switchToLight": "Aydınlık moda geç",
+  "openMenu": "Menüyü aç",
+  "closeMenu": "Menüyü kapat",
+  "footer": {
+    "privacyText": "Gizliliğinize saygı duyuyoruz. Kişisel veri toplanmamaktadır.",
+    "dataDeleted": "Verileriniz silindi.",
+    "deleteConfirm": "Tüm yerel verileriniz silinsin mi?",
+    "confirmYes": "Evet, sil",
+    "confirmCancel": "İptal",
+    "deleteButton": "Verilerimi Sil",
+    "deleteAriaLabel": "Verilerimi sil"
+  },
+  "consent": {
+    "ariaLabel": "Çerez onayı",
+    "text": "Öğrenme deneyimini iyileştirmek için anonim analitik kullanıyoruz. Kişisel veri toplanmamaktadır. Verilerinizi istediğiniz zaman silebilirsiniz.",
+    "accept": "Kabul Et",
+    "decline": "Reddet"
+  }
+}

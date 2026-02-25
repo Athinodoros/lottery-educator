@@ -1,0 +1,14 @@
+{
+  "title": "Lottó Oktató",
+  "subtitle": "Ismerd meg a lottójátékok valós esélyeit",
+  "description": "Fedezd fel, miért jelentenek a lottószelvények statisztikai lehetetlenséget, és értsd meg a játékok valószínűségének matematikáját.",
+  "cta": "Játssz és tanulj",
+  "features": {
+    "interactiveGames": "Interaktív játékok",
+    "interactiveGamesDesc": "Szimulálj több ezer lottóhúzást, hogy megértsd, mennyi idő kell valójában a nyeréshez.",
+    "realStatistics": "Valós statisztikák",
+    "realStatisticsDesc": "Nézd meg a népszerű lottójátékok valós esélyeit és valószínűségeit világszerte.",
+    "financialEducation": "Pénzügyi oktatás",
+    "financialEducationDesc": "Tudd meg, miért fontos a valószínűségek megértése a személyes pénzügyi döntésekhez."
+  }
+}

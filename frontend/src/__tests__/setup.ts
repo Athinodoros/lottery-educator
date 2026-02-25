@@ -2,6 +2,29 @@ import { cleanup } from '@testing-library/react'
 import { afterEach, vi, beforeEach } from 'vitest'
 import '@testing-library/jest-dom'
 
+// Mock react-i18next globally
+vi.mock('react-i18next', () => ({
+  useTranslation: (ns?: string) => ({
+    t: (key: string, opts?: any) => {
+      // Return just the key, optionally with interpolated count for plural tests
+      if (opts?.count !== undefined) return key
+      return key
+    },
+    i18n: {
+      language: 'en',
+      changeLanguage: vi.fn().mockResolvedValue(undefined),
+    },
+  }),
+  Trans: ({ children }: any) => children,
+  initReactI18next: { type: '3rdParty', init: () => {} },
+}))
+
+// Mock the i18n module itself
+vi.mock('../i18n', () => ({
+  default: {},
+  RTL_LANGUAGES: ['ar', 'ur', 'he', 'fa'],
+}))
+
 // Suppress React act() warnings in tests (they're not errors)
 const originalError = console.error
 beforeEach(() => {

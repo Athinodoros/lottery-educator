@@ -122,14 +122,14 @@
 
 .number-badge.match {
   background: var(--color-success-vivid);
-  color: var(--color-bg-card);
+  color: #fff;
   border-color: var(--color-success-dark);
   font-weight: 700;
 }
 
 .number-badge.winning {
   background: var(--color-primary);
-  color: var(--color-bg-card);
+  color: #fff;
   border-color: var(--color-primary-hover);
   font-weight: 700;
 }
@@ -140,13 +140,13 @@
 
 .number-badge.bonus.match {
   background: var(--color-accent);
-  color: var(--color-bg-card);
+  color: #fff;
   border-color: var(--color-accent);
 }
 
 .number-badge.bonus.winning {
   background: var(--color-accent);
-  color: var(--color-bg-card);
+  color: #fff;
   border-color: var(--color-accent);
 }
 

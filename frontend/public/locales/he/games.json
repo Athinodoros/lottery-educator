@@ -1,0 +1,19 @@
+{
+  "title": "משחקים",
+  "subtitle": "בחר משחק לוטו לשחק וללמוד את הסיכויים.",
+  "createGame": "+ צור משחק",
+  "errorTitle": "שגיאה בטעינת משחקים",
+  "loadingGames": "טוען משחקים",
+  "loadingText": "טוען משחקים...",
+  "noGamesTitle": "אין משחקים זמינים",
+  "noGamesText": "חזור בקרוב למצוא משחקי לוטו לשחק.",
+  "card": {
+    "pick": "בחר",
+    "from": "מתוך",
+    "bonus": "בונוס",
+    "odds": "סיכויים",
+    "oddsValue": "1 מתוך {{value}}",
+    "playGame": "שחק →",
+    "viewStats": "צפה בסטטיסטיקות"
+  }
+}

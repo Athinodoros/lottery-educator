@@ -1,0 +1,19 @@
+{
+  "title": "Pelit",
+  "subtitle": "Valitse lottopeli pelattavaksi ja opi todennäköisyyksistä.",
+  "createGame": "+ Luo peli",
+  "errorTitle": "Virhe pelien latauksessa",
+  "loadingGames": "Ladataan pelejä",
+  "loadingText": "Ladataan pelejä...",
+  "noGamesTitle": "Pelejä ei ole saatavilla",
+  "noGamesText": "Tarkista pian uudelleen lottopelejä varten.",
+  "card": {
+    "pick": "Valitse",
+    "from": "Väliltä",
+    "bonus": "Bonus",
+    "odds": "Todennäköisyys",
+    "oddsValue": "1 / {{value}}",
+    "playGame": "Pelaa →",
+    "viewStats": "Tilastot"
+  }
+}

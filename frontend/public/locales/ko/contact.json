@@ -1,0 +1,22 @@
+{
+  "title": "문의하기",
+  "subtitle": "질문이나 피드백이 있으신가요? 연락 주세요.",
+  "successTitle": "메시지 전송 완료!",
+  "successText": "연락해 주셔서 감사합니다. 곧 메시지를 검토하겠습니다.",
+  "sendAnother": "다른 메시지 보내기",
+  "emailLabel": "이메일 주소",
+  "emailPlaceholder": "your@email.com",
+  "emailError": "유효한 이메일 주소를 입력해 주세요",
+  "subjectLabel": "제목",
+  "subjectPlaceholder": "무엇에 관한 문의인가요?",
+  "messageLabel": "메시지",
+  "messagePlaceholder": "하고 싶은 말씀을 적어주세요...",
+  "sending": "전송 중...",
+  "sendMessage": "메시지 보내기",
+  "aboutProject": "프로젝트 소개",
+  "aboutProjectText": "복권 교육은 인터랙티브 시뮬레이션을 통해 복권 당첨의 실제 확률을 이해하는 데 도움이 되는 무료 교육 도구입니다.",
+  "privacy": "개인정보",
+  "privacyText": "귀하의 개인정보를 존중합니다. 이메일은 메시지에 대한 답변에만 사용됩니다. IP 주소를 저장하거나 정보를 공유하지 않습니다. 언제든지 데이터 삭제를 요청할 수 있습니다.",
+  "openSource": "오픈 소스",
+  "openSourceText": "이 프로젝트는 오픈 소스입니다. 버그를 발견하거나 기여하고 싶으시면 GitHub에서 이슈나 풀 리퀘스트를 자유롭게 열어주세요."
+}

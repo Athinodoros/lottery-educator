@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { gameApi } from '../api/games'
 import './CreateGamePage.css'
 
 function CreateGamePage() {
+  const { t } = useTranslation('create')
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [minNumber, setMinNumber] = useState(1)
@@ -21,18 +23,18 @@ function CreateGamePage() {
   const bonusRange = bonusMax - bonusMin + 1
 
   const validate = (): string | null => {
-    if (!name.trim()) return 'Game name is required'
-    if (minNumber >= maxNumber) return 'Min number must be less than max number'
-    if (minNumber < 1) return 'Min number must be at least 1'
-    if (maxNumber > 100) return 'Max number must be at most 100'
-    if (numbersToSelect < 1) return 'Must select at least 1 number'
-    if (numbersToSelect >= mainRange) return 'Numbers to select must be less than the range'
+    if (!name.trim()) return t('validation.nameRequired')
+    if (minNumber >= maxNumber) return t('validation.minLessThanMax')
+    if (minNumber < 1) return t('validation.minAtLeast1')
+    if (maxNumber > 100) return t('validation.maxAtMost100')
+    if (numbersToSelect < 1) return t('validation.selectAtLeast1')
+    if (numbersToSelect >= mainRange) return t('validation.selectLessThanRange')
     if (hasBonus) {
-      if (bonusMin >= bonusMax) return 'Bonus min must be less than bonus max'
-      if (bonusMin < 1) return 'Bonus min must be at least 1'
-      if (bonusMax > 100) return 'Bonus max must be at most 100'
-      if (bonusCount < 1) return 'Must select at least 1 bonus number'
-      if (bonusCount >= bonusRange) return 'Bonus count must be less than the bonus range'
+      if (bonusMin >= bonusMax) return t('validation.bonusMinLessThanMax')
+      if (bonusMin < 1) return t('validation.bonusMinAtLeast1')
+      if (bonusMax > 100) return t('validation.bonusMaxAtMost100')
+      if (bonusCount < 1) return t('validation.bonusAtLeast1')
+      if (bonusCount >= bonusRange) return t('validation.bonusLessThanRange')
     }
     return null
   }
@@ -70,11 +72,11 @@ function CreateGamePage() {
     return (
       <div className="create-game-page">
         <div className="success-card">
-          <h2>Game Submitted!</h2>
-          <p>Your game has been submitted for review. An admin will approve it shortly.</p>
-          <p>Once approved, it will appear in the games list for everyone to play.</p>
+          <h2>{t('successTitle')}</h2>
+          <p>{t('successText1')}</p>
+          <p>{t('successText2')}</p>
           <div className="success-actions">
-            <Link to="/games" className="btn btn-primary">Back to Games</Link>
+            <Link to="/games" className="btn btn-primary">{t('backToGamesBtn')}</Link>
             <button
               className="btn btn-secondary"
               onClick={() => {
@@ -87,7 +89,7 @@ function CreateGamePage() {
                 setHasBonus(false)
               }}
             >
-              Create Another
+              {t('createAnother')}
             </button>
           </div>
         </div>
@@ -98,9 +100,9 @@ function CreateGamePage() {
   return (
     <div className="create-game-page">
       <header className="create-game-header">
-        <Link to="/games" className="back-link">&#8592; Back to Games</Link>
-        <h1>Create a Game</h1>
-        <p>Design your own lottery game. After submission, an admin will review and approve it.</p>
+        <Link to="/games" className="back-link">{t('backToGames')}</Link>
+        <h1>{t('title')}</h1>
+        <p>{t('subtitle')}</p>
       </header>
 
       <form onSubmit={handleSubmit} className="create-game-form">
@@ -109,26 +111,26 @@ function CreateGamePage() {
         )}
 
         <div className="form-section">
-          <h3>Game Details</h3>
+          <h3>{t('gameDetails')}</h3>
           <div className="form-group">
-            <label htmlFor="game-name">Game Name *</label>
+            <label htmlFor="game-name">{t('gameName')}</label>
             <input
               id="game-name"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. My Lucky Lottery"
+              placeholder={t('gameNamePlaceholder')}
               maxLength={100}
               required
             />
           </div>
           <div className="form-group">
-            <label htmlFor="game-desc">Description</label>
+            <label htmlFor="game-desc">{t('descriptionLabel')}</label>
             <textarea
               id="game-desc"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              placeholder="Describe the game rules and format..."
+              placeholder={t('descriptionPlaceholder')}
               rows={3}
               maxLength={500}
             />
@@ -136,10 +138,10 @@ function CreateGamePage() {
         </div>
 
         <div className="form-section">
-          <h3>Main Number Pool</h3>
+          <h3>{t('mainPool')}</h3>
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="min-num">Min Number</label>
+              <label htmlFor="min-num">{t('minNumber')}</label>
               <input
                 id="min-num"
                 type="number"
@@ -150,7 +152,7 @@ function CreateGamePage() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="max-num">Max Number</label>
+              <label htmlFor="max-num">{t('maxNumber')}</label>
               <input
                 id="max-num"
                 type="number"
@@ -161,7 +163,7 @@ function CreateGamePage() {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="nums-select">Numbers to Select</label>
+              <label htmlFor="nums-select">{t('numbersToSelect')}</label>
               <input
                 id="nums-select"
                 type="number"
@@ -173,7 +175,7 @@ function CreateGamePage() {
             </div>
           </div>
           <p className="form-hint">
-            Players will pick {numbersToSelect} number{numbersToSelect !== 1 ? 's' : ''} from {minNumber} to {maxNumber} (range of {mainRange})
+            {t('mainHint', { count: numbersToSelect, min: minNumber, max: maxNumber, range: mainRange })}
           </p>
         </div>
 
@@ -186,7 +188,7 @@ function CreateGamePage() {
                 checked={hasBonus}
                 onChange={(e) => setHasBonus(e.target.checked)}
               />
-              Add Bonus Number Pool
+              {t('addBonusPool')}
             </label>
           </div>
 
@@ -194,7 +196,7 @@ function CreateGamePage() {
             <>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="bonus-min">Bonus Min</label>
+                  <label htmlFor="bonus-min">{t('bonusMin')}</label>
                   <input
                     id="bonus-min"
                     type="number"
@@ -205,7 +207,7 @@ function CreateGamePage() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="bonus-max">Bonus Max</label>
+                  <label htmlFor="bonus-max">{t('bonusMax')}</label>
                   <input
                     id="bonus-max"
                     type="number"
@@ -216,7 +218,7 @@ function CreateGamePage() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="bonus-count">Bonus to Select</label>
+                  <label htmlFor="bonus-count">{t('bonusToSelect')}</label>
                   <input
                     id="bonus-count"
                     type="number"
@@ -228,7 +230,7 @@ function CreateGamePage() {
                 </div>
               </div>
               <p className="form-hint">
-                Players will also pick {bonusCount} bonus number{bonusCount !== 1 ? 's' : ''} from {bonusMin} to {bonusMax}
+                {t('bonusHint', { count: bonusCount, min: bonusMin, max: bonusMax })}
               </p>
             </>
           )}
@@ -239,7 +241,7 @@ function CreateGamePage() {
           className="btn btn-primary submit-btn"
           disabled={submitting || !name.trim()}
         >
-          {submitting ? 'Submitting...' : 'Submit Game for Review'}
+          {submitting ? t('submitting') : t('submitForReview')}
         </button>
       </form>
     </div>

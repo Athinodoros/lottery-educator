@@ -1,0 +1,109 @@
+{
+  "title": "Lær om lotterimatematik",
+  "subtitle": "Forstå de sande odds bag lotterispil",
+  "probability": {
+    "title": "Hvad er sandsynlighed?",
+    "text": "Sandsynlighed er den matematiske chance for, at en begivenhed vil forekomme. Den udtrykkes som et tal mellem 0 og 1, hvor 0 betyder umuligt og 1 betyder sikkert. For eksempel er sandsynligheden for at slå plat på en retfærdig mønt 0,5 (eller 50%), da der er to lige sandsynlige udfald.",
+    "exampleTitle": "Eksempel: Kast med en terning",
+    "exampleText": "Når du kaster en retfærdig sekssidet terning:",
+    "exampleItem1": "Der er 6 mulige udfald (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Sandsynligheden for at slå 3 er 1/6 ≈ 16,67%",
+    "exampleItem3": "Sandsynligheden for at slå et hvilket som helst tal er lige stor"
+  },
+  "combinations": {
+    "title": "Kombinationer og permutationer",
+    "text": "Når vi beregner lotteriodds, skal vi forstå, hvor mange forskellige måder elementer kan vælges og arrangeres på. I de fleste lotterier er rækkefølgen af tallene ligegyldig, så vi bruger <strong>kombinationer</strong>.",
+    "exampleTitle": "Eksempel: Vælg 6 ud af 49",
+    "exampleText": "I et typisk lotteri, hvor du vælger 6 tal ud af 49:",
+    "exampleItem1": "Antallet af mulige kombinationer er cirka 13,98 millioner",
+    "exampleItem2": "Din chance for at vinde med én kupon er 1 ud af 13,98 millioner",
+    "exampleItem3": "Det er 0,0000072% chance for at vinde!"
+  },
+  "expectedValue": {
+    "title": "Forventet værdi",
+    "text": "Forventet værdi er det gennemsnitlige beløb, du forventer at vinde eller tabe per indsats på lang sigt. For lotterier er den forventede værdi altid negativ, hvilket betyder, at du taber penge i gennemsnit.",
+    "exampleTitle": "Eksempel: Et simpelt lotteri",
+    "exampleText": "Forestil dig et lotteri, hvor:",
+    "exampleItem1": "Kuponpris: $1",
+    "exampleItem2": "Sandsynlighed for at vinde $10: 10%",
+    "exampleItem3": "Sandsynlighed for at vinde ingenting: 90%",
+    "exampleItem4": "Forventet værdi = (0,10 x $10) + (0,90 x $0) - $1 = $1 - $1 = $0",
+    "exampleItem5": "Over tid ville du forvente at gå i nul, men rigtige lotterier er værre!"
+  },
+  "houseFavor": {
+    "title": "Hvorfor lotterier altid favoriserer huset",
+    "text": "Rigtige lotterier beholder en procentdel af kuponsalget (typisk 30-50%) før præmierne udbetales. Dette kaldes \"husfordelen\". Her er hvad det betyder:",
+    "exampleTitle": "Eksempel: Rigtig lotterimatematik",
+    "forEvery100": "For hver $100 i kuponsalg:",
+    "item1": "$40-50 går til lotterioperatøren (stat, virksomhed osv.)",
+    "item2": "$40-50 fordeles til vindere",
+    "item3": "De resterende midler går til velgørenhed (uddannelse, infrastruktur osv.)",
+    "item4": "Resultat: Spillere får kun 50-60 øre tilbage for hver krone brugt"
+  },
+  "comparison": {
+    "title": "Lotteri vs Investering: En 30-årig sammenligning",
+    "text": "Hvad hvis du investerede de penge, du ville bruge på lottokuponer i stedet? Lad os sammenligne at bruge $20 om ugen på lottokuponer med at investere det samme beløb.",
+    "lotteryTitle": "Lottokuponer",
+    "investTitle": "Indeksfondsinvestering",
+    "weeklySpend": "Ugentligt forbrug",
+    "weeklyInvest": "Ugentlig investering",
+    "totalSpent": "Samlet brugt (30 år)",
+    "totalInvested": "Samlet investeret (30 år)",
+    "expectedReturn": "Forventet afkast",
+    "portfolioValue": "Porteføljeværdi",
+    "netResult": "Nettoresultat",
+    "netGain": "Nettogevinst",
+    "lotteryNote": "Baseret på gennemsnitlig 50% udbetalingsrate",
+    "investNote": "Baseret på ~7% gennemsnitligt årligt afkast (S&P 500 historisk)",
+    "takeaway": "<strong>Forskellen:</strong> Over 30 år taber lottospilleren cirka $15.600, mens investoren tjener cirka $70.800. Det er et $86.400 gap fra de samme $20 om ugen."
+  },
+  "gamblersFallacy": {
+    "title": "\"Spillerens fejlslutning\"",
+    "text": "Mange tror, at tidligere resultater påvirker fremtidige udfald i uafhængige begivenheder. Det er forkert. Hver lottotrækning er uafhængig, og tidligere udfald påvirker ikke fremtidige.",
+    "exampleTitle": "Almindelige misforståelser",
+    "misconception1": "\"7 blev trukket i sidste uge, så det er mindre sandsynligt i denne uge\"",
+    "reality1": "Hvert tal har nøjagtig samme chance ved hver trækning",
+    "misconception2": "\"Jeg har en gevinst til gode efter mange tab\"",
+    "reality2": "Tidligere tab øger ikke din chance for at vinde",
+    "misconception3": "\"Disse tal er 'varme', så de er mere sandsynlige\"",
+    "reality3": "Hyppigt trukne tal er lige så sandsynlige som sjældne",
+    "misconceptionLabel": "Misforståelse:",
+    "realityLabel": "Virkelighed:"
+  },
+  "largeNumbers": {
+    "title": "De store tals lov",
+    "text": "Jo flere spil du spiller, jo mere nærmer dine faktiske resultater sig den teoretiske sandsynlighed. Men det betyder ikke, at du \"til sidst vinder\" - det betyder, at du til sidst taber endnu flere penge!",
+    "exampleTitle": "Hvad tallene viser",
+    "item1": "Spil 1 lottokupon: Du vinder måske én gang i dit liv",
+    "item2": "Spil 100 kuponer: Dine odds forbedres, men det forventede tab er stadig hele din investering",
+    "item3": "Spil 1.000 kuponer: Du er tættere på det statistiske gennemsnit (taber ~50-60% af pengene)",
+    "item4": "Jo mere du spiller, jo mere nærmer dine tab sig den matematiske forventning"
+  },
+  "lessons": {
+    "title": "Smarte økonomiske lektioner",
+    "text": "Forståelse af lotterimatematik lærer os værdifulde lektioner om sandsynlighed og økonomiske beslutninger:",
+    "riskReward": "Risiko vs Belønning",
+    "riskRewardText": "Vurder altid odds i forhold til den potentielle belønning. I lotterier er risiko-belønningsforholdet ekstremt ugunstigt sammenlignet med andre investeringer.",
+    "statThinking": "Statistisk tænkning",
+    "statThinkingText": "Træf beslutninger baseret på data og sandsynlighed, ikke håb eller overtro. Dette gælder for investering, forsikring og store livsbeslutninger.",
+    "longTermPlanning": "Langsigtet planlægning",
+    "longTermPlanningText": "Lottogevinster er upålidelige. At opbygge formue gennem regelmæssig opsparing og investering (selv små beløb) er langt mere pålideligt end at håbe på en jackpot.",
+    "psychologyLoss": "Tabspsykologi",
+    "psychologyLossText": "Forstå hvordan vores hjerner narrer os til dårlige beslutninger. Vi overvurderer små sandsynligheder og undervurderer vores tab, når de spredes over tid."
+  },
+  "cta": {
+    "title": "Se det selv",
+    "text": "Den bedste måde at forstå lotteriodds er at opleve dem på egen hånd. Prøv vores interaktive lottosimulator og se, hvor mange trækninger det tager at matche dine tal.",
+    "trySimulator": "Prøv simulatoren",
+    "viewStatistics": "Se statistik"
+  },
+  "responsible": {
+    "title": "Ansvarligt spil",
+    "text": "Hvis du nogensinde føler, at lottospil bliver et problem, eller det påvirker dit økonomiske helbred, bedes du søge hjælp:",
+    "helpline": "National Problemspil Hjælpelinje: 1-800-522-4700",
+    "ga": "Anonyme Spillere:",
+    "ncpg": "NCPG (Rådet for Tvangsspil):",
+    "remember": "Lottokuponer bør kun bruges som underholdning med penge, du har råd til at tabe. Stol aldrig på dem til økonomisk planlægning.",
+    "rememberLabel": "Husk:"
+  }
+}

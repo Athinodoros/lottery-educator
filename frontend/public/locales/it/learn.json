@@ -1,0 +1,109 @@
+{
+  "title": "Impara la matematica della lotteria",
+  "subtitle": "Comprendere le vere probabilità dei giochi della lotteria",
+  "probability": {
+    "title": "Cos'è la probabilità?",
+    "text": "La probabilità è la possibilità matematica che un evento si verifichi. Si esprime come un numero tra 0 e 1, dove 0 significa impossibile e 1 significa certo. Ad esempio, la probabilità di ottenere testa lanciando una moneta equa è 0,5 (o 50%), poiché ci sono due risultati ugualmente probabili.",
+    "exampleTitle": "Esempio: Lanciare un dado",
+    "exampleText": "Quando lanci un dado equo a sei facce:",
+    "exampleItem1": "Ci sono 6 risultati possibili (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "La probabilità di ottenere un 3 è 1/6 ≈ 16,67%",
+    "exampleItem3": "La probabilità di ottenere qualsiasi numero è ugualmente probabile"
+  },
+  "combinations": {
+    "title": "Combinazioni e permutazioni",
+    "text": "Quando calcoliamo le probabilità della lotteria, dobbiamo capire in quanti modi diversi gli elementi possono essere selezionati e disposti. Nella maggior parte delle lotterie, l'ordine dei numeri non conta, quindi usiamo le <strong>combinazioni</strong>.",
+    "exampleTitle": "Esempio: Scegliere 6 da 49",
+    "exampleText": "In una lotteria tipica dove scegli 6 numeri da 49:",
+    "exampleItem1": "Il numero di combinazioni possibili è di circa 13,98 milioni",
+    "exampleItem2": "La tua probabilità di vincere con un biglietto è di 1 su 13,98 milioni",
+    "exampleItem3": "È una probabilità di vincita dello 0,0000072%!"
+  },
+  "expectedValue": {
+    "title": "Valore atteso",
+    "text": "Il valore atteso è l'importo medio che ti aspetti di vincere o perdere per scommessa nel lungo periodo. Per le lotterie, il valore atteso è sempre negativo, il che significa che in media perdi denaro.",
+    "exampleTitle": "Esempio: Una lotteria semplice",
+    "exampleText": "Immagina una lotteria dove:",
+    "exampleItem1": "Costo del biglietto: 1 $",
+    "exampleItem2": "Probabilità di vincere 10 $: 10%",
+    "exampleItem3": "Probabilità di non vincere nulla: 90%",
+    "exampleItem4": "Valore atteso = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Nel tempo, ti aspetteresti di andare in pari, ma le lotterie vere sono peggio!"
+  },
+  "houseFavor": {
+    "title": "Perché le lotterie favoriscono sempre il banco",
+    "text": "Le lotterie reali trattengono una percentuale delle vendite dei biglietti (tipicamente 30-50%) prima di pagare i premi. Questo si chiama il \"vantaggio del banco\". Ecco cosa significa:",
+    "exampleTitle": "Esempio: Matematica reale della lotteria",
+    "forEvery100": "Per ogni 100 $ di vendite di biglietti:",
+    "item1": "40-50 $ vanno all'organizzatore della lotteria (stato, azienda, ecc.)",
+    "item2": "40-50 $ vengono distribuiti ai vincitori",
+    "item3": "I fondi rimanenti vanno a cause benefiche (istruzione, infrastrutture, ecc.)",
+    "item4": "Risultato: I giocatori recuperano solo 50-60 centesimi per ogni dollaro speso"
+  },
+  "comparison": {
+    "title": "Lotteria vs Investimento: Confronto a 30 anni",
+    "text": "E se investissi il denaro che spendi in biglietti della lotteria? Confrontiamo la spesa di 20 $ a settimana in biglietti della lotteria con l'investimento della stessa cifra.",
+    "lotteryTitle": "Biglietti della lotteria",
+    "investTitle": "Investimento in fondi indicizzati",
+    "weeklySpend": "Spesa settimanale",
+    "weeklyInvest": "Investimento settimanale",
+    "totalSpent": "Totale speso (30 anni)",
+    "totalInvested": "Totale investito (30 anni)",
+    "expectedReturn": "Rendimento atteso",
+    "portfolioValue": "Valore del portafoglio",
+    "netResult": "Risultato netto",
+    "netGain": "Guadagno netto",
+    "lotteryNote": "Basato su un tasso medio di pagamento del 50%",
+    "investNote": "Basato su un rendimento annuale medio di ~7% (storico S&P 500)",
+    "takeaway": "<strong>La differenza:</strong> In 30 anni, il giocatore della lotteria perde circa 15.600 $ mentre l'investitore guadagna circa 70.800 $. È un divario di 86.400 $ con gli stessi 20 $ a settimana."
+  },
+  "gamblersFallacy": {
+    "title": "La \"fallacia del giocatore\"",
+    "text": "Molte persone credono che i risultati passati influenzino i risultati futuri negli eventi indipendenti. Questo è falso. Ogni estrazione della lotteria è indipendente, e i risultati precedenti non influenzano quelli futuri.",
+    "exampleTitle": "Convinzioni errate comuni",
+    "misconception1": "\"Il 7 è stato estratto la settimana scorsa, quindi è meno probabile questa settimana\"",
+    "reality1": "Ogni numero ha esattamente la stessa probabilità ad ogni estrazione",
+    "misconception2": "\"Dopo aver perso molte volte, è il mio turno di vincere\"",
+    "reality2": "Le perdite passate non aumentano la tua probabilità di vincere",
+    "misconception3": "\"Questi numeri sono 'caldi' quindi sono più probabili\"",
+    "reality3": "I numeri estratti frequentemente sono altrettanto probabili di quelli rari",
+    "misconceptionLabel": "Convinzione errata:",
+    "realityLabel": "Realtà:"
+  },
+  "largeNumbers": {
+    "title": "La legge dei grandi numeri",
+    "text": "Più giochi, più i tuoi risultati effettivi convergono verso la probabilità teorica. Tuttavia, questo non significa che \"alla fine vincerai\" – significa che alla fine perderai ancora più denaro!",
+    "exampleTitle": "Cosa mostrano i numeri",
+    "item1": "Giocare 1 biglietto della lotteria: Potresti vincere una volta nella vita",
+    "item2": "Giocare 100 biglietti: Le tue probabilità migliorano, ma la perdita attesa è comunque il tuo intero investimento",
+    "item3": "Giocare 1.000 biglietti: Ti avvicini alla media statistica (perdita di ~50-60% del denaro speso)",
+    "item4": "Più giochi, più le tue perdite si avvicinano all'aspettativa matematica"
+  },
+  "lessons": {
+    "title": "Lezioni finanziarie intelligenti",
+    "text": "Capire la matematica della lotteria ci insegna lezioni preziose sulla probabilità e le decisioni economiche:",
+    "riskReward": "Rischio vs Ricompensa",
+    "riskRewardText": "Valuta sempre le probabilità rispetto alla potenziale ricompensa. Nelle lotterie, il rapporto rischio-ricompensa è estremamente sfavorevole rispetto ad altri investimenti.",
+    "statThinking": "Pensiero statistico",
+    "statThinkingText": "Prendi decisioni basate su dati e probabilità, non su speranza o superstizione. Questo vale per investimenti, assicurazioni e grandi decisioni di vita.",
+    "longTermPlanning": "Pianificazione a lungo termine",
+    "longTermPlanningText": "Le vincite alla lotteria sono inaffidabili. Costruire ricchezza attraverso il risparmio e l'investimento regolare (anche piccole somme) è molto più affidabile che sperare in un jackpot.",
+    "psychologyLoss": "Psicologia della perdita",
+    "psychologyLossText": "Comprendi come il nostro cervello ci induce a prendere decisioni sbagliate. Sovrastimiamo le piccole probabilità e sottovalutiamo le nostre perdite quando sono distribuite nel tempo."
+  },
+  "cta": {
+    "title": "Prova tu stesso",
+    "text": "Il modo migliore per capire le probabilità della lotteria è viverle in prima persona. Prova il nostro simulatore interattivo della lotteria e osserva quante estrazioni servono per indovinare i tuoi numeri.",
+    "trySimulator": "Prova il simulatore",
+    "viewStatistics": "Vedi statistiche"
+  },
+  "responsible": {
+    "title": "Gioco responsabile",
+    "text": "Se senti che il gioco della lotteria sta diventando un problema o sta influenzando la tua salute finanziaria, chiedi aiuto:",
+    "helpline": "Linea di aiuto nazionale per il gioco problematico: 1-800-522-4700",
+    "ga": "Giocatori Anonimi:",
+    "ncpg": "NCPG (Consiglio sul gioco compulsivo):",
+    "remember": "I biglietti della lotteria dovrebbero essere usati solo come intrattenimento con denaro che puoi permetterti di perdere. Non fare mai affidamento su di essi per la pianificazione finanziaria.",
+    "rememberLabel": "Ricorda:"
+  }
+}

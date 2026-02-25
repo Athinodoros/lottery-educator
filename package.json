@@ -9,8 +9,8 @@
   ],
   "scripts": {
     "install:all": "npm install && npm install --workspaces",
-    "dev": "npm run dev --workspace=backend/api-gateway & npm run dev --workspace=backend/game-engine & npm run dev --workspace=backend/statistics & npm run dev --workspace=backend/email-service & npm run dev --workspace=backend/metrics-service & npm run dev --workspace=frontend & wait",
-    "dev:backend": "npm run dev --workspace=backend/api-gateway & npm run dev --workspace=backend/game-engine & npm run dev --workspace=backend/statistics & npm run dev --workspace=backend/email-service & npm run dev --workspace=backend/metrics-service",
+    "dev": "concurrently -n gateway,engine,stats,email,metrics,frontend -c blue,green,yellow,magenta,cyan,white \"npm run dev --workspace=backend/api-gateway\" \"npm run dev --workspace=backend/game-engine\" \"npm run dev --workspace=backend/statistics\" \"npm run dev --workspace=backend/email-service\" \"npm run dev --workspace=backend/metrics-service\" \"npm run dev --workspace=frontend\"",
+    "dev:backend": "concurrently -n gateway,engine,stats,email,metrics -c blue,green,yellow,magenta,cyan \"npm run dev --workspace=backend/api-gateway\" \"npm run dev --workspace=backend/game-engine\" \"npm run dev --workspace=backend/statistics\" \"npm run dev --workspace=backend/email-service\" \"npm run dev --workspace=backend/metrics-service\"",
     "dev:gateway": "npm run dev --workspace=backend/api-gateway",
     "dev:games": "npm run dev --workspace=backend/game-engine",
     "dev:stats": "npm run dev --workspace=backend/statistics",
@@ -31,5 +31,8 @@
     "typescript"
   ],
   "author": "CodingAltar",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
 }

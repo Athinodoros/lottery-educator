@@ -1,0 +1,19 @@
+{
+  "title": "Spellen",
+  "subtitle": "Selecteer een loterijspel om te spelen en de kansen te leren.",
+  "createGame": "+ Maak een Spel",
+  "errorTitle": "Fout bij Laden van Spellen",
+  "loadingGames": "Spellen laden",
+  "loadingText": "Spellen laden...",
+  "noGamesTitle": "Geen Spellen Beschikbaar",
+  "noGamesText": "Kom binnenkort terug voor loterijspellen om te spelen.",
+  "card": {
+    "pick": "Kies",
+    "from": "Van",
+    "bonus": "Bonus",
+    "odds": "Kansen",
+    "oddsValue": "1 op {{value}}",
+    "playGame": "Speel →",
+    "viewStats": "Bekijk Statistieken"
+  }
+}

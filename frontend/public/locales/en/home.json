@@ -1,0 +1,14 @@
+{
+  "title": "Lottery Educator",
+  "subtitle": "Learn the true odds behind lottery games",
+  "description": "Discover why lottery tickets are a statistical impossibility and understand the mathematics behind game probability.",
+  "cta": "Play Games & Learn",
+  "features": {
+    "interactiveGames": "Interactive Games",
+    "interactiveGamesDesc": "Simulate thousands of lottery draws to understand how long it really takes to win.",
+    "realStatistics": "Real Statistics",
+    "realStatisticsDesc": "See the true odds and probabilities behind popular lottery games worldwide.",
+    "financialEducation": "Financial Education",
+    "financialEducationDesc": "Learn why understanding probability is crucial for personal finance decisions."
+  }
+}

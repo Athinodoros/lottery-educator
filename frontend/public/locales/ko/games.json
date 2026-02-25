@@ -1,0 +1,19 @@
+{
+  "title": "게임",
+  "subtitle": "복권 게임을 선택하여 플레이하고 확률을 배워보세요.",
+  "createGame": "+ 게임 만들기",
+  "errorTitle": "게임 로딩 오류",
+  "loadingGames": "게임 로딩 중",
+  "loadingText": "게임을 로딩하는 중...",
+  "noGamesTitle": "사용 가능한 게임 없음",
+  "noGamesText": "곧 플레이할 수 있는 복권 게임이 추가될 예정입니다.",
+  "card": {
+    "pick": "선택",
+    "from": "범위",
+    "bonus": "보너스",
+    "odds": "확률",
+    "oddsValue": "{{value}} 분의 1",
+    "playGame": "게임 시작 →",
+    "viewStats": "통계 보기"
+  }
+}

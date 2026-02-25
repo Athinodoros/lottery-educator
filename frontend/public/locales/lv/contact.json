@@ -1,0 +1,22 @@
+{
+  "title": "Sazinieties ar mums",
+  "subtitle": "Ir jautājumi vai atsauksmes? Mēs labprāt uzklausīsim.",
+  "successTitle": "Ziņojums nosūtīts!",
+  "successText": "Paldies, ka sazinājāties. Mēs drīzumā izskatīsim jūsu ziņojumu.",
+  "sendAnother": "Nosūtīt citu ziņojumu",
+  "emailLabel": "E-pasta adrese",
+  "emailPlaceholder": "jusu@epasts.lv",
+  "emailError": "Lūdzu, ievadiet derīgu e-pasta adresi",
+  "subjectLabel": "Tēma",
+  "subjectPlaceholder": "Par ko jūs vēlaties rakstīt?",
+  "messageLabel": "Ziņojums",
+  "messagePlaceholder": "Pastāstiet, kas jums rūp...",
+  "sending": "Sūta...",
+  "sendMessage": "Nosūtīt ziņojumu",
+  "aboutProject": "Par šo projektu",
+  "aboutProjectText": "Loteriju izglītība ir bezmaksas izglītojošs rīks, kas palīdz cilvēkiem izprast patiesās loterijas uzvaras iespējas ar interaktīvu simulāciju palīdzību.",
+  "privacy": "Privātums",
+  "privacyText": "Mēs cienām jūsu privātumu. Jūsu e-pasts tiek izmantots tikai atbildei uz jūsu ziņojumu. Mēs neglabājam IP adreses un nedalāmies ar jūsu informāciju. Jūs varat jebkurā laikā pieprasīt savu datu dzēšanu.",
+  "openSource": "Atvērtais kods",
+  "openSourceText": "Šis ir atvērtā koda projekts. Ja atradāt kļūdu vai vēlaties piedalīties, droši atveriet problēmas ziņojumu vai iesniedziet izmaiņu pieprasījumu GitHub platformā."
+}

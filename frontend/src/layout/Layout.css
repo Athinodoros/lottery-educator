@@ -5,8 +5,8 @@
   left: 16px;
   z-index: 300;
   padding: 8px 16px;
-  background: #6366f1;
-  color: white;
+  background: var(--color-primary);
+  color: #fff;
   border-radius: 0 0 8px 8px;
   font-size: 14px;
   font-weight: 600;
@@ -21,21 +21,21 @@
 /* ── Layout ───────────────────────────────────────────── */
 .layout {
   display: flex;
-  min-height: 100vh;
-  overflow-x: hidden;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* ── Drawer ───────────────────────────────────────────── */
 .nav-drawer {
   flex-shrink: 0;
   width: 260px;
-  min-height: 100vh;
+  height: 100%;
   margin-left: -260px;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-bg-card);
+  border-right: 1px solid var(--color-border);
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
   overflow-y: auto;
 }
 
@@ -49,14 +49,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 20px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--color-border);
   margin-bottom: 8px;
 }
 
 .nav-drawer-title {
   font-size: 18px;
   font-weight: 700;
-  color: #6366f1;
+  color: var(--color-primary);
 }
 
 /* ── Nav items ────────────────────────────────────────── */
@@ -65,7 +65,7 @@
   align-items: center;
   gap: 14px;
   padding: 14px 20px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
@@ -73,18 +73,18 @@
 }
 
 .nav-item:hover {
-  background: #f5f3ff;
-  color: #6366f1;
+  background: var(--color-primary-bg-hover);
+  color: var(--color-primary);
 }
 
 .nav-item.active {
-  color: #6366f1;
-  background: #eef2ff;
-  border-right: 3px solid #6366f1;
+  color: var(--color-primary);
+  background: var(--color-primary-bg-subtle);
+  border-right: 3px solid var(--color-primary);
 }
 
 .nav-item:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid var(--color-primary);
   outline-offset: -2px;
   border-radius: 4px;
 }
@@ -103,14 +103,13 @@
 .main-wrapper {
   flex: 1;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .content {
   flex: 1;
-  overflow-y: auto;
 }
 
 /* ── Burger button ────────────────────────────────────── */
@@ -126,9 +125,9 @@
   height: 44px;
   border: none;
   border-radius: 8px;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  color: #374151;
+  background: var(--color-bg-card);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text-secondary);
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -138,13 +137,74 @@
 }
 
 .burger-button:hover {
-  background: #f3f4f6;
-  color: #6366f1;
+  background: var(--color-bg-subtle);
+  color: var(--color-primary);
 }
 
 .burger-button:focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+/* ── Theme toggle (in header) ────────────────────────── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.theme-toggle:hover {
+  background: var(--color-primary-hover);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── RTL support ──────────────────────────────────────── */
+[dir="rtl"] .nav-drawer {
+  margin-left: 0;
+  margin-right: -260px;
+  border-right: none;
+  border-left: 1px solid var(--color-border);
+}
+
+[dir="rtl"] .drawer-open .nav-drawer {
+  margin-right: 0;
+}
+
+[dir="rtl"] .nav-item.active {
+  border-right: none;
+  border-left: 3px solid var(--color-primary);
+}
+
+[dir="rtl"] .burger-button {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .drawer-open .burger-button {
+  transform: translateX(-260px);
+}
+
+[dir="rtl"] .skip-link {
+  left: auto;
+  right: 16px;
 }
 
 /* ── Reduced motion ───────────────────────────────────── */

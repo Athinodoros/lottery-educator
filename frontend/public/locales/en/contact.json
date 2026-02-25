@@ -1,0 +1,22 @@
+{
+  "title": "Contact Us",
+  "subtitle": "Have questions or feedback? We'd love to hear from you.",
+  "successTitle": "Message Sent!",
+  "successText": "Thank you for reaching out. We'll review your message shortly.",
+  "sendAnother": "Send Another Message",
+  "emailLabel": "Email Address",
+  "emailPlaceholder": "your@email.com",
+  "emailError": "Please enter a valid email address",
+  "subjectLabel": "Subject",
+  "subjectPlaceholder": "What is this about?",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Tell us what's on your mind...",
+  "sending": "Sending...",
+  "sendMessage": "Send Message",
+  "aboutProject": "About This Project",
+  "aboutProjectText": "Lottery Educator is a free educational tool that helps people understand the real odds of winning the lottery through interactive simulations.",
+  "privacy": "Privacy",
+  "privacyText": "We respect your privacy. Your email is only used to respond to your message. We don't store IP addresses or share your information. You can request deletion of your data at any time.",
+  "openSource": "Open Source",
+  "openSourceText": "This project is open source. If you find a bug or want to contribute, feel free to open an issue or pull request on GitHub."
+}

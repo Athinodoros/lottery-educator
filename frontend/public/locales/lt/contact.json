@@ -1,0 +1,22 @@
+{
+  "title": "Susisiekite",
+  "subtitle": "Turite klausimų ar atsiliepimų? Mielai išklausysime.",
+  "successTitle": "Žinutė išsiųsta!",
+  "successText": "Dėkojame, kad kreipėtės. Netrukus peržiūrėsime jūsų žinutę.",
+  "sendAnother": "Siųsti kitą žinutę",
+  "emailLabel": "El. pašto adresas",
+  "emailPlaceholder": "jusu@elpastas.lt",
+  "emailError": "Įveskite galiojantį el. pašto adresą",
+  "subjectLabel": "Tema",
+  "subjectPlaceholder": "Apie ką norėtumėte parašyti?",
+  "messageLabel": "Žinutė",
+  "messagePlaceholder": "Papasakokite, kas jums rūpi...",
+  "sending": "Siunčiama...",
+  "sendMessage": "Siųsti žinutę",
+  "aboutProject": "Apie šį projektą",
+  "aboutProjectText": "Loterijų švietimas yra nemokamas edukacinis įrankis, padedantis žmonėms suprasti tikrąsias loterijos laimėjimo galimybes per interaktyvias simuliacijas.",
+  "privacy": "Privatumas",
+  "privacyText": "Gerbiame jūsų privatumą. Jūsų el. paštas naudojamas tik atsakymui į jūsų žinutę. Nekaupkime IP adresų ir nesidalijame jūsų informacija. Galite bet kada paprašyti ištrinti savo duomenis.",
+  "openSource": "Atviras kodas",
+  "openSourceText": "Šis projektas yra atviro kodo. Jei radote klaidą arba norite prisidėti, drąsiai kurkite pranešimą apie problemą arba pateikite pakeitimų užklausą GitHub platformoje."
+}

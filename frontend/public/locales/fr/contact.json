@@ -1,0 +1,22 @@
+{
+  "title": "Contactez-nous",
+  "subtitle": "Vous avez des questions ou des commentaires ? Nous serions ravis de vous entendre.",
+  "successTitle": "Message envoyé !",
+  "successText": "Merci de nous avoir contactés. Nous examinerons votre message sous peu.",
+  "sendAnother": "Envoyer un autre message",
+  "emailLabel": "Adresse e-mail",
+  "emailPlaceholder": "votre@email.com",
+  "emailError": "Veuillez entrer une adresse e-mail valide",
+  "subjectLabel": "Sujet",
+  "subjectPlaceholder": "De quoi s'agit-il ?",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Dites-nous ce qui vous préoccupe...",
+  "sending": "Envoi en cours...",
+  "sendMessage": "Envoyer le message",
+  "aboutProject": "À propos de ce projet",
+  "aboutProjectText": "Loterie Éducative est un outil éducatif gratuit qui aide les gens à comprendre les vraies probabilités de gagner à la loterie grâce à des simulations interactives.",
+  "privacy": "Confidentialité",
+  "privacyText": "Nous respectons votre vie privée. Votre e-mail est uniquement utilisé pour répondre à votre message. Nous ne stockons pas les adresses IP et ne partageons pas vos informations. Vous pouvez demander la suppression de vos données à tout moment.",
+  "openSource": "Open Source",
+  "openSourceText": "Ce projet est open source. Si vous trouvez un bug ou souhaitez contribuer, n'hésitez pas à ouvrir un ticket ou une pull request sur GitHub."
+}

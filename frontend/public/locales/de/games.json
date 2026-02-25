@@ -1,0 +1,19 @@
+{
+  "title": "Spiele",
+  "subtitle": "Wählen Sie ein Lotteriespiel aus, um zu spielen und die Gewinnchancen zu erfahren.",
+  "createGame": "+ Spiel erstellen",
+  "errorTitle": "Fehler beim Laden der Spiele",
+  "loadingGames": "Spiele werden geladen",
+  "loadingText": "Spiele werden geladen...",
+  "noGamesTitle": "Keine Spiele verfügbar",
+  "noGamesText": "Schauen Sie bald wieder vorbei für Lotteriespiele.",
+  "card": {
+    "pick": "Wähle",
+    "from": "Aus",
+    "bonus": "Bonus",
+    "odds": "Gewinnchancen",
+    "oddsValue": "1 zu {{value}}",
+    "playGame": "Spiel spielen →",
+    "viewStats": "Statistiken ansehen"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Contacte-nos",
+  "subtitle": "Tem perguntas ou comentários? Gostaríamos de ouvir a sua opinião.",
+  "successTitle": "Mensagem Enviada!",
+  "successText": "Obrigado por entrar em contacto. Vamos analisar a sua mensagem em breve.",
+  "sendAnother": "Enviar Outra Mensagem",
+  "emailLabel": "Endereço de Email",
+  "emailPlaceholder": "o.seu@email.com",
+  "emailError": "Por favor, insira um endereço de email válido",
+  "subjectLabel": "Assunto",
+  "subjectPlaceholder": "Sobre o que é isto?",
+  "messageLabel": "Mensagem",
+  "messagePlaceholder": "Diga-nos o que tem em mente...",
+  "sending": "A enviar...",
+  "sendMessage": "Enviar Mensagem",
+  "aboutProject": "Sobre Este Projeto",
+  "aboutProjectText": "O Educador de Lotaria é uma ferramenta educativa gratuita que ajuda as pessoas a compreender as verdadeiras probabilidades de ganhar a lotaria através de simulações interativas.",
+  "privacy": "Privacidade",
+  "privacyText": "Respeitamos a sua privacidade. O seu email é usado apenas para responder à sua mensagem. Não armazenamos endereços IP nem partilhamos as suas informações. Pode solicitar a eliminação dos seus dados a qualquer momento.",
+  "openSource": "Código Aberto",
+  "openSourceText": "Este projeto é de código aberto. Se encontrar um erro ou quiser contribuir, sinta-se à vontade para abrir uma issue ou pull request no GitHub."
+}

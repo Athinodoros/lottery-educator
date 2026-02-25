@@ -1,0 +1,22 @@
+{
+  "title": "Kontaktirajte nas",
+  "subtitle": "Imate pitanja ili povratne informacije? Rado bismo čuli od vas.",
+  "successTitle": "Poruka poslana!",
+  "successText": "Hvala što ste nam se javili. Uskoro ćemo pregledati vašu poruku.",
+  "sendAnother": "Pošaljite drugu poruku",
+  "emailLabel": "E-mail adresa",
+  "emailPlaceholder": "vaš@email.com",
+  "emailError": "Molimo unesite valjanu e-mail adresu",
+  "subjectLabel": "Predmet",
+  "subjectPlaceholder": "O čemu se radi?",
+  "messageLabel": "Poruka",
+  "messagePlaceholder": "Recite nam što vam je na umu...",
+  "sending": "Slanje...",
+  "sendMessage": "Pošalji poruku",
+  "aboutProject": "O projektu",
+  "aboutProjectText": "Lutrijski edukator je besplatan edukativni alat koji pomaže ljudima razumjeti stvarne šanse za dobitak na lutriji kroz interaktivne simulacije.",
+  "privacy": "Privatnost",
+  "privacyText": "Poštujemo vašu privatnost. Vaša e-mail adresa koristi se samo za odgovor na vašu poruku. Ne pohranjujemo IP adrese niti dijelimo vaše podatke. Možete zatražiti brisanje svojih podataka u bilo kojem trenutku.",
+  "openSource": "Otvoreni kod",
+  "openSourceText": "Ovaj projekt je otvorenog koda. Ako pronađete grešku ili želite doprinijeti, slobodno otvorite prijavu problema ili zahtjev za promjene na GitHubu."
+}

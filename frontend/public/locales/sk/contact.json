@@ -1,0 +1,22 @@
+{
+  "title": "Kontaktujte Nás",
+  "subtitle": "Máte otázky alebo spätnú väzbu? Radi si od vás vypočujeme.",
+  "successTitle": "Správa Odoslaná!",
+  "successText": "Ďakujeme za váš kontakt. Vašu správu čoskoro posúdime.",
+  "sendAnother": "Odoslať Ďalšiu Správu",
+  "emailLabel": "E-mailová Adresa",
+  "emailPlaceholder": "vas@email.com",
+  "emailError": "Zadajte prosím platnú e-mailovú adresu",
+  "subjectLabel": "Predmet",
+  "subjectPlaceholder": "O čom sa jedná?",
+  "messageLabel": "Správa",
+  "messagePlaceholder": "Povedzte nám, čo máte na srdci...",
+  "sending": "Odosielanie...",
+  "sendMessage": "Odoslať Správu",
+  "aboutProject": "O Tomto Projekte",
+  "aboutProjectText": "Lotériový Vzdelávateľ je bezplatný vzdelávací nástroj, ktorý pomáha ľuďom pochopiť skutočné šance na výhru v lotérii prostredníctvom interaktívnych simulácií.",
+  "privacy": "Súkromie",
+  "privacyText": "Rešpektujeme vaše súkromie. Váš e-mail sa používa len na odpoveď na vašu správu. Neukladáme IP adresy ani nezdieľame vaše informácie. Kedykoľvek môžete požiadať o vymazanie svojich údajov.",
+  "openSource": "Open Source",
+  "openSourceText": "Tento projekt je open source. Ak nájdete chybu alebo chcete prispieť, neváhajte otvoriť issue alebo pull request na GitHube."
+}

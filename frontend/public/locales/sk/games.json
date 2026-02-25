@@ -1,0 +1,19 @@
+{
+  "title": "Hry",
+  "subtitle": "Vyberte si lotériovú hru, ktorú chcete hrať, a spoznajte šance.",
+  "createGame": "+ Vytvoriť Hru",
+  "errorTitle": "Chyba pri Načítaní Hier",
+  "loadingGames": "Načítanie hier",
+  "loadingText": "Načítanie hier...",
+  "noGamesTitle": "Žiadne Dostupné Hry",
+  "noGamesText": "Skúste to znova čoskoro, nové lotériové hry budú k dispozícii.",
+  "card": {
+    "pick": "Vybrať",
+    "from": "Z",
+    "bonus": "Bonus",
+    "odds": "Šance",
+    "oddsValue": "1 ku {{value}}",
+    "playGame": "Hrať →",
+    "viewStats": "Zobraziť Štatistiky"
+  }
+}

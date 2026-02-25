@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Etusivu",
+    "games": "Pelit",
+    "stats": "Tilastot",
+    "learn": "Opi",
+    "contact": "Yhteystiedot",
+    "admin": "Ylläpito"
+  },
+  "appTitle": "Lottery Educator",
+  "skipToContent": "Siirry pääsisältöön",
+  "switchToDark": "Vaihda tummaan tilaan",
+  "switchToLight": "Vaihda vaaleaan tilaan",
+  "openMenu": "Avaa valikko",
+  "closeMenu": "Sulje valikko",
+  "footer": {
+    "privacyText": "Kunnioitamme yksityisyyttäsi. Henkilötietoja ei kerätä.",
+    "dataDeleted": "Tietosi on poistettu.",
+    "deleteConfirm": "Poistetaanko kaikki paikalliset tietosi?",
+    "confirmYes": "Kyllä, poista",
+    "confirmCancel": "Peruuta",
+    "deleteButton": "Poista tietoni",
+    "deleteAriaLabel": "Poista tietoni"
+  },
+  "consent": {
+    "ariaLabel": "Evästeiden suostumus",
+    "text": "Käytämme anonyymejä analytiikkatyökaluja oppimiskokemuksen parantamiseksi. Henkilötietoja ei kerätä. Voit poistaa tietosi milloin tahansa.",
+    "accept": "Hyväksy",
+    "decline": "Hylkää"
+  }
+}

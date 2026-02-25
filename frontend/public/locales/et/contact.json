@@ -1,0 +1,22 @@
+{
+  "title": "Võtke meiega ühendust",
+  "subtitle": "Kas teil on küsimusi või tagasisidet? Kuulame hea meelega.",
+  "successTitle": "Sõnum saadetud!",
+  "successText": "Täname, et pöördusite meie poole. Vaatame teie sõnumi peatselt üle.",
+  "sendAnother": "Saada uus sõnum",
+  "emailLabel": "E-posti aadress",
+  "emailPlaceholder": "teie@epost.ee",
+  "emailError": "Palun sisestage kehtiv e-posti aadress",
+  "subjectLabel": "Teema",
+  "subjectPlaceholder": "Mis teemal soovite kirjutada?",
+  "messageLabel": "Sõnum",
+  "messagePlaceholder": "Rääkige meile, mis teil meeles on...",
+  "sending": "Saatmine...",
+  "sendMessage": "Saada sõnum",
+  "aboutProject": "Sellest projektist",
+  "aboutProjectText": "Loterii haridus on tasuta hariduslik tööriist, mis aitab inimestel mõista loterii tegelikke võiduvõimalusi interaktiivsete simulatsioonide kaudu.",
+  "privacy": "Privaatsus",
+  "privacyText": "Austame teie privaatsust. Teie e-posti kasutatakse ainult teie sõnumile vastamiseks. Me ei salvesta IP-aadresse ega jaga teie teavet. Saate igal ajal nõuda oma andmete kustutamist.",
+  "openSource": "Avatud lähtekood",
+  "openSourceText": "See on avatud lähtekoodiga projekt. Kui leiate vea või soovite panustada, esitage julgelt veateade või tõmbepalve GitHubis."
+}

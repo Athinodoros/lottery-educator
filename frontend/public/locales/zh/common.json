@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "首页",
+    "games": "游戏",
+    "stats": "统计",
+    "learn": "学习",
+    "contact": "联系我们",
+    "admin": "管理"
+  },
+  "appTitle": "彩票教育家",
+  "skipToContent": "跳转到主要内容",
+  "switchToDark": "切换到深色模式",
+  "switchToLight": "切换到浅色模式",
+  "openMenu": "打开菜单",
+  "closeMenu": "关闭菜单",
+  "footer": {
+    "privacyText": "我们尊重您的隐私。不会收集任何个人数据。",
+    "dataDeleted": "您的数据已被删除。",
+    "deleteConfirm": "删除您的所有本地数据？",
+    "confirmYes": "是的，删除",
+    "confirmCancel": "取消",
+    "deleteButton": "删除我的数据",
+    "deleteAriaLabel": "删除我的数据"
+  },
+  "consent": {
+    "ariaLabel": "Cookie 同意",
+    "text": "我们使用匿名分析来改善学习体验。不会收集任何个人数据。您可以随时删除您的数据。",
+    "accept": "接受",
+    "decline": "拒绝"
+  }
+}

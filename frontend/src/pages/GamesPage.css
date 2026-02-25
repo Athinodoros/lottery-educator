@@ -45,6 +45,7 @@
 
 .create-game-link:hover {
   background: var(--color-primary-hover);
+  color: #fff;
 }
 
 .games-grid {

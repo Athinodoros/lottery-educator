@@ -1,0 +1,109 @@
+{
+  "title": "Aprenda Sobre Matemática da Lotaria",
+  "subtitle": "Compreenda as verdadeiras probabilidades dos jogos de lotaria",
+  "probability": {
+    "title": "O que é Probabilidade?",
+    "text": "Probabilidade é a verosimilhança matemática de um evento ocorrer. É expressa como um número entre 0 e 1, onde 0 significa impossível e 1 significa certo. Por exemplo, a probabilidade de obter cara ao lançar uma moeda é 0,5 (ou 50%), pois existem dois resultados igualmente prováveis.",
+    "exampleTitle": "Exemplo: Lançar um Dado",
+    "exampleText": "Quando lança um dado justo de seis faces:",
+    "exampleItem1": "Existem 6 resultados possíveis (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "A probabilidade de obter um 3 é 1/6 ≈ 16,67%",
+    "exampleItem3": "A probabilidade de obter qualquer número é igualmente provável"
+  },
+  "combinations": {
+    "title": "Combinações e Permutações",
+    "text": "Ao calcular as probabilidades da lotaria, precisamos compreender de quantas formas diferentes os itens podem ser selecionados e organizados. Na maioria das lotarias, a ordem dos números não importa, por isso usamos <strong>combinações</strong>.",
+    "exampleTitle": "Exemplo: Escolher 6 de 49",
+    "exampleText": "Numa lotaria típica onde escolhe 6 números de 49:",
+    "exampleItem1": "O número de combinações possíveis é aproximadamente 13,98 milhões",
+    "exampleItem2": "A sua probabilidade de ganhar com um bilhete é 1 em 13,98 milhões",
+    "exampleItem3": "Isso é uma probabilidade de 0,0000072% de ganhar!"
+  },
+  "expectedValue": {
+    "title": "Valor Esperado",
+    "text": "O valor esperado é o montante médio que espera ganhar ou perder por aposta a longo prazo. Para lotarias, o valor esperado é sempre negativo, o que significa que perde dinheiro em média.",
+    "exampleTitle": "Exemplo: Uma Lotaria Simples",
+    "exampleText": "Imagine uma lotaria onde:",
+    "exampleItem1": "Custo do bilhete: 1 $",
+    "exampleItem2": "Probabilidade de ganhar 10 $: 10%",
+    "exampleItem3": "Probabilidade de não ganhar nada: 90%",
+    "exampleItem4": "Valor esperado = (0,10 x 10 $) + (0,90 x 0 $) - 1 $ = 1 $ - 1 $ = 0 $",
+    "exampleItem5": "Com o tempo, esperaria empatar, mas as lotarias reais são piores!"
+  },
+  "houseFavor": {
+    "title": "Por Que as Lotarias Sempre Favorecem a Casa",
+    "text": "As lotarias do mundo real retêm uma percentagem das vendas de bilhetes (tipicamente 30-50%) antes de distribuir os prémios. Isto chama-se a \"vantagem da casa\". Eis o que isto significa:",
+    "exampleTitle": "Exemplo: Matemática Real da Lotaria",
+    "forEvery100": "Por cada 100 $ em vendas de bilhetes:",
+    "item1": "40-50 $ vão para o organizador da lotaria (estado, empresa, etc.)",
+    "item2": "40-50 $ são distribuídos aos vencedores",
+    "item3": "Os fundos restantes vão para causas (educação, infraestrutura, etc.)",
+    "item4": "Resultado: Os jogadores recuperam apenas 50-60 cêntimos por cada dólar gasto"
+  },
+  "comparison": {
+    "title": "Lotaria vs Investimento: Uma Comparação de 30 Anos",
+    "text": "E se investisse o dinheiro que gastaria em bilhetes de lotaria? Vamos comparar gastar 20 $ por semana em bilhetes de lotaria versus investir a mesma quantia.",
+    "lotteryTitle": "Bilhetes de Lotaria",
+    "investTitle": "Investimento em Fundo de Índice",
+    "weeklySpend": "Gasto semanal",
+    "weeklyInvest": "Investimento semanal",
+    "totalSpent": "Total gasto (30 anos)",
+    "totalInvested": "Total investido (30 anos)",
+    "expectedReturn": "Retorno esperado",
+    "portfolioValue": "Valor da carteira",
+    "netResult": "Resultado líquido",
+    "netGain": "Ganho líquido",
+    "lotteryNote": "Baseado numa taxa média de pagamento de 50%",
+    "investNote": "Baseado num retorno médio anual de ~7% (histórico do S&P 500)",
+    "takeaway": "<strong>A diferença:</strong> Ao longo de 30 anos, o jogador de lotaria perde cerca de 15.600 $ enquanto o investidor ganha cerca de 70.800 $. Isso é uma diferença de 86.400 $ com os mesmos 20 $ por semana."
+  },
+  "gamblersFallacy": {
+    "title": "A \"Falácia do Jogador\"",
+    "text": "Muitas pessoas acreditam que resultados passados afetam resultados futuros em eventos independentes. Isto é falso. Cada sorteio de lotaria é independente e os resultados anteriores não influenciam os futuros.",
+    "exampleTitle": "Conceções Erradas Comuns",
+    "misconception1": "\"O 7 saiu na semana passada, por isso é menos provável esta semana\"",
+    "reality1": "Cada número tem exatamente a mesma probabilidade em cada sorteio",
+    "misconception2": "\"Tenho de ganhar depois de perder tantas vezes\"",
+    "reality2": "Perdas passadas não aumentam a sua probabilidade de ganhar",
+    "misconception3": "\"Estes números são 'quentes', por isso são mais prováveis\"",
+    "reality3": "Números frequentemente sorteados são tão prováveis como os raros",
+    "misconceptionLabel": "Conceção errada:",
+    "realityLabel": "Realidade:"
+  },
+  "largeNumbers": {
+    "title": "A Lei dos Grandes Números",
+    "text": "Quanto mais jogos jogar, mais os seus resultados reais convergem para a probabilidade teórica. No entanto, isto não significa que \"eventualmente ganhará\" - significa que eventualmente perderá ainda mais dinheiro!",
+    "exampleTitle": "O Que os Números Mostram",
+    "item1": "Jogar 1 bilhete de lotaria: Pode ganhar uma vez na vida",
+    "item2": "Jogar 100 bilhetes: As suas probabilidades melhoram, mas a perda esperada continua a ser todo o seu investimento",
+    "item3": "Jogar 1.000 bilhetes: Está mais perto da média estatística (perder ~50-60% do dinheiro gasto)",
+    "item4": "Quanto mais jogar, mais as suas perdas se aproximam da expectativa matemática"
+  },
+  "lessons": {
+    "title": "Lições Financeiras Inteligentes",
+    "text": "Compreender a matemática da lotaria ensina-nos lições valiosas sobre probabilidade e decisões económicas:",
+    "riskReward": "Risco vs Recompensa",
+    "riskRewardText": "Avalie sempre as probabilidades versus a recompensa potencial. Nas lotarias, a relação risco-recompensa é extremamente desfavorável comparada com outros investimentos.",
+    "statThinking": "Pensamento Estatístico",
+    "statThinkingText": "Tome decisões baseadas em dados e probabilidade, não em esperança ou superstição. Isto aplica-se a investimentos, seguros e grandes decisões de vida.",
+    "longTermPlanning": "Planeamento a Longo Prazo",
+    "longTermPlanningText": "Os ganhos na lotaria são imprevisíveis. Construir riqueza através de poupança e investimento regulares (mesmo pequenas quantias) é muito mais fiável do que esperar por um jackpot.",
+    "psychologyLoss": "Psicologia da Perda",
+    "psychologyLossText": "Compreenda como os nossos cérebros nos levam a más decisões. Sobrestimamos pequenas probabilidades e subestimamos as nossas perdas quando estão distribuídas ao longo do tempo."
+  },
+  "cta": {
+    "title": "Veja por Si Mesmo",
+    "text": "A melhor forma de compreender as probabilidades da lotaria é experimentá-las em primeira mão. Experimente o nosso simulador interativo de lotaria e veja quantos sorteios são necessários para acertar os seus números.",
+    "trySimulator": "Experimentar o Simulador",
+    "viewStatistics": "Ver Estatísticas"
+  },
+  "responsible": {
+    "title": "Jogo Responsável",
+    "text": "Se alguma vez sentir que o jogo de lotaria está a tornar-se um problema, ou se está a afetar a sua saúde financeira, por favor procure ajuda:",
+    "helpline": "Linha de Ajuda Nacional para Problemas com Jogo: 1-800-522-4700",
+    "ga": "Jogadores Anónimos:",
+    "ncpg": "NCPG (Conselho sobre Jogo Compulsivo):",
+    "remember": "Os bilhetes de lotaria devem ser usados apenas como entretenimento com dinheiro que pode perder. Nunca confie neles para planeamento financeiro.",
+    "rememberLabel": "Lembre-se:"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Spil",
+  "subtitle": "Vælg et lotterispil at spille og lær om odds.",
+  "createGame": "+ Opret et spil",
+  "errorTitle": "Fejl ved indlæsning af spil",
+  "loadingGames": "Indlæser spil",
+  "loadingText": "Indlæser spil...",
+  "noGamesTitle": "Ingen tilgængelige spil",
+  "noGamesText": "Kom tilbage snart for lotterispil at spille.",
+  "card": {
+    "pick": "Vælg",
+    "from": "Fra",
+    "bonus": "Bonus",
+    "odds": "Odds",
+    "oddsValue": "1 ud af {{value}}",
+    "playGame": "Spil →",
+    "viewStats": "Se statistik"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "games": "Jocuri",
+    "stats": "Statistici",
+    "learn": "Învață",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "appTitle": "Educatorul Loteriei",
+  "skipToContent": "Salt la conținutul principal",
+  "switchToDark": "Comută la modul întunecat",
+  "switchToLight": "Comută la modul luminos",
+  "openMenu": "Deschide meniul",
+  "closeMenu": "Închide meniul",
+  "footer": {
+    "privacyText": "Respectăm confidențialitatea ta. Nu colectăm date personale.",
+    "dataDeleted": "Datele tale au fost șterse.",
+    "deleteConfirm": "Ștergi toate datele tale locale?",
+    "confirmYes": "Da, șterge",
+    "confirmCancel": "Anulează",
+    "deleteButton": "Șterge datele mele",
+    "deleteAriaLabel": "Șterge datele mele"
+  },
+  "consent": {
+    "ariaLabel": "Consimțământ pentru cookie-uri",
+    "text": "Folosim analize anonime pentru a îmbunătăți experiența de învățare. Nu colectăm date personale. Poți șterge datele tale oricând.",
+    "accept": "Accept",
+    "decline": "Refuz"
+  }
+}

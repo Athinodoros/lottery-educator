@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import './DrawAnimation.css'
 
 interface DrawAnimationProps {
@@ -9,8 +10,10 @@ interface DrawAnimationProps {
 export function DrawAnimation({
   isDrawing,
   progress,
-  message = 'Drawing lottery...',
+  message,
 }: DrawAnimationProps) {
+  const { t } = useTranslation('gameplay')
+
   if (!isDrawing) {
     return null
   }
@@ -19,7 +22,7 @@ export function DrawAnimation({
     <div className="draw-animation-overlay">
       <div className="draw-animation-container">
         <div className="spinner"></div>
-        <p className="draw-message">{message}</p>
+        <p className="draw-message">{message || t('drawingLottery')}</p>
         <div className="progress-bar-container">
           <div
             className="progress-bar-fill"

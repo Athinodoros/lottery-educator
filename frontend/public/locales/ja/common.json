@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "games": "ゲーム",
+    "stats": "統計",
+    "learn": "学ぶ",
+    "contact": "お問い合わせ",
+    "admin": "管理"
+  },
+  "appTitle": "宝くじ教育",
+  "skipToContent": "メインコンテンツへスキップ",
+  "switchToDark": "ダークモードに切り替え",
+  "switchToLight": "ライトモードに切り替え",
+  "openMenu": "メニューを開く",
+  "closeMenu": "メニューを閉じる",
+  "footer": {
+    "privacyText": "私たちはあなたのプライバシーを尊重します。個人データは一切収集しません。",
+    "dataDeleted": "あなたのデータは削除されました。",
+    "deleteConfirm": "すべてのローカルデータを削除しますか？",
+    "confirmYes": "はい、削除します",
+    "confirmCancel": "キャンセル",
+    "deleteButton": "データを削除",
+    "deleteAriaLabel": "自分のデータを削除"
+  },
+  "consent": {
+    "ariaLabel": "Cookie の同意",
+    "text": "学習体験を向上させるために匿名の分析を使用しています。個人データは一切収集しません。いつでもデータを削除できます。",
+    "accept": "同意する",
+    "decline": "拒否する"
+  }
+}

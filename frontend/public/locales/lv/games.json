@@ -1,0 +1,19 @@
+{
+  "title": "Spēles",
+  "subtitle": "Izvēlieties loterijas spēli, lai spēlētu un uzzinātu iespējas.",
+  "createGame": "+ Izveidot spēli",
+  "errorTitle": "Kļūda ielādējot spēles",
+  "loadingGames": "Spēles tiek ielādētas",
+  "loadingText": "Spēles tiek ielādētas...",
+  "noGamesTitle": "Nav pieejamu spēļu",
+  "noGamesText": "Drīzumā pārbaudiet – būs loterijas spēles.",
+  "card": {
+    "pick": "Izvēlēties",
+    "from": "No",
+    "bonus": "Bonuss",
+    "odds": "Iespējas",
+    "oddsValue": "1 no {{value}}",
+    "playGame": "Spēlēt →",
+    "viewStats": "Skatīt statistiku"
+  }
+}

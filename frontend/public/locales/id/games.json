@@ -1,0 +1,19 @@
+{
+  "title": "Permainan",
+  "subtitle": "Pilih permainan lotere untuk dimainkan dan pelajari peluangnya.",
+  "createGame": "+ Buat Permainan",
+  "errorTitle": "Gagal Memuat Permainan",
+  "loadingGames": "Memuat permainan",
+  "loadingText": "Memuat permainan...",
+  "noGamesTitle": "Tidak Ada Permainan",
+  "noGamesText": "Kunjungi kembali nanti untuk permainan lotere yang bisa dimainkan.",
+  "card": {
+    "pick": "Pilih",
+    "from": "Dari",
+    "bonus": "Bonus",
+    "odds": "Peluang",
+    "oddsValue": "1 dari {{value}}",
+    "playGame": "Mainkan →",
+    "viewStats": "Lihat Statistik"
+  }
+}

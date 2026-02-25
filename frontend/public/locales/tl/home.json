@@ -1,0 +1,14 @@
+{
+  "title": "Edukasyon sa Lotería",
+  "subtitle": "Alamin ang tunay na tsansa sa likod ng mga laro ng lotería",
+  "description": "Tuklasin kung bakit ang mga tiket ng lotería ay halos imposible sa estadistika at unawain ang matematika sa likod ng probabilidad ng laro.",
+  "cta": "Maglaro at Matuto",
+  "features": {
+    "interactiveGames": "Mga Interaktibong Laro",
+    "interactiveGamesDesc": "Mag-simulate ng libu-libong buntungan ng lotería upang maunawaan kung gaano katagal bago manalo.",
+    "realStatistics": "Totoong Estadistika",
+    "realStatisticsDesc": "Tingnan ang tunay na tsansa at probabilidad sa likod ng mga tanyag na laro ng lotería sa buong mundo.",
+    "financialEducation": "Edukasyon sa Pananalapi",
+    "financialEducationDesc": "Alamin kung bakit mahalaga ang pag-unawa sa probabilidad para sa mga desisyon sa personal na pananalapi."
+  }
+}

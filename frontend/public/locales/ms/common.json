@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Utama",
+    "games": "Permainan",
+    "stats": "Statistik",
+    "learn": "Belajar",
+    "contact": "Hubungi",
+    "admin": "Pentadbir"
+  },
+  "appTitle": "Pendidikan Loteri",
+  "skipToContent": "Langkau ke kandungan utama",
+  "switchToDark": "Tukar ke mod gelap",
+  "switchToLight": "Tukar ke mod cerah",
+  "openMenu": "Buka menu",
+  "closeMenu": "Tutup menu",
+  "footer": {
+    "privacyText": "Kami menghormati privasi anda. Tiada data peribadi dikumpulkan.",
+    "dataDeleted": "Data anda telah dipadam.",
+    "deleteConfirm": "Padam semua data tempatan anda?",
+    "confirmYes": "Ya, padam",
+    "confirmCancel": "Batal",
+    "deleteButton": "Padam Data Saya",
+    "deleteAriaLabel": "Padam data saya"
+  },
+  "consent": {
+    "ariaLabel": "Persetujuan kuki",
+    "text": "Kami menggunakan analitik tanpa nama untuk meningkatkan pengalaman pembelajaran. Tiada data peribadi dikumpulkan. Anda boleh memadam data anda pada bila-bila masa.",
+    "accept": "Terima",
+    "decline": "Tolak"
+  }
+}

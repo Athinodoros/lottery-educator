@@ -14,7 +14,7 @@
 .not-found-code {
   font-size: 96px;
   font-weight: 800;
-  color: #e5e7eb;
+  color: var(--color-border);
   line-height: 1;
   margin-bottom: 8px;
 }
@@ -22,13 +22,13 @@
 .not-found-title {
   font-size: 24px;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-text);
   margin-bottom: 12px;
 }
 
 .not-found-message {
   font-size: 15px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   line-height: 1.6;
   margin-bottom: 32px;
 }
@@ -38,8 +38,8 @@
   align-items: center;
   gap: 8px;
   padding: 10px 24px;
-  background: #6366f1;
-  color: white;
+  background: var(--color-primary);
+  color: #fff;
   border-radius: 8px;
   font-weight: 600;
   font-size: 14px;
@@ -48,6 +48,6 @@
 }
 
 .not-found-home:hover {
-  background: #4f46e5;
-  color: white;
+  background: var(--color-primary-hover);
+  color: #fff;
 }

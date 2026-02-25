@@ -11,11 +11,11 @@
 .consent-inner {
   max-width: 600px;
   margin: 0 auto;
-  background: white;
-  border: 1px solid #e5e7eb;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   padding: 16px 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   gap: 16px;
@@ -23,7 +23,7 @@
 
 .consent-text {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--color-text-muted);
   line-height: 1.5;
   flex: 1;
 }
@@ -37,8 +37,8 @@
 .consent-accept {
   font-size: 13px;
   font-weight: 600;
-  color: white;
-  background: #6366f1;
+  color: #fff;
+  background: var(--color-primary);
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -47,15 +47,15 @@
 }
 
 .consent-accept:hover {
-  background: #4f46e5;
+  background: var(--color-primary-hover);
 }
 
 .consent-decline {
   font-size: 13px;
   font-weight: 500;
-  color: #6b7280;
+  color: var(--color-text-muted);
   background: none;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--color-border-strong);
   padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
@@ -63,8 +63,8 @@
 }
 
 .consent-decline:hover {
-  color: #374151;
-  border-color: #9ca3af;
+  color: var(--color-text-secondary);
+  border-color: var(--color-text-dim);
 }
 
 @keyframes slideUp {

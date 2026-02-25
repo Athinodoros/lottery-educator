@@ -1,0 +1,14 @@
+{
+  "title": "Loterii haridus",
+  "subtitle": "Õppige tundma loteriimängude tegelikke võimalusi",
+  "description": "Avastage, miks loteripiletid on statistiliselt peaaegu võimatud, ja mõistke mängude tõenäosuste matemaatikat.",
+  "cta": "Mängige ja õppige",
+  "features": {
+    "interactiveGames": "Interaktiivsed mängud",
+    "interactiveGamesDesc": "Simuleerige tuhandeid loterii loosimisi, et mõista, kui kaua tegelikult võidu ootamine kestab.",
+    "realStatistics": "Tõeline statistika",
+    "realStatisticsDesc": "Vaadake populaarsete loteriimängude tegelikke võimalusi ja tõenäosusi üle kogu maailma.",
+    "financialEducation": "Finantsharidus",
+    "financialEducationDesc": "Õppige, miks tõenäosuste mõistmine on isiklike rahanduse otsuste jaoks ülioluline."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "title": "Poznejte Matematiku Loterie",
+  "subtitle": "Pochopte skutečné šance za loterijními hrami",
+  "probability": {
+    "title": "Co je Pravděpodobnost?",
+    "text": "Pravděpodobnost je matematická šance, že k události dojde. Vyjadřuje se jako číslo mezi 0 a 1, kde 0 znamená nemožné a 1 jisté. Například pravděpodobnost, že při hodu spravedlivou mincí padne hlava, je 0,5 (neboli 50 %), protože existují dva stejně pravděpodobné výsledky.",
+    "exampleTitle": "Příklad: Hod Kostkou",
+    "exampleText": "Když hodíte spravedlivou šestistrannou kostkou:",
+    "exampleItem1": "Existuje 6 možných výsledků (1, 2, 3, 4, 5, 6)",
+    "exampleItem2": "Pravděpodobnost, že padne 3, je 1/6 ≈ 16,67 %",
+    "exampleItem3": "Pravděpodobnost, že padne jakékoliv číslo, je stejná"
+  },
+  "combinations": {
+    "title": "Kombinace a Permutace",
+    "text": "Při výpočtu loterijních šancí musíme pochopit, kolika různými způsoby lze položky vybrat a uspořádat. Ve většině loterií na pořadí čísel nezáleží, proto používáme <strong>kombinace</strong>.",
+    "exampleTitle": "Příklad: Výběr 6 z 49",
+    "exampleText": "V typické loterii, kde vybíráte 6 čísel ze 49:",
+    "exampleItem1": "Počet možných kombinací je přibližně 13,98 milionu",
+    "exampleItem2": "Vaše šance na výhru s jedním losem je 1 ku 13,98 milionu",
+    "exampleItem3": "To je 0,0000072% šance na výhru!"
+  },
+  "expectedValue": {
+    "title": "Očekávaná Hodnota",
+    "text": "Očekávaná hodnota je průměrná částka, kterou očekáváte, že vyhrajete nebo prohrajete na jeden sázku v dlouhodobém horizontu. U loterií je očekávaná hodnota vždy záporná, což znamená, že v průměru proděláváte.",
+    "exampleTitle": "Příklad: Jednoduchá Loterie",
+    "exampleText": "Představte si loterii, kde:",
+    "exampleItem1": "Cena losu: $1",
+    "exampleItem2": "Pravděpodobnost výhry $10: 10 %",
+    "exampleItem3": "Pravděpodobnost výhry ničeho: 90 %",
+    "exampleItem4": "Očekávaná hodnota = (0,10 × $10) + (0,90 × $0) − $1 = $1 − $1 = $0",
+    "exampleItem5": "Časem byste vycházeli na nulu, ale skutečné loterie jsou horší!"
+  },
+  "houseFavor": {
+    "title": "Proč Loterie Vždy Zvýhodňují Dům",
+    "text": "Skutečné loterie si ponechávají procento z prodeje losů (obvykle 30-50 %) před vyplacením výher. Tomu se říká \"výhoda domu\". Zde je, co to znamená:",
+    "exampleTitle": "Příklad: Skutečná Matematika Loterie",
+    "forEvery100": "Na každých $100 z prodeje losů:",
+    "item1": "$40-50 jde organizátoru loterie (stát, společnost atd.)",
+    "item2": "$40-50 se rozdělí mezi výherce",
+    "item3": "Zbývající prostředky jdou na veřejně prospěšné účely (vzdělání, infrastruktura atd.)",
+    "item4": "Výsledek: Hráči dostávají zpět pouze 50-60 centů za každý utracený dolar"
+  },
+  "comparison": {
+    "title": "Loterie vs Investování: Srovnání za 30 Let",
+    "text": "Co kdybyste peníze, které byste utratili za loterijní losy, místo toho investovali? Porovnejme utrácení $20 týdně za loterijní losy s investováním stejné částky.",
+    "lotteryTitle": "Loterijní Losy",
+    "investTitle": "Investice do Indexového Fondu",
+    "weeklySpend": "Týdenní útrata",
+    "weeklyInvest": "Týdenní investice",
+    "totalSpent": "Celkem utraceno (30 let)",
+    "totalInvested": "Celkem investováno (30 let)",
+    "expectedReturn": "Očekávaný výnos",
+    "portfolioValue": "Hodnota portfolia",
+    "netResult": "Čistý výsledek",
+    "netGain": "Čistý zisk",
+    "lotteryNote": "Na základě průměrného poměru výplat 50 %",
+    "investNote": "Na základě ~7% průměrného ročního výnosu (historický S&P 500)",
+    "takeaway": "<strong>Rozdíl:</strong> Za 30 let hráč loterie ztratí přibližně $15 600, zatímco investor získá přibližně $70 800. To je rozdíl $86 400 ze stejných $20 týdně."
+  },
+  "gamblersFallacy": {
+    "title": "\"Hráčský Klam\"",
+    "text": "Mnoho lidí věří, že minulé výsledky ovlivňují budoucí výsledky u nezávislých událostí. To je nesprávné. Každé losování loterie je nezávislé a předchozí výsledky neovlivňují budoucí.",
+    "exampleTitle": "Časté Mylné Představy",
+    "misconception1": "\"Sedmička padla minulý týden, takže je tento týden méně pravděpodobná\"",
+    "reality1": "Každé číslo má při každém losování přesně stejnou šanci",
+    "misconception2": "\"Po tolika prohrách si zasloužím výhru\"",
+    "reality2": "Předchozí prohry nezvyšují vaši šanci na výhru",
+    "misconception3": "\"Tato čísla jsou 'horká', takže jsou pravděpodobnější\"",
+    "reality3": "Často losovaná čísla jsou stejně pravděpodobná jako vzácná",
+    "misconceptionLabel": "Mylná představa:",
+    "realityLabel": "Skutečnost:"
+  },
+  "largeNumbers": {
+    "title": "Zákon Velkých Čísel",
+    "text": "Čím více her odehrajete, tím více se vaše skutečné výsledky blíží k teoretické pravděpodobnosti. To však neznamená, že \"nakonec vyhrajete\" - znamená to, že nakonec ztratíte ještě více peněz!",
+    "exampleTitle": "Co Ukazují Čísla",
+    "item1": "Zahrajte si 1 loterijní los: Můžete vyhrát jednou za život",
+    "item2": "Zahrajte si 100 losů: Vaše šance se zlepší, ale očekávaná ztráta je stále celá vaše investice",
+    "item3": "Zahrajte si 1 000 losů: Jste blíže statistickému průměru (ztráta ~50-60 % utracených peněz)",
+    "item4": "Čím více hrajete, tím více se vaše ztráty blíží matematickému očekávání"
+  },
+  "lessons": {
+    "title": "Chytré Finanční Lekce",
+    "text": "Pochopení matematiky loterie nás učí cenným lekcím o pravděpodobnosti a ekonomických rozhodnutích:",
+    "riskReward": "Riziko vs Odměna",
+    "riskRewardText": "Vždy vyhodnocujte šance oproti potenciální odměně. U loterií je poměr rizika k odměně extrémně nevýhodný ve srovnání s jinými investicemi.",
+    "statThinking": "Statistické Myšlení",
+    "statThinkingText": "Rozhodujte se na základě dat a pravděpodobnosti, nikoli naděje nebo pověr. To platí pro investování, pojištění a velká životní rozhodnutí.",
+    "longTermPlanning": "Dlouhodobé Plánování",
+    "longTermPlanningText": "Výhry v loterii jsou nespolehlivé. Budování bohatství prostřednictvím pravidelného spoření a investování (i malých částek) je mnohem spolehlivější než doufání v jackpot.",
+    "psychologyLoss": "Psychologie Ztráty",
+    "psychologyLossText": "Pochopte, jak nás naše mozky klamou k špatným rozhodnutím. Přeceňujeme malé pravděpodobnosti a podceňujeme naše ztráty, když jsou rozloženy v čase."
+  },
+  "cta": {
+    "title": "Přesvědčte Se Sami",
+    "text": "Nejlepší způsob, jak pochopit loterijní šance, je zažít je na vlastní kůži. Vyzkoušejte náš interaktivní loterijní simulátor a sledujte, kolik losování je potřeba k trefení vašich čísel.",
+    "trySimulator": "Vyzkoušet Simulátor",
+    "viewStatistics": "Zobrazit Statistiky"
+  },
+  "responsible": {
+    "title": "Zodpovědné Hraní",
+    "text": "Pokud někdy pocítíte, že se loterijní hra stává problémem, nebo pokud ovlivňuje vaše finanční zdraví, prosím vyhledejte pomoc:",
+    "helpline": "Národní Linka Pomoci pro Problémy s Hazardem: 1-800-522-4700",
+    "ga": "Anonymní Hráči:",
+    "ncpg": "NCPG (Rada pro Kompulzivní Hazard):",
+    "remember": "Loterijní losy by měly být používány pouze jako zábava za peníze, které si můžete dovolit ztratit. Nikdy se na ně nespoléhejte při finančním plánování.",
+    "rememberLabel": "Pamatujte:"
+  }
+}

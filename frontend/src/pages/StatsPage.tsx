@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { useSessionStore } from '../store/useSessionStore'
 import StatCard from '../components/StatCard'
 import { SkeletonCard } from '../components/Skeleton'
 import { metricsApi } from '../api/metrics'
 import { gameApi } from '../api/games'
 import apiClient from '../api/client'
+import { formatNumber as fmtNum } from '../utils/formatNumber'
 import './StatsPage.css'
 
 function StatsPage() {
   const navigate = useNavigate()
+  const { t, i18n } = useTranslation('stats')
   const recordPageView = useSessionStore((state) => state.recordPageView)
+  const lng = i18n.language
 
   const [sessionStats, setSessionStats] = useState<any>(null)
   const [playStats, setPlayStats] = useState<any>(null)
@@ -58,10 +62,9 @@ function StatsPage() {
   return (
     <div className="stats-page">
       <header className="stats-header">
-        <h1>Lottery Statistics</h1>
+        <h1>{t('title')}</h1>
         <p>
-          Explore the odds and win rates across all lottery games. Understand why lottery
-          tickets are statistically a losing proposition.
+          {t('subtitle')}
         </p>
       </header>
 
@@ -73,8 +76,8 @@ function StatsPage() {
       )}
 
       {loading && (
-        <div role="status" aria-label="Loading statistics">
-          <span className="sr-only">Loading statistics...</span>
+        <div role="status" aria-label={t('loadingStats')}>
+          <span className="sr-only">{t('loadingText')}</span>
           <div className="stats-grid">
             {[1, 2, 3, 4, 5, 6].map((i) => (
               <SkeletonCard key={i} />
@@ -85,10 +88,10 @@ function StatsPage() {
 
       {!loading && !sessionStats && !playStats && gameDrawStats.length === 0 && !error && (
         <div className="empty-state">
-          <h2>No Statistics Available</h2>
-          <p>Play some games first to see statistics!</p>
+          <h2>{t('noStatsTitle')}</h2>
+          <p>{t('noStatsText')}</p>
           <button className="play-button" onClick={() => navigate('/games')}>
-            Go to Games
+            {t('goToGames')}
           </button>
         </div>
       )}
@@ -99,19 +102,19 @@ function StatsPage() {
             {sessionStats && (
               <>
                 <StatCard
-                  label="Total Sessions"
+                  label={t('totalSessions')}
                   value={formatNumber(sessionStats.totalSessions || 0)}
                 />
                 <StatCard
-                  label="Active Sessions"
+                  label={t('activeSessions')}
                   value={formatNumber(sessionStats.activeSessions || 0)}
                 />
                 <StatCard
-                  label="Avg Session Duration"
+                  label={t('avgSessionDuration')}
                   value={`${Number(sessionStats.avgSessionDuration || 0).toFixed(1)}m`}
                 />
                 <StatCard
-                  label="Bounce Rate"
+                  label={t('bounceRate')}
                   value={`${Number(sessionStats.bounceRate || 0).toFixed(1)}%`}
                 />
               </>
@@ -120,19 +123,19 @@ function StatsPage() {
             {playStats && (
               <>
                 <StatCard
-                  label="Total Plays"
+                  label={t('totalPlays')}
                   value={formatNumber(playStats.totalPlays || 0)}
                 />
                 <StatCard
-                  label="Play Conversion Rate"
+                  label={t('playConversionRate')}
                   value={`${Number(playStats.playConversionRate || 0).toFixed(1)}%`}
                 />
                 <StatCard
-                  label="Avg Plays Per Session"
+                  label={t('avgPlaysPerSession')}
                   value={Number(playStats.avgPlaysPerSession || 0).toFixed(1)}
                 />
                 <StatCard
-                  label="Favorite Game"
+                  label={t('favoriteGame')}
                   value={playStats.favoritGame || 'N/A'}
                 />
               </>
@@ -140,10 +143,10 @@ function StatsPage() {
           </section>
 
           {gameDrawStats.length > 0 && (
-            <section className="avg-draws-section" aria-label="Average draws per game">
-              <h2>Average Draws to Win</h2>
+            <section className="avg-draws-section" aria-label={t('avgDrawsToWin')}>
+              <h2>{t('avgDrawsToWin')}</h2>
               <p className="section-subtitle">
-                How many draws it takes on average to match your numbers for each game.
+                {t('avgDrawsSubtitle')}
               </p>
               <div className="avg-draws-grid">
                 {gameDrawStats.map((stat: any) => (
@@ -154,15 +157,15 @@ function StatsPage() {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => e.key === 'Enter' && handleGameClick(stat.game_id)}
-                    aria-label={`${stat.name}: ${Number(stat.avg_draws_to_win).toLocaleString('de-DE')} average draws. Click for details.`}
+                    aria-label={`${stat.name}: ${fmtNum(Number(stat.avg_draws_to_win), lng)} average draws.`}
                   >
                     <span className="avg-draws-name">{stat.name}</span>
                     <span className="avg-draws-value">
-                      {Number(stat.avg_draws_to_win).toLocaleString('de-DE')}
+                      {fmtNum(Number(stat.avg_draws_to_win), lng)}
                     </span>
-                    <span className="avg-draws-label">avg draws</span>
+                    <span className="avg-draws-label">{t('avgDrawsLabel')}</span>
                     <span className="avg-draws-plays">
-                      {Number(stat.total_plays).toLocaleString('de-DE')} plays
+                      {t('playsLabel', { count: Number(stat.total_plays) })}
                     </span>
                   </div>
                 ))}
@@ -171,15 +174,15 @@ function StatsPage() {
           )}
 
           {games.length > 0 && (
-            <section className="games-stats-section" aria-label="Game-specific statistics">
-              <h2>Game-Specific Statistics</h2>
+            <section className="games-stats-section" aria-label={t('gameSpecificStats')}>
+              <h2>{t('gameSpecificStats')}</h2>
               <div className="games-list">
                 {games.map((game) => (
                   <button
                     key={game.id}
                     className="game-stat-link"
                     onClick={() => handleGameClick(game.id)}
-                    aria-label={`View statistics for ${game.name}`}
+                    aria-label={t('viewStatsFor', { name: game.name })}
                   >
                     {game.name}
                   </button>
@@ -190,32 +193,22 @@ function StatsPage() {
 
           <section className="stats-info" aria-label="Educational information">
             <div className="info-section">
-              <h3>Understanding Lottery Odds</h3>
-              <p>
-                Lottery games are designed with odds heavily stacked against players. The average
-                draws to win metric shows how many iterations you would need to run before hitting
-                the specific combination you selected.
-              </p>
-              <p>
-                Click on any game to see detailed probability calculations and learn more about the
-                mathematical impossibility of winning based on combinatorics.
-              </p>
+              <h3>{t('understandingOdds')}</h3>
+              <p>{t('understandingOddsText1')}</p>
+              <p>{t('understandingOddsText2')}</p>
             </div>
 
             <div className="info-section">
-              <h3>Why This Matters</h3>
+              <h3>{t('whyMatters')}</h3>
               <ul>
                 <li>
-                  <strong>Personal Finance:</strong> Understanding odds helps you make better
-                  financial decisions
+                  <strong>{t('personalFinance')}</strong> {t('personalFinanceText')}
                 </li>
                 <li>
-                  <strong>Statistical Literacy:</strong> Lottery odds are a great way to learn
-                  about probability
+                  <strong>{t('statLiteracy')}</strong> {t('statLiteracyText')}
                 </li>
                 <li>
-                  <strong>Expected Value:</strong> Most lotteries have a negative expected value,
-                  meaning you lose money on average
+                  <strong>{t('expectedValue')}</strong> {t('expectedValueText')}
                 </li>
               </ul>
             </div>

@@ -1,0 +1,19 @@
+{
+  "title": "Mängud",
+  "subtitle": "Valige loteriimäng mängimiseks ja võimaluste tundmaõppimiseks.",
+  "createGame": "+ Loo mäng",
+  "errorTitle": "Viga mängude laadimisel",
+  "loadingGames": "Mängude laadimine",
+  "loadingText": "Mängude laadimine...",
+  "noGamesTitle": "Mänge pole saadaval",
+  "noGamesText": "Vaadake peagi uuesti – loteriimängud on tulekul.",
+  "card": {
+    "pick": "Vali",
+    "from": "Vahemikust",
+    "bonus": "Boonus",
+    "odds": "Võimalused",
+    "oddsValue": "1 {{value}}-st",
+    "playGame": "Mängi →",
+    "viewStats": "Vaata statistikat"
+  }
+}

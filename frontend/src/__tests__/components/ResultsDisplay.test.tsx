@@ -40,13 +40,13 @@ describe('ResultsDisplay Component', () => {
   describe('Loss result', () => {
     it('should show losing header for non-winner', () => {
       render(<ResultsDisplay result={loserResult} />)
-      expect(screen.getByRole('heading', { name: /better luck/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /results\.betterLuck/ })).toBeTruthy()
     })
 
     it('should display draws to win', () => {
       render(<ResultsDisplay result={loserResult} />)
-      // draws_to_win appears in stat-value span and in the footer text — use getAllByText
-      const matches = screen.getAllByText(/8\.500\.000|8,500,000|8500000/)
+      // draws_to_win appears in stat-value span — formatNumber('en') formats with commas
+      const matches = screen.getAllByText(/8,500,000/)
       expect(matches.length).toBeGreaterThan(0)
     })
 
@@ -65,7 +65,7 @@ describe('ResultsDisplay Component', () => {
   describe('Win result', () => {
     it('should show winner header', () => {
       render(<ResultsDisplay result={winnerResult} />)
-      expect(screen.getByRole('heading', { name: /you won/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /results\.youWon/ })).toBeTruthy()
     })
 
     it('should show draws count for winner', () => {
@@ -97,10 +97,10 @@ describe('ResultsDisplay Component', () => {
   describe('Educational footer', () => {
     it('should display educational message about draws needed', () => {
       render(<ResultsDisplay result={loserResult} />)
-      // Footer fact section contains draw/lottery related text
+      // Footer fact section contains the translation key
       const factEl = document.querySelector('.fact')
       expect(factEl).toBeTruthy()
-      expect(factEl?.textContent).toMatch(/draw|lottery|odds/i)
+      expect(factEl?.textContent).toMatch(/results\.fact/)
     })
   })
 })

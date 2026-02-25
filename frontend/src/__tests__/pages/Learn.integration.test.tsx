@@ -39,35 +39,35 @@ describe('Learn Page - Integration Test', () => {
     it('should display probability section heading', () => {
       renderLearn()
       // Use heading query to avoid matching ancestor containers
-      expect(screen.getByRole('heading', { name: /probability/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /probability\.title/ })).toBeTruthy()
     })
 
     it('should display combinations or permutations section heading', () => {
       renderLearn()
-      expect(screen.getByRole('heading', { name: /combination|permutation/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /combinations\.title/ })).toBeTruthy()
     })
 
     it('should display expected value section heading', () => {
       renderLearn()
-      expect(screen.getByRole('heading', { name: /expected value/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /expectedValue\.title/ })).toBeTruthy()
     })
 
     it('should display responsible gaming section', () => {
       renderLearn()
       // Heading or strong text about responsible gaming
-      expect(screen.getByRole('heading', { name: /responsible/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /responsible\.title/ })).toBeTruthy()
     })
   })
 
   describe('Educational content', () => {
     it('should explain gambler\'s fallacy', () => {
       renderLearn()
-      expect(screen.getByRole('heading', { name: /gambler/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /gamblersFallacy\.title/ })).toBeTruthy()
     })
 
     it('should mention law of large numbers', () => {
       renderLearn()
-      expect(screen.getByRole('heading', { name: /large numbers/i })).toBeTruthy()
+      expect(screen.getByRole('heading', { name: /largeNumbers\.title/ })).toBeTruthy()
     })
 
     it('should provide multiple lesson headings', () => {

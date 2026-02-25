@@ -43,13 +43,13 @@ describe('GameCard Component', () => {
 
   it('should have play button with link to game', () => {
     render(<GameCard game={mockGame} />)
-    const playButton = screen.getByRole('link', { name: /play/i })
+    const playButton = screen.getByRole('link', { name: /card\.playGame/i })
     expect(playButton.getAttribute('href')).toBe(`/games/${mockGame.id}`)
   })
 
   it('should have stats button with link to statistics', () => {
     render(<GameCard game={mockGame} />)
-    const statsButton = screen.getByRole('link', { name: /stats/i })
+    const statsButton = screen.getByRole('link', { name: /card\.viewStats/i })
     expect(statsButton.getAttribute('href')).toBe(`/stats/${mockGame.id}`)
   })
 
@@ -66,7 +66,7 @@ describe('GameCard Component', () => {
     const user = userEvent.setup()
     render(<GameCard game={mockGame} />)
     
-    const playButton = screen.getByRole('link', { name: /play/i })
+    const playButton = screen.getByRole('link', { name: /card\.playGame/i })
     await user.tab()
     expect(document.activeElement).toBe(playButton)
   })

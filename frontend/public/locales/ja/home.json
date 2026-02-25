@@ -1,0 +1,14 @@
+{
+  "title": "宝くじ教育",
+  "subtitle": "宝くじゲームの本当の確率を学ぼう",
+  "description": "なぜ宝くじは統計的にほぼ当たらないのか、ゲーム確率の背後にある数学を理解しましょう。",
+  "cta": "ゲームで遊んで学ぶ",
+  "features": {
+    "interactiveGames": "インタラクティブゲーム",
+    "interactiveGamesDesc": "数千回の宝くじ抽選をシミュレーションして、当選までにどれくらいかかるか体験しましょう。",
+    "realStatistics": "リアルな統計",
+    "realStatisticsDesc": "世界中の人気宝くじゲームの本当のオッズと確率を見てみましょう。",
+    "financialEducation": "金融教育",
+    "financialEducationDesc": "確率を理解することが個人の財務判断にとって重要な理由を学びましょう。"
+  }
+}

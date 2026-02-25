@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Domov",
+    "games": "Hry",
+    "stats": "Štatistiky",
+    "learn": "Vzdelávanie",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Lotériový Vzdelávateľ",
+  "skipToContent": "Preskočiť na hlavný obsah",
+  "switchToDark": "Prepnúť na tmavý režim",
+  "switchToLight": "Prepnúť na svetlý režim",
+  "openMenu": "Otvoriť menu",
+  "closeMenu": "Zatvoriť menu",
+  "footer": {
+    "privacyText": "Rešpektujeme vaše súkromie. Žiadne osobné údaje nie sú zhromažďované.",
+    "dataDeleted": "Vaše údaje boli vymazané.",
+    "deleteConfirm": "Vymazať všetky vaše lokálne údaje?",
+    "confirmYes": "Áno, vymazať",
+    "confirmCancel": "Zrušiť",
+    "deleteButton": "Vymazať Moje Údaje",
+    "deleteAriaLabel": "Vymazať moje údaje"
+  },
+  "consent": {
+    "ariaLabel": "Súhlas s cookies",
+    "text": "Používame anonymné analýzy na zlepšenie vzdelávacieho zážitku. Žiadne osobné údaje nie sú zhromažďované. Svoje údaje môžete kedykoľvek vymazať.",
+    "accept": "Prijať",
+    "decline": "Odmietnuť"
+  }
+}

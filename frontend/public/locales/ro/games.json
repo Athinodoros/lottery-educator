@@ -1,0 +1,19 @@
+{
+  "title": "Jocuri",
+  "subtitle": "Selectează un joc de loterie pentru a juca și a afla șansele.",
+  "createGame": "+ Creează un joc",
+  "errorTitle": "Eroare la încărcarea jocurilor",
+  "loadingGames": "Se încarcă jocurile",
+  "loadingText": "Se încarcă jocurile...",
+  "noGamesTitle": "Nu sunt jocuri disponibile",
+  "noGamesText": "Revino curând pentru jocuri de loterie.",
+  "card": {
+    "pick": "Alege",
+    "from": "Din",
+    "bonus": "Bonus",
+    "odds": "Șanse",
+    "oddsValue": "1 la {{value}}",
+    "playGame": "Joacă →",
+    "viewStats": "Statistici"
+  }
+}

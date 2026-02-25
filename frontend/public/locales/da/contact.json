@@ -1,0 +1,22 @@
+{
+  "title": "Kontakt os",
+  "subtitle": "Har du spørgsmål eller feedback? Vi vil gerne høre fra dig.",
+  "successTitle": "Besked sendt!",
+  "successText": "Tak fordi du kontaktede os. Vi vil gennemgå din besked snart.",
+  "sendAnother": "Send endnu en besked",
+  "emailLabel": "E-mailadresse",
+  "emailPlaceholder": "din@email.dk",
+  "emailError": "Indtast venligst en gyldig e-mailadresse",
+  "subjectLabel": "Emne",
+  "subjectPlaceholder": "Hvad handler det om?",
+  "messageLabel": "Besked",
+  "messagePlaceholder": "Fortæl os hvad du tænker på...",
+  "sending": "Sender...",
+  "sendMessage": "Send besked",
+  "aboutProject": "Om dette projekt",
+  "aboutProjectText": "Lottery Educator er et gratis uddannelsesværktøj, der hjælper folk med at forstå de reelle odds for at vinde i lotteriet gennem interaktive simuleringer.",
+  "privacy": "Privatliv",
+  "privacyText": "Vi respekterer dit privatliv. Din e-mail bruges kun til at svare på din besked. Vi gemmer ikke IP-adresser eller deler dine oplysninger. Du kan til enhver tid anmode om sletning af dine data.",
+  "openSource": "Open source",
+  "openSourceText": "Dette projekt er open source. Hvis du finder en fejl eller vil bidrage, er du velkommen til at oprette et issue eller en pull request på GitHub."
+}

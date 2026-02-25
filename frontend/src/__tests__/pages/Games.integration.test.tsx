@@ -72,7 +72,7 @@ describe('Games List - GameCard Component', () => {
       </BrowserRouter>
     )
 
-    const playButtons = screen.getAllByRole('link', { name: /play/i })
+    const playButtons = screen.getAllByRole('link', { name: /card\.playGame/ })
     expect(playButtons.length).toBeGreaterThan(0)
     expect(playButtons[0].getAttribute('href')).toBe(`/games/${mockGame.id}`)
   })
@@ -84,7 +84,7 @@ describe('Games List - GameCard Component', () => {
       </BrowserRouter>
     )
 
-    const statsButtons = screen.getAllByRole('link', { name: /stats/i })
+    const statsButtons = screen.getAllByRole('link', { name: /card\.viewStats/ })
     expect(statsButtons.length).toBeGreaterThan(0)
     expect(statsButtons[0].getAttribute('href')).toBe(`/stats/${mockGame.id}`)
   })
@@ -114,8 +114,8 @@ describe('Games List - GameCard Component', () => {
     expect(screen.getByText('Pick 5 from 69, plus 1 from 26')).toBeTruthy()
 
     // Verify buttons are present
-    const playButtons = screen.getAllByRole('link', { name: /play/i })
-    const statsButtons = screen.getAllByRole('link', { name: /stats/i })
+    const playButtons = screen.getAllByRole('link', { name: /card\.playGame/ })
+    const statsButtons = screen.getAllByRole('link', { name: /card\.viewStats/ })
     expect(playButtons.length).toBeGreaterThan(0)
     expect(statsButtons.length).toBeGreaterThan(0)
   })
@@ -200,8 +200,8 @@ describe('Games List - Responsive Design', () => {
     )
 
     // Buttons should be accessible with labels
-    const playBtn = screen.getByRole('link', { name: /play/i })
-    const statsBtn = screen.getByRole('link', { name: /stats/i })
+    const playBtn = screen.getByRole('link', { name: /card\.playGame/ })
+    const statsBtn = screen.getByRole('link', { name: /card\.viewStats/ })
 
     expect(playBtn).toBeTruthy()
     expect(statsBtn).toBeTruthy()

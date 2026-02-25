@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSessionStore } from '../store/useSessionStore'
 import './PrivacyFooter.css'
 
 function PrivacyFooter() {
+  const { t } = useTranslation()
   const forgetMe = useSessionStore((state) => state.forgetMe)
   const [showConfirm, setShowConfirm] = useState(false)
   const [deleted, setDeleted] = useState(false)
@@ -17,23 +19,23 @@ function PrivacyFooter() {
     <footer className="privacy-footer">
       <div className="privacy-footer-inner">
         <span className="privacy-text">
-          We respect your privacy. No personal data is collected.
+          {t('footer.privacyText')}
         </span>
         {deleted ? (
-          <span className="privacy-confirmed" role="status">Your data has been deleted.</span>
+          <span className="privacy-confirmed" role="status">{t('footer.dataDeleted')}</span>
         ) : showConfirm ? (
           <span className="privacy-confirm" role="alert">
-            <span>Delete all your local data?</span>
-            <button className="confirm-yes" onClick={handleDelete}>Yes, delete</button>
-            <button className="confirm-no" onClick={() => setShowConfirm(false)}>Cancel</button>
+            <span>{t('footer.deleteConfirm')}</span>
+            <button className="confirm-yes" onClick={handleDelete}>{t('footer.confirmYes')}</button>
+            <button className="confirm-no" onClick={() => setShowConfirm(false)}>{t('footer.confirmCancel')}</button>
           </span>
         ) : (
           <button
             className="privacy-delete-btn"
             onClick={() => setShowConfirm(true)}
-            aria-label="Delete my data"
+            aria-label={t('footer.deleteAriaLabel')}
           >
-            Delete My Data
+            {t('footer.deleteButton')}
           </button>
         )}
       </div>

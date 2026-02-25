@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "games": "Gry",
+    "stats": "Statystyki",
+    "learn": "Nauka",
+    "contact": "Kontakt",
+    "admin": "Admin"
+  },
+  "appTitle": "Edukator Loteryjny",
+  "skipToContent": "Przejdź do głównej treści",
+  "switchToDark": "Przełącz na tryb ciemny",
+  "switchToLight": "Przełącz na tryb jasny",
+  "openMenu": "Otwórz menu",
+  "closeMenu": "Zamknij menu",
+  "footer": {
+    "privacyText": "Szanujemy Twoją prywatność. Żadne dane osobowe nie są zbierane.",
+    "dataDeleted": "Twoje dane zostały usunięte.",
+    "deleteConfirm": "Usunąć wszystkie Twoje lokalne dane?",
+    "confirmYes": "Tak, usuń",
+    "confirmCancel": "Anuluj",
+    "deleteButton": "Usuń Moje Dane",
+    "deleteAriaLabel": "Usuń moje dane"
+  },
+  "consent": {
+    "ariaLabel": "Zgoda na pliki cookie",
+    "text": "Używamy anonimowych analiz, aby poprawić doświadczenie nauki. Żadne dane osobowe nie są zbierane. Możesz usunąć swoje dane w dowolnym momencie.",
+    "accept": "Akceptuj",
+    "decline": "Odrzuć"
+  }
+}

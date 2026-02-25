@@ -141,7 +141,7 @@
 .play-link-btn {
   display: inline-block;
   background: var(--gradient-primary);
-  color: var(--color-bg-card);
+  color: #fff;
   border: none;
   border-radius: 8px;
   padding: 12px 28px;

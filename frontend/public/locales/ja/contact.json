@@ -1,0 +1,22 @@
+{
+  "title": "お問い合わせ",
+  "subtitle": "ご質問やフィードバックがありますか？お気軽にご連絡ください。",
+  "successTitle": "メッセージ送信完了！",
+  "successText": "ご連絡ありがとうございます。すぐにメッセージを確認いたします。",
+  "sendAnother": "別のメッセージを送信",
+  "emailLabel": "メールアドレス",
+  "emailPlaceholder": "your@email.com",
+  "emailError": "有効なメールアドレスを入力してください",
+  "subjectLabel": "件名",
+  "subjectPlaceholder": "どのようなご用件ですか？",
+  "messageLabel": "メッセージ",
+  "messagePlaceholder": "お気持ちをお聞かせください...",
+  "sending": "送信中...",
+  "sendMessage": "メッセージを送信",
+  "aboutProject": "このプロジェクトについて",
+  "aboutProjectText": "宝くじ教育は、インタラクティブなシミュレーションを通じて宝くじ当選の真のオッズを理解するのに役立つ無料の教育ツールです。",
+  "privacy": "プライバシー",
+  "privacyText": "私たちはあなたのプライバシーを尊重します。メールアドレスはメッセージへの返信のみに使用されます。IPアドレスの保存や情報の共有は行いません。いつでもデータの削除を要求できます。",
+  "openSource": "オープンソース",
+  "openSourceText": "このプロジェクトはオープンソースです。バグを見つけた場合や貢献したい場合は、GitHubでイシューやプルリクエストを自由に作成してください。"
+}
