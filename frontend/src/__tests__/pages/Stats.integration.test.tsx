@@ -13,7 +13,7 @@ vi.mock('../../api/metrics', () => ({
 
 vi.mock('../../api/games', () => ({
   gameApi: {
-    getGames: vi.fn(),
+    getGames: vi.fn().mockResolvedValue([]),
   },
 }))
 
@@ -127,51 +127,6 @@ describe('Statistics Page - Integration Test', () => {
     // Verify stat card components exist
     const cards = container.querySelectorAll('[class*="stat"]')
     expect(cards.length).toBeGreaterThan(0)
-  })
-
-  it('should allow navigation to game-specific statistics', async () => {
-    const mockGames = [
-      {
-        id: 'game-1',
-        name: 'Powerball',
-        description: 'Pick 5 from 69, plus 1 from 26',
-        number_range: [1, 69],
-        numbers_to_select: 5,
-        extra_numbers: 26,
-        created_at: '2024-01-01',
-      },
-      {
-        id: 'game-2',
-        name: 'Mega Millions',
-        description: 'Pick 5 from 70, plus 1 from 25',
-        number_range: [1, 70],
-        numbers_to_select: 5,
-        extra_numbers: 25,
-        created_at: '2024-01-01',
-      },
-    ]
-
-    const { metricsApi } = await import('../../api/metrics')
-    const { gameApi } = await import('../../api/games')
-
-    vi.mocked(metricsApi.getSessionMetrics).mockResolvedValue(
-      mockSessionMetrics
-    )
-    vi.mocked(metricsApi.getPlayMetrics).mockResolvedValue(mockPlayMetrics)
-    vi.mocked(gameApi.getGames).mockResolvedValue(mockGames)
-
-    render(
-      <BrowserRouter>
-        <StatsPage />
-      </BrowserRouter>
-    )
-
-    await waitFor(() => {
-      expect(gameApi.getGames).toHaveBeenCalled()
-    })
-
-    // Would verify game list links are present
-    // Links should go to /stats/{gameId}
   })
 
   it('should format large numbers with thousand separators', async () => {

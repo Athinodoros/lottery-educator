@@ -7,6 +7,7 @@ import { useGamesStore } from '../store/gamesStore'
 import { useSessionStore } from '../store/useSessionStore'
 import { SkeletonCard, Skeleton } from '../components/Skeleton'
 import { formatNumber } from '../utils/formatNumber'
+import OddsPerspective from '../components/OddsPerspective'
 import './StatisticsDetailPage.css'
 
 interface GameStats {
@@ -195,129 +196,7 @@ export default function StatisticsDetailPage() {
       </section>
 
       {expectedDraws > 0 && (
-        <section className="odds-perspective-section" aria-label={t('detail.oddsInPerspective')}>
-          <h2>{t('detail.oddsInPerspective')}</h2>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.howLong', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.howLongDesc', { ns: 'gameplay', name: stats.name })}</p>
-            <div className="time-grid">
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 365), lng)}</div>
-                <div className="time-label">{t('perspective.yearsDaily', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 104), lng)}</div>
-                <div className="time-label">{t('perspective.yearsTwiceWeek', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 52), lng)}</div>
-                <div className="time-label">{t('perspective.yearsOnceWeek', { ns: 'gameplay' })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.howMuchSpend', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.howMuchSpendDesc', { ns: 'gameplay' })}</p>
-            <div className="time-grid">
-              <div className="time-item">
-                <div className="time-value">${formatNumber(expectedDraws * 2, lng)}</div>
-                <div className="time-label">{t('perspective.totalCost', { ns: 'gameplay', perYear: formatNumber(Math.round((expectedDraws * 2) / (Math.round(expectedDraws / 365))), lng) })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">${formatNumber(104 * 2, lng)}</div>
-                <div className="time-label">{t('perspective.perYearTwiceWeek', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">${formatNumber(52 * 2, lng)}</div>
-                <div className="time-label">{t('perspective.perYearOnceWeek', { ns: 'gameplay' })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.lightning', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.lightningDesc', { ns: 'gameplay' })}</p>
-            <div className="time-grid single">
-              <div className="time-item">
-                <div className="time-value">{(expectedDraws / 1222000).toFixed(1)}x</div>
-                <div className="time-label">{t('perspective.lightningLabel', { ns: 'gameplay', name: stats.name })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.coinFlip', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.coinFlipDesc', { ns: 'gameplay', name: stats.name })}</p>
-            <div className="time-grid single">
-              <div className="time-item">
-                <div className="time-value">{t('perspective.coinFlipValue', { ns: 'gameplay', count: Math.round(Math.log2(expectedDraws)) })}</div>
-                <div className="time-label">{t('perspective.coinFlipLabel', { ns: 'gameplay' })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.ticketStack', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.ticketStackDesc', { ns: 'gameplay' })}</p>
-            <div className="time-grid">
-              <div className="time-item">
-                <div className="time-value">{formatNumber(expectedDraws / 1000, lng)} m</div>
-                <div className="time-label">{t('perspective.stackHeight', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{(expectedDraws / 1000000).toFixed(1)} km</div>
-                <div className="time-label">{expectedDraws >= 8848000 ? t('perspective.everestComparison', { ns: 'gameplay', value: (expectedDraws / 8848000).toFixed(1) }) : expectedDraws >= 324000 ? t('perspective.eiffelComparison', { ns: 'gameplay', value: (expectedDraws / 324000).toFixed(1) }) : t('perspective.stackedUp', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{expectedDraws >= 384400000000 ? `${(expectedDraws / 384400000000).toFixed(2)}x` : expectedDraws >= 1000000000 ? `${((expectedDraws / 384400000000) * 100).toFixed(2)}%` : `${((expectedDraws / 1000000) / 384400 * 100).toFixed(4)}%`}</div>
-                <div className="time-label">{t('perspective.moonDistance', { ns: 'gameplay' })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.pickCard', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.pickCardDesc', { ns: 'gameplay', name: stats.name })}</p>
-            <div className="time-grid single">
-              <div className="time-item">
-                <div className="time-value">{t('perspective.pickCardValue', { ns: 'gameplay', decks: formatNumber(Math.round(expectedDraws / 52), lng) })}</div>
-                <div className="time-label">{t('perspective.pickCardLabel', { ns: 'gameplay', decks: formatNumber(Math.round(expectedDraws / 52), lng) })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.lifetimes', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.lifetimesDesc', { ns: 'gameplay' })}</p>
-            <div className="time-grid">
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 365 / 80), lng)}</div>
-                <div className="time-label">{t('perspective.lifetimesDaily', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 104 / 80), lng)}</div>
-                <div className="time-label">{t('perspective.lifetimesTwiceWeek', { ns: 'gameplay' })}</div>
-              </div>
-              <div className="time-item">
-                <div className="time-value">{formatNumber(Math.round(expectedDraws / 52 / 80), lng)}</div>
-                <div className="time-label">{t('perspective.lifetimesOnceWeek', { ns: 'gameplay' })}</div>
-              </div>
-            </div>
-          </div>
-
-          <div className="perspective-card">
-            <h3>{t('perspective.birthday', { ns: 'gameplay' })}</h3>
-            <p>{t('perspective.birthdayDesc', { ns: 'gameplay', name: stats.name })}</p>
-            <div className="time-grid single">
-              <div className="time-item">
-                <div className="time-value">{t('perspective.birthdayValue', { ns: 'gameplay', count: Math.round(Math.log(expectedDraws) / Math.log(365)) })}</div>
-                <div className="time-label">{t('perspective.birthdayLabel', { ns: 'gameplay', count: Math.round(Math.log(expectedDraws) / Math.log(365)) })}</div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <OddsPerspective expectedDraws={Math.round(Number(stats.avg_draws_to_win))} gameName={stats.name} />
       )}
 
       <section className="educational-section" aria-label={t('detail.understandingNumbers')}>

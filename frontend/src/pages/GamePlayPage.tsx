@@ -10,6 +10,8 @@ import { Skeleton } from '../components/Skeleton'
 import { Game, GameResult } from '../types'
 import { gameApi } from '../api/games'
 import { formatNumber } from '../utils/formatNumber'
+import AdBanner from '../components/AdBanner'
+import OddsPerspective from '../components/OddsPerspective'
 import './GamePlayPage.css'
 
 function GamePlayPage() {
@@ -155,6 +157,15 @@ function GamePlayPage() {
     }
   }, [rerunRequested, result, isPlaying])
 
+  useEffect(() => {
+    if (result) {
+      const scroller = document.querySelector('.main-wrapper')
+      if (scroller) {
+        scroller.scrollTo({ top: 0, behavior: 'instant' })
+      }
+    }
+  }, [result])
+
   const handleBackToGames = () => {
     navigate('/games')
   }
@@ -284,134 +295,9 @@ function GamePlayPage() {
         <div className="results-container">
           <ResultsDisplay result={result} />
 
-          {game.probability_of_winning && (() => {
-            const expectedDraws = Math.round(1 / game.probability_of_winning)
-            return (
-              <section className="odds-perspective-section" aria-label={t('perspective.title')}>
-                <h2>{t('perspective.title')}</h2>
+          <OddsPerspective expectedDraws={result.draws_to_win} gameName={game.name} />
 
-                <div className="perspective-card">
-                  <h3>{t('perspective.howLong')}</h3>
-                  <p>{t('perspective.howLongDesc', { name: game.name })}</p>
-                  <div className="time-grid">
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 365), lng)}</div>
-                      <div className="time-label">{t('perspective.yearsDaily')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 104), lng)}</div>
-                      <div className="time-label">{t('perspective.yearsTwiceWeek')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 52), lng)}</div>
-                      <div className="time-label">{t('perspective.yearsOnceWeek')}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.howMuchSpend')}</h3>
-                  <p>{t('perspective.howMuchSpendDesc')}</p>
-                  <div className="time-grid">
-                    <div className="time-item">
-                      <div className="time-value">${formatNumber(expectedDraws * 2, lng)}</div>
-                      <div className="time-label">{t('perspective.totalCost', { perYear: formatNumber(Math.round((expectedDraws * 2) / (Math.round(expectedDraws / 365))), lng) })}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">${formatNumber(104 * 2, lng)}</div>
-                      <div className="time-label">{t('perspective.perYearTwiceWeek')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">${formatNumber(52 * 2, lng)}</div>
-                      <div className="time-label">{t('perspective.perYearOnceWeek')}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.lightning')}</h3>
-                  <p>{t('perspective.lightningDesc')}</p>
-                  <div className="time-grid single">
-                    <div className="time-item">
-                      <div className="time-value">{(expectedDraws / 1222000).toFixed(1)}x</div>
-                      <div className="time-label">{t('perspective.lightningLabel', { name: game.name })}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.coinFlip')}</h3>
-                  <p>{t('perspective.coinFlipDesc', { name: game.name })}</p>
-                  <div className="time-grid single">
-                    <div className="time-item">
-                      <div className="time-value">{t('perspective.coinFlipValue', { count: Math.round(Math.log2(expectedDraws)) })}</div>
-                      <div className="time-label">{t('perspective.coinFlipLabel')}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.ticketStack')}</h3>
-                  <p>{t('perspective.ticketStackDesc')}</p>
-                  <div className="time-grid">
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(expectedDraws / 1000, lng)} m</div>
-                      <div className="time-label">{t('perspective.stackHeight')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{(expectedDraws / 1000000).toFixed(1)} km</div>
-                      <div className="time-label">{expectedDraws >= 8848000 ? t('perspective.everestComparison', { value: (expectedDraws / 8848000).toFixed(1) }) : expectedDraws >= 324000 ? t('perspective.eiffelComparison', { value: (expectedDraws / 324000).toFixed(1) }) : t('perspective.stackedUp')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{expectedDraws >= 384400000000 ? `${(expectedDraws / 384400000000).toFixed(2)}x` : expectedDraws >= 1000000000 ? `${((expectedDraws / 384400000000) * 100).toFixed(2)}%` : `${((expectedDraws / 1000000) / 384400 * 100).toFixed(4)}%`}</div>
-                      <div className="time-label">{t('perspective.moonDistance')}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.pickCard')}</h3>
-                  <p>{t('perspective.pickCardDesc', { name: game.name })}</p>
-                  <div className="time-grid single">
-                    <div className="time-item">
-                      <div className="time-value">{t('perspective.pickCardValue', { decks: formatNumber(Math.round(expectedDraws / 52), lng) })}</div>
-                      <div className="time-label">{t('perspective.pickCardLabel', { decks: formatNumber(Math.round(expectedDraws / 52), lng) })}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.lifetimes')}</h3>
-                  <p>{t('perspective.lifetimesDesc')}</p>
-                  <div className="time-grid">
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 365 / 80), lng)}</div>
-                      <div className="time-label">{t('perspective.lifetimesDaily')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 104 / 80), lng)}</div>
-                      <div className="time-label">{t('perspective.lifetimesTwiceWeek')}</div>
-                    </div>
-                    <div className="time-item">
-                      <div className="time-value">{formatNumber(Math.round(expectedDraws / 52 / 80), lng)}</div>
-                      <div className="time-label">{t('perspective.lifetimesOnceWeek')}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="perspective-card">
-                  <h3>{t('perspective.birthday')}</h3>
-                  <p>{t('perspective.birthdayDesc', { name: game.name })}</p>
-                  <div className="time-grid single">
-                    <div className="time-item">
-                      <div className="time-value">{t('perspective.birthdayValue', { count: Math.round(Math.log(expectedDraws) / Math.log(365)) })}</div>
-                      <div className="time-label">{t('perspective.birthdayLabel', { count: Math.round(Math.log(expectedDraws) / Math.log(365)) })}</div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            )
-          })()}
+          <AdBanner variant="inline" />
 
           <div className="results-actions">
             <button className="play-again-button" onClick={handleRerun}>

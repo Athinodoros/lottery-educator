@@ -5,9 +5,9 @@ import { useSessionStore } from '../store/useSessionStore'
 import StatCard from '../components/StatCard'
 import { SkeletonCard } from '../components/Skeleton'
 import { metricsApi } from '../api/metrics'
-import { gameApi } from '../api/games'
 import apiClient from '../api/client'
 import { formatNumber as fmtNum } from '../utils/formatNumber'
+import AdBanner from '../components/AdBanner'
 import './StatsPage.css'
 
 function StatsPage() {
@@ -19,7 +19,6 @@ function StatsPage() {
   const [sessionStats, setSessionStats] = useState<any>(null)
   const [playStats, setPlayStats] = useState<any>(null)
   const [gameDrawStats, setGameDrawStats] = useState<any[]>([])
-  const [games, setGames] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
@@ -34,12 +33,10 @@ function StatsPage() {
         // Load both session and play metrics
         const sessionData = await metricsApi.getSessionMetrics().catch(() => null)
         const playData = await metricsApi.getPlayMetrics().catch(() => null)
-        const gamesData = await gameApi.getGames().catch(() => [])
         const drawStatsData = await apiClient.get('/stats').then(r => r.data).catch(() => [])
 
         setSessionStats(sessionData)
         setPlayStats(playData)
-        setGames(gamesData || [])
         setGameDrawStats(drawStatsData || [])
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load statistics')
@@ -173,24 +170,6 @@ function StatsPage() {
             </section>
           )}
 
-          {games.length > 0 && (
-            <section className="games-stats-section" aria-label={t('gameSpecificStats')}>
-              <h2>{t('gameSpecificStats')}</h2>
-              <div className="games-list">
-                {games.map((game) => (
-                  <button
-                    key={game.id}
-                    className="game-stat-link"
-                    onClick={() => handleGameClick(game.id)}
-                    aria-label={t('viewStatsFor', { name: game.name })}
-                  >
-                    {game.name}
-                  </button>
-                ))}
-              </div>
-            </section>
-          )}
-
           <section className="stats-info" aria-label="Educational information">
             <div className="info-section">
               <h3>{t('understandingOdds')}</h3>
@@ -213,6 +192,8 @@ function StatsPage() {
               </ul>
             </div>
           </section>
+
+          <AdBanner variant="footer" />
         </>
       )}
     </div>

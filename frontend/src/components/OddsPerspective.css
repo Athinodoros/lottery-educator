@@ -1,0 +1,128 @@
+/* ── Odds perspective section ────────────── */
+.odds-perspective-section {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.odds-perspective-section h2 {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.perspective-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
+.perspective-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text-heading);
+}
+
+.perspective-card > p {
+  margin: 0 0 20px 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.time-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.time-item {
+  text-align: center;
+  padding: 16px 12px;
+  background: var(--gradient-primary-subtle);
+  border-radius: 10px;
+  border: 1px solid var(--color-primary-bg);
+}
+
+.time-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 6px;
+}
+
+.time-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .time-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .time-value {
+    font-size: 22px;
+  }
+
+  .perspective-card {
+    padding: 20px;
+  }
+
+  .odds-perspective-section h2 {
+    font-size: 20px;
+  }
+}
+
+/* ── Tombstone visualization ────────────── */
+.tombstone-visualization {
+  margin-top: 24px;
+  padding: 28px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.tombstone-label {
+  margin: 0 0 16px 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tombstone-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tombstone-icon {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  transition-delay: calc(var(--i) * 30ms);
+}
+
+.tombstone-visualization.visible .tombstone-icon {
+  opacity: 1;
+}
+
+.tombstone-overflow {
+  margin: 16px 0 0 0;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+}

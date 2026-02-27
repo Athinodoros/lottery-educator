@@ -244,49 +244,6 @@
   font-weight: 600;
 }
 
-/* ── Game-specific statistics links ───────────── */
-.games-stats-section {
-  margin-bottom: 48px;
-}
-
-.games-stats-section h2 {
-  margin: 0 0 8px 0;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--color-text-heading);
-}
-
-.games-stats-section .games-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 12px;
-}
-
-.game-stat-link {
-  display: block;
-  padding: 16px 20px;
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  color: var(--color-text-heading);
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-
-.game-stat-link:hover {
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-primary-sm);
-  transform: translateY(-2px);
-}
-
-.game-stat-link:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
 /* Mobile responsive */
 @media (max-width: 768px) {
   .stats-page {
